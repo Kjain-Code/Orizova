@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import projects from '../data/projects';
 import './Projects.css';
+import { Link } from 'react-scroll';
 
 const categories = ['All', 'Website Development', 'App Development', 'E-Commerce', 'Digital Marketing', 'Branding', 'SEO'];
 
