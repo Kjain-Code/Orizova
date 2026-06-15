@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
 import './Navbar.css';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,9 +27,8 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
         <div className="navbar-logo">
-          <span className="logo-icon">◎</span>
-          <span className="logo-text">Orizova <span>Co.</span></span>
-        </div>
+  <img src={logo} alt="Orizova Co." style={{ height: '50px', objectFit: 'contain' }} />
+</div>
 
         <ul className="navbar-links">
           {navLinks.map((link) => (

@@ -1,4 +1,3 @@
-// src/data/services.js
 const services = [
   {
     id: 1,
@@ -11,7 +10,7 @@ const services = [
   },
   {
     id: 2,
-    slug: "app-development", 
+    slug: "app-development",
     icon: "FiSmartphone",
     title: "App Development",
     shortDesc: "Sleek, scalable, future-ready mobile apps for every device.",
@@ -24,7 +23,7 @@ const services = [
     icon: "FiTrendingUp",
     title: "Digital Marketing",
     shortDesc: "Social media, performance ads & influencer campaigns that convert.",
-    fullDesc: "We craft strategies that build your brand voice, engage your audience, and turn followers into loyal customers through social, paid ads, and influencer partnerships.",
+    fullDesc: "We craft strategies that build your brand voice, engage your audience, and turn followers into loyal customers.",
     color: "#D97706"
   },
   {
@@ -33,7 +32,7 @@ const services = [
     icon: "FiPenTool",
     title: "Branding & Designing",
     shortDesc: "Brand identities that stand out — logos, visuals, LinkedIn carousels.",
-    fullDesc: "We shape brand identities that stand out — from logos and color palettes to complete visual storytelling and LinkedIn carousel content.",
+    fullDesc: "We shape brand identities that stand out — from logos and color palettes to complete visual storytelling.",
     color: "#0EA5E9"
   },
   {
@@ -53,15 +52,6 @@ const services = [
     shortDesc: "End-to-end e-commerce platforms with secure payments & smooth UX.",
     fullDesc: "We design and develop end-to-end e-commerce platforms that sell — with secure payments, smooth UX, and mobile optimization.",
     color: "#7C3AED"
-  },
-  {
-    id: 7,
-    slug: "content-email-marketing",
-    icon: "FiMail",
-    title: "Content & Email Marketing",
-    shortDesc: "Content that converts and emails that actually get opened.",
-    fullDesc: "We create content that informs, entertains, and converts — paired with smart email campaigns that land in inboxes and drive real action.",
-    color: "#D97706"
   }
 ];
 

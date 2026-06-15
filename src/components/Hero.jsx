@@ -5,6 +5,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import './Hero.css';
+import logo from '../assets/logo.png';
 
 const stats = [
   { value: 150, suffix: '+', label: 'Projects Delivered' },
@@ -104,8 +105,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
         >
           <div className="hero-card-main">
-            <div className="logo-big">◎</div>
-            <h2>Orizova Co.</h2>
+            <img src={logo} alt="Orizova Co." style={{ height: '80px', objectFit: 'contain', marginBottom: '12px' }} />
             <p>Your Digital Growth Partner</p>
             <div className="services-chips">
               {['Web Dev', 'App Dev', 'SEO', 'Branding', 'Marketing', 'E-Commerce'].map(s => (
