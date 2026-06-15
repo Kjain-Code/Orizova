@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import logo from "../assets/logo.png";
 import './Navbar.css';
 
 const Navbar = () => {
@@ -18,6 +19,7 @@ const Navbar = () => {
     { name: 'Services', to: 'services' },
     { name: 'About', to: 'about' },
     { name: 'Why Us', to: 'whyus' },
+    { name: 'Projects', to: 'projects' },
     { name: 'Contact', to: 'contact' },
   ];
 
@@ -26,8 +28,10 @@ const Navbar = () => {
       <div className="container navbar-inner">
         {/* Logo */}
         <div className="navbar-logo">
-          <span className="logo-icon">◎</span>
-          <span className="logo-text">Orizova <span>Co.</span></span>
+          {/* <img src='../assets/logo.png' alt='Orizova Co.' className='logo-image' /> */}
+          <img className="logo-text" src={logo} alt="Orizova Co." className="logo-image" />
+          {/* <span className="logo-icon">◎</span>
+          <span className="logo-text">Orizova <span>Co.</span></span> */}
         </div>
 
         {/* Desktop Links */}

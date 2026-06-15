@@ -10,6 +10,7 @@ import About from './components/About';
 import WhyUs from './components/WhyUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Projects from './components/Projects';
 
 function App() {
   useEffect(() => {
@@ -34,13 +35,15 @@ function App() {
         <Services />
         <About />
         <WhyUs />
+        <Projects />
         <Contact />
       </main>
       <Footer />
 
       {/* WhatsApp Float */}
       <a
-        href="https://wa.me/917505802687"
+        // href="https://wa.me/917505802687"
+        href="https://wa.me/917505802687?text=Hi%20Orizova%20Co.%2C%20I%20want%20to%20discuss%20a%20project"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"

@@ -1,0 +1,138 @@
+.projects-section {
+  background: white;
+}
+
+.project-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.filter-btn {
+  padding: 9px 20px;
+  border-radius: 100px;
+  border: 1.5px solid var(--lavender);
+  background: var(--lilac);
+  color: var(--text-light);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(72,11,121,0.25);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.project-card {
+  background: var(--lilac);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1.5px solid transparent;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.project-card:hover {
+  border-color: var(--lavender);
+  box-shadow: var(--shadow-lg);
+  background: white;
+}
+
+.project-top {
+  padding: 32px 28px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.project-emoji {
+  font-size: 2.5rem;
+}
+
+.project-category {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-content {
+  padding: 0 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-content h3 {
+  font-size: 1.1rem;
+  color: var(--midnight);
+}
+
+.project-content p {
+  font-size: 13px;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-tag {
+  background: white;
+  border: 1px solid var(--lavender);
+  color: var(--midnight);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+.project-result {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 100px;
+  border: 1.5px solid;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 4px;
+  width: fit-content;
+}
+
+.projects-cta {
+  padding-top: 20px;
+}
+
+.projects-cta p {
+  font-size: 16px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-filters { gap: 8px; }
+  .filter-btn { font-size: 12px; padding: 7px 14px; }
+}
