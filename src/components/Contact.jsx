@@ -28,7 +28,6 @@ const Contact = () => {
         </div>
 
         <div className="contact-inner">
-          {/* Info */}
           <motion.div
             className="contact-info"
             initial={{ opacity: 0, x: -40 }}
@@ -66,14 +65,13 @@ const Contact = () => {
             <div className="contact-social">
               <p>Follow us on</p>
               <div className="social-links">
-                <a href="#" className="social-btn">LinkedIn</a>
-                <a href="#" className="social-btn">Instagram</a>
-                <a href="#" className="social-btn">Twitter</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-btn">LinkedIn</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-btn">Instagram</a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-btn">Twitter</a>
               </div>
             </div>
           </motion.div>
 
-          {/* Form */}
           <motion.form
             className="contact-form"
             onSubmit={handleSubmit}

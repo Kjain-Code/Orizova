@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
-import { FiArrowRight, FiPlay } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import './Hero.css';
@@ -31,7 +31,6 @@ const Hero = () => {
       </div>
 
       <div className="container hero-inner">
-        {/* Left Content */}
         <div className="hero-content">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -78,7 +77,6 @@ const Hero = () => {
             </Link>
           </motion.div>
 
-          {/* Stats */}
           <motion.div
             className="hero-stats"
             ref={ref}
@@ -99,7 +97,6 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right Visual */}
         <motion.div
           className="hero-visual"
           initial={{ opacity: 0, x: 60 }}
@@ -135,7 +132,6 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         className="scroll-indicator"
         animate={{ y: [0, 10, 0] }}

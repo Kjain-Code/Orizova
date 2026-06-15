@@ -23,7 +23,7 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            {['home','services','about','whyus','contact'].map(l => (
+            {['home','services','projects','about','whyus','contact'].map(l => (
               <li key={l}>
                 <Link to={l} smooth duration={600} offset={-80}>
                   {l.charAt(0).toUpperCase() + l.slice(1)}
@@ -37,7 +37,7 @@ const Footer = () => {
           <h4>Services</h4>
           <ul>
             {['Website Development','App Development','Digital Marketing','Branding & Designing','SEO','E-Commerce Solutions','Content & Email Marketing'].map(s => (
-              <li key={s}><a href="#">{s}</a></li>
+              <li key={s}><span>{s}</span></li>
             ))}
           </ul>
         </div>

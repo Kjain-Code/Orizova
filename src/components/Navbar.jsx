@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
-import logo from "../assets/logo.png";
 import './Navbar.css';
 
 const Navbar = () => {
@@ -17,24 +16,20 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', to: 'home' },
     { name: 'Services', to: 'services' },
+    { name: 'Projects', to: 'projects' },
     { name: 'About', to: 'about' },
     { name: 'Why Us', to: 'whyus' },
-    { name: 'Projects', to: 'projects' },
     { name: 'Contact', to: 'contact' },
   ];
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-inner">
-        {/* Logo */}
         <div className="navbar-logo">
-          {/* <img src='../assets/logo.png' alt='Orizova Co.' className='logo-image' /> */}
-          <img className="logo-text" src={logo} alt="Orizova Co." className="logo-image" />
-          {/* <span className="logo-icon">◎</span>
-          <span className="logo-text">Orizova <span>Co.</span></span> */}
+          <span className="logo-icon">◎</span>
+          <span className="logo-text">Orizova <span>Co.</span></span>
         </div>
 
-        {/* Desktop Links */}
         <ul className="navbar-links">
           {navLinks.map((link) => (
             <li key={link.name}>
@@ -44,8 +39,6 @@ const Navbar = () => {
                 duration={600}
                 offset={-80}
                 className="nav-link"
-                activeClass="active"
-                spy={true}
               >
                 {link.name}
               </Link>
@@ -53,19 +46,16 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* CTA */}
         <a href="tel:+917505802687" className="navbar-cta">
           <FiPhone size={16} />
           Call Us
         </a>
 
-        {/* Mobile Menu Toggle */}
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         {navLinks.map((link) => (
           <Link

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import projects from '../data/projects';
 import './Projects.css';
 
@@ -24,7 +24,6 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Filter Tabs */}
         <div className="project-filters">
           {categories.map(cat => (
             <button
@@ -37,7 +36,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Grid */}
         <motion.div className="projects-grid" layout>
           <AnimatePresence>
             {filtered.map((project) => (
@@ -51,7 +49,6 @@ const Projects = () => {
                 transition={{ duration: 0.4 }}
                 whileHover={{ y: -8 }}
               >
-                {/* Top */}
                 <div className="project-top" style={{ background: project.color + '15' }}>
                   <span className="project-emoji">{project.emoji}</span>
                   <span className="project-category" style={{ color: project.color }}>
@@ -59,19 +56,14 @@ const Projects = () => {
                   </span>
                 </div>
 
-                {/* Content */}
                 <div className="project-content">
                   <h3>{project.title}</h3>
                   <p>{project.desc}</p>
-
-                  {/* Tags */}
                   <div className="project-tags">
                     {project.tags.map(tag => (
                       <span key={tag} className="project-tag">{tag}</span>
                     ))}
                   </div>
-
-                  {/* Result Badge */}
                   <div className="project-result" style={{ borderColor: project.color + '40', color: project.color }}>
                     ✅ {project.result}
                   </div>
@@ -81,14 +73,13 @@ const Projects = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* CTA */}
         <div className="projects-cta text-center">
           <p>Want results like these for your business?</p>
-          <a href="#contact">
+          <Link to="contact" smooth duration={600} offset={-80}>
             <button className="btn-primary">
               Start Your Project <FiArrowRight />
             </button>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
