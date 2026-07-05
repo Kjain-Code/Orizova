@@ -1,7 +1,3 @@
-/* ===========================
-   NAVBAR
-=========================== */
-
 .navbar {
   position: fixed;
   top: 0;
@@ -13,27 +9,19 @@
 }
 
 .navbar.scrolled {
-  background: rgba(212, 191, 226, 0.95);
+  background: rgba(11, 9, 12, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 12px 0;
   box-shadow: 0 2px 30px rgba(72, 11, 121, 0.10);
 }
 
-.navbar-inner{
-    width:100%;
-    max-width:1200px;
-    margin:0 auto;
-    padding:0 20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
 }
-
-/* ===========================
-   LOGO
-=========================== */
 
 .navbar-logo {
   display: flex;
@@ -44,13 +32,17 @@
   font-size: 1.4rem;
   color: var(--primary);
   cursor: pointer;
-  flex-shrink: 0;
 }
-
-.navbar-logo img {
+img{
+    display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
   height: 60px;
-  width: auto;
-  display: block;
+  color: var(--primary);
+  cursor: pointer;
 }
 
 .logo-icon {
@@ -62,10 +54,6 @@
 .logo-text span {
   color: var(--gold);
 }
-
-/* ===========================
-   NAV LINKS
-=========================== */
 
 .navbar-links {
   display: flex;
@@ -91,10 +79,6 @@
   background: var(--lavender);
 }
 
-/* ===========================
-   CTA BUTTON
-=========================== */
-
 .navbar-cta {
   display: flex;
   align-items: center;
@@ -105,19 +89,15 @@
   border-radius: 100px;
   font-weight: 700;
   font-size: 14px;
-  white-space: nowrap;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(72, 11, 121, 0.25);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(72,11,121,0.25);
 }
 
 .navbar-cta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(72, 11, 121, 0.35);
+  box-shadow: 0 8px 25px rgba(72,11,121,0.35);
 }
-
-/* ===========================
-   MENU BUTTON
-=========================== */
 
 .menu-toggle {
   display: none;
@@ -125,33 +105,23 @@
   border: none;
   color: var(--primary);
   cursor: pointer;
-  width: 45px;
-  height: 45px;
-  align-items: center;
-  justify-content: center;
+  padding: 4px;
 }
 
-/* ===========================
-   MOBILE MENU
-=========================== */
-
+/* Mobile Menu */
 .mobile-menu {
   display: none;
   flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
   background: white;
-  overflow: hidden;
+  padding: 0;
   max-height: 0;
-  transition: max-height 0.4s ease;
+  overflow: hidden;
+  transition: all 0.4s ease;
   border-top: 1px solid var(--lavender);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
 .mobile-menu.open {
-  max-height: 500px;
+  max-height: 400px;
   padding: 16px 24px 24px;
 }
 
@@ -172,91 +142,28 @@
 .mobile-cta {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 8px;
-  margin-top: 18px;
+  margin-top: 16px;
   background: linear-gradient(135deg, var(--primary), var(--violet));
   color: white;
   padding: 14px 24px;
   border-radius: 100px;
   font-weight: 700;
   font-size: 15px;
+  justify-content: center;
 }
-
-/* ===========================
-   TABLET
-=========================== */
-
-@media (max-width: 992px) {
-
-  .navbar-links {
-    gap: 4px;
-  }
-
-  .nav-link {
-    padding: 8px 10px;
-    font-size: 13px;
-  }
-
-}
-
-/* ===========================
-   MOBILE
-=========================== */
 
 @media (max-width: 768px) {
-
-  .navbar {
-    padding: 12px 0;
-  }
-
-  .navbar-inner {
-    padding: 0 18px;
-  }
-
-  .navbar-logo img {
-    height: 45px;
-  }
-
-  .logo-text {
-    font-size: 18px;
-  }
-
   .navbar-links,
   .navbar-cta {
     display: none;
   }
 
   .menu-toggle {
-    display: flex;
+    display: block;
   }
 
   .mobile-menu {
     display: flex;
   }
-
-}
-
-/* ===========================
-   SMALL MOBILE
-=========================== */
-
-@media (max-width: 480px) {
-
-  .navbar-inner {
-    padding: 0 15px;
-  }
-
-  .navbar-logo img {
-    height: 40px;
-  }
-
-  .logo-text {
-    font-size: 16px;
-  }
-
-  .mobile-link {
-    font-size: 15px;
-  }
-
 }
