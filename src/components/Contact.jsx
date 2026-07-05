@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { supabase } from "../lib/supabase";
+
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
 import './Contact.css';
@@ -6,15 +8,47 @@ import './Contact.css';
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', phone: '', service: '', message: '' });
-  };
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  setLoading(true);
+
+  const { error } = await supabase
+    .from("contact_leads")
+    .insert([
+      {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        service: form.service,
+        message: form.message,
+      },
+    ]);
+
+  setLoading(false);
+
+  if (error) {
+    console.error(error);
+    alert("❌ Failed to send message.");
+    return;
+  }
+
+  setSent(true);
+
+  setTimeout(() => setSent(false), 4000);
+
+  setForm({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+};
 
   return (
     <section id="contact" className="contact-section">
@@ -113,9 +147,21 @@ const Contact = () => {
               <label>Your Message *</label>
               <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={5} required />
             </div>
-            <button type="submit" className="btn-primary submit-btn">
-              {sent ? '✅ Message Sent!' : <><FiSend /> Send Message</>}
-            </button>
+            <button
+  type="submit"
+  className="btn-primary submit-btn"
+  disabled={loading}
+>
+  {loading
+    ? "Sending..."
+    : sent
+    ? "✅ Message Sent!"
+    : (
+      <>
+        <FiSend /> Send Message
+      </>
+    )}
+</button>
           </motion.form>
         </div>
       </div>

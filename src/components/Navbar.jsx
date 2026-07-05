@@ -73,6 +73,7 @@ const Navbar = () => {
         <a href="tel:+917505802687" className="mobile-cta">
           <FiPhone size={16} /> +91 7505802687
         </a>
+        
       </div>
     </nav>
   );
