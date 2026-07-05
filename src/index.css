@@ -155,3 +155,81 @@ section {
 [data-aos].aos-animate {
   pointer-events: auto;
 }
+/* ===========================
+   RESPONSIVE FIX
+=========================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+section {
+  overflow-x: hidden;
+}
+
+@media (max-width:768px){
+
+  .hero{
+    overflow:hidden;
+    padding-top:90px;
+  }
+
+  .hero-inner{
+    grid-template-columns:1fr !important;
+    gap:40px;
+    padding:40px 20px !important;
+  }
+
+  .hero-content{
+    width:100%;
+    text-align:center;
+    align-items:center;
+  }
+
+  .hero-title{
+    font-size:2.3rem;
+    line-height:1.2;
+  }
+
+  .hero-desc{
+    max-width:100%;
+    font-size:16px;
+  }
+
+  .hero-btns{
+    justify-content:center;
+    width:100%;
+  }
+
+  .hero-stats{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+
+  .hero-visual{
+    display:none !important;
+  }
+
+}
