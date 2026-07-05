@@ -9,7 +9,7 @@
 }
 
 .navbar.scrolled {
-  background: rgba(11, 9, 12, 0.95);
+  background: rgba(201, 167, 219, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 12px 0;
@@ -33,16 +33,11 @@
   color: var(--primary);
   cursor: pointer;
 }
-img{
-    display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 1.4rem;
+
+.navbar-logo img {
   height: 60px;
-  color: var(--primary);
-  cursor: pointer;
+  width: auto;
+  display: block;
 }
 
 .logo-icon {
@@ -69,8 +64,7 @@ img{
   font-size: 14px;
   color: var(--midnight);
   cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
+  transition: all .3s ease;
 }
 
 .nav-link:hover,
@@ -83,87 +77,133 @@ img{
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, var(--primary), var(--violet));
-  color: white;
-  padding: 10px 22px;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 14px;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(72,11,121,0.25);
+  background: linear-gradient(135deg,var(--primary),var(--violet));
+  color:#fff;
+  padding:10px 22px;
+  border-radius:100px;
+  font-weight:700;
+  font-size:14px;
+  white-space:nowrap;
+  transition:.3s;
+  box-shadow:0 4px 15px rgba(72,11,121,.25);
 }
 
-.navbar-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(72,11,121,0.35);
+.navbar-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(72,11,121,.35);
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--primary);
-  cursor: pointer;
-  padding: 4px;
+.menu-toggle{
+  display:none;
+  background:none;
+  border:none;
+  color:var(--primary);
+  cursor:pointer;
+  padding:4px;
 }
 
-/* Mobile Menu */
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: white;
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
-  border-top: 1px solid var(--lavender);
+/* ===========================
+   MOBILE MENU
+=========================== */
+
+.mobile-menu{
+  position:fixed;
+  top:84px;
+  left:0;
+  width:100%;
+  height:calc(100vh - 84px);
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  padding:0 24px;
+  overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
+  transform:translateY(-20px);
+  opacity:0;
+  visibility:hidden;
+  transition:all .35s ease;
+  z-index:999;
+  box-sizing:border-box;
 }
 
-.mobile-menu.open {
-  max-height: 400px;
-  padding: 16px 24px 24px;
+.mobile-menu.open{
+  transform:translateY(0);
+  opacity:1;
+  visibility:visible;
+  padding-top:20px;
+  padding-bottom:30px;
 }
 
-.mobile-link {
-  padding: 14px 0;
-  font-weight: 600;
-  font-size: 16px;
-  color: var(--midnight);
-  border-bottom: 1px solid var(--lavender);
-  cursor: pointer;
-  transition: color 0.3s ease;
+.mobile-link{
+  padding:18px 0;
+  border-bottom:1px solid #eee;
+  font-size:16px;
+  font-weight:600;
+  color:var(--midnight);
+  cursor:pointer;
+  transition:.3s;
 }
 
-.mobile-link:hover {
-  color: var(--primary);
+.mobile-link:hover{
+  color:var(--primary);
 }
 
-.mobile-cta {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-  background: linear-gradient(135deg, var(--primary), var(--violet));
-  color: white;
-  padding: 14px 24px;
-  border-radius: 100px;
-  font-weight: 700;
-  font-size: 15px;
-  justify-content: center;
+.mobile-cta{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  margin-top:24px;
+  margin-bottom:30px;
+  width:100%;
+  padding:16px;
+  border-radius:50px;
+  background:linear-gradient(135deg,var(--primary),var(--violet));
+  color:#fff;
+  font-weight:700;
+  text-decoration:none;
+  box-sizing:border-box;
+  flex-shrink:0;
 }
 
-@media (max-width: 768px) {
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+  .navbar{
+    padding:12px 0;
+  }
+
   .navbar-links,
-  .navbar-cta {
-    display: none;
+  .navbar-cta{
+    display:none;
   }
 
-  .menu-toggle {
-    display: block;
+  .menu-toggle{
+    display:block;
+    z-index:1001;
   }
 
-  .mobile-menu {
-    display: flex;
+  .mobile-menu{
+    display:flex;
   }
+
+  .navbar-logo img{
+    height:52px;
+  }
+
+}
+
+/* ===========================
+   DESKTOP
+=========================== */
+
+@media (min-width:769px){
+
+  .mobile-menu{
+    display:none !important;
+  }
+
 }
