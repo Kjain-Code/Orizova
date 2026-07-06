@@ -70,8 +70,8 @@ const Navbar = () => {
             {link.name}
           </Link>
         ))}
-        <a href="tel:+917505802687" className="mobile-cta">
-          <FiPhone size={16} /> +91 7505802687
+        <a href="tel:+918527290722" className="mobile-cta">
+          <FiPhone size={16} /> +91 8527290722
         </a>
         
       </div>
