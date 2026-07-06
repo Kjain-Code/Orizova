@@ -16,6 +16,7 @@ const Footer = () => {
           <div className="footer-contacts">
             <a href="mailto:orizovadigital@gmail.com"><FiMail size={14}/> orizovadigital@gmail.com</a>
             <a href="tel:+917505802687"><FiPhone size={14}/> +91 7505802687</a>
+            <a href="tel:+918527290722"><FiPhone size={14}/> +91 8527290722</a>
             <span><FiMapPin size={14}/> India (Serving Globally)</span>
           </div>
         </div>
@@ -45,7 +46,7 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>© 2025 Orizova Co. All Rights Reserved. | Designed with ❤️ in India</p>
+          <p>© 2026 Orizova Co. All Rights Reserved. | Designed with ❤️ in India</p>
         </div>
       </div>
     </footer>

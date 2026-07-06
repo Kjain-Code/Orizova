@@ -46,7 +46,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <a href="tel:+917505802687" className="navbar-cta">
+        <a href="tel:+918527290722" className="navbar-cta">
           <FiPhone size={16} />
           Call Us
         </a>

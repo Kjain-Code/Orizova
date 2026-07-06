@@ -9,6 +9,7 @@ const projects = [
     emoji: "🛍️",
     result: "40% ↑ Conversions"
   },
+  
   {
     id: 2,
     title: "Real Estate Lead Gen Website",
