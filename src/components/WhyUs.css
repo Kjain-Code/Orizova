@@ -215,16 +215,29 @@
    =============================== */
 @media (max-width: 992px) {
   .whyus-grid { grid-template-columns: repeat(2, 1fr); }
+  .whyus-section { padding: 80px 0; }
 }
 
 @media (max-width: 768px) {
-  .whyus-grid { grid-template-columns: 1fr; }
-  .whyus-flip-container { max-width: 420px; margin: auto; }
+  .whyus-grid { grid-template-columns: 1fr; gap: 20px; }
+  .whyus-section { padding: 60px 0; }
+  .whyus-flip-container { max-width: 420px; margin: auto; width: 100%; }
+  .whyus-section .section-title { font-size: 1.8rem; }
+  .whyus-section .section-subtitle { font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
+  .whyus-section { padding: 50px 0; }
   .whyus-flip-front,
   .whyus-flip-back { padding: 22px 18px; }
   .whyus-flip-container { min-height: auto; }
   .whyus-flip-inner { min-height: auto; }
+  .whyus-flip-front h3 { font-size: 0.95rem; }
+  .whyus-flip-front p { font-size: 0.78rem; }
+  .whyus-flip-back h3 { font-size: 1.05rem; }
+  .whyus-flip-back p { font-size: 0.8rem; }
+  .whyus-icon { width: 42px; height: 42px; }
+  .whyus-section .section-title { font-size: 1.5rem; }
+  .whyus-section .section-subtitle { font-size: 0.88rem; }
+  .whyus-card-number { font-size: 1.8rem; }
 }
