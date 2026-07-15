@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle, FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-scroll';
+import Founders from './Founders';
 import './About.css';
 
 const points = [
@@ -82,7 +83,7 @@ const About = () => {
                 transition={{ delay: i * 0.08, duration: 0.4 }}
                 viewport={{ once: true }}
               >
-                <FiCheckCircle size={18} color="var(--primary)" />
+                <FiCheckCircle size={18} color="#06B6D4" />
                 <span>{point}</span>
               </motion.div>
             ))}
@@ -95,6 +96,9 @@ const About = () => {
           </Link>
         </motion.div>
       </div>
+
+      {/* Founders Section */}
+      <Founders />
     </section>
   );
 };

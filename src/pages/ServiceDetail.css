@@ -1,0 +1,230 @@
+/* ===============================
+   SERVICE DETAIL — BASE
+   =============================== */
+.sd-page { min-height: 100vh; overflow: hidden; }
+.sd-container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+.sd-topbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 16px 32px; backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.sd-back { display: inline-flex; align-items: center; gap: 8px; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.3s; }
+.sd-back:hover { color: var(--accent); }
+
+.sd-hero { position: relative; padding: 140px 0 80px; text-align: center; overflow: hidden; }
+.sd-hero-orb { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; }
+.sd-hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.sd-hero-icon { width: 80px; height: 80px; border-radius: 20px; background: var(--accent-bg); color: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 8px; }
+.sd-tag { display: inline-block; padding: 10px 28px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; background: var(--tag-bg); color: var(--accent); border: 1px solid var(--tag-border); }
+.sd-hero-title { font-size: clamp(2rem, 5vw, 3.5rem); color: #fff; line-height: 1.15; font-weight: 800; }
+.sd-hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; font-weight: 500; }
+.sd-hero-particles { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.sd-particle { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); opacity: 0.3; }
+
+.sd-title { font-size: clamp(1.6rem, 3.5vw, 2.4rem); color: #fff; text-align: center; margin-bottom: 48px; font-weight: 700; }
+.sd-title span { color: var(--accent); }
+.sd-divider { display: flex; justify-content: center; margin: 60px 0; }
+.sd-divider span { width: 60px; height: 3px; border-radius: 2px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+.sd-section { padding: 50px 0; }
+.sd-build { padding: 50px 0; max-width: 800px; margin: 0 auto; }
+.sd-text { font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.85; margin-bottom: 16px; text-align: center; }
+.sd-text strong { color: var(--accent); }
+
+/* Included */
+.sd-included-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 900px; margin: 0 auto; }
+.sd-include-item { display: flex; align-items: center; gap: 14px; padding: 16px 20px; color: rgba(255,255,255,0.85); font-size: 0.92rem; transition: all 0.3s ease; }
+.sd-include-index { font-size: 0.75rem; font-weight: 800; opacity: 0.6; min-width: 24px; }
+.sd-include-label { flex: 1; }
+
+/* Pricing */
+.sd-pricing-row { display: grid; gap: 24px; max-width: 1000px; margin: 0 auto; align-items: start; }
+.sd-price-box { position: relative; padding: 36px 28px; text-align: center; transition: all 0.4s ease; transform-style: preserve-3d; }
+.sd-price-box:hover { transform: translateY(-8px); box-shadow: 0 20px 50px var(--shadow); }
+.sd-price-highlight { border-color: var(--accent) !important; }
+.sd-badge { position: absolute; top: 14px; right: 14px; padding: 5px 14px; border-radius: 50px; font-size: 0.7rem; font-weight: 700; background: var(--accent); color: var(--bg-dark); text-transform: uppercase; }
+.sd-price-box h3 { font-size: 1.3rem; color: #fff; margin-bottom: 14px; font-weight: 700; }
+.sd-price { font-size: 1rem; color: rgba(255,255,255,0.55); margin-bottom: 18px; }
+.sd-price strong { font-size: 1.7rem; color: var(--accent); font-weight: 800; }
+.sd-price-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; font-weight: 600; }
+.sd-price-list { list-style: none; padding: 0; margin: 0 0 24px; text-align: left; }
+.sd-price-list li { padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.7); font-size: 0.88rem; display: flex; align-items: center; gap: 10px; }
+.sd-price-check { width: 20px; height: 20px; min-width: 20px; border-radius: 6px; background: var(--accent); color: var(--bg-dark); display: flex; align-items: center; justify-content: center; }
+.sd-price-note, .sd-price-extra { color: rgba(255,255,255,0.5); font-size: 0.85rem; line-height: 1.6; margin-bottom: 20px; }
+.sd-price-btn { display: flex; width: 100%; padding: 14px; border: none; border-radius: 12px; background: var(--accent); color: var(--bg-dark); font-weight: 700; font-size: 0.95rem; cursor: pointer; align-items: center; justify-content: center; gap: 8px; text-decoration: none; transition: all 0.3s; }
+.sd-price-btn:hover { box-shadow: 0 0 25px var(--shadow); transform: translateY(-2px); }
+.sd-price-btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--accent); }
+.sd-price-btn-outline:hover { background: var(--accent-bg); }
+
+/* Process */
+.sd-process-row { display: flex; flex-direction: column; gap: 16px; max-width: 700px; margin: 0 auto; }
+.sd-process-item { display: flex; gap: 20px; align-items: flex-start; padding: 24px; transition: all 0.3s; }
+.sd-process-num { width: 48px; height: 48px; min-width: 48px; display: flex; align-items: center; justify-content: center; font-size: 1rem; font-weight: 800; }
+.sd-process-info h3 { font-size: 1.1rem; color: #fff; margin-bottom: 6px; font-weight: 700; }
+.sd-process-info p { font-size: 0.9rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+/* Perfect For */
+.sd-perfect-wrap { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; max-width: 800px; margin: 0 auto; }
+.sd-perfect-chip { display: flex; align-items: center; gap: 10px; padding: 12px 24px; color: rgba(255,255,255,0.8); font-size: 0.9rem; font-weight: 500; cursor: default; transition: all 0.3s; }
+.sd-perfect-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+
+/* Why Choose */
+.sd-why-wrap { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; max-width: 800px; margin: 0 auto; }
+.sd-why-box { display: flex; align-items: center; gap: 14px; padding: 18px 22px; color: rgba(255,255,255,0.8); font-size: 0.92rem; transition: all 0.3s; }
+.sd-why-badge { width: 32px; height: 32px; min-width: 32px; border-radius: 8px; background: var(--accent); color: var(--bg-dark); display: flex; align-items: center; justify-content: center; }
+
+/* CTA */
+.sd-cta-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 800px; margin: 0 auto 50px; }
+.sd-cta-box { padding: 32px 24px; text-align: center; transition: all 0.3s; }
+.sd-cta-box:hover { transform: translateY(-6px); box-shadow: 0 12px 35px var(--shadow); }
+.sd-cta-icon-box { width: 52px; height: 52px; border-radius: 14px; margin: 0 auto 14px; background: var(--accent-bg); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.sd-cta-box h4 { color: #fff; font-size: 1rem; margin-bottom: 12px; }
+.sd-cta-box a { display: block; color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.9rem; padding: 3px 0; transition: color 0.3s; }
+.sd-cta-box a:hover { color: var(--accent); }
+
+.sd-footer-brand { text-align: center; padding-bottom: 40px; }
+.sd-brand-logo { width: 60px; height: 60px; border-radius: 16px; margin: 0 auto 16px; background: var(--accent-bg); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.sd-brand-text { font-size: 2.5rem; font-weight: 900; letter-spacing: 6px; margin-bottom: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.sd-footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.95rem; font-style: italic; }
+
+@media (max-width: 992px) { .sd-pricing-row, .sd-cta-wrap { grid-template-columns: 1fr; max-width: 450px; } }
+@media (max-width: 768px) { .sd-hero { padding: 120px 0 60px; } .sd-included-grid, .sd-why-wrap { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .sd-topbar { padding: 14px 16px; } .sd-hero-title { font-size: 1.7rem; } .sd-title { font-size: 1.5rem; margin-bottom: 32px; } }
+
+/* ==========================================================
+   THEME 1 — WEBSITE DEVELOPMENT (Cyan / Rounded Glass)
+   ========================================================== */
+.sd-theme-website-development { --accent: #22D3EE; --accent-light: #67E8F9; --accent-bg: rgba(34,211,238,0.12); --tag-bg: rgba(34,211,238,0.12); --tag-border: rgba(34,211,238,0.3); --card-bg: rgba(255,255,255,0.04); --card-border: rgba(255,255,255,0.07); --shadow: rgba(34,211,238,0.12); --bg-dark: #0F172A; background: linear-gradient(180deg, #0F172A, #1E293B 40%, #0F172A); }
+.sd-theme-website-development .sd-topbar { background: rgba(15,23,42,0.88); }
+.sd-theme-website-development .sd-orb-1 { width: 500px; height: 500px; background: rgba(34,211,238,0.1); top: -100px; left: -100px; }
+.sd-theme-website-development .sd-orb-2 { width: 400px; height: 400px; background: rgba(6,182,212,0.06); bottom: -150px; right: -80px; }
+.sd-theme-website-development .sd-orb-3 { width: 250px; height: 250px; background: rgba(34,211,238,0.08); top: 40%; left: 50%; }
+
+.sd-theme-website-development .sd-include-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; }
+.sd-theme-website-development .sd-include-item:hover { background: rgba(34,211,238,0.06); border-color: rgba(34,211,238,0.2); transform: translateY(-2px); }
+.sd-theme-website-development .sd-price-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; }
+.sd-theme-website-development .sd-process-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; }
+.sd-theme-website-development .sd-process-item:hover { border-color: rgba(34,211,238,0.2); transform: translateX(6px); }
+.sd-theme-website-development .sd-process-num { background: rgba(34,211,238,0.12); color: #22D3EE; border-radius: 12px; }
+.sd-theme-website-development .sd-perfect-chip { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 50px; }
+.sd-theme-website-development .sd-perfect-chip:hover { border-color: rgba(34,211,238,0.3); color: #22D3EE; }
+.sd-theme-website-development .sd-why-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; }
+.sd-theme-website-development .sd-why-box:hover { border-color: rgba(34,211,238,0.2); }
+.sd-theme-website-development .sd-cta-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; }
+.sd-theme-website-development .sd-cta-box:hover { border-color: rgba(34,211,238,0.2); }
+
+/* ==========================================================
+   THEME 2 — APP DEVELOPMENT (Purple / Deep Shadow Cards)
+   ========================================================== */
+.sd-theme-app-development { --accent: #A78BFA; --accent-light: #C4B5FD; --accent-bg: rgba(167,139,250,0.12); --tag-bg: rgba(167,139,250,0.12); --tag-border: rgba(167,139,250,0.3); --card-bg: rgba(139,92,246,0.06); --card-border: rgba(139,92,246,0.12); --shadow: rgba(139,92,246,0.15); --bg-dark: #1a0533; background: linear-gradient(180deg, #1a0533, #2d1052 40%, #1a0533); }
+.sd-theme-app-development .sd-topbar { background: rgba(26,5,51,0.88); }
+.sd-theme-app-development .sd-orb-1 { width: 500px; height: 500px; background: rgba(139,92,246,0.1); top: -100px; right: -100px; }
+.sd-theme-app-development .sd-orb-2 { width: 350px; height: 350px; background: rgba(167,139,250,0.06); bottom: -100px; left: -80px; }
+.sd-theme-app-development .sd-orb-3 { width: 200px; height: 200px; background: rgba(139,92,246,0.08); top: 30%; left: 20%; }
+
+.sd-theme-app-development .sd-include-item { background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(88,28,135,0.08)); border: 1px solid rgba(139,92,246,0.15); border-radius: 18px; box-shadow: 0 4px 15px rgba(139,92,246,0.05); }
+.sd-theme-app-development .sd-include-item:hover { background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(88,28,135,0.12)); box-shadow: 0 8px 25px rgba(139,92,246,0.1); transform: translateY(-3px); }
+.sd-theme-app-development .sd-price-box { background: linear-gradient(160deg, rgba(139,92,246,0.08), rgba(88,28,135,0.06)); border: 1px solid rgba(139,92,246,0.15); border-radius: 24px; box-shadow: 0 8px 30px rgba(139,92,246,0.08); }
+.sd-theme-app-development .sd-process-item { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(88,28,135,0.04)); border: 1px solid rgba(139,92,246,0.1); border-radius: 20px; box-shadow: 0 4px 20px rgba(139,92,246,0.06); }
+.sd-theme-app-development .sd-process-item:hover { box-shadow: 0 8px 30px rgba(139,92,246,0.12); transform: translateY(-4px); }
+.sd-theme-app-development .sd-process-num { background: linear-gradient(135deg, #7C3AED, #A78BFA); color: #fff; border-radius: 14px; box-shadow: 0 4px 12px rgba(124,58,237,0.3); }
+.sd-theme-app-development .sd-perfect-chip { background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.15); border-radius: 16px; box-shadow: 0 2px 10px rgba(139,92,246,0.06); }
+.sd-theme-app-development .sd-perfect-chip:hover { background: rgba(139,92,246,0.15); box-shadow: 0 6px 20px rgba(139,92,246,0.12); }
+.sd-theme-app-development .sd-why-box { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.1); border-radius: 16px; }
+.sd-theme-app-development .sd-why-box:hover { border-color: rgba(139,92,246,0.25); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(139,92,246,0.1); }
+.sd-theme-app-development .sd-cta-box { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.1); border-radius: 20px; }
+.sd-theme-app-development .sd-cta-box:hover { border-color: rgba(139,92,246,0.25); box-shadow: 0 12px 35px rgba(139,92,246,0.1); }
+
+/* ==========================================================
+   THEME 3 — DIGITAL MARKETING (Orange / Dashboard Style)
+   ========================================================== */
+.sd-theme-digital-marketing { --accent: #F59E0B; --accent-light: #FCD34D; --accent-bg: rgba(245,158,11,0.1); --tag-bg: rgba(245,158,11,0.1); --tag-border: rgba(245,158,11,0.3); --card-bg: rgba(255,255,255,0.04); --card-border: rgba(255,255,255,0.07); --shadow: rgba(245,158,11,0.12); --bg-dark: #1C1004; background: linear-gradient(180deg, #1C1004, #2A1A08 40%, #1C1004); }
+.sd-theme-digital-marketing .sd-topbar { background: rgba(28,16,4,0.88); }
+.sd-theme-digital-marketing .sd-orb-1 { width: 500px; height: 500px; background: rgba(245,158,11,0.08); top: -120px; left: 20%; }
+.sd-theme-digital-marketing .sd-orb-2 { width: 350px; height: 350px; background: rgba(251,211,77,0.05); bottom: -100px; right: 10%; }
+.sd-theme-digital-marketing .sd-orb-3 { width: 200px; height: 200px; background: rgba(245,158,11,0.06); top: 50%; right: 30%; }
+
+.sd-theme-digital-marketing .sd-include-item { background: rgba(245,158,11,0.04); border-left: 3px solid rgba(245,158,11,0.4); border-radius: 0 12px 12px 0; padding-left: 18px; }
+.sd-theme-digital-marketing .sd-include-item:hover { background: rgba(245,158,11,0.08); border-left-color: #F59E0B; transform: translateX(6px); }
+.sd-theme-digital-marketing .sd-include-index { color: #F59E0B; }
+.sd-theme-digital-marketing .sd-price-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(245,158,11,0.1); border-radius: 16px; border-top: 3px solid #F59E0B; }
+.sd-theme-digital-marketing .sd-price-box:hover { border-top-color: #FCD34D; }
+.sd-theme-digital-marketing .sd-process-item { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.08); border-radius: 14px; position: relative; overflow: hidden; }
+.sd-theme-digital-marketing .sd-process-item::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px; background: linear-gradient(180deg, #F59E0B, #FCD34D); }
+.sd-theme-digital-marketing .sd-process-item:hover { background: rgba(245,158,11,0.06); }
+.sd-theme-digital-marketing .sd-process-num { background: rgba(245,158,11,0.15); color: #F59E0B; border-radius: 10px; }
+.sd-theme-digital-marketing .sd-perfect-chip { background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.12); border-radius: 10px; }
+.sd-theme-digital-marketing .sd-perfect-chip:hover { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.3); }
+.sd-theme-digital-marketing .sd-perfect-dot { background: #F59E0B; border-radius: 3px; width: 6px; height: 6px; }
+.sd-theme-digital-marketing .sd-why-box { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.08); border-radius: 12px; }
+.sd-theme-digital-marketing .sd-why-box:hover { border-color: rgba(245,158,11,0.2); }
+.sd-theme-digital-marketing .sd-why-badge { background: linear-gradient(135deg, #F59E0B, #D97706); border-radius: 8px; }
+.sd-theme-digital-marketing .sd-cta-box { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.08); border-radius: 16px; }
+.sd-theme-digital-marketing .sd-cta-box:hover { border-color: rgba(245,158,11,0.2); }
+
+/* ==========================================================
+   THEME 4 — BRANDING (Sky Blue / Creative Angular)
+   ========================================================== */
+.sd-theme-branding-designing { --accent: #38BDF8; --accent-light: #7DD3FC; --accent-bg: rgba(56,189,248,0.1); --tag-bg: rgba(56,189,248,0.1); --tag-border: rgba(56,189,248,0.3); --card-bg: rgba(56,189,248,0.05); --card-border: rgba(56,189,248,0.1); --shadow: rgba(56,189,248,0.12); --bg-dark: #0C1929; background: linear-gradient(180deg, #0C1929, #132740 40%, #0C1929); }
+.sd-theme-branding-designing .sd-topbar { background: rgba(12,25,41,0.88); }
+.sd-theme-branding-designing .sd-orb-1 { width: 450px; height: 450px; background: rgba(56,189,248,0.08); top: -80px; right: -80px; }
+.sd-theme-branding-designing .sd-orb-2 { width: 350px; height: 350px; background: rgba(125,211,252,0.05); bottom: -120px; left: -60px; }
+.sd-theme-branding-designing .sd-orb-3 { width: 180px; height: 180px; background: rgba(56,189,248,0.07); top: 35%; left: 40%; }
+
+.sd-theme-branding-designing .sd-include-item { background: linear-gradient(135deg, rgba(56,189,248,0.06), rgba(14,165,233,0.04)); border: 1px solid rgba(56,189,248,0.1); border-radius: 18px; backdrop-filter: blur(8px); }
+.sd-theme-branding-designing .sd-include-item:hover { background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(14,165,233,0.08)); transform: translateY(-3px) rotate(0.5deg); }
+.sd-theme-branding-designing .sd-price-box { background: linear-gradient(160deg, rgba(56,189,248,0.06), rgba(14,165,233,0.03)); border: 1px solid rgba(56,189,248,0.12); border-radius: 22px; }
+.sd-theme-branding-designing .sd-process-item { background: linear-gradient(135deg, rgba(56,189,248,0.05), rgba(14,165,233,0.03)); border: 1px solid rgba(56,189,248,0.08); border-radius: 18px; }
+.sd-theme-branding-designing .sd-process-item:hover { border-color: rgba(56,189,248,0.2); transform: translateX(8px) rotate(0.3deg); }
+.sd-theme-branding-designing .sd-process-num { background: linear-gradient(135deg, #0EA5E9, #38BDF8); color: #fff; border-radius: 50%; box-shadow: 0 4px 15px rgba(14,165,233,0.3); }
+.sd-theme-branding-designing .sd-perfect-chip { background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.12); border-radius: 14px; }
+.sd-theme-branding-designing .sd-perfect-chip:hover { background: rgba(56,189,248,0.12); transform: translateY(-4px) rotate(1deg); }
+.sd-theme-branding-designing .sd-why-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.08); border-radius: 18px; }
+.sd-theme-branding-designing .sd-why-box:hover { border-color: rgba(56,189,248,0.2); }
+.sd-theme-branding-designing .sd-why-badge { background: linear-gradient(135deg, #0EA5E9, #38BDF8); border-radius: 10px; }
+.sd-theme-branding-designing .sd-cta-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.08); border-radius: 22px; }
+.sd-theme-branding-designing .sd-cta-icon-box { border-radius: 16px; }
+.sd-theme-branding-designing .sd-cta-box:hover { border-color: rgba(56,189,248,0.2); }
+
+/* ==========================================================
+   THEME 5 — SEO (Deep Purple / Rank Style)
+   ========================================================== */
+.sd-theme-seo { --accent: #7C3AED; --accent-light: #A78BFA; --accent-bg: rgba(124,58,237,0.1); --tag-bg: rgba(124,58,237,0.1); --tag-border: rgba(124,58,237,0.3); --card-bg: rgba(124,58,237,0.05); --card-border: rgba(124,58,237,0.1); --shadow: rgba(124,58,237,0.12); --bg-dark: #12082A; background: linear-gradient(180deg, #12082A, #1E1040 40%, #12082A); }
+.sd-theme-seo .sd-topbar { background: rgba(18,8,42,0.88); }
+.sd-theme-seo .sd-orb-1 { width: 500px; height: 500px; background: rgba(124,58,237,0.08); top: -100px; left: 10%; }
+.sd-theme-seo .sd-orb-2 { width: 400px; height: 400px; background: rgba(167,139,250,0.05); bottom: -150px; right: -50px; }
+.sd-theme-seo .sd-orb-3 { width: 220px; height: 220px; background: rgba(124,58,237,0.06); top: 45%; right: 25%; }
+
+.sd-theme-seo .sd-include-item { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.08); border-radius: 12px; position: relative; }
+.sd-theme-seo .sd-include-item::after { content: '✓'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: rgba(124,58,237,0.3); font-size: 0.8rem; }
+.sd-theme-seo .sd-include-item:hover { background: rgba(124,58,237,0.08); border-color: rgba(124,58,237,0.2); }
+.sd-theme-seo .sd-price-box { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.1); border-radius: 16px; }
+.sd-theme-seo .sd-process-item { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.08); border-radius: 14px; }
+.sd-theme-seo .sd-process-item:hover { border-color: rgba(124,58,237,0.2); }
+.sd-theme-seo .sd-process-num { background: rgba(124,58,237,0.15); color: #A78BFA; border-radius: 50%; }
+.sd-theme-seo .sd-perfect-chip { background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.1); border-radius: 10px; }
+.sd-theme-seo .sd-perfect-chip:hover { background: rgba(124,58,237,0.12); }
+.sd-theme-seo .sd-why-box { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.08); border-radius: 12px; }
+.sd-theme-seo .sd-why-box:hover { border-color: rgba(124,58,237,0.2); }
+.sd-theme-seo .sd-cta-box { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.08); border-radius: 14px; }
+
+/* ==========================================================
+   THEME 6 — E-COMMERCE (Violet / Product Card Style)
+   ========================================================== */
+.sd-theme-ecommerce-solutions { --accent: #8B5CF6; --accent-light: #A78BFA; --accent-bg: rgba(139,92,246,0.12); --tag-bg: rgba(139,92,246,0.12); --tag-border: rgba(139,92,246,0.3); --card-bg: rgba(139,92,246,0.06); --card-border: rgba(139,92,246,0.12); --shadow: rgba(139,92,246,0.15); --bg-dark: #13082A; background: linear-gradient(180deg, #13082A, #201040 40%, #13082A); }
+.sd-theme-ecommerce-solutions .sd-topbar { background: rgba(19,8,42,0.88); }
+.sd-theme-ecommerce-solutions .sd-orb-1 { width: 450px; height: 450px; background: rgba(139,92,246,0.08); top: -80px; right: -80px; }
+.sd-theme-ecommerce-solutions .sd-orb-2 { width: 350px; height: 350px; background: rgba(167,139,250,0.05); bottom: -120px; left: -60px; }
+.sd-theme-ecommerce-solutions .sd-orb-3 { width: 200px; height: 200px; background: rgba(139,92,246,0.06); top: 40%; left: 30%; }
+
+.sd-theme-ecommerce-solutions .sd-include-item { background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.1); border-radius: 16px; position: relative; overflow: hidden; }
+.sd-theme-ecommerce-solutions .sd-include-item::before { content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 100%; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.06)); }
+.sd-theme-ecommerce-solutions .sd-include-item:hover { background: rgba(139,92,246,0.08); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139,92,246,0.08); }
+.sd-theme-ecommerce-solutions .sd-price-box { background: linear-gradient(160deg, rgba(139,92,246,0.06), rgba(91,33,182,0.04)); border: 1px solid rgba(139,92,246,0.12); border-radius: 20px; }
+.sd-theme-ecommerce-solutions .sd-process-item { background: rgba(139,92,246,0.04); border: 1px solid rgba(139,92,246,0.08); border-radius: 16px; }
+.sd-theme-ecommerce-solutions .sd-process-item:hover { border-color: rgba(139,92,246,0.2); box-shadow: 0 6px 20px rgba(139,92,246,0.08); }
+.sd-theme-ecommerce-solutions .sd-process-num { background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(124,58,237,0.25); }
+.sd-theme-ecommerce-solutions .sd-perfect-chip { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.1); border-radius: 12px; }
+.sd-theme-ecommerce-solutions .sd-perfect-chip:hover { background: rgba(139,92,246,0.12); }
+.sd-theme-ecommerce-solutions .sd-why-box { background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.08); border-radius: 16px; }
+.sd-theme-ecommerce-solutions .sd-why-box:hover { border-color: rgba(139,92,246,0.2); }
+.sd-theme-ecommerce-solutions .sd-cta-box { background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.08); border-radius: 18px; }

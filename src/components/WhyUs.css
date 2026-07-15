@@ -1,53 +1,230 @@
+/* ===============================
+   WHY US SECTION
+   =============================== */
 .whyus-section {
-  background: white;
+  position: relative;
+  background: #F8FAFC;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.whyus-section .section-tag {
+  font-family: 'Playfair Display', serif;
+}
+
+.whyus-section .section-title {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -0.02em;
+}
+
+.whyus-section .section-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
 }
 
 .whyus-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 28px;
+  perspective: 1200px;
 }
 
-.whyus-card {
-  background: var(--lilac);
-  border-radius: var(--radius-lg);
-  padding: 32px 28px;
-  border: 1.5px solid transparent;
-  transition: all 0.3s ease;
-  cursor: default;
+/* ===============================
+   FLIP CONTAINER
+   =============================== */
+.whyus-flip-container {
+  min-height: 260px;
 }
 
-.whyus-card:hover {
-  border-color: var(--lavender);
-  background: white;
+.whyus-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 16px;
+  cursor: pointer;
 }
 
-.whyus-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+.whyus-flip-container:hover .whyus-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.whyus-flip-front,
+.whyus-flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.whyus-flip-front {
+  z-index: 2;
+}
+
+.whyus-flip-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* ===============================
+   FRONT FACE — Same for all cards
+   =============================== */
+.whyus-flip-front {
+  background: #fff;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.whyus-flip-front h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #111827;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.whyus-flip-front p {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.82rem;
+  color: #6b7280;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.whyus-card-number {
+  font-family: 'Playfair Display', serif;
+  position: absolute;
+  bottom: 10px;
+  right: 14px;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: rgba(6, 182, 212, 0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ===============================
+   BACK FACE — Cyan for all cards
+   =============================== */
+.whyus-flip-back {
+  background: linear-gradient(145deg, #22D3EE, #06B6D4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.whyus-back-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  animation: whyusBackPulse 2s ease-in-out infinite;
 }
 
-.whyus-card h3 {
-  font-size: 1.1rem;
-  color: var(--midnight);
-  margin-bottom: 10px;
+@keyframes whyusBackPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
-.whyus-card p {
-  font-size: 14px;
-  color: var(--text-light);
-  line-height: 1.65;
+.whyus-flip-back h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
 }
 
-@media (max-width: 900px) {
+.whyus-flip-back p {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  flex: 1;
+  font-weight: 400;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+.whyus-icon-float {
+  position: relative;
+  display: inline-flex;
+  margin-bottom: 14px;
+}
+
+.whyus-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  background: rgba(6, 182, 212, 0.1);
+  color: #06B6D4;
+}
+
+.whyus-icon-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 16px;
+  border: 2px solid rgba(6, 182, 212, 0.2);
+  animation: whyusRingPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes whyusRingPulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.15); opacity: 0; }
+}
+
+/* ===============================
+   CARD GLOW — Same cyan color
+   =============================== */
+.whyus-card-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #06B6D4;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.whyus-flip-container:hover .whyus-card-glow {
+  opacity: 1;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+@media (max-width: 992px) {
   .whyus-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .whyus-grid { grid-template-columns: 1fr; }
+  .whyus-flip-container { max-width: 420px; margin: auto; }
+}
+
+@media (max-width: 480px) {
+  .whyus-flip-front,
+  .whyus-flip-back { padding: 22px 18px; }
+  .whyus-flip-container { min-height: auto; }
+  .whyus-flip-inner { min-height: auto; }
 }

@@ -1,5 +1,5 @@
 .footer {
-  background: var(--midnight);
+  background: #0F172A;
   color: white;
   padding-top: 80px;
 }
@@ -15,9 +15,9 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 16px;
 }
 
@@ -30,7 +30,7 @@
 
 .footer-brand p {
   font-size: 14px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.7;
   margin-bottom: 24px;
   max-width: 300px;
@@ -48,11 +48,11 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255, 255, 255, 0.6);
   transition: color 0.3s;
 }
 
-.footer-contacts a:hover { color: var(--gold); }
+.footer-contacts a:hover { color: #22D3EE; }
 
 .footer-links h4 {
   font-size: 14px;
@@ -73,21 +73,24 @@
 .footer-links ul li a,
 .footer-links ul li span {
   font-size: 14px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.footer-links ul li a:hover { color: var(--gold); }
+.footer-links ul li a:hover {
+  color: #22D3EE;
+  padding-left: 4px;
+}
 
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 20px 0;
 }
 
 .footer-bottom p {
   font-size: 13px;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   text-align: center;
 }
 
