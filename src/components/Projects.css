@@ -289,39 +289,115 @@
 }
 
 /* ===============================
-   RESPONSIVE
+   RESPONSIVE — TABLET LANDSCAPE
 =============================== */
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .project-top {
+    padding: 28px 24px 18px;
+  }
+
+  .project-content {
+    padding: 0 24px 26px;
   }
 }
+
+/* ===============================
+   RESPONSIVE — TABLET PORTRAIT
+=============================== */
+
+@media (max-width: 900px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .projects-section {
+    padding: 90px 0;
+  }
+
+  .project-filters {
+    margin: 40px 0;
+    gap: 10px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE LANDSCAPE
+=============================== */
 
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto 60px;
   }
 
-  .project-card {
-    max-width: 500px;
-    margin: auto;
+  .projects-section {
+    padding: 70px 0;
+  }
+
+  .project-filters {
+    gap: 8px;
+  }
+
+  .filter-btn {
+    padding: 8px 16px;
+    font-size: 12px;
   }
 }
 
-@media (max-width: 480px) {
+/* ===============================
+   RESPONSIVE — MOBILE PORTRAIT
+=============================== */
+
+@media (max-width: 560px) {
   .project-top,
   .project-content {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .project-emoji {
-    font-size: 42px;
+    padding-left: 22px;
+    padding-right: 22px;
   }
 
   .project-content h3 {
     font-size: 20px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — SMALL MOBILE
+=============================== */
+
+@media (max-width: 480px) {
+  .project-top,
+  .project-content {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .project-top {
+    padding-top: 24px;
+    padding-bottom: 16px;
+  }
+
+  .project-content {
+    padding-bottom: 22px;
+  }
+
+  .project-emoji {
+    font-size: 40px;
+  }
+
+  .project-content h3 {
+    font-size: 18px;
+  }
+
+  .project-content p {
+    font-size: 13px;
   }
 
   .project-actions {
@@ -332,5 +408,39 @@
     width: 100%;
     height: auto;
     padding: 12px;
+  }
+
+  .projects-section {
+    padding: 60px 0;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — EXTRA SMALL
+=============================== */
+
+@media (max-width: 360px) {
+  .project-top,
+  .project-content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .project-emoji {
+    font-size: 36px;
+  }
+
+  .project-content h3 {
+    font-size: 16px;
+  }
+
+  .project-tech-pill {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .filter-btn {
+    padding: 7px 14px;
+    font-size: 11px;
   }
 }

@@ -135,9 +135,193 @@
   color: var(--midnight);
 }
 
+/* ===========================
+   RESPONSIVE — TABLET LANDSCAPE
+============================= */
+@media (max-width: 1024px) {
+  .about-inner {
+    gap: 60px;
+  }
+
+  .about-card-main {
+    padding: 30px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — TABLET PORTRAIT
+============================= */
 @media (max-width: 900px) {
   .about-inner {
     grid-template-columns: 1fr;
     gap: 48px;
+    padding-bottom: 60px;
+  }
+
+  .about-content {
+    order: -1;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about-points {
+    align-items: center;
+  }
+
+  .about-point {
+    justify-content: center;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE LANDSCAPE
+============================= */
+@media (max-width: 768px) {
+  .about-card-main {
+    padding: 26px;
+  }
+
+  .about-logo {
+    font-size: 2.5rem;
+  }
+
+  .about-card-main h3 {
+    font-size: 1.2rem;
+  }
+
+  .about-stat-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .about-stat {
+    padding: 16px 12px;
+  }
+
+  .about-stat h4 {
+    font-size: 1.5rem;
+  }
+
+  .about-stat p {
+    font-size: 11px;
+  }
+
+  .about-desc {
+    font-size: 14px;
+  }
+
+  .about-point {
+    font-size: 13px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE PORTRAIT
+============================= */
+@media (max-width: 560px) {
+  .about-inner {
+    gap: 40px;
+    padding-bottom: 50px;
+  }
+
+  .about-card-main {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .about-badge {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  .about-badge span {
+    font-size: 1.5rem;
+  }
+
+  .about-badge strong {
+    font-size: 13px;
+  }
+
+  .about-stat-cards {
+    gap: 10px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — SMALL MOBILE
+============================= */
+@media (max-width: 480px) {
+  .about-card-main {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .about-logo {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+  }
+
+  .about-card-main h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .about-card-main p {
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  .about-stat-cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .about-stat {
+    padding: 14px 8px;
+    border-radius: 12px;
+  }
+
+  .about-stat h4 {
+    font-size: 1.3rem;
+  }
+
+  .about-stat p {
+    font-size: 10px;
+  }
+
+  .about-desc {
+    font-size: 13px;
+  }
+
+  .about-points {
+    gap: 10px;
+  }
+
+  .about-point {
+    font-size: 12px;
+    gap: 10px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — EXTRA SMALL
+============================= */
+@media (max-width: 360px) {
+  .about-card-main {
+    padding: 16px;
+  }
+
+  .about-badge {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .about-stat h4 {
+    font-size: 1.1rem;
+  }
+
+  .about-point {
+    font-size: 11px;
   }
 }

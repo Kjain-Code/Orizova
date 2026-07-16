@@ -69,25 +69,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Ball starts above screen */
   transform: translateY(-500px);
   opacity: 0;
 }
 
 .glow-ball-container.bounce-start {
   opacity: 1;
-  /* 3 bounces with gravity - each smaller */
   animation: ballBounce3 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
-/*
-  3 BOUNCE KEYFRAMES
-  Duration: 0.7s total
-  Each bounce gets smaller (gravity effect)
-  Bounce 1: -400px (sabse bada)
-  Bounce 2: -200px
-  Bounce 3: -80px
-*/
 @keyframes ballBounce3 {
   0% {
     transform: translateY(-400px);
@@ -280,7 +270,27 @@
 }
 
 /* ===========================
-   RESPONSIVE
+   RESPONSIVE — TABLET LANDSCAPE
+============================= */
+
+@media (max-width: 1024px) {
+  .brand-letter {
+    font-size: 3.5rem;
+  }
+
+  .logo-image {
+    width: 90px;
+    height: 90px;
+  }
+
+  .welcome-text {
+    font-size: 13px;
+    letter-spacing: 6px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE LANDSCAPE
 ============================= */
 
 @media (max-width: 768px) {
@@ -316,5 +326,150 @@
   .tagline {
     font-size: 13px;
     letter-spacing: 2px;
+  }
+
+  .logo-glow {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE PORTRAIT
+============================= */
+
+@media (max-width: 560px) {
+  .brand-letter {
+    font-size: 2.4rem;
+    gap: 4px;
+  }
+
+  .logo-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .glow-ball-core {
+    width: 36px;
+    height: 36px;
+  }
+
+  .glow-ball-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .glow-ball-glow {
+    width: 80px;
+    height: 80px;
+  }
+
+  .welcome-text {
+    font-size: 10px;
+    letter-spacing: 4px;
+  }
+
+  .tagline {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — SMALL MOBILE
+============================= */
+
+@media (max-width: 480px) {
+  .brand-letter {
+    font-size: 2rem;
+    gap: 3px;
+  }
+
+  .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .glow-ball-core {
+    width: 30px;
+    height: 30px;
+  }
+
+  .glow-ball-ring {
+    width: 44px;
+    height: 44px;
+  }
+
+  .glow-ball-glow {
+    width: 70px;
+    height: 70px;
+  }
+
+  .glow-ball {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-glow {
+    width: 90px;
+    height: 90px;
+  }
+
+  .welcome-text {
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .tagline {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .loader-content {
+    gap: 12px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — EXTRA SMALL
+============================= */
+
+@media (max-width: 360px) {
+  .brand-letter {
+    font-size: 1.7rem;
+  }
+
+  .logo-image {
+    width: 44px;
+    height: 44px;
+  }
+
+  .glow-ball-core {
+    width: 26px;
+    height: 26px;
+  }
+
+  .glow-ball-ring {
+    width: 38px;
+    height: 38px;
+  }
+
+  .glow-ball-glow {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-glow {
+    width: 80px;
+    height: 80px;
+  }
+
+  .welcome-text {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .tagline {
+    font-size: 10px;
   }
 }

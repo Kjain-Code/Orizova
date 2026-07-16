@@ -136,6 +136,26 @@ function App() {
           .whatsapp-float:hover {
             transform: scale(1.1);
           }
+          @media (max-width: 1024px) {
+            .instagram-float { bottom: 28px; left: 28px; width: 52px; height: 52px; }
+            .whatsapp-float { bottom: 28px; right: 28px; width: 52px; height: 52px; }
+            .instagram-float svg, .whatsapp-float svg { width: 24px; height: 24px; }
+          }
+          @media (max-width: 768px) {
+            .instagram-float { bottom: 24px; left: 20px; width: 48px; height: 48px; }
+            .whatsapp-float { bottom: 24px; right: 20px; width: 48px; height: 48px; }
+            .instagram-float svg, .whatsapp-float svg { width: 22px; height: 22px; }
+          }
+          @media (max-width: 480px) {
+            .instagram-float { bottom: 20px; left: 16px; width: 44px; height: 44px; }
+            .whatsapp-float { bottom: 20px; right: 16px; width: 44px; height: 44px; }
+            .instagram-float svg, .whatsapp-float svg { width: 20px; height: 20px; }
+          }
+          @media (max-width: 360px) {
+            .instagram-float { bottom: 16px; left: 14px; width: 40px; height: 40px; }
+            .whatsapp-float { bottom: 16px; right: 14px; width: 40px; height: 40px; }
+            .instagram-float svg, .whatsapp-float svg { width: 18px; height: 18px; }
+          }
         `}</style>
       </Router>
     </HelmetProvider>

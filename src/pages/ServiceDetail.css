@@ -86,9 +86,409 @@
 .sd-brand-text { font-size: 2.5rem; font-weight: 900; letter-spacing: 6px; margin-bottom: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .sd-footer-brand p { color: rgba(255,255,255,0.45); font-size: 0.95rem; font-style: italic; }
 
-@media (max-width: 992px) { .sd-pricing-row, .sd-cta-wrap { grid-template-columns: 1fr; max-width: 450px; } }
-@media (max-width: 768px) { .sd-hero { padding: 120px 0 60px; } .sd-included-grid, .sd-why-wrap { grid-template-columns: 1fr; } }
-@media (max-width: 480px) { .sd-topbar { padding: 14px 16px; } .sd-hero-title { font-size: 1.7rem; } .sd-title { font-size: 1.5rem; margin-bottom: 32px; } .sd-why-box { padding: 14px 16px; font-size: 0.85rem; } .sd-why-badge { width: 28px; height: 28px; min-width: 28px; } }
+/* ===============================
+   RESPONSIVE — TABLET LANDSCAPE
+   =============================== */
+@media (max-width: 1024px) {
+  .sd-container {
+    padding: 0 20px;
+  }
+
+  .sd-pricing-row {
+    gap: 20px;
+  }
+
+  .sd-price-box {
+    padding: 32px 24px;
+  }
+
+  .sd-process-item {
+    padding: 20px;
+  }
+
+  .sd-cta-wrap {
+    gap: 16px;
+  }
+
+  .sd-cta-box {
+    padding: 28px 20px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — TABLET PORTRAIT
+   =============================== */
+@media (max-width: 900px) {
+  .sd-pricing-row,
+  .sd-cta-wrap {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .sd-hero {
+    padding: 130px 0 60px;
+  }
+
+  .sd-container {
+    padding: 0 18px;
+  }
+
+  .sd-included-grid {
+    gap: 12px;
+  }
+
+  .sd-process-info h3 {
+    font-size: 1rem;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE LANDSCAPE
+   =============================== */
+@media (max-width: 768px) {
+  .sd-hero {
+    padding: 120px 0 50px;
+  }
+
+  .sd-hero-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+  }
+
+  .sd-hero-sub {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+
+  .sd-tag {
+    padding: 8px 20px;
+    font-size: 0.8rem;
+  }
+
+  .sd-title {
+    margin-bottom: 36px;
+  }
+
+  .sd-text {
+    font-size: 0.95rem;
+  }
+
+  .sd-included-grid,
+  .sd-why-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .sd-include-item {
+    padding: 14px 16px;
+    font-size: 0.88rem;
+  }
+
+  .sd-process-item {
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .sd-process-num {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 0.9rem;
+  }
+
+  .sd-process-info h3 {
+    font-size: 0.95rem;
+  }
+
+  .sd-process-info p {
+    font-size: 0.85rem;
+  }
+
+  .sd-perfect-chip {
+    padding: 10px 18px;
+    font-size: 0.85rem;
+  }
+
+  .sd-why-box {
+    padding: 14px 18px;
+    font-size: 0.88rem;
+  }
+
+  .sd-cta-box {
+    padding: 24px 18px;
+  }
+
+  .sd-cta-box h4 {
+    font-size: 0.95rem;
+  }
+
+  .sd-cta-box a {
+    font-size: 0.85rem;
+  }
+
+  .sd-section {
+    padding: 40px 0;
+  }
+
+  .sd-build {
+    padding: 40px 0;
+  }
+
+  .sd-divider {
+    margin: 40px 0;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — MOBILE PORTRAIT
+   =============================== */
+@media (max-width: 560px) {
+  .sd-topbar {
+    padding: 14px 20px;
+  }
+
+  .sd-back {
+    font-size: 0.88rem;
+  }
+
+  .sd-hero-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+  }
+
+  .sd-price-box {
+    padding: 28px 20px;
+  }
+
+  .sd-price-box h3 {
+    font-size: 1.15rem;
+  }
+
+  .sd-price strong {
+    font-size: 1.5rem;
+  }
+
+  .sd-price-list li {
+    font-size: 0.85rem;
+    padding: 8px 0;
+  }
+
+  .sd-process-item {
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .sd-perfect-chip {
+    padding: 10px 16px;
+    font-size: 0.82rem;
+    gap: 8px;
+  }
+
+  .sd-why-box {
+    padding: 14px 16px;
+  }
+
+  .sd-cta-box {
+    padding: 22px 16px;
+  }
+
+  .sd-brand-text {
+    font-size: 2rem;
+    letter-spacing: 4px;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — SMALL MOBILE
+   =============================== */
+@media (max-width: 480px) {
+  .sd-topbar {
+    padding: 12px 16px;
+  }
+
+  .sd-hero-title {
+    font-size: 1.7rem;
+  }
+
+  .sd-hero-sub {
+    font-size: 0.8rem;
+  }
+
+  .sd-tag {
+    padding: 7px 16px;
+    font-size: 0.75rem;
+  }
+
+  .sd-title {
+    font-size: 1.5rem;
+    margin-bottom: 32px;
+  }
+
+  .sd-text {
+    font-size: 0.88rem;
+    margin-bottom: 12px;
+  }
+
+  .sd-container {
+    padding: 0 14px;
+  }
+
+  .sd-included-grid {
+    gap: 10px;
+  }
+
+  .sd-include-item {
+    padding: 12px 14px;
+    font-size: 0.82rem;
+    gap: 12px;
+  }
+
+  .sd-price-box {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+
+  .sd-price-box h3 {
+    font-size: 1.05rem;
+  }
+
+  .sd-price strong {
+    font-size: 1.4rem;
+  }
+
+  .sd-price-list li {
+    font-size: 0.82rem;
+  }
+
+  .sd-process-item {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .sd-process-num {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    font-size: 0.85rem;
+  }
+
+  .sd-process-info h3 {
+    font-size: 0.9rem;
+  }
+
+  .sd-process-info p {
+    font-size: 0.82rem;
+  }
+
+  .sd-perfect-wrap {
+    gap: 10px;
+  }
+
+  .sd-perfect-chip {
+    padding: 9px 14px;
+    font-size: 0.78rem;
+    border-radius: 10px;
+  }
+
+  .sd-why-box {
+    padding: 12px 14px;
+    font-size: 0.82rem;
+    gap: 12px;
+  }
+
+  .sd-why-badge {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 6px;
+  }
+
+  .sd-cta-wrap {
+    gap: 12px;
+  }
+
+  .sd-cta-box {
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+
+  .sd-cta-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+
+  .sd-cta-box h4 {
+    font-size: 0.88rem;
+    margin-bottom: 8px;
+  }
+
+  .sd-cta-box a {
+    font-size: 0.82rem;
+  }
+
+  .sd-brand-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+  }
+
+  .sd-brand-text {
+    font-size: 1.8rem;
+    letter-spacing: 3px;
+  }
+
+  .sd-footer-brand p {
+    font-size: 0.85rem;
+  }
+
+  .sd-section {
+    padding: 32px 0;
+  }
+
+  .sd-build {
+    padding: 32px 0;
+  }
+
+  .sd-divider {
+    margin: 32px 0;
+  }
+}
+
+/* ===============================
+   RESPONSIVE — EXTRA SMALL
+   =============================== */
+@media (max-width: 360px) {
+  .sd-hero-title {
+    font-size: 1.5rem;
+  }
+
+  .sd-title {
+    font-size: 1.3rem;
+  }
+
+  .sd-price-box h3 {
+    font-size: 1rem;
+  }
+
+  .sd-price strong {
+    font-size: 1.3rem;
+  }
+
+  .sd-process-info h3 {
+    font-size: 0.85rem;
+  }
+
+  .sd-why-box {
+    font-size: 0.78rem;
+  }
+
+  .sd-brand-text {
+    font-size: 1.5rem;
+  }
+}
 
 /* ==========================================================
    THEME 1 — WEBSITE DEVELOPMENT (Cyan / Rounded Glass)
@@ -195,7 +595,7 @@
 .sd-theme-seo .sd-orb-3 { width: 220px; height: 220px; background: rgba(124,58,237,0.06); top: 45%; right: 25%; }
 
 .sd-theme-seo .sd-include-item { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.08); border-radius: 12px; position: relative; }
-.sd-theme-seo .sd-include-item::after { content: '✓'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: rgba(124,58,237,0.3); font-size: 0.8rem; }
+.sd-theme-seo .sd-include-item::after { content: '\2713'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); color: rgba(124,58,237,0.3); font-size: 0.8rem; }
 .sd-theme-seo .sd-include-item:hover { background: rgba(124,58,237,0.08); border-color: rgba(124,58,237,0.2); }
 .sd-theme-seo .sd-price-box { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.1); border-radius: 16px; }
 .sd-theme-seo .sd-process-item { background: rgba(124,58,237,0.04); border: 1px solid rgba(124,58,237,0.08); border-radius: 14px; }

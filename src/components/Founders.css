@@ -571,7 +571,43 @@
 }
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE — TABLET LANDSCAPE
+   ========================================= */
+@media (max-width: 1024px) {
+  .fc-grid {
+    gap: 28px;
+    max-width: 800px;
+  }
+
+  .fc-card-body {
+    padding: 32px 28px 24px;
+  }
+
+  .fc-card-footer {
+    padding: 16px 28px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — TABLET PORTRAIT
+   ========================================= */
+@media (max-width: 900px) {
+  .fc-section {
+    padding: 110px 0 80px;
+  }
+
+  .fc-header {
+    margin-bottom: 56px;
+  }
+
+  .fc-grid {
+    gap: 26px;
+    max-width: 700px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE LANDSCAPE
    ========================================= */
 @media (max-width: 768px) {
   .fc-section {
@@ -598,5 +634,181 @@
 
   .fc-bottom {
     margin-top: 50px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE PORTRAIT
+   ========================================= */
+@media (max-width: 560px) {
+  .fc-section {
+    padding: 80px 0 60px;
+  }
+
+  .fc-badge {
+    padding: 6px 14px;
+    font-size: 0.65rem;
+  }
+
+  .fc-subtitle {
+    font-size: 0.9rem;
+    padding: 0 16px;
+  }
+
+  .fc-card-body {
+    padding: 24px 20px 20px;
+  }
+
+  .fc-name {
+    font-size: 1.2rem;
+  }
+
+  .fc-quote,
+  .fc-bio {
+    font-size: 0.82rem;
+    max-width: 300px;
+  }
+
+  .fc-card-footer {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .fc-bottom {
+    margin-top: 40px;
+  }
+
+  .fc-bottom-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================= */
+@media (max-width: 480px) {
+  .fc-section {
+    padding: 70px 0 50px;
+  }
+
+  .fc-header {
+    margin-bottom: 40px;
+  }
+
+  .fc-avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .fc-initials {
+    font-size: 1.6rem;
+  }
+
+  .fc-name {
+    font-size: 1.1rem;
+  }
+
+  .fc-role {
+    font-size: 0.6rem;
+    padding: 4px 12px;
+  }
+
+  .fc-quote {
+    font-size: 0.78rem;
+    max-width: 260px;
+  }
+
+  .fc-bio {
+    font-size: 0.78rem;
+    max-width: 260px;
+    margin-bottom: 16px;
+  }
+
+  .fc-skill {
+    font-size: 0.6rem;
+    padding: 4px 10px;
+  }
+
+  .fc-stat-val {
+    font-size: 1rem;
+  }
+
+  .fc-stat-lbl {
+    font-size: 0.55rem;
+  }
+
+  .fc-social {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .fc-connect {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+
+  .fc-bottom {
+    margin-top: 36px;
+    gap: 16px;
+  }
+
+  .fc-bottom-line {
+    width: 40px;
+  }
+
+  .fc-bottom-text {
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — EXTRA SMALL
+   ========================================= */
+@media (max-width: 360px) {
+  .fc-card-body {
+    padding: 20px 16px 18px;
+  }
+
+  .fc-avatar {
+    width: 70px;
+    height: 70px;
+  }
+
+  .fc-initials {
+    font-size: 1.4rem;
+  }
+
+  .fc-name {
+    font-size: 1rem;
+  }
+
+  .fc-quote,
+  .fc-bio {
+    font-size: 0.75rem;
+    max-width: 230px;
+  }
+
+  .fc-skills {
+    gap: 6px;
+  }
+
+  .fc-skill {
+    padding: 3px 8px;
+    font-size: 0.55rem;
+  }
+
+  .fc-stats {
+    gap: 6px;
+  }
+
+  .fc-stat {
+    padding: 10px 3px;
+  }
+
+  .fc-stat-val {
+    font-size: 0.9rem;
   }
 }

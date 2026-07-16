@@ -1,6 +1,6 @@
 /* ===========================
    NAVBAR — SIMPLE & CLEAN
-============================ */
+=========================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -130,7 +130,7 @@
 
 /* ===========================
    MOBILE MENU
-============================ */
+=========================== */
 .mobile-menu {
   position: fixed;
   inset: 0;
@@ -162,6 +162,7 @@
   right: 0;
   width: min(340px, 85vw);
   height: 100vh;
+  height: 100dvh;
   background: #030712;
   border-left: 1px solid rgba(255, 255, 255, 0.08);
   transform: translateX(100%);
@@ -270,8 +271,26 @@
 }
 
 /* ===========================
-   RESPONSIVE
-============================ */
+   RESPONSIVE — TABLET LANDSCAPE
+=========================== */
+@media (max-width: 1024px) {
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+
+  .navbar-cta {
+    padding: 9px 16px;
+    font-size: 12px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE
+=========================== */
 @media (max-width: 768px) {
   .navbar-links,
   .navbar-cta {
@@ -283,10 +302,57 @@
   }
 
   .navbar-logo-img {
-    height: 34px;
+    height: 32px;
   }
 
   .navbar-logo-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+  }
+
+  .navbar-logo-subtext {
+    font-size: 0.45rem;
+  }
+
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .navbar.scrolled {
+    padding: 10px 0;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — SMALL MOBILE
+=========================== */
+@media (max-width: 480px) {
+  .navbar-logo-img {
+    height: 28px;
+  }
+
+  .navbar-logo-text {
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-logo-subtext {
+    font-size: 0.4rem;
+    letter-spacing: 1px;
+  }
+
+  .mobile-menu-panel {
+    width: min(300px, 88vw);
+    padding: 16px;
+  }
+
+  .mobile-link {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .mobile-cta {
+    padding: 12px;
+    font-size: 13px;
   }
 }
