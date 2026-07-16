@@ -118,7 +118,7 @@ const Contact = () => {
                   <div className="info-icon"><FiPhone size={20} /></div>
                   <div>
                     <strong>Call Us</strong>
-                    <a href="tel:+917505802687">+91 7505802687</a>
+                    <a href="tel:+917060824503">+91 7060824503</a>
                   </div>
                 </div>
                 <div className="info-item">

@@ -79,7 +79,7 @@ const ServiceDetail = () => {
         <div className="sd-container" style={{ paddingTop: '200px', textAlign: 'center' }}>
           <h1 style={{ color: '#fff', fontSize: '2rem' }}>Service Coming Soon</h1>
           <p style={{ color: 'rgba(255,255,255,0.5)', marginTop: '16px' }}>This service page is under development.</p>
-          <Link to="/#services" style={{ color: '#22D3EE', marginTop: '24px', display: 'inline-block' }}>← Go Back to Services</Link>
+           <Link to="/#services" style={{ color: '#3b6a9e', marginTop: '24px', display: 'inline-block' }}>← Go Back to Services</Link>
         </div>
       </div>
     );

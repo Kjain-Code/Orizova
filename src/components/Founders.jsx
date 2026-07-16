@@ -1,99 +1,135 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FiLinkedin, FiInstagram, FiArrowUpRight } from 'react-icons/fi';
+import { FiLinkedin, FiInstagram, FiArrowUpRight, FiStar } from 'react-icons/fi';
 import founders from '../data/founders';
 import './Founders.css';
 
 const Founders = () => {
   return (
-    <section className="founders-section">
-      <div className="founders-bg-pattern" />
-      
-      {/* Planets */}
-      <div className="founder-planet founder-planet-1">
-        <div className="planet-ring" />
-        <div className="planet-dot" />
-        <div className="planet-dot" />
-        <div className="planet-dot" />
-      </div>
-      <div className="founder-planet founder-planet-2">
-        <div className="planet-ring" />
-        <div className="planet-dot" />
-        <div className="planet-dot" />
-      </div>
-      <div className="founder-planet founder-planet-3">
-        <div className="planet-ring" />
+    <section className="fc-section" id="founders">
+      {/* Background */}
+      <div className="fc-bg">
+        <div className="fc-bg-orb fc-bg-orb-1" />
+        <div className="fc-bg-orb fc-bg-orb-2" />
+        <div className="fc-bg-grid" />
       </div>
 
       <div className="container">
+        {/* Header */}
         <motion.div
-          className="text-center"
+          className="fc-header"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <span className="section-tag">Leadership</span>
-          <h2 className="section-title">Meet Our <span>Founders</span></h2>
-          <p className="section-subtitle">
-            The visionaries behind Orizova's mission to transform businesses through digital excellence.
+          <div className="fc-badge">
+            <FiStar size={12} />
+            <span>Leadership</span>
+          </div>
+          <h2 className="fc-title">
+            Meet Our <span className="fc-title-accent">Founders</span>
+          </h2>
+          <p className="fc-subtitle">
+            The visionaries driving Orizova's mission to transform businesses through digital excellence.
           </p>
         </motion.div>
 
-        <div className="founders-grid">
+        {/* Cards Grid */}
+        <div className="fc-grid">
           {founders.map((founder, i) => (
             <motion.div
               key={founder.id}
-              className={`founder-card founder-card-${i}`}
-              initial={{ opacity: 0, x: i === 0 ? -100 : 100, rotate: i === 0 ? -5 : 5 }}
-              whileInView={{ opacity: 1, x: 0, rotate: 0 }}
+              className="fc-card"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 18,
-                delay: i * 0.3,
+                duration: 0.6,
+                delay: i * 0.2,
+                ease: [0.22, 1, 0.36, 1],
               }}
               viewport={{ once: true }}
             >
-              <div className="founder-card-bg" />
+              {/* Top gradient strip */}
+              <div className="fc-card-top" />
 
-              <div className="founder-image-wrap">
-                {founder.photo ? (
-                  <img src={founder.photo} alt={founder.name} className="founder-photo" />
-                ) : (
-                  <div className="founder-photo-placeholder">
-                    <span>{founder.name.split(' ').pop().charAt(0)}</span>
+              <div className="fc-card-body">
+                {/* Avatar */}
+                <div className="fc-avatar-wrap">
+                  <div className="fc-avatar-glow" />
+                  <div className="fc-avatar">
+                    {founder.photo ? (
+                      <img src={founder.photo} alt={founder.name} />
+                    ) : (
+                      <span className="fc-initials">{founder.initials}</span>
+                    )}
                   </div>
-                )}
-                <div className="founder-image-ring" />
+                  <div className="fc-avatar-ring" />
+                </div>
+
+                {/* Name + Role */}
+                <h3 className="fc-name">{founder.name}</h3>
+                <span className="fc-role">{founder.role}</span>
+
+                {/* Quote */}
+                <p className="fc-quote">"{founder.quote}"</p>
+
+                {/* Bio */}
+                <p className="fc-bio">{founder.bio}</p>
+
+                {/* Skills */}
+                <div className="fc-skills">
+                  {founder.skills.map((skill, j) => (
+                    <span key={j} className="fc-skill">{skill}</span>
+                  ))}
+                </div>
+
+                {/* Stats */}
+                <div className="fc-stats">
+                  {founder.stats.map((stat, j) => (
+                    <div key={j} className="fc-stat">
+                      <span className="fc-stat-val">{stat.value}</span>
+                      <span className="fc-stat-lbl">{stat.label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="founder-content">
-                <h3 className="founder-name">{founder.name}</h3>
-                <span className="founder-role">{founder.role}</span>
-                <p className="founder-desc">{founder.description}</p>
-              </div>
-
-              <div className="founder-footer">
-                <div className="founder-socials">
-                  <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="founder-social-link">
-                    <FiLinkedin size={16} />
+              {/* Footer */}
+              <div className="fc-card-footer">
+                <div className="fc-socials">
+                  <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="fc-social" aria-label="LinkedIn">
+                    <FiLinkedin size={15} />
                   </a>
-                  <a href={founder.instagram} target="_blank" rel="noopener noreferrer" className="founder-social-link">
-                    <FiInstagram size={16} />
+                  <a href={founder.instagram} target="_blank" rel="noopener noreferrer" className="fc-social" aria-label="Instagram">
+                    <FiInstagram size={15} />
                   </a>
                 </div>
-                <div className="founder-connect">
-                  <span>Profile</span>
-                  <FiArrowUpRight size={14} />
-                </div>
+                <a href={founder.linkedin} target="_blank" rel="noopener noreferrer" className="fc-connect">
+                  <span>Connect</span>
+                  <FiArrowUpRight size={13} />
+                </a>
               </div>
 
-              <div className="founder-decor-1" />
-              <div className="founder-decor-2" />
+              {/* Corner decoration */}
+              <div className="fc-corner fc-corner-tl" />
+              <div className="fc-corner fc-corner-br" />
             </motion.div>
           ))}
         </div>
+
+        {/* Bottom line */}
+        <motion.div
+          className="fc-bottom"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          <div className="fc-bottom-line" />
+          <p className="fc-bottom-text">Two founders. One vision. Unlimited possibilities.</p>
+          <div className="fc-bottom-line" />
+        </motion.div>
       </div>
     </section>
   );

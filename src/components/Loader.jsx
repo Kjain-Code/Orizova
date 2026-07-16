@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/logo.png';
 import './Loader.css';
 
 const Loader = ({ onComplete }) => {
@@ -11,17 +12,17 @@ const Loader = ({ onComplete }) => {
 
   useEffect(() => {
     const timers = [
-      setTimeout(() => setPhase(1), 100),
-      setTimeout(() => setPhase(2), 800),
-      setTimeout(() => setPhase(3), 1600),
-      setTimeout(() => setPhase(4), 2400),
-      setTimeout(() => setPhase(5), 3200),
-      setTimeout(() => setPhase(6), 3800),
-      setTimeout(() => setPhase(7), 4500),
+      setTimeout(() => setPhase(1), 50),
+      setTimeout(() => setPhase(2), 400),
+      setTimeout(() => setPhase(3), 800),
+      setTimeout(() => setPhase(4), 1200),
+      setTimeout(() => setPhase(5), 1800),
+      setTimeout(() => setPhase(6), 2200),
+      setTimeout(() => setPhase(7), 2600),
       setTimeout(() => {
         setPhase(8);
-        setTimeout(handleComplete, 800);
-      }, 7000),
+        setTimeout(handleComplete, 400);
+      }, 3200),
     ];
     return () => timers.forEach(clearTimeout);
   }, [handleComplete]);
@@ -54,8 +55,8 @@ const Loader = ({ onComplete }) => {
           </div>
 
           <div className="loader-content">
-            {/* Glowing Ball with 7 Bounces */}
-            {phase < 5 && (
+            {/* Glowing Ball with 3 Bounces */}
+            {phase < 4 && (
               <div className={`glow-ball-container ${phase >= 1 ? 'bounce-start' : ''}`}>
                 <div className="glow-ball">
                   <div className="glow-ball-core" />
@@ -64,7 +65,7 @@ const Loader = ({ onComplete }) => {
                 </div>
 
                 {/* Impact Particles on each bounce */}
-                {phase >= 2 && phase <= 4 && (
+                {phase >= 2 && phase <= 3 && (
                   <div className="impact-burst">
                     {[...Array(10)].map((_, i) => {
                       const angle = (i * 36) * Math.PI / 180;
@@ -89,7 +90,7 @@ const Loader = ({ onComplete }) => {
             )}
 
             {/* Logo Reveal */}
-            {phase >= 5 && (
+            {phase >= 4 && (
               <motion.div
                 className="logo-reveal"
                 initial={{ scale: 0, opacity: 0 }}
@@ -97,36 +98,36 @@ const Loader = ({ onComplete }) => {
                 transition={{ type: 'spring', stiffness: 250, damping: 12 }}
               >
                 <div className="logo-glow" />
-                <span className="logo-symbol">◎</span>
+                <img src={logo} alt="Orizova" className="logo-image" />
               </motion.div>
             )}
 
             {/* Welcome Text */}
-            {phase >= 5 && (
+            {phase >= 4 && (
               <motion.div
                 className="welcome-text"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
               >
                 WELCOME TO
               </motion.div>
             )}
 
             {/* ORIZOVA Letter by Letter */}
-            {phase >= 5 && (
+            {phase >= 4 && (
               <div className="brand-name">
                 {letters.map((letter, i) => (
                   <motion.span
                     key={i}
                     className="brand-letter"
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
                       type: "spring",
                       stiffness: 200,
                       damping: 10,
-                      delay: 0.4 + i * 0.08,
+                      delay: 0.3 + i * 0.05,
                     }}
                   >
                     {letter}
@@ -136,12 +137,12 @@ const Loader = ({ onComplete }) => {
             )}
 
             {/* Tagline */}
-            {phase >= 6 && (
+            {phase >= 5 && (
               <motion.div
                 className="tagline"
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.4 }}
               >
                 Building Digital Experiences
               </motion.div>

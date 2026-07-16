@@ -83,7 +83,7 @@ const About = () => {
                 transition={{ delay: i * 0.08, duration: 0.4 }}
                 viewport={{ once: true }}
               >
-                <FiCheckCircle size={18} color="#06B6D4" />
+                <FiCheckCircle size={18} color="#1e3a5f" />
                 <span>{point}</span>
               </motion.div>
             ))}

@@ -15,7 +15,7 @@ const Footer = () => {
           <p>Your trusted digital growth partner. We build brands, drive traffic, and scale businesses across India and globally.</p>
           <div className="footer-contacts">
             <a href="mailto:orizovadigital@gmail.com"><FiMail size={14}/> orizovadigital@gmail.com</a>
-            <a href="tel:+917505802687"><FiPhone size={14}/> +91 7505802687</a>
+            <a href="tel:+917060824503"><FiPhone size={14}/> +91 7060824503</a>
             <a href="tel:+918527290722"><FiPhone size={14}/> +91 8527290722</a>
             <span><FiMapPin size={14}/> India (Serving Globally)</span>
           </div>

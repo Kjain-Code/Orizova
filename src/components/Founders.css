@@ -1,409 +1,602 @@
-.founders-section {
+/* =========================================
+   FOUNDERS — Premium Card Design
+   ========================================= */
+.fc-section {
   position: relative;
-  background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
-  padding: 120px 0;
+  padding: 140px 0;
+  background: #030712;
   overflow: hidden;
 }
 
-.founders-bg-pattern {
+/* Background */
+.fc-bg {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
   pointer-events: none;
 }
 
-/* ===============================
-   PLANET ANIMATION
-   =============================== */
-.founder-planet {
+.fc-bg-orb {
   position: absolute;
   border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
+  filter: blur(100px);
 }
 
-.founder-planet-1 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle at 30% 30%, #22D3EE, #06B6D4, #0891B2);
-  top: -100px;
-  right: -80px;
-  box-shadow: 0 0 80px rgba(6, 182, 212, 0.3), inset 0 0 60px rgba(0, 0, 0, 0.2);
-  animation: planetFloat1 8s ease-in-out infinite;
+.fc-bg-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(59, 130, 246, 0.06);
+  top: -10%;
+  right: 10%;
 }
 
-.founder-planet-2 {
-  width: 180px;
-  height: 180px;
-  background: radial-gradient(circle at 30% 30%, #A78BFA, #7C3AED, #6D28D9);
-  bottom: -60px;
-  left: -50px;
-  box-shadow: 0 0 60px rgba(124, 58, 237, 0.3), inset 0 0 40px rgba(0, 0, 0, 0.2);
-  animation: planetFloat2 10s ease-in-out infinite;
-}
-
-.founder-planet-3 {
-  width: 80px;
-  height: 80px;
-  background: radial-gradient(circle at 30% 30%, #FBBF24, #F59E0B, #D97706);
-  top: 40%;
+.fc-bg-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: rgba(139, 92, 246, 0.04);
+  bottom: 0;
   left: 5%;
-  box-shadow: 0 0 40px rgba(245, 158, 11, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.2);
-  animation: planetFloat3 6s ease-in-out infinite;
 }
 
-.planet-ring {
+.fc-bg-grid {
   position: absolute;
-  border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  animation: planetRingPulse 4s ease-in-out infinite;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 65%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 65%);
 }
 
-.founder-planet-1 .planet-ring {
-  inset: -15px;
+/* =========================================
+   HEADER
+   ========================================= */
+.fc-header {
+  text-align: center;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 2;
 }
 
-.founder-planet-2 .planet-ring {
-  inset: -12px;
+.fc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border-radius: 100px;
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
-.founder-planet-3 .planet-ring {
-  inset: -8px;
+.fc-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.15;
 }
 
-.planet-dot {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
-  animation: planetDotFloat 3s ease-in-out infinite;
+.fc-title-accent {
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.founder-planet-1 .planet-dot:nth-child(2) { top: 20%; right: 15%; animation-delay: 0s; }
-.founder-planet-1 .planet-dot:nth-child(3) { bottom: 25%; left: 20%; animation-delay: 1s; }
-.founder-planet-1 .planet-dot:nth-child(4) { top: 50%; right: 25%; animation-delay: 2s; }
-
-.founder-planet-2 .planet-dot:nth-child(2) { top: 25%; left: 20%; animation-delay: 0.5s; }
-.founder-planet-2 .planet-dot:nth-child(3) { bottom: 30%; right: 15%; animation-delay: 1.5s; }
-
-@keyframes planetFloat1 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(-15px, 20px) rotate(5deg); }
-  50% { transform: translate(10px, -15px) rotate(-3deg); }
-  75% { transform: translate(-8px, 10px) rotate(2deg); }
+.fc-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
-@keyframes planetFloat2 {
-  0%, 100% { transform: translate(0, 0) rotate(0deg); }
-  33% { transform: translate(20px, -15px) rotate(-5deg); }
-  66% { transform: translate(-15px, 20px) rotate(5deg); }
-}
-
-@keyframes planetFloat3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(10px, -10px) scale(1.1); }
-}
-
-@keyframes planetRingPulse {
-  0%, 100% { transform: scale(1); opacity: 0.3; }
-  50% { transform: scale(1.1); opacity: 0.6; }
-}
-
-@keyframes planetDotFloat {
-  0%, 100% { transform: translateY(0); opacity: 0.4; }
-  50% { transform: translateY(-8px); opacity: 1; }
-}
-
-.founders-grid {
+/* =========================================
+   GRID
+   ========================================= */
+.fc-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 36px;
-  max-width: 900px;
+  gap: 32px;
+  max-width: 920px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
-/* ===============================
-   FOUNDER CARD — Unique Style
-   =============================== */
-.founder-card {
+/* =========================================
+   CARD
+   ========================================= */
+.fc-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.06);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  cursor: pointer;
+}
+
+.fc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.fc-card:hover::before {
+  opacity: 1;
+}
+
+.fc-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(59, 130, 246, 0.1),
+    0 0 80px rgba(139, 92, 246, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* Top gradient strip */
+.fc-card-top {
+  height: 3px;
+  background: linear-gradient(90deg, #3B82F6, #8B5CF6, #3B82F6);
+  background-size: 200% 100%;
+  animation: stripFlow 4s ease-in-out infinite;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@keyframes stripFlow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.fc-card:hover .fc-card-top {
+  height: 5px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa, #22D3EE, #60a5fa);
+  background-size: 300% 100%;
+  animation: stripFlowFast 2s ease-in-out infinite;
+  box-shadow: 0 2px 15px rgba(59, 130, 246, 0.4);
+}
+
+@keyframes stripFlowFast {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Card body */
+.fc-card-body {
+  padding: 36px 32px 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0;
-  z-index: 2;
 }
 
-.founder-card:hover {
-  transform: scale(1.08) translateY(-10px);
-  box-shadow: 0 40px 80px rgba(6, 182, 212, 0.2), 0 0 0 1px rgba(6, 182, 212, 0.3);
-  border-color: rgba(6, 182, 212, 0.4);
-  background: rgba(255, 255, 255, 0.06);
-}
-
-.founder-card-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 140px;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(8, 145, 178, 0.1) 100%);
-  z-index: 0;
-}
-
-.founder-card-0 .founder-card-bg {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.2) 0%, rgba(34, 211, 238, 0.1) 100%);
-}
-
-.founder-card-1 .founder-card-bg {
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(167, 139, 250, 0.1) 100%);
-}
-
-/* ===============================
-   IMAGE
-   =============================== */
-.founder-image-wrap {
+/* =========================================
+   AVATAR
+   ========================================= */
+.fc-avatar-wrap {
   position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid rgba(255, 255, 255, 0.1);
-  margin-top: 60px;
-  z-index: 2;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
+  margin-bottom: 24px;
 }
 
-.founder-card:hover .founder-image-wrap {
-  transform: scale(1.1);
-  border-color: #06B6D4;
-  box-shadow: 0 12px 40px rgba(6, 182, 212, 0.4);
-}
-
-.founder-image-ring {
+.fc-avatar-glow {
   position: absolute;
-  inset: -4px;
+  inset: -20px;
   border-radius: 50%;
-  border: 2px solid rgba(6, 182, 212, 0.3);
-  animation: founderRingPulse 3s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.1), transparent 70%);
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
-@keyframes founderRingPulse {
-  0%, 100% { transform: scale(1); opacity: 0.5; }
-  50% { transform: scale(1.05); opacity: 0; }
+.fc-card:hover .fc-avatar-glow {
+  opacity: 1;
+  inset: -30px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.15), transparent 70%);
 }
 
-.founder-photo {
+.fc-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fc-card:hover .fc-avatar {
+  transform: scale(1.12);
+  box-shadow:
+    0 15px 40px rgba(59, 130, 246, 0.35),
+    0 0 30px rgba(139, 92, 246, 0.2),
+    0 0 60px rgba(59, 130, 246, 0.1);
+}
+
+.fc-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.founder-photo-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #06B6D4 0%, #0891B2 100%);
+.fc-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.fc-avatar-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fc-card:hover .fc-avatar-ring {
+  inset: -14px;
+  border-color: rgba(59, 130, 246, 0.4);
+  border-width: 1.5px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  animation: ringPulse 2s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { inset: -14px; opacity: 1; }
+  50% { inset: -18px; opacity: 0.6; }
+}
+
+/* =========================================
+   NAME + ROLE
+   ========================================= */
+.fc-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  transition: all 0.4s ease;
+}
+
+.fc-card:hover .fc-name {
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.fc-role {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #60a5fa;
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  padding: 5px 14px;
+  border-radius: 100px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  transition: all 0.4s ease;
+}
+
+.fc-card:hover .fc-role {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: #93c5fd;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15);
+}
+
+/* =========================================
+   QUOTE + BIO
+   ========================================= */
+.fc-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 340px;
+  transition: all 0.4s ease;
+}
+
+.fc-card:hover .fc-quote {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.fc-bio {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  max-width: 340px;
+  transition: all 0.4s ease;
+}
+
+.fc-card:hover .fc-bio {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================
+   SKILLS
+   ========================================= */
+.fc-skills {
   display: flex;
-  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-.founder-photo-placeholder span {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-/* ===============================
-   CONTENT
-   =============================== */
-.founder-content {
-  position: relative;
-  z-index: 2;
-  padding: 20px 28px 0;
-  flex: 1;
-}
-
-.founder-name {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 6px;
-  transition: color 0.3s ease;
-}
-
-.founder-card:hover .founder-name {
-  color: #22D3EE;
-}
-
-.founder-role {
-  display: inline-block;
-  font-size: 0.75rem;
+.fc-skill {
+  font-size: 0.68rem;
   font-weight: 600;
-  color: #22D3EE;
-  background: rgba(6, 182, 212, 0.15);
-  padding: 6px 16px;
-  border-radius: 20px;
-  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 5px 14px;
+  border-radius: 100px;
+  letter-spacing: 0.3px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fc-card:hover .fc-skill {
+  background: rgba(59, 130, 246, 0.1);
+  border-color: rgba(59, 130, 246, 0.25);
+  color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+/* =========================================
+   STATS
+   ========================================= */
+.fc-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.fc-stat {
+  text-align: center;
+  padding: 12px 4px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.fc-card:hover .fc-stat {
+  background: rgba(59, 130, 246, 0.06);
+  border-color: rgba(59, 130, 246, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.08);
+}
+
+.fc-stat-val {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #60a5fa;
+  line-height: 1.2;
+  margin-bottom: 4px;
+  transition: all 0.4s ease;
+}
+
+.fc-card:hover .fc-stat-val {
+  text-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+  color: #93c5fd;
+}
+
+.fc-stat-lbl {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
-.founder-desc {
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.7;
-}
-
-/* ===============================
+/* =========================================
    FOOTER
-   =============================== */
-.founder-footer {
-  position: relative;
-  z-index: 2;
+   ========================================= */
+.fc-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding: 20px 28px;
-  margin-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 18px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
 }
 
-.founder-socials {
+.fc-socials {
   display: flex;
   gap: 8px;
 }
 
-.founder-social-link {
+.fc-social {
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 255, 255, 0.6);
-  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.4);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.founder-social-link:hover {
-  background: #06B6D4;
-  color: white;
-  border-color: #06B6D4;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(6, 182, 212, 0.35);
+.fc-card:hover .fc-social {
+  background: rgba(59, 130, 246, 0.12);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #93c5fd;
 }
 
-.founder-connect {
+.fc-social:hover {
+  background: rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  color: #fff !important;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.25);
+}
+
+.fc-connect {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
-  transition: all 0.3s ease;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  padding: 6px 12px;
+  border-radius: 8px;
 }
 
-.founder-connect svg {
-  transition: transform 0.3s ease;
+.fc-card:hover .fc-connect {
+  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.08);
 }
 
-.founder-card:hover .founder-connect {
-  color: #22D3EE;
+.fc-connect:hover {
+  color: #fff !important;
+  background: rgba(59, 130, 246, 0.15) !important;
+  transform: translateX(4px);
 }
 
-.founder-card:hover .founder-connect svg {
-  transform: translate(2px, -2px);
+.fc-connect svg {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* ===============================
-   DECORATIVE ELEMENTS
-   =============================== */
-.founder-decor-1,
-.founder-decor-2 {
+.fc-connect:hover svg {
+  transform: translate(3px, -3px) scale(1.15);
+}
+
+/* =========================================
+   CORNER DECORATIONS
+   ========================================= */
+.fc-corner {
   position: absolute;
-  border-radius: 50%;
+  width: 24px;
+  height: 24px;
   pointer-events: none;
-  z-index: 1;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.founder-decor-1 {
-  width: 80px;
-  height: 80px;
-  background: rgba(6, 182, 212, 0.05);
-  top: -20px;
-  right: -20px;
+.fc-card:hover .fc-corner {
+  opacity: 1;
 }
 
-.founder-decor-2 {
+.fc-corner-tl {
+  top: 12px;
+  left: 12px;
+  border-top: 1px solid rgba(59, 130, 246, 0.3);
+  border-left: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.fc-card:hover .fc-corner-tl {
+  top: 8px;
+  left: 8px;
+  width: 30px;
+  height: 30px;
+  border-color: rgba(59, 130, 246, 0.5);
+  border-width: 1.5px;
+}
+
+.fc-corner-br {
+  bottom: 12px;
+  right: 12px;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+  border-right: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.fc-card:hover .fc-corner-br {
+  bottom: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-color: rgba(59, 130, 246, 0.5);
+  border-width: 1.5px;
+}
+
+/* =========================================
+   BOTTOM
+   ========================================= */
+.fc-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.fc-bottom-line {
   width: 60px;
-  height: 60px;
-  background: rgba(124, 58, 237, 0.05);
-  bottom: 40px;
-  left: -15px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
 }
 
-.founder-card:hover .founder-decor-1 {
-  background: rgba(6, 182, 212, 0.15);
-  transition: background 0.5s ease;
+.fc-bottom-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.3);
 }
 
-.founder-card:hover .founder-decor-2 {
-  background: rgba(124, 58, 237, 0.15);
-  transition: background 0.5s ease;
-}
-
-/* ===============================
-   SECTION TITLE OVERRIDES
-   =============================== */
-.founders-section .section-tag {
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(6, 182, 212, 0.15);
-  border: 1px solid rgba(6, 182, 212, 0.2);
-}
-
-.founders-section .section-title {
-  color: #fff;
-}
-
-.founders-section .section-title span {
-  color: #22D3EE;
-}
-
-.founders-section .section-subtitle {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-/* ===============================
+/* =========================================
    RESPONSIVE
-   =============================== */
+   ========================================= */
 @media (max-width: 768px) {
-.founders-grid {
+  .fc-section {
+    padding: 100px 0 80px;
+  }
+
+  .fc-header {
+    margin-bottom: 50px;
+  }
+
+  .fc-grid {
     grid-template-columns: 1fr;
     max-width: 420px;
+    gap: 24px;
   }
 
-  .founder-content {
-    padding: 16px 24px 0;
+  .fc-card-body {
+    padding: 28px 24px 24px;
   }
 
-  .founder-footer {
-    padding: 16px 24px 20px;
+  .fc-card-footer {
+    padding: 16px 24px;
+  }
+
+  .fc-bottom {
+    margin-top: 50px;
   }
 }

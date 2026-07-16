@@ -1,5 +1,5 @@
 .footer {
-  background: #0F172A;
+  background: #030712;
   color: white;
   padding-top: 80px;
 }
@@ -52,7 +52,7 @@
   transition: color 0.3s;
 }
 
-.footer-contacts a:hover { color: #22D3EE; }
+.footer-contacts a:hover { color: #3B82F6; }
 
 .footer-links h4 {
   font-size: 14px;
@@ -79,7 +79,7 @@
 }
 
 .footer-links ul li a:hover {
-  color: #22D3EE;
+  color: #3B82F6;
   padding-left: 4px;
 }
 

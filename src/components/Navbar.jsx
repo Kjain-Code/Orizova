@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
+import { FiMenu, FiX, FiArrowRight } from 'react-icons/fi';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [onHero, setOnHero] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      setOnHero(window.scrollY < window.innerHeight - 100);
 
       const sections = ['home', 'services', 'projects', 'about', 'whyus', 'contact'];
       let current = 'home';
@@ -44,16 +42,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${onHero ? 'on-hero' : 'off-hero'}`}>
-      <div className="container navbar-inner">
-        <div className="navbar-logo">
-          <img src={logo} alt="Orizova Co." style={{ height: '50px', objectFit: 'contain' }} />
-        </div>
+    <>
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+        <div className="container navbar-inner">
+          <div className="navbar-logo">
+            <img src={logo} alt="Orizova" className="navbar-logo-img" />
+            <div className="navbar-logo-text-group">
+              <span className="navbar-logo-text">ORIZOVA</span>
+              <span className="navbar-logo-subtext">DIGITAL AGENCY</span>
+            </div>
+          </div>
 
-        <ul className="navbar-links">
-          {navLinks.map((link) => (
-            <li key={link.name}>
+          <div className="navbar-links">
+            {navLinks.map((link) => (
               <Link
+                key={link.name}
                 to={link.to}
                 smooth={true}
                 duration={600}
@@ -61,42 +64,60 @@ const Navbar = () => {
                 className={`nav-link ${activeSection === link.to ? 'active' : ''}`}
               >
                 {link.name}
-                {activeSection === link.to && <span className="nav-indicator" />}
               </Link>
-            </li>
-          ))}
-        </ul>
+            ))}
+          </div>
 
-        <a href="tel:+918527290722" className="navbar-cta">
-          <FiPhone size={16} />
-          Call Us
-        </a>
+          <a href="#contact" className="navbar-cta">
+            Get in Touch
+            <FiArrowRight size={14} />
+          </a>
 
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-        </button>
-      </div>
+          <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
+        </div>
+      </nav>
 
+      {/* Mobile Menu */}
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-        {navLinks.map((link, i) => (
-          <Link
-            key={link.name}
-            to={link.to}
-            smooth={true}
-            duration={600}
-            offset={-80}
-            className={`mobile-link ${activeSection === link.to ? 'active' : ''}`}
-            onClick={() => setMenuOpen(false)}
-            style={{ transitionDelay: menuOpen ? `${i * 0.05}s` : '0s' }}
-          >
-            {link.name}
-          </Link>
-        ))}
-        <a href="tel:+918527290722" className="mobile-cta">
-          <FiPhone size={16} /> +91 8527290722
-        </a>
+        <div className="mobile-menu-bg" onClick={() => setMenuOpen(false)} />
+        <div className="mobile-menu-panel">
+          <div className="mobile-menu-header">
+            <img src={logo} alt="Orizova" className="navbar-logo-img" />
+            <div className="navbar-logo-text-group">
+              <span className="navbar-logo-text">ORIZOVA</span>
+              <span className="navbar-logo-subtext">DIGITAL AGENCY</span>
+            </div>
+            <button className="mobile-close" onClick={() => setMenuOpen(false)}>
+              <FiX size={22} />
+            </button>
+          </div>
+
+          <div className="mobile-menu-links">
+            {navLinks.map((link, i) => (
+              <Link
+                key={link.name}
+                to={link.to}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className={`mobile-link ${activeSection === link.to ? 'active' : ''}`}
+                onClick={() => setMenuOpen(false)}
+                style={{ transitionDelay: menuOpen ? `${i * 0.06}s` : '0s' }}
+              >
+                <span>{link.name}</span>
+                <FiArrowRight size={16} />
+              </Link>
+            ))}
+          </div>
+
+          <a href="#contact" className="mobile-cta" onClick={() => setMenuOpen(false)}>
+            Get in Touch
+          </a>
+        </div>
       </div>
-    </nav>
+    </>
   );
 };
 

@@ -4,12 +4,12 @@ import { FiZap, FiTarget, FiUsers, FiBarChart2, FiShield, FiClock } from 'react-
 import './WhyUs.css';
 
 const reasons = [
-  { icon: FiZap, title: 'Fast Delivery', desc: 'We deliver projects on time without compromising quality.', backTitle: 'Quick Turnaround', backDesc: 'Agile workflows ensure rapid delivery without quality trade-offs.' },
-  { icon: FiTarget, title: 'Result Focused', desc: 'Every strategy we build is designed to drive measurable outcomes.', backTitle: 'Measurable ROI', backDesc: 'Track every metric and optimize for maximum returns.' },
-  { icon: FiUsers, title: 'Client-First Approach', desc: 'Your success is our success — we treat your business like our own.', backTitle: 'Your Partner', backDesc: 'More than a vendor — we become your growth partner.' },
-  { icon: FiBarChart2, title: 'Data-Driven', desc: 'Every decision is backed by data, research, and market insights.', backTitle: 'Smart Decisions', backDesc: 'Analytics-powered strategies that remove guesswork.' },
-  { icon: FiShield, title: 'Transparent Process', desc: 'No hidden costs. Clear communication at every stage.', backTitle: 'Full Visibility', backDesc: 'Real-time updates and complete project transparency.' },
-  { icon: FiClock, title: '24/7 Support', desc: 'We are always available to support your business needs.', backTitle: 'Always Here', backDesc: 'Round-the-clock support whenever you need us.' },
+  { icon: FiZap, title: 'Fast Delivery', desc: 'We deliver projects on time without compromising quality.' },
+  { icon: FiTarget, title: 'Result Focused', desc: 'Every strategy we build is designed to drive measurable outcomes.' },
+  { icon: FiUsers, title: 'Client-First Approach', desc: 'Your success is our success — we treat your business like our own.' },
+  { icon: FiBarChart2, title: 'Data-Driven', desc: 'Every decision is backed by data, research, and market insights.' },
+  { icon: FiShield, title: 'Transparent Process', desc: 'No hidden costs. Clear communication at every stage.' },
+  { icon: FiClock, title: '24/7 Support', desc: 'We are always available to support your business needs.' },
 ];
 
 const bounceIn = {
@@ -54,45 +54,31 @@ const WhyUs = () => {
           {reasons.map((reason, i) => (
             <motion.div
               key={i}
-              className="whyus-flip-container"
+              className="whyus-card"
               custom={i}
               variants={bounceIn}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
             >
-              <div className="whyus-flip-inner">
-                {/* FRONT */}
-                <div className="whyus-flip-front">
-                  <div className="whyus-icon-float">
-                    <motion.div
-                      className="whyus-icon"
-                      animate={{ y: [0, -6, 0] }}
-                      transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.3, ease: "easeInOut" }}
-                    >
-                      <reason.icon size={26} />
-                    </motion.div>
-                    <div className="whyus-icon-ring" />
-                  </div>
+              <div className="whyus-icon-float">
+                <motion.div
+                  className="whyus-icon"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 2.5, repeat: Infinity, delay: i * 0.3, ease: "easeInOut" }}
+                >
+                  <reason.icon size={26} />
+                </motion.div>
+                <div className="whyus-icon-ring" />
+              </div>
 
-                  <h3>{reason.title}</h3>
-                  <p>{reason.desc}</p>
+              <h3>{reason.title}</h3>
+              <p>{reason.desc}</p>
 
-                  <div className="whyus-card-glow" />
+              <div className="whyus-card-glow" />
 
-                  <div className="whyus-card-number">
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                </div>
-
-                {/* BACK */}
-                <div className="whyus-flip-back">
-                  <div className="whyus-back-icon">
-                    <reason.icon size={32} />
-                  </div>
-                  <h3>{reason.backTitle}</h3>
-                  <p>{reason.backDesc}</p>
-                </div>
+              <div className="whyus-card-number">
+                {String(i + 1).padStart(2, '0')}
               </div>
             </motion.div>
           ))}

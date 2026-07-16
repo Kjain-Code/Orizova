@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: rgba(6, 182, 212, 0.1);
+  background: rgba(30, 58, 95, 0.1);
   border-radius: var(--radius);
   padding: 14px 18px;
 }
@@ -97,7 +97,7 @@
 
 .about-stat h4 {
   font-size: 1.8rem;
-  color: #06B6D4;
+  color: #1e3a5f;
   font-family: 'Playfair Display', serif;
 }
 

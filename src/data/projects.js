@@ -8,7 +8,7 @@ const projects = [
     website: "https://example.com",
     github: null,
     technologies: ["Shopify", "UI/UX", "Payment Gateway"],
-    color: "#480b79",
+    color: "#22D3EE",
     emoji: "🛍️",
     result: "40% ↑ Conversions"
   },
@@ -34,7 +34,7 @@ const projects = [
     website: "https://example.com",
     github: null,
     technologies: ["React Native", "Firebase", "UX"],
-    color: "#D97706",
+    color: "#3B82F6",
     emoji: "🍽️",
     result: "4.8★ App Rating"
   },
@@ -47,7 +47,7 @@ const projects = [
     website: "https://example.com",
     github: null,
     technologies: ["Instagram", "Content", "Reels"],
-    color: "#0EA5E9",
+    color: "#22D3EE",
     emoji: "📱",
     result: "2K → 50K Followers"
   },
@@ -60,7 +60,7 @@ const projects = [
     website: "https://example.com",
     github: null,
     technologies: ["Logo", "Brand Kit", "Pitch Deck"],
-    color: "#480b79",
+    color: "#7C3AED",
     emoji: "🎨",
     result: "Full Brand Identity"
   },
@@ -73,7 +73,7 @@ const projects = [
     website: "https://example.com",
     github: "https://github.com",
     technologies: ["On-Page SEO", "Backlinks", "Content"],
-    color: "#7C3AED",
+    color: "#3B82F6",
     emoji: "🏥",
     result: "3x Organic Traffic"
   }

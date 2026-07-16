@@ -24,7 +24,7 @@
   padding: 10px 22px;
   border: none;
   border-radius: 50px;
-  background: rgba(6, 182, 212, 0.1);
+  background: rgba(30, 58, 95, 0.1);
   color: #64748B;
   font-size: 13px;
   font-weight: 600;
@@ -34,10 +34,10 @@
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: linear-gradient(135deg, #06B6D4, #0891B2);
+  background: linear-gradient(135deg, #1e3a5f, #162d4a);
   color: #fff;
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(6, 182, 212, 0.25);
+  box-shadow: 0 12px 30px rgba(30, 58, 95, 0.25);
 }
 
 /* ===============================
@@ -61,7 +61,7 @@
   border-radius: 24px;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(18px);
-  border: 1px solid rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(30, 58, 95, 0.08);
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -71,7 +71,7 @@
   inset: 0;
   padding: 1.5px;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.4), rgba(8, 145, 178, 0.2), rgba(34, 211, 238, 0.3));
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.4), rgba(8, 145, 178, 0.2), rgba(34, 211, 238, 0.3));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
@@ -112,7 +112,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(6, 182, 212, 0.06), transparent 60%);
+  background: radial-gradient(circle at center, rgba(30, 58, 95, 0.06), transparent 60%);
   opacity: 0;
   transition: opacity 0.5s ease;
   pointer-events: none;
@@ -194,16 +194,16 @@
 .project-tech-pill {
   padding: 5px 12px;
   border-radius: 30px;
-  background: rgba(6, 182, 212, 0.1);
-  border: 1px solid rgba(6, 182, 212, 0.15);
+  background: rgba(30, 58, 95, 0.1);
+  border: 1px solid rgba(30, 58, 95, 0.15);
   font-size: 12px;
   font-weight: 600;
-  color: #0891B2;
+  color: #162d4a;
   transition: all 0.3s ease;
 }
 
 .project-card:hover .project-tech-pill {
-  background: rgba(6, 182, 212, 0.15);
+  background: rgba(30, 58, 95, 0.15);
 }
 
 /* ===============================
@@ -248,9 +248,9 @@
 
 .project-btn-primary {
   flex: 1;
-  background: linear-gradient(135deg, #06B6D4, #0891B2);
+  background: linear-gradient(135deg, #1e3a5f, #162d4a);
   color: white;
-  box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+  box-shadow: 0 4px 15px rgba(30, 58, 95, 0.2);
 }
 
 .project-btn-primary:hover {
@@ -262,9 +262,9 @@
   width: 44px;
   height: 44px;
   padding: 0;
-  background: rgba(6, 182, 212, 0.1);
-  color: #0891B2;
-  border: 1px solid rgba(6, 182, 212, 0.15);
+  background: rgba(30, 58, 95, 0.1);
+  color: #162d4a;
+  border: 1px solid rgba(30, 58, 95, 0.15);
 }
 
 .project-btn-secondary:hover {

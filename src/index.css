@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
 
 :root {
-  --primary: #0F172A;
-  --secondary: #1E293B;
-  --accent: #06B6D4;
-  --accent-hover: #0891B2;
-  --gold: #06B6D4;
-  --blue: #06B6D4;
-  --midnight: #0F172A;
+  --primary: #030712;
+  --secondary: #7C3AED;
+  --accent: #22D3EE;
+  --accent-hover: #3B82F6;
+  --gold: #7C3AED;
+  --blue: #3B82F6;
+  --midnight: #030712;
   --lavender: #E0F2FE;
   --lilac: #F8FAFC;
   --amber: #F0F9FF;
   --white: #ffffff;
-  --text: #0F172A;
+  --text: #030712;
   --text-light: #64748B;
-  --shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 8px 40px rgba(15, 23, 42, 0.12);
+  --shadow: 0 4px 24px rgba(3, 7, 18, 0.08);
+  --shadow-lg: 0 8px 40px rgba(3, 7, 18, 0.12);
   --radius: 16px;
   --radius-lg: 24px;
 }
@@ -60,8 +60,8 @@ img {
 
 .section-tag {
   display: inline-block;
-  background: rgba(6, 182, 212, 0.1);
-  color: #0891B2;
+  background: rgba(124, 58, 237, 0.1);
+  color: #7C3AED;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 2px;
@@ -73,12 +73,12 @@ img {
 
 .section-title {
   font-size: clamp(2rem, 4vw, 3rem);
-  color: #0F172A;
+  color: #030712;
   margin-bottom: 16px;
 }
 
 .section-title span {
-  color: #06B6D4;
+  color: #7C3AED;
 }
 
 .section-subtitle {
@@ -92,7 +92,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #06B6D4, #0891B2);
+  background: linear-gradient(135deg, #7C3AED, #5B21B6);
   color: white;
   padding: 14px 32px;
   border-radius: 100px;
@@ -101,13 +101,13 @@ img {
   border: none;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 30px rgba(6, 182, 212, 0.45);
-  background: linear-gradient(135deg, #0891B2, #0E7490);
+  box-shadow: 0 8px 30px rgba(34, 211, 238, 0.45);
+  background: linear-gradient(135deg, #22D3EE, #0891B2);
 }
 
 .btn-outline {
@@ -147,7 +147,7 @@ section {
   background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #06B6D4;
+  background: #7C3AED;
   border-radius: 10px;
 }
 

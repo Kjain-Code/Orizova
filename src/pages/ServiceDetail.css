@@ -93,10 +93,10 @@
 /* ==========================================================
    THEME 1 — WEBSITE DEVELOPMENT (Cyan / Rounded Glass)
    ========================================================== */
-.sd-theme-website-development { --accent: #22D3EE; --accent-light: #67E8F9; --accent-bg: rgba(34,211,238,0.12); --tag-bg: rgba(34,211,238,0.12); --tag-border: rgba(34,211,238,0.3); --card-bg: rgba(255,255,255,0.04); --card-border: rgba(255,255,255,0.07); --shadow: rgba(34,211,238,0.12); --bg-dark: #0F172A; background: linear-gradient(180deg, #0F172A, #1E293B 40%, #0F172A); }
-.sd-theme-website-development .sd-topbar { background: rgba(15,23,42,0.88); }
+.sd-theme-website-development { --accent: #22D3EE; --accent-light: #67E8F9; --accent-bg: rgba(34,211,238,0.12); --tag-bg: rgba(34,211,238,0.12); --tag-border: rgba(34,211,238,0.3); --card-bg: rgba(255,255,255,0.04); --card-border: rgba(255,255,255,0.07); --shadow: rgba(34,211,238,0.12); --bg-dark: #030712; background: linear-gradient(180deg, #030712, #0a0f1a 40%, #030712); }
+.sd-theme-website-development .sd-topbar { background: rgba(3,7,18,0.88); }
 .sd-theme-website-development .sd-orb-1 { width: 500px; height: 500px; background: rgba(34,211,238,0.1); top: -100px; left: -100px; }
-.sd-theme-website-development .sd-orb-2 { width: 400px; height: 400px; background: rgba(6,182,212,0.06); bottom: -150px; right: -80px; }
+.sd-theme-website-development .sd-orb-2 { width: 400px; height: 400px; background: rgba(34,211,238,0.06); bottom: -150px; right: -80px; }
 .sd-theme-website-development .sd-orb-3 { width: 250px; height: 250px; background: rgba(34,211,238,0.08); top: 40%; left: 50%; }
 
 .sd-theme-website-development .sd-include-item { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; }
@@ -104,7 +104,7 @@
 .sd-theme-website-development .sd-price-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 20px; }
 .sd-theme-website-development .sd-process-item { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; }
 .sd-theme-website-development .sd-process-item:hover { border-color: rgba(34,211,238,0.2); transform: translateX(6px); }
-.sd-theme-website-development .sd-process-num { background: rgba(34,211,238,0.12); color: #22D3EE; border-radius: 12px; }
+.sd-theme-website-development .sd-process-num { background: rgba(34,211,238,0.12); color: #3B82F6; border-radius: 12px; }
 .sd-theme-website-development .sd-perfect-chip { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 50px; }
 .sd-theme-website-development .sd-perfect-chip:hover { border-color: rgba(34,211,238,0.3); color: #22D3EE; }
 .sd-theme-website-development .sd-why-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 14px; }
@@ -115,81 +115,81 @@
 /* ==========================================================
    THEME 2 — APP DEVELOPMENT (Purple / Deep Shadow Cards)
    ========================================================== */
-.sd-theme-app-development { --accent: #A78BFA; --accent-light: #C4B5FD; --accent-bg: rgba(167,139,250,0.12); --tag-bg: rgba(167,139,250,0.12); --tag-border: rgba(167,139,250,0.3); --card-bg: rgba(139,92,246,0.06); --card-border: rgba(139,92,246,0.12); --shadow: rgba(139,92,246,0.15); --bg-dark: #1a0533; background: linear-gradient(180deg, #1a0533, #2d1052 40%, #1a0533); }
-.sd-theme-app-development .sd-topbar { background: rgba(26,5,51,0.88); }
-.sd-theme-app-development .sd-orb-1 { width: 500px; height: 500px; background: rgba(139,92,246,0.1); top: -100px; right: -100px; }
+.sd-theme-app-development { --accent: #7C3AED; --accent-light: #A78BFA; --accent-bg: rgba(124,58,237,0.12); --tag-bg: rgba(124,58,237,0.12); --tag-border: rgba(124,58,237,0.3); --card-bg: rgba(124,58,237,0.06); --card-border: rgba(124,58,237,0.12); --shadow: rgba(124,58,237,0.15); --bg-dark: #030712; background: linear-gradient(180deg, #030712, #0a0f1a 40%, #030712); }
+.sd-theme-app-development .sd-topbar { background: rgba(3,7,18,0.88); }
+.sd-theme-app-development .sd-orb-1 { width: 500px; height: 500px; background: rgba(124,58,237,0.1); top: -100px; right: -100px; }
 .sd-theme-app-development .sd-orb-2 { width: 350px; height: 350px; background: rgba(167,139,250,0.06); bottom: -100px; left: -80px; }
-.sd-theme-app-development .sd-orb-3 { width: 200px; height: 200px; background: rgba(139,92,246,0.08); top: 30%; left: 20%; }
+.sd-theme-app-development .sd-orb-3 { width: 200px; height: 200px; background: rgba(124,58,237,0.08); top: 30%; left: 20%; }
 
-.sd-theme-app-development .sd-include-item { background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(88,28,135,0.08)); border: 1px solid rgba(139,92,246,0.15); border-radius: 18px; box-shadow: 0 4px 15px rgba(139,92,246,0.05); }
-.sd-theme-app-development .sd-include-item:hover { background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(88,28,135,0.12)); box-shadow: 0 8px 25px rgba(139,92,246,0.1); transform: translateY(-3px); }
-.sd-theme-app-development .sd-price-box { background: linear-gradient(160deg, rgba(139,92,246,0.08), rgba(88,28,135,0.06)); border: 1px solid rgba(139,92,246,0.15); border-radius: 24px; box-shadow: 0 8px 30px rgba(139,92,246,0.08); }
-.sd-theme-app-development .sd-process-item { background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(88,28,135,0.04)); border: 1px solid rgba(139,92,246,0.1); border-radius: 20px; box-shadow: 0 4px 20px rgba(139,92,246,0.06); }
-.sd-theme-app-development .sd-process-item:hover { box-shadow: 0 8px 30px rgba(139,92,246,0.12); transform: translateY(-4px); }
+.sd-theme-app-development .sd-include-item { background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(91,33,182,0.08)); border: 1px solid rgba(124,58,237,0.15); border-radius: 18px; box-shadow: 0 4px 15px rgba(124,58,237,0.05); }
+.sd-theme-app-development .sd-include-item:hover { background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(91,33,182,0.12)); box-shadow: 0 8px 25px rgba(124,58,237,0.1); transform: translateY(-3px); }
+.sd-theme-app-development .sd-price-box { background: linear-gradient(160deg, rgba(124,58,237,0.08), rgba(91,33,182,0.06)); border: 1px solid rgba(124,58,237,0.15); border-radius: 24px; box-shadow: 0 8px 30px rgba(124,58,237,0.08); }
+.sd-theme-app-development .sd-process-item { background: linear-gradient(135deg, rgba(124,58,237,0.06), rgba(91,33,182,0.04)); border: 1px solid rgba(124,58,237,0.1); border-radius: 20px; box-shadow: 0 4px 20px rgba(124,58,237,0.06); }
+.sd-theme-app-development .sd-process-item:hover { box-shadow: 0 8px 30px rgba(124,58,237,0.12); transform: translateY(-4px); }
 .sd-theme-app-development .sd-process-num { background: linear-gradient(135deg, #7C3AED, #A78BFA); color: #fff; border-radius: 14px; box-shadow: 0 4px 12px rgba(124,58,237,0.3); }
-.sd-theme-app-development .sd-perfect-chip { background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.15); border-radius: 16px; box-shadow: 0 2px 10px rgba(139,92,246,0.06); }
-.sd-theme-app-development .sd-perfect-chip:hover { background: rgba(139,92,246,0.15); box-shadow: 0 6px 20px rgba(139,92,246,0.12); }
-.sd-theme-app-development .sd-why-box { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.1); border-radius: 16px; }
-.sd-theme-app-development .sd-why-box:hover { border-color: rgba(139,92,246,0.25); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(139,92,246,0.1); }
-.sd-theme-app-development .sd-cta-box { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.1); border-radius: 20px; }
-.sd-theme-app-development .sd-cta-box:hover { border-color: rgba(139,92,246,0.25); box-shadow: 0 12px 35px rgba(139,92,246,0.1); }
+.sd-theme-app-development .sd-perfect-chip { background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.15); border-radius: 16px; box-shadow: 0 2px 10px rgba(124,58,237,0.06); }
+.sd-theme-app-development .sd-perfect-chip:hover { background: rgba(124,58,237,0.15); box-shadow: 0 6px 20px rgba(124,58,237,0.12); }
+.sd-theme-app-development .sd-why-box { background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.1); border-radius: 16px; }
+.sd-theme-app-development .sd-why-box:hover { border-color: rgba(124,58,237,0.25); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(124,58,237,0.1); }
+.sd-theme-app-development .sd-cta-box { background: rgba(124,58,237,0.06); border: 1px solid rgba(124,58,237,0.1); border-radius: 20px; }
+.sd-theme-app-development .sd-cta-box:hover { border-color: rgba(124,58,237,0.25); box-shadow: 0 12px 35px rgba(124,58,237,0.1); }
 
 /* ==========================================================
    THEME 3 — DIGITAL MARKETING (Orange / Dashboard Style)
    ========================================================== */
-.sd-theme-digital-marketing { --accent: #F59E0B; --accent-light: #FCD34D; --accent-bg: rgba(245,158,11,0.1); --tag-bg: rgba(245,158,11,0.1); --tag-border: rgba(245,158,11,0.3); --card-bg: rgba(255,255,255,0.04); --card-border: rgba(255,255,255,0.07); --shadow: rgba(245,158,11,0.12); --bg-dark: #1C1004; background: linear-gradient(180deg, #1C1004, #2A1A08 40%, #1C1004); }
-.sd-theme-digital-marketing .sd-topbar { background: rgba(28,16,4,0.88); }
-.sd-theme-digital-marketing .sd-orb-1 { width: 500px; height: 500px; background: rgba(245,158,11,0.08); top: -120px; left: 20%; }
-.sd-theme-digital-marketing .sd-orb-2 { width: 350px; height: 350px; background: rgba(251,211,77,0.05); bottom: -100px; right: 10%; }
-.sd-theme-digital-marketing .sd-orb-3 { width: 200px; height: 200px; background: rgba(245,158,11,0.06); top: 50%; right: 30%; }
+.sd-theme-digital-marketing { --accent: #3B82F6; --accent-light: #60A5FA; --accent-bg: rgba(59,130,246,0.1); --tag-bg: rgba(59,130,246,0.1); --tag-border: rgba(59,130,246,0.3); --card-bg: rgba(255,255,255,0.04); --card-border: rgba(255,255,255,0.07); --shadow: rgba(59,130,246,0.12); --bg-dark: #030712; background: linear-gradient(180deg, #030712, #0a0f1a 40%, #030712); }
+.sd-theme-digital-marketing .sd-topbar { background: rgba(3,7,18,0.88); }
+.sd-theme-digital-marketing .sd-orb-1 { width: 500px; height: 500px; background: rgba(59,130,246,0.08); top: -120px; left: 20%; }
+.sd-theme-digital-marketing .sd-orb-2 { width: 350px; height: 350px; background: rgba(96,165,250,0.05); bottom: -100px; right: 10%; }
+.sd-theme-digital-marketing .sd-orb-3 { width: 200px; height: 200px; background: rgba(59,130,246,0.06); top: 50%; right: 30%; }
 
-.sd-theme-digital-marketing .sd-include-item { background: rgba(245,158,11,0.04); border-left: 3px solid rgba(245,158,11,0.4); border-radius: 0 12px 12px 0; padding-left: 18px; }
-.sd-theme-digital-marketing .sd-include-item:hover { background: rgba(245,158,11,0.08); border-left-color: #F59E0B; transform: translateX(6px); }
-.sd-theme-digital-marketing .sd-include-index { color: #F59E0B; }
-.sd-theme-digital-marketing .sd-price-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(245,158,11,0.1); border-radius: 16px; border-top: 3px solid #F59E0B; }
-.sd-theme-digital-marketing .sd-price-box:hover { border-top-color: #FCD34D; }
-.sd-theme-digital-marketing .sd-process-item { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.08); border-radius: 14px; position: relative; overflow: hidden; }
-.sd-theme-digital-marketing .sd-process-item::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px; background: linear-gradient(180deg, #F59E0B, #FCD34D); }
-.sd-theme-digital-marketing .sd-process-item:hover { background: rgba(245,158,11,0.06); }
-.sd-theme-digital-marketing .sd-process-num { background: rgba(245,158,11,0.15); color: #F59E0B; border-radius: 10px; }
-.sd-theme-digital-marketing .sd-perfect-chip { background: rgba(245,158,11,0.06); border: 1px solid rgba(245,158,11,0.12); border-radius: 10px; }
-.sd-theme-digital-marketing .sd-perfect-chip:hover { background: rgba(245,158,11,0.12); border-color: rgba(245,158,11,0.3); }
-.sd-theme-digital-marketing .sd-perfect-dot { background: #F59E0B; border-radius: 3px; width: 6px; height: 6px; }
-.sd-theme-digital-marketing .sd-why-box { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.08); border-radius: 12px; }
-.sd-theme-digital-marketing .sd-why-box:hover { border-color: rgba(245,158,11,0.2); }
-.sd-theme-digital-marketing .sd-why-badge { background: linear-gradient(135deg, #F59E0B, #D97706); border-radius: 8px; }
-.sd-theme-digital-marketing .sd-cta-box { background: rgba(245,158,11,0.04); border: 1px solid rgba(245,158,11,0.08); border-radius: 16px; }
-.sd-theme-digital-marketing .sd-cta-box:hover { border-color: rgba(245,158,11,0.2); }
+.sd-theme-digital-marketing .sd-include-item { background: rgba(59,130,246,0.04); border-left: 3px solid rgba(59,130,246,0.4); border-radius: 0 12px 12px 0; padding-left: 18px; }
+.sd-theme-digital-marketing .sd-include-item:hover { background: rgba(59,130,246,0.08); border-left-color: #3B82F6; transform: translateX(6px); }
+.sd-theme-digital-marketing .sd-include-index { color: #3B82F6; }
+.sd-theme-digital-marketing .sd-price-box { background: rgba(255,255,255,0.03); border: 1px solid rgba(59,130,246,0.1); border-radius: 16px; border-top: 3px solid #3B82F6; }
+.sd-theme-digital-marketing .sd-price-box:hover { border-top-color: #60A5FA; }
+.sd-theme-digital-marketing .sd-process-item { background: rgba(59,130,246,0.04); border: 1px solid rgba(59,130,246,0.08); border-radius: 14px; position: relative; overflow: hidden; }
+.sd-theme-digital-marketing .sd-process-item::before { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 3px; background: linear-gradient(180deg, #3B82F6, #60A5FA); }
+.sd-theme-digital-marketing .sd-process-item:hover { background: rgba(59,130,246,0.06); }
+.sd-theme-digital-marketing .sd-process-num { background: rgba(59,130,246,0.15); color: #3B82F6; border-radius: 10px; }
+.sd-theme-digital-marketing .sd-perfect-chip { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.12); border-radius: 10px; }
+.sd-theme-digital-marketing .sd-perfect-chip:hover { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); }
+.sd-theme-digital-marketing .sd-perfect-dot { background: #3B82F6; border-radius: 3px; width: 6px; height: 6px; }
+.sd-theme-digital-marketing .sd-why-box { background: rgba(59,130,246,0.04); border: 1px solid rgba(59,130,246,0.08); border-radius: 12px; }
+.sd-theme-digital-marketing .sd-why-box:hover { border-color: rgba(59,130,246,0.2); }
+.sd-theme-digital-marketing .sd-why-badge { background: linear-gradient(135deg, #3B82F6, #2563EB); border-radius: 8px; }
+.sd-theme-digital-marketing .sd-cta-box { background: rgba(59,130,246,0.04); border: 1px solid rgba(59,130,246,0.08); border-radius: 16px; }
+.sd-theme-digital-marketing .sd-cta-box:hover { border-color: rgba(59,130,246,0.2); }
 
 /* ==========================================================
    THEME 4 — BRANDING (Sky Blue / Creative Angular)
    ========================================================== */
-.sd-theme-branding-designing { --accent: #38BDF8; --accent-light: #7DD3FC; --accent-bg: rgba(56,189,248,0.1); --tag-bg: rgba(56,189,248,0.1); --tag-border: rgba(56,189,248,0.3); --card-bg: rgba(56,189,248,0.05); --card-border: rgba(56,189,248,0.1); --shadow: rgba(56,189,248,0.12); --bg-dark: #0C1929; background: linear-gradient(180deg, #0C1929, #132740 40%, #0C1929); }
-.sd-theme-branding-designing .sd-topbar { background: rgba(12,25,41,0.88); }
-.sd-theme-branding-designing .sd-orb-1 { width: 450px; height: 450px; background: rgba(56,189,248,0.08); top: -80px; right: -80px; }
-.sd-theme-branding-designing .sd-orb-2 { width: 350px; height: 350px; background: rgba(125,211,252,0.05); bottom: -120px; left: -60px; }
-.sd-theme-branding-designing .sd-orb-3 { width: 180px; height: 180px; background: rgba(56,189,248,0.07); top: 35%; left: 40%; }
+.sd-theme-branding-designing { --accent: #22D3EE; --accent-light: #67E8F9; --accent-bg: rgba(34,211,238,0.1); --tag-bg: rgba(34,211,238,0.1); --tag-border: rgba(34,211,238,0.3); --card-bg: rgba(34,211,238,0.05); --card-border: rgba(34,211,238,0.1); --shadow: rgba(34,211,238,0.12); --bg-dark: #030712; background: linear-gradient(180deg, #030712, #0a0f1a 40%, #030712); }
+.sd-theme-branding-designing .sd-topbar { background: rgba(3,7,18,0.88); }
+.sd-theme-branding-designing .sd-orb-1 { width: 450px; height: 450px; background: rgba(34,211,238,0.08); top: -80px; right: -80px; }
+.sd-theme-branding-designing .sd-orb-2 { width: 350px; height: 350px; background: rgba(103,232,249,0.05); bottom: -120px; left: -60px; }
+.sd-theme-branding-designing .sd-orb-3 { width: 180px; height: 180px; background: rgba(34,211,238,0.07); top: 35%; left: 40%; }
 
-.sd-theme-branding-designing .sd-include-item { background: linear-gradient(135deg, rgba(56,189,248,0.06), rgba(14,165,233,0.04)); border: 1px solid rgba(56,189,248,0.1); border-radius: 18px; backdrop-filter: blur(8px); }
-.sd-theme-branding-designing .sd-include-item:hover { background: linear-gradient(135deg, rgba(56,189,248,0.1), rgba(14,165,233,0.08)); transform: translateY(-3px) rotate(0.5deg); }
-.sd-theme-branding-designing .sd-price-box { background: linear-gradient(160deg, rgba(56,189,248,0.06), rgba(14,165,233,0.03)); border: 1px solid rgba(56,189,248,0.12); border-radius: 22px; }
-.sd-theme-branding-designing .sd-process-item { background: linear-gradient(135deg, rgba(56,189,248,0.05), rgba(14,165,233,0.03)); border: 1px solid rgba(56,189,248,0.08); border-radius: 18px; }
-.sd-theme-branding-designing .sd-process-item:hover { border-color: rgba(56,189,248,0.2); transform: translateX(8px) rotate(0.3deg); }
-.sd-theme-branding-designing .sd-process-num { background: linear-gradient(135deg, #0EA5E9, #38BDF8); color: #fff; border-radius: 50%; box-shadow: 0 4px 15px rgba(14,165,233,0.3); }
-.sd-theme-branding-designing .sd-perfect-chip { background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.12); border-radius: 14px; }
-.sd-theme-branding-designing .sd-perfect-chip:hover { background: rgba(56,189,248,0.12); transform: translateY(-4px) rotate(1deg); }
-.sd-theme-branding-designing .sd-why-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.08); border-radius: 18px; }
-.sd-theme-branding-designing .sd-why-box:hover { border-color: rgba(56,189,248,0.2); }
-.sd-theme-branding-designing .sd-why-badge { background: linear-gradient(135deg, #0EA5E9, #38BDF8); border-radius: 10px; }
-.sd-theme-branding-designing .sd-cta-box { background: rgba(56,189,248,0.05); border: 1px solid rgba(56,189,248,0.08); border-radius: 22px; }
+.sd-theme-branding-designing .sd-include-item { background: linear-gradient(135deg, rgba(34,211,238,0.06), rgba(59,130,246,0.04)); border: 1px solid rgba(34,211,238,0.1); border-radius: 18px; backdrop-filter: blur(8px); }
+.sd-theme-branding-designing .sd-include-item:hover { background: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(59,130,246,0.08)); transform: translateY(-3px) rotate(0.5deg); }
+.sd-theme-branding-designing .sd-price-box { background: linear-gradient(160deg, rgba(34,211,238,0.06), rgba(59,130,246,0.03)); border: 1px solid rgba(34,211,238,0.12); border-radius: 22px; }
+.sd-theme-branding-designing .sd-process-item { background: linear-gradient(135deg, rgba(34,211,238,0.05), rgba(59,130,246,0.03)); border: 1px solid rgba(34,211,238,0.08); border-radius: 18px; }
+.sd-theme-branding-designing .sd-process-item:hover { border-color: rgba(34,211,238,0.2); transform: translateX(8px) rotate(0.3deg); }
+.sd-theme-branding-designing .sd-process-num { background: linear-gradient(135deg, #3B82F6, #22D3EE); color: #fff; border-radius: 50%; box-shadow: 0 4px 15px rgba(59,130,246,0.3); }
+.sd-theme-branding-designing .sd-perfect-chip { background: rgba(34,211,238,0.06); border: 1px solid rgba(34,211,238,0.12); border-radius: 14px; }
+.sd-theme-branding-designing .sd-perfect-chip:hover { background: rgba(34,211,238,0.12); transform: translateY(-4px) rotate(1deg); }
+.sd-theme-branding-designing .sd-why-box { background: rgba(34,211,238,0.05); border: 1px solid rgba(34,211,238,0.08); border-radius: 18px; }
+.sd-theme-branding-designing .sd-why-box:hover { border-color: rgba(34,211,238,0.2); }
+.sd-theme-branding-designing .sd-why-badge { background: linear-gradient(135deg, #3B82F6, #22D3EE); border-radius: 10px; }
+.sd-theme-branding-designing .sd-cta-box { background: rgba(34,211,238,0.05); border: 1px solid rgba(34,211,238,0.08); border-radius: 22px; }
 .sd-theme-branding-designing .sd-cta-icon-box { border-radius: 16px; }
-.sd-theme-branding-designing .sd-cta-box:hover { border-color: rgba(56,189,248,0.2); }
+.sd-theme-branding-designing .sd-cta-box:hover { border-color: rgba(34,211,238,0.2); }
 
 /* ==========================================================
    THEME 5 — SEO (Deep Purple / Rank Style)
    ========================================================== */
-.sd-theme-seo { --accent: #7C3AED; --accent-light: #A78BFA; --accent-bg: rgba(124,58,237,0.1); --tag-bg: rgba(124,58,237,0.1); --tag-border: rgba(124,58,237,0.3); --card-bg: rgba(124,58,237,0.05); --card-border: rgba(124,58,237,0.1); --shadow: rgba(124,58,237,0.12); --bg-dark: #12082A; background: linear-gradient(180deg, #12082A, #1E1040 40%, #12082A); }
-.sd-theme-seo .sd-topbar { background: rgba(18,8,42,0.88); }
+.sd-theme-seo { --accent: #7C3AED; --accent-light: #A78BFA; --accent-bg: rgba(124,58,237,0.1); --tag-bg: rgba(124,58,237,0.1); --tag-border: rgba(124,58,237,0.3); --card-bg: rgba(124,58,237,0.05); --card-border: rgba(124,58,237,0.1); --shadow: rgba(124,58,237,0.12); --bg-dark: #030712; background: linear-gradient(180deg, #030712, #0a0f1a 40%, #030712); }
+.sd-theme-seo .sd-topbar { background: rgba(3,7,18,0.88); }
 .sd-theme-seo .sd-orb-1 { width: 500px; height: 500px; background: rgba(124,58,237,0.08); top: -100px; left: 10%; }
 .sd-theme-seo .sd-orb-2 { width: 400px; height: 400px; background: rgba(167,139,250,0.05); bottom: -150px; right: -50px; }
 .sd-theme-seo .sd-orb-3 { width: 220px; height: 220px; background: rgba(124,58,237,0.06); top: 45%; right: 25%; }
@@ -210,21 +210,21 @@
 /* ==========================================================
    THEME 6 — E-COMMERCE (Violet / Product Card Style)
    ========================================================== */
-.sd-theme-ecommerce-solutions { --accent: #8B5CF6; --accent-light: #A78BFA; --accent-bg: rgba(139,92,246,0.12); --tag-bg: rgba(139,92,246,0.12); --tag-border: rgba(139,92,246,0.3); --card-bg: rgba(139,92,246,0.06); --card-border: rgba(139,92,246,0.12); --shadow: rgba(139,92,246,0.15); --bg-dark: #13082A; background: linear-gradient(180deg, #13082A, #201040 40%, #13082A); }
-.sd-theme-ecommerce-solutions .sd-topbar { background: rgba(19,8,42,0.88); }
-.sd-theme-ecommerce-solutions .sd-orb-1 { width: 450px; height: 450px; background: rgba(139,92,246,0.08); top: -80px; right: -80px; }
-.sd-theme-ecommerce-solutions .sd-orb-2 { width: 350px; height: 350px; background: rgba(167,139,250,0.05); bottom: -120px; left: -60px; }
-.sd-theme-ecommerce-solutions .sd-orb-3 { width: 200px; height: 200px; background: rgba(139,92,246,0.06); top: 40%; left: 30%; }
+.sd-theme-ecommerce-solutions { --accent: #3B82F6; --accent-light: #60A5FA; --accent-bg: rgba(59,130,246,0.12); --tag-bg: rgba(59,130,246,0.12); --tag-border: rgba(59,130,246,0.3); --card-bg: rgba(59,130,246,0.06); --card-border: rgba(59,130,246,0.12); --shadow: rgba(59,130,246,0.15); --bg-dark: #030712; background: linear-gradient(180deg, #030712, #0a0f1a 40%, #030712); }
+.sd-theme-ecommerce-solutions .sd-topbar { background: rgba(3,7,18,0.88); }
+.sd-theme-ecommerce-solutions .sd-orb-1 { width: 450px; height: 450px; background: rgba(59,130,246,0.08); top: -80px; right: -80px; }
+.sd-theme-ecommerce-solutions .sd-orb-2 { width: 350px; height: 350px; background: rgba(96,165,250,0.05); bottom: -120px; left: -60px; }
+.sd-theme-ecommerce-solutions .sd-orb-3 { width: 200px; height: 200px; background: rgba(59,130,246,0.06); top: 40%; left: 30%; }
 
-.sd-theme-ecommerce-solutions .sd-include-item { background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.1); border-radius: 16px; position: relative; overflow: hidden; }
-.sd-theme-ecommerce-solutions .sd-include-item::before { content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 100%; background: linear-gradient(90deg, transparent, rgba(139,92,246,0.06)); }
-.sd-theme-ecommerce-solutions .sd-include-item:hover { background: rgba(139,92,246,0.08); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139,92,246,0.08); }
-.sd-theme-ecommerce-solutions .sd-price-box { background: linear-gradient(160deg, rgba(139,92,246,0.06), rgba(91,33,182,0.04)); border: 1px solid rgba(139,92,246,0.12); border-radius: 20px; }
-.sd-theme-ecommerce-solutions .sd-process-item { background: rgba(139,92,246,0.04); border: 1px solid rgba(139,92,246,0.08); border-radius: 16px; }
-.sd-theme-ecommerce-solutions .sd-process-item:hover { border-color: rgba(139,92,246,0.2); box-shadow: 0 6px 20px rgba(139,92,246,0.08); }
-.sd-theme-ecommerce-solutions .sd-process-num { background: linear-gradient(135deg, #7C3AED, #8B5CF6); color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(124,58,237,0.25); }
-.sd-theme-ecommerce-solutions .sd-perfect-chip { background: rgba(139,92,246,0.06); border: 1px solid rgba(139,92,246,0.1); border-radius: 12px; }
-.sd-theme-ecommerce-solutions .sd-perfect-chip:hover { background: rgba(139,92,246,0.12); }
-.sd-theme-ecommerce-solutions .sd-why-box { background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.08); border-radius: 16px; }
-.sd-theme-ecommerce-solutions .sd-why-box:hover { border-color: rgba(139,92,246,0.2); }
-.sd-theme-ecommerce-solutions .sd-cta-box { background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.08); border-radius: 18px; }
+.sd-theme-ecommerce-solutions .sd-include-item { background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.1); border-radius: 16px; position: relative; overflow: hidden; }
+.sd-theme-ecommerce-solutions .sd-include-item::before { content: ''; position: absolute; top: 0; right: 0; width: 40px; height: 100%; background: linear-gradient(90deg, transparent, rgba(59,130,246,0.06)); }
+.sd-theme-ecommerce-solutions .sd-include-item:hover { background: rgba(59,130,246,0.08); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59,130,246,0.08); }
+.sd-theme-ecommerce-solutions .sd-price-box { background: linear-gradient(160deg, rgba(59,130,246,0.06), rgba(37,99,235,0.04)); border: 1px solid rgba(59,130,246,0.12); border-radius: 20px; }
+.sd-theme-ecommerce-solutions .sd-process-item { background: rgba(59,130,246,0.04); border: 1px solid rgba(59,130,246,0.08); border-radius: 16px; }
+.sd-theme-ecommerce-solutions .sd-process-item:hover { border-color: rgba(59,130,246,0.2); box-shadow: 0 6px 20px rgba(59,130,246,0.08); }
+.sd-theme-ecommerce-solutions .sd-process-num { background: linear-gradient(135deg, #3B82F6, #60A5FA); color: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(59,130,246,0.25); }
+.sd-theme-ecommerce-solutions .sd-perfect-chip { background: rgba(59,130,246,0.06); border: 1px solid rgba(59,130,246,0.1); border-radius: 12px; }
+.sd-theme-ecommerce-solutions .sd-perfect-chip:hover { background: rgba(59,130,246,0.12); }
+.sd-theme-ecommerce-solutions .sd-why-box { background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.08); border-radius: 16px; }
+.sd-theme-ecommerce-solutions .sd-why-box:hover { border-color: rgba(59,130,246,0.2); }
+.sd-theme-ecommerce-solutions .sd-cta-box { background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.08); border-radius: 18px; }
