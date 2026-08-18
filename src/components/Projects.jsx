@@ -80,8 +80,6 @@ const Projects = () => {
                 whileHover={{ y: -12, scale: 1.02 }}
                 className="project-card"
               >
-                <div className="project-card-glow" />
-
                 {project.image ? (
                   <div className="project-image-wrap">
                     <img src={project.image} alt={project.title} className="project-image" />
@@ -116,12 +114,12 @@ const Projects = () => {
 
                 <div className="project-content">
                   <h3>{project.title}</h3>
-                  <p>{project.description}</p>
+                  <p>{project.desc}</p>
 
-                  <div className="project-tech">
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className="project-tech-pill">
-                        {tech}
+                  <div className="project-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="project-tag">
+                        {tag}
                       </span>
                     ))}
                   </div>
