@@ -6,11 +6,11 @@ import './WhyUs.css';
 
 const reasons = [
   { icon: FiZap, title: 'Fast Delivery', desc: 'We deliver projects on time without compromising quality.', color: '#D97706' },
-  { icon: FiTarget, title: 'Result Focused', desc: 'Every strategy we build is designed to drive measurable outcomes.', color: '#480b79' },
-  { icon: FiUsers, title: 'Client-First Approach', desc: 'Your success is our success — we treat your business like our own.', color: '#7C3AED' },
-  { icon: FiBarChart2, title: 'Data-Driven', desc: 'Every decision is backed by data, research, and market insights.', color: '#0EA5E9' },
-  { icon: FiShield, title: 'Transparent Process', desc: 'No hidden costs. Clear communication at every stage.', color: '#480b79' },
-  { icon: FiClock, title: '24/7 Support', desc: 'We are always available to support your business needs.', color: '#D97706' },
+  { icon: FiTarget, title: 'Result Focused', desc: 'Every strategy we build is designed to drive measurable outcomes.', color: '#4C0E82' },
+  { icon: FiUsers, title: 'Client-First Approach', desc: 'Your success is our success — we treat your business like our own.', color: '#8B5CF6' },
+  { icon: FiBarChart2, title: 'Data-Driven', desc: 'Every decision is backed by data, research, and market insights.', color: '#4C0E82' },
+  { icon: FiShield, title: 'Transparent Process', desc: 'No hidden costs. Clear communication at every stage.', color: '#C2650C' },
+  { icon: FiClock, title: '24/7 Support', desc: 'We are always available to support your business needs.', color: '#8B5CF6' },
 ];
 
 const WhyUs = () => {
@@ -42,7 +42,7 @@ const WhyUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -6, boxShadow: '0 12px 40px rgba(72,11,121,0.15)' }}
+              whileHover={{ y: -6, boxShadow: '0 12px 40px rgba(76,14,130,0.15)' }}
             >
               <div className="whyus-icon" style={{ background: reason.color + '18' }}>
                 <reason.icon size={26} color={reason.color} />

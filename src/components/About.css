@@ -8,6 +8,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 80px;
   align-items: center;
+  padding-bottom: 80px;
 }
 
 .about-visual {
@@ -95,6 +96,12 @@
   padding: 20px;
   text-align: center;
   box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.about-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(72, 11, 121, 0.12);
 }
 
 .about-stat h4 {
@@ -149,10 +156,27 @@
   color: var(--ink);
 }
 
+/* ===========================
+   RESPONSIVE — TABLET LANDSCAPE
+============================= */
+@media (max-width: 1024px) {
+  .about-inner {
+    gap: 60px;
+  }
+
+  .about-card-main {
+    padding: 30px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — TABLET PORTRAIT
+============================= */
 @media (max-width: 900px) {
   .about-inner {
     grid-template-columns: 1fr;
     gap: 48px;
+    padding-bottom: 60px;
   }
   .about-title-arc { display: none; }
 }

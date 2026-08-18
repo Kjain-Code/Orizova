@@ -1,8 +1,11 @@
+/* ===========================
+   NAVBAR — SIMPLE & CLEAN
+=========================== */
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1000;
   padding: 22px 0;
   transition: all 0.4s cubic-bezier(.23,1,.32,1);
@@ -31,17 +34,19 @@
   border: 1.5px solid rgba(140, 92, 247, 0.12);
 }
 
+/* Logo */
 .navbar-logo {
   display: flex;
   align-items: center;
   gap: 10px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .navbar-logo img {
   height: 56px;
   width: auto;
-  display: block;
+  object-fit: contain;
 }
 
 .navbar-links {
@@ -68,6 +73,7 @@
   background: var(--lavender);
 }
 
+/* CTA */
 .navbar-cta {
   display: flex;
   align-items: center;
@@ -162,7 +168,7 @@
 }
 
 /* ===========================
-   MOBILE
+   RESPONSIVE — TABLET LANDSCAPE
 =========================== */
 
 @media (max-width:1010px){
@@ -178,27 +184,37 @@
   }
 
   .navbar-links,
-  .navbar-cta{
-    display:none;
+  .navbar-cta {
+    display: none;
   }
 
-  .menu-toggle{
-    display:block;
-    z-index:1001;
+  .menu-toggle {
+    display: block;
   }
 
-  .mobile-menu{
-    display:flex;
+  .navbar-logo-img {
+    height: 32px;
   }
 
   .navbar-logo img{
     height:48px;
   }
 
+  .navbar-logo-subtext {
+    font-size: 0.45rem;
+  }
+
+  .navbar {
+    padding: 14px 0;
+  }
+
+  .navbar.scrolled {
+    padding: 10px 0;
+  }
 }
 
 /* ===========================
-   DESKTOP
+   RESPONSIVE — SMALL MOBILE
 =========================== */
 
 @media (min-width:1011px){

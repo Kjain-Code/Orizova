@@ -55,9 +55,7 @@ const Projects = () => {
           {categories.map((cat) => (
             <button
               key={cat}
-              className={`filter-btn ${
-                active === cat ? "active" : ""
-              }`}
+              className={`filter-btn ${active === cat ? "active" : ""}`}
               onClick={() => setActive(cat)}
             >
               {cat}
@@ -73,23 +71,16 @@ const Projects = () => {
           className="projects-grid"
         >
           <AnimatePresence>
-
             {filtered.map((project) => (
-
               <motion.div
                 key={project.id}
                 layout
                 variants={cardVariants}
-                exit={{
-                  opacity: 0,
-                  scale: .8,
-                }}
-                whileHover={{
-                  y: -12,
-                  scale: 1.03,
-                }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                whileHover={{ y: -12, scale: 1.02 }}
                 className="project-card"
               >
+                <div className="project-card-glow" />
 
                 {project.image ? (
                   <div className="project-image-wrap">
@@ -124,18 +115,13 @@ const Projects = () => {
                 )}
 
                 <div className="project-content">
-
                   <h3>{project.title}</h3>
+                  <p>{project.description}</p>
 
-                  <p>{project.desc}</p>
-
-                  <div className="project-tags">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="project-tag"
-                      >
-                        {tag}
+                  <div className="project-tech">
+                    {project.technologies.map((tech) => (
+                      <span key={tech} className="project-tech-pill">
+                        {tech}
                       </span>
                     ))}
                   </div>
@@ -168,11 +154,8 @@ const Projects = () => {
                   )}
 
                 </div>
-
               </motion.div>
-
             ))}
-
           </AnimatePresence>
         </motion.div>
 
@@ -180,7 +163,7 @@ const Projects = () => {
           className="projects-cta text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: .8 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           <p>
@@ -193,9 +176,7 @@ const Projects = () => {
               <FiArrowRight />
             </button>
           </Link>
-
         </motion.div>
-
       </div>
     </section>
   );
