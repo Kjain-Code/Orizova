@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   FiMonitor,
   FiSmartphone,
@@ -11,6 +12,7 @@ import {
   FiArrowRight,
 } from "react-icons/fi";
 import services from "../data/services";
+import { SquiggleUnderline } from "./Doodles";
 import "./Services.css";
 
 const iconMap = {
@@ -45,7 +47,7 @@ const Services = () => {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section id="services" className="services-section">
+    <section className="services-section">
       <div className="container">
 
         <motion.div
@@ -58,7 +60,9 @@ const Services = () => {
           <span className="section-tag">What We Do</span>
 
           <h2 className="section-title">
-            Services That <span>Drive Results</span>
+            Services That <span>Drive Results
+              <SquiggleUnderline className="title-squiggle" />
+            </span>
           </h2>
 
           <p className="section-subtitle">
@@ -114,10 +118,10 @@ const Services = () => {
                     {service.shortDesc}
                   </p>
 
-                  <button className="service-btn">
-                    Learn
+                  <Link to="/services" className="service-btn">
+                    Learn More
                     <FiArrowRight />
-                  </button>
+                  </Link>
 
                 </div>
 

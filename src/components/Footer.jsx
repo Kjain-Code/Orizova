@@ -1,34 +1,50 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import CONTACT, { whatsappLink } from '../data/contact';
 import './Footer.css';
 import logo from '../assets/logo.png';
+
+const quickLinks = [
+  { name: 'Home', to: '/' },
+  { name: 'Services', to: '/services' },
+  { name: 'Portfolio', to: '/portfolio' },
+  { name: 'Creative Work', to: '/creative-work' },
+  { name: 'About', to: '/about' },
+  { name: 'Contact', to: '/contact' },
+];
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand">
-          <div className="footer-logo">
-  <img src={logo} alt="Orizova Co." style={{ height: '45px', objectFit: 'contain' }} />
-</div>
+          <Link to="/" className="footer-logo">
+            <img src={logo} alt="Orizova Co." style={{ height: '48px', objectFit: 'contain' }} />
+          </Link>
           <p>Your trusted digital growth partner. We build brands, drive traffic, and scale businesses across India and globally.</p>
           <div className="footer-contacts">
-            <a href="mailto:orizovadigital@gmail.com"><FiMail size={14}/> orizovadigital@gmail.com</a>
-            <a href="tel:+917505802687"><FiPhone size={14}/> +91 7505802687</a>
-            <a href="tel:+918527290722"><FiPhone size={14}/> +91 8527290722</a>
-            <span><FiMapPin size={14}/> India (Serving Globally)</span>
+            <a href={`mailto:${CONTACT.email}`}><FiMail size={14}/> {CONTACT.email}</a>
+            <a href={`tel:${CONTACT.phoneTel}`}><FiPhone size={14}/> {CONTACT.phoneDisplay}</a>
+            <span><FiMapPin size={14}/> {CONTACT.location}</span>
+          </div>
+          <div className="footer-socials">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <FaWhatsapp size={18} />
+            </a>
+            <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <FaInstagram size={18} />
+            </a>
           </div>
         </div>
 
         <div className="footer-links">
           <h4>Quick Links</h4>
           <ul>
-            {['home','services','projects','about','whyus','contact'].map(l => (
-              <li key={l}>
-                <Link to={l} smooth duration={600} offset={-80}>
-                  {l.charAt(0).toUpperCase() + l.slice(1)}
-                </Link>
+            {quickLinks.map(l => (
+              <li key={l.name}>
+                <Link to={l.to}>{l.name}</Link>
               </li>
             ))}
           </ul>
@@ -37,8 +53,8 @@ const Footer = () => {
         <div className="footer-links">
           <h4>Services</h4>
           <ul>
-            {['Website Development','App Development','Digital Marketing','Branding & Designing','SEO','E-Commerce Solutions','Content & Email Marketing'].map(s => (
-              <li key={s}><span>{s}</span></li>
+            {['Website Development','App Development','Digital Marketing','Branding & Designing','SEO','E-Commerce Solutions'].map(s => (
+              <li key={s}><Link to="/services">{s}</Link></li>
             ))}
           </ul>
         </div>

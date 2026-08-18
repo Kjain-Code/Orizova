@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight } from 'react-icons/fi';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import { ArrowDoodle, StarDoodle, SparkleDoodle, RocketCharacter } from './Doodles';
 import './Hero.css';
 import logo from '../assets/logo.png';
 
@@ -20,11 +21,13 @@ const floatingCards = [
   { icon: '⭐', title: 'Client First', value: '5.0', sub: 'Average Rating' },
 ];
 
+const marqueeItems = ['Web Development', 'App Development', 'SEO', 'Branding', 'Digital Marketing', 'E-Commerce'];
+
 const Hero = () => {
   const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
 
   return (
-    <section id="home" className="hero">
+    <section className="hero">
       <div className="hero-bg-shapes">
         <div className="shape shape-1" />
         <div className="shape shape-2" />
@@ -47,8 +50,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            From Strategy to <span className="highlight-gold">Scale</span> —<br />
-            We Build Growth <span className="highlight-purple">That Lasts</span>
+            From Strategy to <span className="highlight-gold gradient-text">Scale</span> —<br />
+            We Build Growth <span className="highlight-purple accent-serif">That Lasts</span>
+            <StarDoodle className="hero-title-star" />
           </motion.h1>
 
           <motion.p
@@ -66,12 +70,15 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <Link to="contact" smooth duration={600} offset={-80}>
-              <button className="btn-primary">
-                Get Free Consultation <FiArrowRight />
-              </button>
-            </Link>
-            <Link to="services" smooth duration={600} offset={-80}>
+            <div className="hero-cta-wrap">
+              <Link to="/contact">
+                <button className="btn-primary">
+                  Get Free Consultation <FiArrowRight />
+                </button>
+              </Link>
+              <ArrowDoodle className="hero-cta-doodle" />
+            </div>
+            <Link to="/services">
               <button className="btn-outline">
                 Our Services
               </button>
@@ -104,11 +111,19 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
+          <SparkleDoodle className="hero-visual-sparkle" />
+          <motion.div
+            className="hero-visual-rocket"
+            animate={{ y: [0, -12, 0], rotate: [-4, 4, -4] }}
+            transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <RocketCharacter />
+          </motion.div>
           <div className="hero-card-main">
             <img src={logo} alt="Orizova Co." style={{ height: '80px', objectFit: 'contain', marginBottom: '12px' }} />
             <p>Your Digital Growth Partner</p>
             <div className="services-chips">
-              {['Web Dev', 'App Dev', 'SEO', 'Branding', 'Marketing', 'E-Commerce'].map(s => (
+              {marqueeItems.map(s => (
                 <span key={s} className="chip">{s}</span>
               ))}
             </div>
@@ -130,6 +145,16 @@ const Hero = () => {
             </motion.div>
           ))}
         </motion.div>
+      </div>
+
+      <div className="hero-marquee">
+        <div className="marquee-track">
+          {[...marqueeItems, ...marqueeItems].map((item, i) => (
+            <span className="marquee-item" key={i}>
+              {item} <span className="marquee-dot">✦</span>
+            </span>
+          ))}
+        </div>
       </div>
 
       <motion.div

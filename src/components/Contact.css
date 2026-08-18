@@ -1,5 +1,6 @@
 .contact-section {
-  background: var(--lilac);
+  background: var(--paper);
+  position: relative;
 }
 
 .contact-inner {
@@ -9,9 +10,20 @@
   align-items: start;
 }
 
+.contact-info {
+  position: relative;
+}
+
+.contact-chat-character {
+  position: absolute;
+  top: -46px;
+  right: 0;
+  animation: doodle-float 4s ease-in-out infinite;
+}
+
 .contact-info h3 {
   font-size: 1.5rem;
-  color: var(--midnight);
+  color: var(--ink);
   margin-bottom: 10px;
 }
 
@@ -57,7 +69,7 @@
 .info-item span {
   font-size: 15px;
   font-weight: 600;
-  color: var(--midnight);
+  color: var(--ink);
 }
 
 .info-item a:hover {
@@ -77,9 +89,12 @@
 }
 
 .social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 16px;
   border-radius: 100px;
-  background: white;
+  background: var(--paper);
   border: 1.5px solid var(--lavender);
   font-size: 13px;
   font-weight: 600;
@@ -95,13 +110,14 @@
 
 /* Form */
 .contact-form {
-  background: white;
+  background: var(--cream);
   border-radius: var(--radius-lg);
   padding: 40px;
   box-shadow: var(--shadow-lg);
   display: flex;
   flex-direction: column;
   gap: 20px;
+  border: 1.5px solid var(--lavender);
 }
 
 .form-row {
@@ -119,7 +135,7 @@
 .form-group label {
   font-size: 13px;
   font-weight: 700;
-  color: var(--midnight);
+  color: var(--ink);
 }
 
 .form-group input,
@@ -131,7 +147,7 @@
   font-size: 14px;
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text);
-  background: var(--lilac);
+  background: var(--paper);
   transition: all 0.3s ease;
   outline: none;
   resize: none;
@@ -142,7 +158,7 @@
 .form-group textarea:focus {
   border-color: var(--primary);
   background: white;
-  box-shadow: 0 0 0 3px rgba(72, 11, 121, 0.08);
+  box-shadow: 0 0 0 3px rgba(76, 14, 130, 0.10);
 }
 
 .submit-btn {
@@ -155,4 +171,5 @@
 @media (max-width: 900px) {
   .contact-inner { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
+  .contact-title-star { display: none; }
 }

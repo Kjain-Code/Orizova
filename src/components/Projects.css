@@ -3,9 +3,17 @@
 ================================ */
 
 .projects-section{
-    background:linear-gradient(180deg,#ffffff,#faf8ff);
+    background: var(--lilac);
     padding:120px 0;
     overflow:hidden;
+}
+
+.title-squiggle {
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  width: 100%;
+  height: 12px;
 }
 
 /* ===============================
@@ -24,20 +32,22 @@
     padding:10px 22px;
     border:none;
     border-radius:50px;
-    background:#f3efff;
-    color:#666;
+    background:var(--paper);
+    color:var(--text-light);
     font-size:13px;
     font-weight:600;
     cursor:pointer;
     transition:.35s;
+    border:1.5px solid var(--lavender);
 }
 
 .filter-btn:hover,
 .filter-btn.active{
-    background:linear-gradient(135deg,#7c3aed,#8b5cf6);
+    background: var(--grad-primary);
     color:#fff;
+    border-color: transparent;
     transform:translateY(-2px);
-    box-shadow:0 12px 30px rgba(124,58,237,.25);
+    box-shadow:0 12px 30px rgba(76,14,130,.22);
 }
 
 /* ===============================
@@ -59,9 +69,8 @@
     position:relative;
     overflow:hidden;
     border-radius:24px;
-    background:rgba(255,255,255,.75);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(124,58,237,.08);
+    background: var(--paper);
+    border:1.5px solid var(--lavender);
     transition:.5s cubic-bezier(.23,1,.32,1);
 }
 
@@ -71,8 +80,8 @@
     inset:0;
     background:linear-gradient(
         135deg,
-        rgba(124,58,237,.07),
-        rgba(59,130,246,.05)
+        rgba(139,92,246,.08),
+        rgba(245,166,35,.06)
     );
     opacity:0;
     transition:.5s;
@@ -88,7 +97,7 @@
     background:linear-gradient(
         120deg,
         transparent,
-        rgba(255,255,255,.55),
+        rgba(255,255,255,.6),
         transparent
     );
     transform:rotate(20deg);
@@ -106,8 +115,48 @@
 .project-card:hover{
     transform:translateY(-14px);
     box-shadow:
-        0 30px 60px rgba(0,0,0,.08),
-        0 10px 30px rgba(124,58,237,.18);
+        0 30px 60px rgba(76,14,130,.10),
+        0 10px 30px rgba(139,92,247,.18);
+}
+
+/* ===============================
+   IMAGE (real project thumbnail)
+================================ */
+
+.project-image-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    background: linear-gradient(180deg, var(--lilac), var(--lavender));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform .6s cubic-bezier(.23,1,.32,1);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.06);
+}
+
+.project-category-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
 }
 
 /* ===============================
@@ -146,18 +195,19 @@
 }
 
 .project-content h3{
+    font-family:'Syne', sans-serif;
     font-size:22px;
     margin-bottom:12px;
-    color:#111827;
+    color:var(--ink);
     transition:.35s;
 }
 
 .project-card:hover h3{
-    color:#f0061a;
+    color:var(--primary);
 }
 
 .project-content p{
-    color:#666;
+    color:var(--text-light);
     line-height:1.8;
     font-size:14px;
     margin-bottom:18px;
@@ -177,15 +227,16 @@
 .project-tag{
     padding:6px 12px;
     border-radius:30px;
-    background:#fff;
-    border:1px solid #ececec;
+    background:var(--cream);
+    border:1px solid var(--lavender);
     font-size:12px;
     transition:.3s;
 }
 
 .project-tag:hover{
-    background:#7c3aed;
+    background:var(--primary);
     color:#fff;
+    border-color: var(--primary);
     transform:translateY(-2px);
 }
 
@@ -201,6 +252,7 @@
     font-weight:600;
     font-size:13px;
     margin-bottom:18px;
+    border: 1.5px solid;
 }
 
 /* ===============================
@@ -212,7 +264,7 @@
     padding:14px;
     border:none;
     border-radius:14px;
-    background:#111827;
+    background:var(--ink);
     color:#fff;
     font-weight:600;
     display:flex;
@@ -233,7 +285,7 @@
 }
 
 .project-btn:hover{
-    background:#7c3aed;
+    background:var(--primary);
 }
 
 /* ===============================
@@ -248,7 +300,7 @@
 .projects-cta p{
     margin-bottom:25px;
     font-size:17px;
-    color:#666;
+    color:var(--text-light);
 }
 
 /* ===============================

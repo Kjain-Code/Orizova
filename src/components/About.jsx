@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiCheckCircle, FiArrowRight } from 'react-icons/fi';
-import { Link } from 'react-scroll';
+import { Link } from 'react-router-dom';
+import { LoopArc, StarDoodle } from './Doodles';
 import './About.css';
 
 const points = [
@@ -15,7 +16,7 @@ const points = [
 
 const About = () => {
   return (
-    <section id="about" className="about-section">
+    <section className="about-section">
       <div className="container about-inner">
         {/* Left Visual */}
         <motion.div
@@ -25,6 +26,7 @@ const About = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
+          <StarDoodle className="about-star" />
           <div className="about-card-main">
             <div className="about-logo">◎</div>
             <h3>Orizova Co.</h3>
@@ -61,9 +63,10 @@ const About = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <span className="section-tag">Who We Are</span>
+          <span className="section-tag">Our Story</span>
           <h2 className="section-title">
-            A Team That Turns <span>Vision Into Reality</span>
+            Why <span className="accent-serif">Orizova</span> Exists
+            <LoopArc className="about-title-arc" />
           </h2>
           <p className="about-desc">
             At Orizova Co., we are more than just a digital agency — we are your growth partners. Based in India, we serve businesses globally with cutting-edge digital solutions that deliver real, measurable results.
@@ -88,7 +91,7 @@ const About = () => {
             ))}
           </div>
 
-          <Link to="contact" smooth duration={600} offset={-80}>
+          <Link to="/contact">
             <button className="btn-primary" style={{ marginTop: '32px' }}>
               Work With Us <FiArrowRight />
             </button>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FiZap, FiTarget, FiUsers, FiBarChart2, FiShield, FiClock } from 'react-icons/fi';
+import { SquiggleUnderline } from './Doodles';
 import './WhyUs.css';
 
 const reasons = [
@@ -14,15 +15,23 @@ const reasons = [
 
 const WhyUs = () => {
   return (
-    <section id="whyus" className="whyus-section">
+    <section className="whyus-section">
       <div className="container">
-        <div className="text-center" data-aos="fade-up">
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
           <span className="section-tag">Why Choose Us</span>
-          <h2 className="section-title">The <span>Orizova Advantage</span></h2>
+          <h2 className="section-title">
+            The <span>Orizova Advantage<SquiggleUnderline className="title-squiggle" /></span>
+          </h2>
           <p className="section-subtitle">
             We don't just deliver services — we deliver growth. Here's what makes us different.
           </p>
-        </div>
+        </motion.div>
 
         <div className="whyus-grid">
           {reasons.map((reason, i) => (

@@ -4,9 +4,17 @@
 
 .services-section{
     position:relative;
-    background:linear-gradient(180deg,#ffffff 0%,#faf8ff 100%);
+    background: var(--cream);
     padding:120px 0;
     overflow:hidden;
+}
+
+.title-squiggle {
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  width: 100%;
+  height: 12px;
 }
 
 /* ===============================
@@ -29,9 +37,8 @@
     overflow:hidden;
     padding:35px;
     border-radius:24px;
-    background:rgba(236, 236, 236, 0.82);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(229, 218, 218, 0.759);
+    background: var(--paper);
+    border:1.5px solid var(--lavender);
 
     transition:
         transform .55s cubic-bezier(.23,1,.32,1),
@@ -48,7 +55,7 @@
     inset:0;
     background:
     radial-gradient(circle at top right,
-    rgba(124,58,237,.18),
+    rgba(139,92,246,.16),
     transparent 65%);
     opacity:0;
     transition:.5s;
@@ -75,7 +82,7 @@ height:350%;
 background:linear-gradient(
 120deg,
 transparent,
-rgba(255,255,255,.55),
+rgba(255,255,255,.6),
 transparent
 );
 
@@ -101,15 +108,15 @@ position:absolute;
 
 inset:0;
 
-padding:1px;
+padding:1.5px;
 
 border-radius:24px;
 
 background:linear-gradient(
 135deg,
-rgba(93, 18, 223, 0.889),
-rgba(59,130,246,.25),
-rgba(124,58,237,.4)
+rgba(76,14,130,.7),
+rgba(245,166,35,.5),
+rgba(139,92,246,.5)
 );
 
 -webkit-mask:
@@ -139,8 +146,8 @@ rotateX(4deg)
 rotateY(-4deg);
 
 box-shadow:
-0 35px 70px rgba(0, 0, 0, 0.371),
-0 15px 40px rgba(124,58,237,.18);
+0 35px 70px rgba(76,14,130,.14),
+0 15px 40px rgba(139,92,247,.18);
 
 }
 
@@ -190,13 +197,14 @@ z-index:2;
 
 .service-title{
 
+font-family:'Syne', sans-serif;
 font-size:22px;
 
 font-weight:700;
 
 margin-bottom:14px;
 
-color:#111827;
+color:var(--ink);
 
 transition:.35s;
 
@@ -204,7 +212,7 @@ transition:.35s;
 
 .service-card:hover .service-title{
 
-color:#7c3aed;
+color:var(--primary);
 
 }
 
@@ -214,7 +222,7 @@ font-size:14px;
 
 line-height:1.8;
 
-color:#6b7280;
+color:var(--text-light);
 
 margin-bottom:24px;
 
@@ -236,7 +244,7 @@ border:none;
 
 border-radius:14px;
 
-background:#111827;
+background:var(--ink);
 
 color:white;
 
@@ -270,7 +278,7 @@ transform:translateY(0);
 
 .service-btn:hover{
 
-background:#7c3aed;
+background:var(--primary);
 
 }
 
@@ -294,7 +302,7 @@ border-radius:50%;
 
 filter:blur(90px);
 
-opacity:.08;
+opacity:.10;
 
 transition:.5s;
 
@@ -304,7 +312,7 @@ transition:.5s;
 
 transform:scale(1.4);
 
-opacity:.18;
+opacity:.22;
 
 }
 

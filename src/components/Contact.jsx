@@ -1,66 +1,38 @@
 import React, { useState } from 'react';
-import { supabase } from "../lib/supabase";
-
 import { motion } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import { ChatCharacter } from './Doodles';
+import CONTACT, { whatsappLink } from '../data/contact';
 import './Contact.css';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
   const [sent, setSent] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  // No backend yet — this opens the visitor's email client with the enquiry
+  // pre-filled, addressed to us. Once the backend is ready this can be
+  // swapped for a real API call without touching the form UI.
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  setLoading(true);
+    const subject = encodeURIComponent(`New Enquiry from ${form.name || 'Website'}${form.service ? ` — ${form.service}` : ''}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || '-'}\nService: ${form.service || '-'}\n\nMessage:\n${form.message}`
+    );
 
-  const { error } = await supabase
-    .from("contact_leads")
-    .insert([
-      {
-        name: form.name,
-        email: form.email,
-        phone: form.phone,
-        service: form.service,
-        message: form.message,
-      },
-    ]);
+    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
 
-  setLoading(false);
-
-  if (error) {
-    console.error(error);
-    alert("❌ Failed to send message.");
-    return;
-  }
-
-  setSent(true);
-
-  setTimeout(() => setSent(false), 4000);
-
-  setForm({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-};
+    setSent(true);
+    setTimeout(() => setSent(false), 4000);
+    setForm({ name: '', email: '', phone: '', service: '', message: '' });
+  };
 
   return (
-    <section id="contact" className="contact-section">
+    <section className="contact-section">
       <div className="container">
-        <div className="text-center" data-aos="fade-up">
-          <span className="section-tag">Get In Touch</span>
-          <h2 className="section-title">Let's <span>Grow Together</span></h2>
-          <p className="section-subtitle">
-            Ready to take your business to the next level? Let's talk about how Orizova Co. can help you scale.
-          </p>
-        </div>
-
         <div className="contact-inner">
           <motion.div
             className="contact-info"
@@ -69,6 +41,7 @@ const handleSubmit = async (e) => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
+            <ChatCharacter className="contact-chat-character" />
             <h3>Contact Information</h3>
             <p>We're here to help. Reach out to us through any of these channels.</p>
 
@@ -77,21 +50,21 @@ const handleSubmit = async (e) => {
                 <div className="info-icon"><FiMail size={20} /></div>
                 <div>
                   <strong>Email Us</strong>
-                  <a href="mailto:orizovadigital@gmail.com">orizovadigital@gmail.com</a>
+                  <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon"><FiPhone size={20} /></div>
                 <div>
                   <strong>Call Us</strong>
-                  <a href="tel:+917505802687">+91 7505802687</a>
+                  <a href={`tel:${CONTACT.phoneTel}`}>{CONTACT.phoneDisplay}</a>
                 </div>
               </div>
               <div className="info-item">
                 <div className="info-icon"><FiMapPin size={20} /></div>
                 <div>
                   <strong>Location</strong>
-                  <span>India (Serving Globally)</span>
+                  <span>{CONTACT.location}</span>
                 </div>
               </div>
             </div>
@@ -99,9 +72,12 @@ const handleSubmit = async (e) => {
             <div className="contact-social">
               <p>Follow us on</p>
               <div className="social-links">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-btn">LinkedIn</a>
-                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-btn">Instagram</a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-btn">Twitter</a>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="social-btn">
+                  <FaWhatsapp size={16} /> WhatsApp
+                </a>
+                <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" className="social-btn">
+                  <FaInstagram size={16} /> Instagram
+                </a>
               </div>
             </div>
           </motion.div>
@@ -147,21 +123,13 @@ const handleSubmit = async (e) => {
               <label>Your Message *</label>
               <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={5} required />
             </div>
-            <button
-  type="submit"
-  className="btn-primary submit-btn"
-  disabled={loading}
->
-  {loading
-    ? "Sending..."
-    : sent
-    ? "✅ Message Sent!"
-    : (
-      <>
-        <FiSend /> Send Message
-      </>
-    )}
-</button>
+            <button type="submit" className="btn-primary submit-btn">
+              {sent ? "✅ Opening your email app..." : (
+                <>
+                  <FiSend /> Send Message
+                </>
+              )}
+            </button>
           </motion.form>
         </div>
       </div>

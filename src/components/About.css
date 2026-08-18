@@ -1,5 +1,6 @@
 .about-section {
   background: var(--lilac);
+  position: relative;
 }
 
 .about-inner {
@@ -13,19 +14,34 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  position: relative;
+}
+
+.about-star {
+  position: absolute;
+  top: -18px;
+  right: 10%;
+  animation: doodle-float 3.8s ease-in-out infinite;
+  z-index: 2;
 }
 
 .about-card-main {
-  background: white;
+  background: var(--paper);
   border-radius: var(--radius-lg);
   padding: 36px;
   box-shadow: var(--shadow-lg);
   border: 1.5px solid var(--lavender);
+  transform: rotate(-1.5deg);
+  transition: transform 0.4s ease;
+}
+
+.about-card-main:hover {
+  transform: rotate(0deg);
 }
 
 .about-logo {
   font-size: 3rem;
-  color: var(--gold);
+  color: var(--gold-deep);
   margin-bottom: 12px;
 }
 
@@ -58,7 +74,7 @@
 .about-badge strong {
   display: block;
   font-size: 14px;
-  color: var(--midnight);
+  color: var(--ink);
 }
 
 .about-badge p {
@@ -74,7 +90,7 @@
 }
 
 .about-stat {
-  background: white;
+  background: var(--paper);
   border-radius: var(--radius);
   padding: 20px;
   text-align: center;
@@ -99,6 +115,18 @@
   gap: 16px;
 }
 
+.about-content > .section-tag,
+.about-content > a {
+  align-self: flex-start;
+}
+
+.about-title-arc {
+  position: absolute;
+  top: -30px;
+  right: -10px;
+  opacity: 0.85;
+}
+
 .about-desc {
   font-size: 15px;
   color: var(--text-light);
@@ -118,7 +146,7 @@
   gap: 12px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--midnight);
+  color: var(--ink);
 }
 
 @media (max-width: 900px) {
@@ -126,4 +154,5 @@
     grid-template-columns: 1fr;
     gap: 48px;
   }
+  .about-title-arc { display: none; }
 }

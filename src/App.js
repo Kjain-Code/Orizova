@@ -1,78 +1,73 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { AnimatePresence } from 'framer-motion';
 
+import Preloader from './components/Preloader';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import About from './components/About';
-import WhyUs from './components/WhyUs';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Projects from './components/Projects';
+import FloatingButtons from './components/FloatingButtons';
+import ScrollToTop from './components/ScrollToTop';
+import ScrollProgress from './components/ScrollProgress';
+
+import Home from './pages/Home';
+import ServicesPage from './pages/ServicesPage';
+import Portfolio from './pages/Portfolio';
+import CreativeWork from './pages/CreativeWork';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
+import NotFound from './pages/NotFound';
+
+// Animates pages in/out on route change (needs to live under <BrowserRouter>
+// so it can read the current location).
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<ServicesPage />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/creative-work" element={<CreativeWork />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    AOS.init({ duration: 700, once: true, easing: 'ease-out-cubic' });
+    const timer = setTimeout(() => setLoading(false), 1100);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
     <HelmetProvider>
       <Helmet>
-        <title>Orizova Co. | Digital Marketing & Web Development Agency India</title>
-        <meta name="description" content="Orizova Co. is a full-service digital agency offering website development, app development, SEO, social media marketing, branding, and e-commerce solutions across India." />
-        <meta name="keywords" content="digital marketing agency India, website development company, SEO services India, app development, social media marketing, branding agency, e-commerce solutions, performance marketing, Orizova" />
-        <meta property="og:title" content="Orizova Co. | Digital Growth Agency" />
-        <meta property="og:description" content="From strategy to scale — we build growth that lasts." />
         <meta name="robots" content="index, follow" />
+        <meta name="theme-color" content="#FDF6EC" />
         <link rel="canonical" href="https://orizova.com" />
       </Helmet>
 
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <WhyUs />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
+      <AnimatePresence>
+        {loading && <Preloader />}
+      </AnimatePresence>
 
-      {/* WhatsApp Float */}
-      <a
-        // href="https://wa.me/917505802687"
-        href="https://wa.me/917505802687?text=Hi%20Orizova%20Co.%2C%20I%20want%20to%20discuss%20a%20project"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float"
-      >
-        💬
-      </a>
+      <BrowserRouter>
+        <ScrollToTop />
+        <ScrollProgress />
+        <Navbar />
+        <main>
+          <AnimatedRoutes />
+        </main>
+        <Footer />
+      </BrowserRouter>
 
-      <style>{`
-        .whatsapp-float {
-          position: fixed;
-          bottom: 32px;
-          right: 32px;
-          width: 56px;
-          height: 56px;
-          background: #25D366;
-          border-radius: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 1.6rem;
-          box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-          z-index: 999;
-          transition: transform 0.3s ease;
-          text-decoration: none;
-        }
-        .whatsapp-float:hover {
-          transform: scale(1.1);
-        }
-      `}</style>
+      <FloatingButtons />
     </HelmetProvider>
   );
 }

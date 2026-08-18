@@ -1,65 +1,53 @@
+import vamaImg from '../assets/portfolio/vama-clinics.jpg';
+import wipoImg from '../assets/portfolio/wipo-group.jpg';
+import ganeshImg from '../assets/portfolio/ganesh-creation.jpg';
+import fpsImg from '../assets/portfolio/fps-subtitle.jpg';
+
 const projects = [
   {
     id: 1,
-    title: "E-Commerce Fashion Store",
-    category: "E-Commerce",
-    desc: "Built a full-stack Shopify store with custom UI, payment integration, and 40% conversion boost.",
-    tags: ["Shopify", "UI/UX", "Payment Gateway"],
-    color: "#480b79",
-    emoji: "🛍️",
-    result: "40% ↑ Conversions"
+    title: "Vama Advanced Hair & Skin Clinic",
+    category: "Website Development",
+    desc: "A multi-city clinic website for Vama Advanced Hair & Skin, with treatment listings, doctor profiles, and an integrated appointment booking flow across 6 locations in North India.",
+    tags: ["Healthcare", "Booking Flow", "Multi-Location"],
+    color: "#4C0E82",
+    image: vamaImg,
+    link: "https://www.vamaclinics.com/",
+    result: "Live — 6 Clinics Onboarded",
   },
-  
   {
     id: 2,
-    title: "Real Estate Lead Gen Website",
+    title: "WIPO Group",
     category: "Website Development",
-    desc: "Designed a high-converting landing page that generated 500+ qualified leads in first month.",
-    tags: ["React", "SEO", "Lead Gen"],
-    color: "#7C3AED",
-    emoji: "🏠",
-    result: "500+ Leads / Month"
+    desc: "An interactive fractional real-estate investment portal with a live wallet dashboard, property listings, and a coin-trading interface.",
+    tags: ["Real Estate", "FinTech", "Dashboard UI"],
+    color: "#8B5CF6",
+    image: wipoImg,
+    link: "https://wipogroupinllc.com/",
+    result: "Live Investment Platform",
   },
   {
     id: 3,
-    title: "Restaurant Mobile App",
-    category: "App Development",
-    desc: "Developed iOS & Android app with online ordering, table booking, and loyalty rewards system.",
-    tags: ["React Native", "Firebase", "UX"],
-    color: "#D97706",
-    emoji: "🍽️",
-    result: "4.8★ App Rating"
+    title: "Ganesh Creation",
+    category: "Website Development",
+    desc: "A cinematic portfolio website for a pan-India wedding and fashion photography studio, with an animated intro loader, filterable gallery, and team showcase.",
+    tags: ["Photography", "Portfolio Site", "Animation"],
+    color: "#C2650C",
+    image: ganeshImg,
+    link: "https://www.ganeshcreation.online/",
+    result: "Live Studio Portfolio",
   },
   {
     id: 4,
-    title: "D2C Brand Social Media Growth",
-    category: "Digital Marketing",
-    desc: "Grew a D2C skincare brand from 2K to 50K followers with viral content strategy in 3 months.",
-    tags: ["Instagram", "Content", "Reels"],
-    color: "#0EA5E9",
-    emoji: "📱",
-    result: "2K → 50K Followers"
+    title: "FPS Subtitle",
+    category: "Website Development",
+    desc: "A corporate website for a Bollywood subtitling, translation, and localization studio, with rotating multilingual hero messaging and a full service breakdown.",
+    tags: ["Localization", "Corporate Site", "Multilingual"],
+    color: "#FF6B4A",
+    image: fpsImg,
+    link: "https://fpssubtitle.com/",
+    result: "Live Corporate Site",
   },
-  {
-    id: 5,
-    title: "SaaS Company Branding",
-    category: "Branding",
-    desc: "Complete brand identity — logo, color system, UI kit, pitch deck, and LinkedIn presence.",
-    tags: ["Logo", "Brand Kit", "Pitch Deck"],
-    color: "#480b79",
-    emoji: "🎨",
-    result: "Full Brand Identity"
-  },
-  {
-    id: 6,
-    title: "Healthcare SEO Campaign",
-    category: "SEO",
-    desc: "Ranked a healthcare clinic on Page 1 Google for 25+ keywords, tripling organic traffic.",
-    tags: ["On-Page SEO", "Backlinks", "Content"],
-    color: "#7C3AED",
-    emoji: "🏥",
-    result: "3x Organic Traffic"
-  }
 ];
 
 export default projects;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
-import { Link } from "react-scroll";
+import { Link } from "react-router-dom";
 import projects from "../data/projects";
 import "./Projects.css";
 
@@ -48,27 +48,8 @@ const Projects = () => {
       : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="projects-section">
+    <section className="projects-section">
       <div className="container">
-
-        <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .8 }}
-          viewport={{ once: true }}
-        >
-          <span className="section-tag">Our Work</span>
-
-          <h2 className="section-title">
-            Projects That <span>Speak Results</span>
-          </h2>
-
-          <p className="section-subtitle">
-            Real projects. Real results. See how we've helped businesses grow
-            across industries.
-          </p>
-        </motion.div>
 
         <div className="project-filters">
           {categories.map((cat) => (
@@ -110,25 +91,37 @@ const Projects = () => {
                 className="project-card"
               >
 
-                <div
-                  className="project-top"
-                  style={{
-                    background: `${project.color}15`,
-                  }}
-                >
-                  <span className="project-emoji">
-                    {project.emoji}
-                  </span>
-
-                  <span
-                    className="project-category"
+                {project.image ? (
+                  <div className="project-image-wrap">
+                    <img src={project.image} alt={project.title} className="project-image" />
+                    <span
+                      className="project-category project-category-badge"
+                      style={{ color: project.color, background: '#fff' }}
+                    >
+                      {project.category}
+                    </span>
+                  </div>
+                ) : (
+                  <div
+                    className="project-top"
                     style={{
-                      color: project.color,
+                      background: `${project.color}15`,
                     }}
                   >
-                    {project.category}
-                  </span>
-                </div>
+                    <span className="project-emoji">
+                      {project.emoji}
+                    </span>
+
+                    <span
+                      className="project-category"
+                      style={{
+                        color: project.color,
+                      }}
+                    >
+                      {project.category}
+                    </span>
+                  </div>
+                )}
 
                 <div className="project-content">
 
@@ -157,10 +150,22 @@ const Projects = () => {
                     ✅ {project.result}
                   </div>
 
-                  <button className="project-btn">
-                    View Project
-                    <FiExternalLink />
-                  </button>
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-btn"
+                    >
+                      {project.linkLabel || "Visit Website"}
+                      <FiExternalLink />
+                    </a>
+                  ) : (
+                    <Link to="/contact" className="project-btn">
+                      Start a Project Like This
+                      <FiExternalLink />
+                    </Link>
+                  )}
 
                 </div>
 
@@ -182,12 +187,7 @@ const Projects = () => {
             Want results like these for your business?
           </p>
 
-          <Link
-            to="contact"
-            smooth
-            duration={600}
-            offset={-80}
-          >
+          <Link to="/contact">
             <button className="btn-primary">
               Start Your Project
               <FiArrowRight />
