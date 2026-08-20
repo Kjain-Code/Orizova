@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiExternalLink, FiFilm } from 'react-icons/fi';
 import creativeWork from '../data/creativeWork';
 import { StarDoodle } from './Doodles';
+import CreativeRingGallery from './CreativeRingGallery';
 import './CreativeWorkSections.css';
 
 const categories = [
@@ -12,8 +11,6 @@ const categories = [
   'Reels & Social Content',
   'Showreel — Best Work',
 ];
-
-const accentColors = ['#4C0E82', '#8B5CF6', '#C2650C', '#FF6B4A'];
 
 const CreativeWorkSections = () => {
   const [active, setActive] = useState('All');
@@ -47,43 +44,8 @@ const CreativeWorkSections = () => {
           ))}
         </div>
 
-        <motion.div layout className="creative-grid">
-          <AnimatePresence>
-            {filtered.map((item, i) => {
-              const color = accentColors[i % accentColors.length];
-              return (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.85 }}
-                  transition={{ duration: 0.4 }}
-                  whileHover={{ y: -8 }}
-                  className="creative-card"
-                >
-                  <div className="creative-card-media">
-                    {item.thumbnail ? (
-                      <img src={item.thumbnail} alt={item.title} />
-                    ) : (
-                      <div className="creative-card-fallback" style={{ background: `${color}18` }}>
-                        <span>🎬</span>
-                      </div>
-                    )}
-                    <span className="creative-play-badge"><FiFilm size={13} /> Video</span>
-                  </div>
-                  <div className="creative-card-body">
-                    <span className="creative-card-category" style={{ color }}>{item.category}</span>
-                    <h3>{item.title}</h3>
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="creative-card-link">
-                      {item.linkLabel || 'Watch Video'} <FiExternalLink size={14} />
-                    </a>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+        <CreativeRingGallery items={filtered} />
+        <p className="ring-hint">Click any card to play the video</p>
       </div>
     </section>
   );

@@ -1,14 +1,6 @@
-.floating-buttons {
+.float-btn {
   position: fixed;
   bottom: 28px;
-  right: 28px;
-  z-index: 999;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.float-btn {
   width: 54px;
   height: 54px;
   border-radius: 50%;
@@ -16,6 +8,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+  z-index: 999;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -23,24 +16,54 @@
   transform: scale(1.1);
 }
 
-.float-whatsapp {
-  background: #25D366;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
-}
-
 .float-insta {
+  left: 28px;
   background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   box-shadow: 0 4px 20px rgba(214, 36, 159, 0.4);
 }
 
+.float-whatsapp {
+  right: 28px;
+  background: #25D366;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.45);
+}
+
+.float-tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background: var(--ink, #241832);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.float-tooltip::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--ink, #241832);
+}
+
+.float-whatsapp:hover .float-tooltip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
 @media (max-width: 600px) {
-  .floating-buttons {
-    bottom: 18px;
-    right: 18px;
-    gap: 10px;
-  }
-  .float-btn {
-    width: 48px;
-    height: 48px;
-  }
+  .float-btn { width: 48px; height: 48px; bottom: 18px; }
+  .float-insta { left: 18px; }
+  .float-whatsapp { right: 18px; }
+  .float-tooltip { display: none; }
 }

@@ -4,10 +4,11 @@ import CONTACT, { whatsappLink } from '../data/contact';
 import './FloatingButtons.css';
 
 /* Permanent floating action buttons, present on every page. Real icons,
-   real links — no placeholders. */
+   real links — no placeholders. Instagram sits bottom-left, WhatsApp
+   bottom-right (with a "Chat with us" tooltip on hover). */
 const FloatingButtons = () => {
   return (
-    <div className="floating-buttons">
+    <>
       <a
         href={CONTACT.instagramUrl}
         target="_blank"
@@ -17,6 +18,7 @@ const FloatingButtons = () => {
       >
         <FaInstagram size={24} />
       </a>
+
       <a
         href={whatsappLink}
         target="_blank"
@@ -25,8 +27,9 @@ const FloatingButtons = () => {
         aria-label="Chat with us on WhatsApp"
       >
         <FaWhatsapp size={26} />
+        <span className="float-tooltip">Chat with us</span>
       </a>
-    </div>
+    </>
   );
 };
 
