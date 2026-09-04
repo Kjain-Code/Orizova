@@ -2,7 +2,6 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import PageBanner from '../components/PageBanner';
 import About from '../components/About';
-import Founders from '../components/Founders';
 import CtaBand from '../components/CtaBand';
 import PageTransition from '../components/PageTransition';
 
@@ -11,7 +10,7 @@ const AboutPage = () => {
     <PageTransition>
       <Helmet>
         <title>About Us | Orizova Co. — Digital Growth Agency, India</title>
-        <meta name="description" content="Meet Orizova Co. — a full-service digital agency founded by Kritika Jain and Ritik, helping brands across India grow smarter and stronger online." />
+        <meta name="description" content="Meet Orizova Co. — a full-service digital agency helping brands across India grow smarter and stronger online." />
       </Helmet>
 
       <PageBanner
@@ -21,7 +20,6 @@ const AboutPage = () => {
         subtitle="We're a full-service digital agency helping businesses grow smarter, faster, and stronger in the digital world."
       />
       <About />
-      <Founders />
       <CtaBand
         title="Let's Work Together"
         subtitle="Have a project in mind? We'd love to hear about it."
