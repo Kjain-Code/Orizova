@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import CONTACT from '../data/contact';
 
-const SITE_URL = (process.env.REACT_APP_SITE_URL || process.env.NEXT_PUBLIC_SITE_URL || 'https://orizova.com').replace(/\/$/, '');
+const SITE_URL = (process.env.REACT_APP_SITE_URL || 'https://orizovadigital.co.in').replace(/\/$/, '');
 const SITE_NAME = 'Orizova Co.';
 const DEFAULT_IMAGE = `${SITE_URL}/logo512.png`;
 

@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
-import Seo from '../components/Seo';
+import Seo, { SITE_URL } from '../components/Seo';
 import services from '../data/services';
 import NotFound from './NotFound';
 
@@ -61,6 +61,7 @@ const ServicePage = () => {
             provider: { '@type': 'Organization', name: 'Orizova Co.' },
             areaServed: 'India and global clients',
             serviceType: service.title,
+            url: `${SITE_URL}/services/${service.slug}`,
           },
           ...(faqs.length ? [{
             '@context': 'https://schema.org',

@@ -4,4 +4,4 @@ Disallow: /search
 Disallow: /admin
 Disallow: /api/
 
-Sitemap: https://orizova.com/sitemap.xml
+Sitemap: https://orizovadigital.co.in/sitemap.xml

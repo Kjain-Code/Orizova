@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from '../components/Seo';
+import { SITE_URL } from '../components/Seo';
 import services from '../data/services';
 import PageBanner from '../components/PageBanner';
 import ServicesDetail from '../components/ServicesDetail';
@@ -18,7 +19,7 @@ const ServicesPage = () => {
           description: service.fullDesc,
           provider: { '@type': 'Organization', name: 'Orizova Co.' },
           areaServed: 'India and global clients',
-          url: 'https://orizova.com/services',
+          url: `${SITE_URL}/services`,
         }))}
       />
 
