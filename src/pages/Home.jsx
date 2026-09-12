@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import WhyUs from '../components/WhyUs';
@@ -10,12 +10,7 @@ import PageTransition from '../components/PageTransition';
 const Home = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>Orizova Co. | Digital Marketing & Web Development Agency India</title>
-        <meta name="description" content="Orizova Co. is a full-service digital agency offering website development, app development, SEO, social media marketing, branding, and e-commerce solutions across India." />
-        <meta property="og:title" content="Orizova Co. | Digital Growth Agency" />
-        <meta property="og:description" content="From strategy to scale — we build growth that lasts." />
-      </Helmet>
+      <Seo page="home" />
 
       <Hero />
       <Services />

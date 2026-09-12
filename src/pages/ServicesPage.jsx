@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
+import services from '../data/services';
 import PageBanner from '../components/PageBanner';
 import ServicesDetail from '../components/ServicesDetail';
 import CtaBand from '../components/CtaBand';
@@ -8,10 +9,18 @@ import PageTransition from '../components/PageTransition';
 const ServicesPage = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>Our Services | Orizova Co. — Web, App, SEO, Branding & Marketing</title>
-        <meta name="description" content="Explore Orizova Co.'s full range of services — website development, app development, digital marketing, branding, SEO, and e-commerce solutions, each with detailed sub-services." />
-      </Helmet>
+      <Seo
+        page="services"
+        schema={services.map((service) => ({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: service.title,
+          description: service.fullDesc,
+          provider: { '@type': 'Organization', name: 'Orizova Co.' },
+          areaServed: 'India and global clients',
+          url: 'https://orizova.com/services',
+        }))}
+      />
 
       <PageBanner
         tag="What We Do"

@@ -1,18 +1,16 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowLeft } from 'react-icons/fi';
 import { MagnifierCharacter } from '../components/Doodles';
 import PageTransition from '../components/PageTransition';
+import Seo from '../components/Seo';
 
 const NotFound = () => {
   return (
     <PageTransition>
     <section className="page-banner" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center' }}>
-      <Helmet>
-        <title>Page Not Found | Orizova Co.</title>
-      </Helmet>
+      <Seo page="notFound" />
       <div className="page-banner-shape" style={{ width: 380, height: 380, background: 'var(--violet)', top: -140, right: -100 }} />
       <div className="page-banner-shape" style={{ width: 260, height: 260, background: 'var(--gold)', bottom: -100, left: -80 }} />
       <div className="container">

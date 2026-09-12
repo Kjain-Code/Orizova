@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
+import projects from '../data/projects';
 import PageBanner from '../components/PageBanner';
 import Projects from '../components/Projects';
 import CtaBand from '../components/CtaBand';
@@ -8,10 +9,19 @@ import PageTransition from '../components/PageTransition';
 const Portfolio = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>Portfolio | Orizova Co. — Our Work & Client Results</title>
-        <meta name="description" content="Browse Orizova Co.'s portfolio of website, app, e-commerce, branding, SEO, and digital marketing projects with real, measurable results." />
-      </Helmet>
+      <Seo
+        page="portfolio"
+        schema={[{
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          itemListElement: projects.map((project, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: project.title,
+            url: project.link,
+          })),
+        }]}
+      />
 
       <PageBanner
         tag="Our Work"

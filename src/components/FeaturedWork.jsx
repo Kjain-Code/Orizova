@@ -41,7 +41,7 @@ const FeaturedWork = () => {
             >
               {project.image ? (
                 <div className="project-image-wrap">
-                  <img src={project.image} alt={project.title} className="project-image" />
+                  <img src={project.image} alt={`${project.title} ${project.category.toLowerCase()} project by Orizova Co.`} className="project-image" />
                   <span
                     className="project-category project-category-badge"
                     style={{ color: project.color, background: '#fff' }}

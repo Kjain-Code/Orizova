@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import PageBanner from '../components/PageBanner';
 import Contact from '../components/Contact';
 import PageTransition from '../components/PageTransition';
@@ -7,10 +7,7 @@ import PageTransition from '../components/PageTransition';
 const ContactPage = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>Contact Us | Orizova Co. — Let's Grow Together</title>
-        <meta name="description" content="Get in touch with Orizova Co. for website development, app development, digital marketing, branding, SEO, and e-commerce projects." />
-      </Helmet>
+      <Seo page="contact" />
 
       <PageBanner
         tag="Get In Touch"

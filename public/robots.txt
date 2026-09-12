@@ -1,3 +1,7 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /search
+Disallow: /admin
+Disallow: /api/
+
+Sitemap: https://orizova.com/sitemap.xml

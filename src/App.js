@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import { HelmetProvider, Helmet } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 
 import Preloader from './components/Preloader';
@@ -16,6 +16,7 @@ import Portfolio from './pages/Portfolio';
 import CreativeWork from './pages/CreativeWork';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import ServicePage from './pages/ServicePage';
 import NotFound from './pages/NotFound';
 
 // Animates pages in/out on route change (needs to live under <BrowserRouter>
@@ -27,6 +28,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/services/:slug" element={<ServicePage />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/creative-work" element={<CreativeWork />} />
         <Route path="/about" element={<AboutPage />} />
@@ -47,12 +49,6 @@ function App() {
 
   return (
     <HelmetProvider>
-      <Helmet>
-        <meta name="robots" content="index, follow" />
-        <meta name="theme-color" content="#FDF6EC" />
-        <link rel="canonical" href="https://orizova.com" />
-      </Helmet>
-
       <AnimatePresence>
         {loading && <Preloader />}
       </AnimatePresence>

@@ -69,8 +69,8 @@ const ServicesDetail = () => {
                   ))}
                 </div>
 
-                <Link to="/contact" className="service-detail-link">
-                  Get Started <FiArrowRight />
+                <Link to={`/services/${service.slug}`} className="service-detail-link">
+                  Explore service <FiArrowRight />
                 </Link>
               </motion.div>
             );

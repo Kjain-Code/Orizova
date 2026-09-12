@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import PageBanner from '../components/PageBanner';
 import About from '../components/About';
 import CtaBand from '../components/CtaBand';
@@ -8,10 +8,7 @@ import PageTransition from '../components/PageTransition';
 const AboutPage = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>About Us | Orizova Co. — Digital Growth Agency, India</title>
-        <meta name="description" content="Meet Orizova Co. — a full-service digital agency helping brands across India grow smarter and stronger online." />
-      </Helmet>
+      <Seo page="about" />
 
       <PageBanner
         tag="About Orizova"

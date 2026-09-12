@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import PageBanner from '../components/PageBanner';
 import CreativeWorkSections from '../components/CreativeWorkSections';
 import CtaBand from '../components/CtaBand';
@@ -8,10 +8,7 @@ import PageTransition from '../components/PageTransition';
 const CreativeWork = () => {
   return (
     <PageTransition>
-      <Helmet>
-        <title>Creative Work | Orizova Co. — Branding, Video Editing & Animation</title>
-        <meta name="description" content="Orizova Co.'s branding, video editing, animated typography, and shoot work — organised by style." />
-      </Helmet>
+      <Seo page="creativeWork" />
 
       <PageBanner
         tag="Creative Work"
