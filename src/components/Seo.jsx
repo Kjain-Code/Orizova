@@ -1,91 +1,113 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import CONTACT from '../data/contact';
+import seo from '../data/seo.json';
 
-const SITE_URL = (process.env.REACT_APP_SITE_URL || 'https://orizovadigital.co.in').replace(/\/$/, '');
-const SITE_NAME = 'Orizova Co.';
+const SITE_URL = (process.env.REACT_APP_SITE_URL || seo.defaultSiteUrl).replace(/\/$/, '');
+const SITE_NAME = seo.siteName;
 const DEFAULT_IMAGE = `${SITE_URL}/logo512.png`;
+const AREAS_SERVED = ['Ghaziabad', 'Noida', 'Greater Noida', 'Delhi', 'Delhi NCR', 'Chandigarh', 'Mohali', 'Panchkula', 'India'];
 
+const routesByKey = Object.fromEntries(seo.routes.map((r) => [r.key, r]));
+const routesByPath = Object.fromEntries(seo.routes.map((r) => [r.path, r]));
+
+// Kept for backwards compatibility with pages that import pageDefaults.
 const pageDefaults = {
-  home: {
-    title: 'Digital Agency for Web Development, SEO & Marketing | Orizova Co.',
-    description: 'Orizova Co. builds websites, apps, ecommerce experiences, brands and search-led digital marketing for businesses in India and globally.',
-    path: '/',
-  },
-  services: {
-    title: 'Web, App, SEO, Marketing & Branding Services | Orizova Co.',
-    description: 'Explore Orizova Co. services for website and app development, SEO, digital marketing, branding, design and ecommerce solutions.',
-    path: '/services',
-  },
-  portfolio: {
-    title: 'Web Development Portfolio | Orizova Co.',
-    description: 'See selected website development work by Orizova Co., including an investment platform, photography portfolio and localization studio website.',
-    path: '/portfolio',
-  },
-  creativeWork: {
-    title: 'Video Editing, Brand Films & Motion Work | Orizova Co.',
-    description: 'Explore Orizova Co. creative work across brand films, reels, typography, advertising and informative video content.',
-    path: '/creative-work',
-  },
-  about: {
-    title: 'About Orizova Co. | Digital Agency Serving India and Globally',
-    description: 'Learn how Orizova Co. helps businesses build their digital presence through web development, marketing, branding and creative services.',
-    path: '/about',
-  },
-  contact: {
-    title: 'Contact Orizova Co. | Discuss Your Digital Project',
-    description: 'Talk to Orizova Co. about website development, apps, SEO, digital marketing, branding, ecommerce or creative video work.',
-    path: '/contact',
-  },
+  ...routesByKey,
   notFound: {
     title: 'Page Not Found | Orizova Co.',
-    description: 'The page you requested could not be found. Visit Orizova Co. to explore our digital services and work.',
+    description: 'The page you requested could not be found. Explore Orizova Co. web development, SEO and digital marketing services.',
     path: '/',
     noindex: true,
   },
 };
 
-const organizationSchema = {
+const businessSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'ProfessionalService',
+  '@id': `${SITE_URL}/#organization`,
   name: SITE_NAME,
+  alternateName: ['Orizova', 'Orizova Digital'],
   url: SITE_URL,
   logo: DEFAULT_IMAGE,
+  image: DEFAULT_IMAGE,
   email: CONTACT.email,
-  telephone: CONTACT.phoneDisplay,
+  telephone: CONTACT.phoneTel,
+  priceRange: '₹₹',
+  description:
+    'Web development and digital marketing agency serving Ghaziabad, Noida, Delhi and Chandigarh: websites, mobile apps, SEO, Meta & Google Ads, branding and e-commerce.',
+  areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
+  knowsAbout: [
+    'Website Development', 'Web Design', 'Mobile App Development', 'Search Engine Optimization',
+    'Local SEO', 'Digital Marketing', 'Performance Marketing', 'Meta Ads', 'Google Ads',
+    'Social Media Marketing', 'Branding', 'E-commerce Development',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: CONTACT.phoneTel,
+    contactType: 'sales',
+    areaServed: 'IN',
+    availableLanguage: ['English', 'Hindi'],
+  },
   sameAs: [CONTACT.instagramUrl],
-  description: 'Digital agency offering web development, app development, SEO, digital marketing, branding, design and ecommerce solutions.',
 };
 
-const breadcrumbSchema = (name, path) => ({
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  inLanguage: 'en-IN',
+  publisher: { '@id': `${SITE_URL}/#organization` },
+};
+
+const breadcrumbSchema = (crumbs) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
-  itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-    ...(path !== '/' ? [{ '@type': 'ListItem', position: 2, name, item: `${SITE_URL}${path}` }] : []),
-  ],
+  itemListElement: [{ name: 'Home', path: '/' }, ...crumbs].map((c, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: c.name,
+    item: `${SITE_URL}${c.path === '/' ? '/' : c.path}`,
+  })),
 });
 
-const Seo = ({ page = 'home', schema = [], title, description, path }) => {
-  const defaults = pageDefaults[page] || pageDefaults.home;
-  const resolvedTitle = title || defaults.title;
-  const resolvedDescription = description || defaults.description;
-  const resolvedPath = path || defaults.path;
-  const canonical = `${SITE_URL}${resolvedPath}`;
+/**
+ * Per-page <head> tags. Resolve order: explicit props → route by `page` key →
+ * route by `path`. Titles/descriptions live in data/seo.json so the build-time
+ * prerender script (scripts/prerender.js) outputs the exact same tags as
+ * static HTML for Google and social previews.
+ */
+const Seo = ({ page, path, title, description, schema = [], breadcrumbs, noindex }) => {
+  const route = (page && pageDefaults[page]) || (path && routesByPath[path]) || pageDefaults.home;
+  const resolvedPath = path || route.path || '/';
+  const resolvedTitle = title || route.title;
+  const resolvedDescription = description || route.description;
+  const isNoindex = noindex ?? route.noindex;
+  const canonical = `${SITE_URL}${resolvedPath === '/' ? '/' : resolvedPath}`;
+
+  const crumbs = breadcrumbs || (resolvedPath !== '/' ? [{ name: route.h1 || resolvedTitle, path: resolvedPath }] : []);
+
   const schemas = [
-    organizationSchema,
-    { '@context': 'https://schema.org', '@type': 'WebSite', name: SITE_NAME, url: SITE_URL },
-    breadcrumbSchema(resolvedTitle, resolvedPath),
+    businessSchema,
+    websiteSchema,
+    ...(crumbs.length ? [breadcrumbSchema(crumbs)] : []),
     ...schema,
   ];
 
   return (
     <Helmet>
+      <html lang="en-IN" />
       <title>{resolvedTitle}</title>
       <meta name="description" content={resolvedDescription} />
-      <meta name="robots" content={defaults.noindex ? 'noindex, follow' : 'index, follow'} />
+      <meta
+        name="robots"
+        content={isNoindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'}
+      />
       <link rel="canonical" href={canonical} />
       <meta property="og:type" content="website" />
+      <meta property="og:locale" content="en_IN" />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:title" content={resolvedTitle} />
       <meta property="og:description" content={resolvedDescription} />
@@ -104,5 +126,5 @@ const Seo = ({ page = 'home', schema = [], title, description, path }) => {
   );
 };
 
-export { SITE_URL, pageDefaults };
+export { SITE_URL, SITE_NAME, AREAS_SERVED, pageDefaults, routesByPath };
 export default Seo;

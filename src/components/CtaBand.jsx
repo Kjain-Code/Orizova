@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 import { SparkleDoodle, StarDoodle } from './Doodles';
@@ -17,7 +17,7 @@ const CtaBand = ({
       <SparkleDoodle className="cta-sparkle-1" color="var(--gold)" />
       <StarDoodle className="cta-sparkle-2" color="#fff" />
       <div className="container">
-        <motion.div
+        <m.div
           className="cta-band-inner"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,12 +26,10 @@ const CtaBand = ({
         >
           <h2>{title}</h2>
           <p>{subtitle}</p>
-          <Link to="/contact">
-            <button className="btn-gold">
+          <Link to="/contact" className="btn-gold">
               {buttonText} <FiArrowRight />
-            </button>
-          </Link>
-        </motion.div>
+            </Link>
+        </m.div>
       </div>
     </section>
   );

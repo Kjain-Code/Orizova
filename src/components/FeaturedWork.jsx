@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 import projects from "../data/projects";
@@ -12,7 +12,7 @@ const FeaturedWork = () => {
   return (
     <section className="projects-section">
       <div className="container">
-        <motion.div
+        <m.div
           className="text-center"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,22 +26,30 @@ const FeaturedWork = () => {
           <p className="section-subtitle">
             Real projects. Real results. A quick look at how we've helped businesses grow.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="projects-grid" style={{ marginTop: 50 }}>
           {featured.map((project, i) => (
-            <motion.div
+            <m.div
               key={project.id}
               className="project-card"
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -12, scale: 1.03 }}
+              whileHover={{ y: -8 }}
             >
               {project.image ? (
                 <div className="project-image-wrap">
-                  <img src={project.image} alt={`${project.title} ${project.category.toLowerCase()} project by Orizova Co.`} className="project-image" />
+                  <img
+                    src={project.image}
+                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Co.`}
+                    className="project-image"
+                    width="800"
+                    height="338"
+                    loading="lazy"
+                    decoding="async"
+                  />
                   <span
                     className="project-category project-category-badge"
                     style={{ color: project.color, background: '#fff' }}
@@ -76,23 +84,21 @@ const FeaturedWork = () => {
                   </Link>
                 )}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
 
-        <motion.div
+        <m.div
           className="projects-cta text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Link to="/portfolio">
-            <button className="btn-primary">
-              View Full Portfolio <FiArrowRight />
-            </button>
+          <Link to="/portfolio" className="btn-primary">
+            View Full Portfolio <FiArrowRight />
           </Link>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

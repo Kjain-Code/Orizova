@@ -25,8 +25,8 @@ const Portfolio = () => {
 
       <PageBanner
         tag="Our Work"
-        title="Projects That"
-        highlight="Speak for Themselves"
+        title="Website Development Portfolio —"
+        highlight="Projects That Speak"
         subtitle="A look at the websites, apps, and campaigns we've built — and the results they delivered."
       />
       <Projects />

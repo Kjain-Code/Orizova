@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { ChatCharacter } from './Doodles';
@@ -34,7 +34,7 @@ const Contact = () => {
     <section className="contact-section">
       <div className="container">
         <div className="contact-inner">
-          <motion.div
+          <m.div
             className="contact-info"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -80,9 +80,9 @@ const Contact = () => {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.form
+          <m.form
             className="contact-form"
             onSubmit={handleSubmit}
             initial={{ opacity: 0, x: 40 }}
@@ -130,7 +130,7 @@ const Contact = () => {
                 </>
               )}
             </button>
-          </motion.form>
+          </m.form>
         </div>
       </div>
     </section>

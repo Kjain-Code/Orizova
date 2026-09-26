@@ -12,7 +12,7 @@ const AboutPage = () => {
 
       <PageBanner
         tag="About Orizova"
-        title="A Team That Turns"
+        title="About Orizova — A Team That Turns"
         highlight="Vision Into Reality"
         subtitle="We're a full-service digital agency helping businesses grow smarter, faster, and stronger in the digital world."
       />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   FiMonitor,
@@ -50,7 +50,7 @@ const Services = () => {
     <section className="services-section">
       <div className="container">
 
-        <motion.div
+        <m.div
           className="text-center"
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +60,7 @@ const Services = () => {
           <span className="section-tag">What We Do</span>
 
           <h2 className="section-title">
-            Services That <span>Drive Results
+            Web, SEO &amp; Marketing Services That <span>Drive Results
               <SquiggleUnderline className="title-squiggle" />
             </span>
           </h2>
@@ -68,14 +68,14 @@ const Services = () => {
           <p className="section-subtitle">
             From building your digital presence to scaling your brand — we cover every step of your growth journey.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="services-grid">
           {services.map((service, i) => {
             const Icon = iconMap[service.icon];
 
             return (
-              <motion.div
+              <m.div
                 key={service.id}
                 className={`service-card ${hovered === i ? "active" : ""}`}
                 custom={i}
@@ -118,8 +118,8 @@ const Services = () => {
                     {service.shortDesc}
                   </p>
 
-                  <Link to="/services" className="service-btn">
-                    Learn More
+                  <Link to={`/services/${service.slug}`} className="service-btn">
+                    Learn More<span className="sr-only"> about {service.title}</span>
                     <FiArrowRight />
                   </Link>
 
@@ -132,7 +132,7 @@ const Services = () => {
                   }}
                 />
 
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

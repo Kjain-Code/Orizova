@@ -1,15 +1,37 @@
-import React from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 import './ScrollProgress.css';
 
-// A slim gradient bar fixed to the very top of the viewport that fills as
-// the visitor scrolls the page — a small, modern touch used across the
-// reference sites we studied.
+// Slim gradient bar at the top that fills as the visitor scrolls.
+// Plain requestAnimationFrame + transform (no animation library) so it adds
+// nothing to the initial JavaScript cost.
 const ScrollProgress = () => {
-  const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 25, restDelta: 0.001 });
+  const barRef = useRef(null);
 
-  return <motion.div className="scroll-progress" style={{ scaleX }} />;
+  useEffect(() => {
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      if (barRef.current) barRef.current.style.transform = `scaleX(${progress})`;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(update);
+      }
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, []);
+
+  return <div ref={barRef} className="scroll-progress" aria-hidden="true" />;
 };
 
 export default ScrollProgress;

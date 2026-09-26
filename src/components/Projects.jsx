@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import projects from "../data/projects";
@@ -63,7 +63,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <motion.div
+        <m.div
           layout
           variants={containerVariants}
           initial="hidden"
@@ -72,17 +72,25 @@ const Projects = () => {
         >
           <AnimatePresence>
             {filtered.map((project) => (
-              <motion.div
+              <m.div
                 key={project.id}
                 layout
                 variants={cardVariants}
                 exit={{ opacity: 0, scale: 0.8 }}
-                whileHover={{ y: -12, scale: 1.02 }}
+                whileHover={{ y: -8 }}
                 className="project-card"
               >
                 {project.image ? (
                   <div className="project-image-wrap">
-                    <img src={project.image} alt={`${project.title} ${project.category.toLowerCase()} project by Orizova Co.`} className="project-image" />
+                    <img
+                    src={project.image}
+                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Co.`}
+                    className="project-image"
+                    width="800"
+                    height="338"
+                    loading="lazy"
+                    decoding="async"
+                  />
                     <span
                       className="project-category project-category-badge"
                       style={{ color: project.color, background: '#fff' }}
@@ -152,12 +160,12 @@ const Projects = () => {
                   )}
 
                 </div>
-              </motion.div>
+              </m.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           className="projects-cta text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -168,13 +176,11 @@ const Projects = () => {
             Want results like these for your business?
           </p>
 
-          <Link to="/contact">
-            <button className="btn-primary">
-              Start Your Project
-              <FiArrowRight />
-            </button>
+          <Link to="/contact" className="btn-primary">
+            Start Your Project
+            <FiArrowRight />
           </Link>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
-import wipoImg from '../assets/portfolio/wipo-group.jpg';
-import ganeshImg from '../assets/portfolio/ganesh-creation.jpg';
-import fpsImg from '../assets/portfolio/fps-subtitle.jpg';
+import wipoImg from '../assets/portfolio/wipo-group.webp';
+import ganeshImg from '../assets/portfolio/ganesh-creation.webp';
+import fpsImg from '../assets/portfolio/fps-subtitle.webp';
 
 const projects = [
   {

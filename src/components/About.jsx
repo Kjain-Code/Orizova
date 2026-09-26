@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { FiCheckCircle, FiArrowRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { LoopArc, StarDoodle } from './Doodles';
@@ -19,7 +19,7 @@ const About = () => {
     <section className="about-section">
       <div className="container about-inner">
         {/* Left Visual */}
-        <motion.div
+        <m.div
           className="about-visual"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -53,10 +53,10 @@ const About = () => {
               <p>Happy Clients</p>
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Right Content */}
-        <motion.div
+        <m.div
           className="about-content"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -77,7 +77,7 @@ const About = () => {
 
           <div className="about-points">
             {points.map((point, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 className="about-point"
                 initial={{ opacity: 0, x: 20 }}
@@ -87,16 +87,14 @@ const About = () => {
               >
                 <FiCheckCircle size={18} color="var(--primary)" />
                 <span>{point}</span>
-              </motion.div>
+              </m.div>
             ))}
           </div>
 
-          <Link to="/contact">
-            <button className="btn-primary" style={{ marginTop: '32px' }}>
+          <Link to="/contact" className="btn-primary" style={{ marginTop: '32px' }}>
               Work With Us <FiArrowRight />
-            </button>
-          </Link>
-        </motion.div>
+            </Link>
+        </m.div>
       </div>
     </section>
   );

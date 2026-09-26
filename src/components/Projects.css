@@ -57,6 +57,7 @@
 .projects-grid{
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
+    align-items:stretch;
     gap:30px;
     margin-bottom:70px;
 }
@@ -71,13 +72,18 @@
     border-radius:24px;
     background: var(--paper);
     border:1.5px solid var(--lavender);
-    transition:.5s cubic-bezier(.23,1,.32,1);
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    transition:box-shadow .5s cubic-bezier(.23,1,.32,1);
 }
 
 .project-card::before{
     content:"";
     position:absolute;
     inset:0;
+    pointer-events:none;
+    z-index:0;
     background:linear-gradient(
         135deg,
         rgba(139,92,246,.08),
@@ -90,7 +96,11 @@
 .project-card::after{
     content:"";
     position:absolute;
-    top:-120%;
+    pointer-events:none;
+    z-index:3;
+    /* parked fully above the card at rest — before, the white shine band sat
+       across the card and made the whole thing look washed-out */
+    top:-280%;
     left:-40%;
     width:180%;
     height:260%;
@@ -105,7 +115,7 @@
 }
 
 .project-card:hover::after{
-    top:120%;
+    top:140%;
 }
 
 .project-card:hover::before{
@@ -113,7 +123,6 @@
 }
 
 .project-card:hover{
-    transform:translateY(-14px);
     box-shadow:
         0 30px 60px rgba(76,14,130,.10),
         0 10px 30px rgba(139,92,247,.18);
@@ -125,20 +134,23 @@
 
 .project-image-wrap {
     position: relative;
+    z-index: 1;
     width: 100%;
-    aspect-ratio: 2 / 1;
+    /* matches the screenshots' real ratio, so the image fills the frame edge
+       to edge — no empty bands above/below it any more */
+    aspect-ratio: 1367 / 578;
     overflow: hidden;
-    background: linear-gradient(180deg, var(--lilac), var(--lavender));
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--lavender);
+    border-bottom: 1.5px solid var(--lavender);
+    flex-shrink: 0;
 }
 
 .project-image {
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center;
+    object-fit: cover;
+    object-position: top center;
     transition: transform .6s cubic-bezier(.23,1,.32,1);
 }
 
@@ -191,11 +203,20 @@
 ================================ */
 
 .project-content{
-    padding:0 28px 30px;
+    position:relative;
+    z-index:1;
+    padding:24px 28px 28px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.project-top + .project-content{
+    padding-top:0;
 }
 
 .project-content h3{
-    font-family:'Syne', sans-serif;
+    font-family:'Bricolage Grotesque', sans-serif;
     font-size:22px;
     margin-bottom:12px;
     color:var(--ink);
@@ -245,6 +266,7 @@
 ================================ */
 
 .project-result{
+    align-self:flex-start;
     display:inline-flex;
     align-items:center;
     padding:8px 16px;
@@ -261,6 +283,7 @@
 
 .project-btn{
     width:100%;
+    margin-top:auto;
     padding:14px;
     border:none;
     border-radius:14px;
@@ -272,16 +295,9 @@
     align-items:center;
     gap:10px;
     cursor:pointer;
-
-    opacity:0;
-    transform:translateY(20px);
-
-    transition:.4s;
-}
-
-.project-card:hover .project-btn{
-    opacity:1;
-    transform:translateY(0);
+    /* always visible — it used to be invisible until hover, which left a
+       blank gap at the bottom of every card (and on phones there is no hover) */
+    transition:background .3s ease, transform .3s ease;
 }
 
 .project-btn:hover{

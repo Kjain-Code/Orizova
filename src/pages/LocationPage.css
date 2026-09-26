@@ -1,0 +1,116 @@
+.loc-section { background: var(--paper); }
+
+.loc-intro {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.loc-text {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+.loc-card {
+  background: var(--lilac);
+  border: 1.5px solid var(--lavender);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+}
+
+.loc-card h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 12px; }
+
+.loc-areas {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.loc-areas li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--paper);
+  border: 1px solid var(--lavender);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 100px;
+}
+
+.loc-block { margin-top: 80px; }
+
+.loc-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.loc-service {
+  display: block;
+  background: var(--cream);
+  border: 1.5px solid var(--lavender);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.loc-service:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.loc-service h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
+.loc-service p { color: var(--text-light); font-size: 14px; margin-bottom: 12px; }
+
+.loc-service-link, .loc-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.loc-projects { padding-left: 18px; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
+.loc-projects li { margin-bottom: 10px; }
+.loc-projects a { color: var(--primary); font-weight: 600; }
+
+.loc-faq {
+  border: 1.5px solid var(--lavender);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-bottom: 12px;
+  max-width: 820px;
+  background: var(--lilac);
+}
+
+.loc-faq summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+.loc-faq p { margin-top: 10px; color: var(--text-light); }
+
+.loc-other-title { font-size: 1.3rem; margin-bottom: 14px; color: var(--ink); }
+.loc-other { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.chip-link {
+  display: inline-flex;
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: var(--lavender);
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 14px;
+  transition: background .25s ease, color .25s ease;
+}
+
+.chip-link:hover { background: var(--primary); color: #fff; }
+
+@media (max-width: 900px) {
+  .loc-intro { grid-template-columns: 1fr; }
+  .loc-services { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 600px) {
+  .loc-services { grid-template-columns: 1fr; }
+  .loc-block { margin-top: 56px; }
+}

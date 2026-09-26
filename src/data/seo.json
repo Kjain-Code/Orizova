@@ -1,0 +1,134 @@
+{
+  "siteName": "Orizova Co.",
+  "defaultSiteUrl": "https://orizovadigital.co.in",
+  "routes": [
+    {
+      "key": "home",
+      "path": "/",
+      "priority": "1.0",
+      "title": "Web Development & Digital Marketing Agency in Delhi NCR | Orizova",
+      "description": "Orizova is a website development company & digital marketing agency for Ghaziabad, Noida, Delhi & Chandigarh. Fast websites, apps, SEO and Meta/Google Ads that bring leads.",
+      "h1": "Website Development & Digital Marketing Agency in Ghaziabad, Noida, Delhi & Chandigarh"
+    },
+    {
+      "key": "services",
+      "path": "/services",
+      "priority": "0.9",
+      "title": "Web Development, SEO & Digital Marketing Services | Orizova Co.",
+      "description": "Website development, mobile apps, SEO, social media & performance marketing, branding and e-commerce services for businesses in Delhi NCR, Chandigarh and across India.",
+      "h1": "Web Development, SEO & Digital Marketing Services"
+    },
+    {
+      "key": "service:website-development",
+      "path": "/services/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Delhi NCR & Noida | Orizova Co.",
+      "description": "Custom, fast, mobile-first websites for businesses in Ghaziabad, Noida, Delhi & Chandigarh. Business sites, landing pages, e-commerce & web apps built to rank and convert.",
+      "h1": "Website Development Company in Delhi NCR"
+    },
+    {
+      "key": "service:app-development",
+      "path": "/services/app-development",
+      "priority": "0.8",
+      "title": "Mobile App Development Company in Delhi NCR | Orizova Co.",
+      "description": "Android, iOS and cross-platform (React Native / Flutter) app development for startups and businesses in Noida, Ghaziabad, Delhi and Chandigarh.",
+      "h1": "Mobile App Development Company in Delhi NCR"
+    },
+    {
+      "key": "service:digital-marketing",
+      "path": "/services/digital-marketing",
+      "priority": "0.9",
+      "title": "Digital Marketing Agency in Delhi NCR – Meta & Google Ads | Orizova",
+      "description": "Result-driven digital marketing agency for Ghaziabad, Noida, Delhi & Chandigarh: Meta & Google Ads, social media marketing, lead generation and content that converts.",
+      "h1": "Digital Marketing Agency in Delhi NCR"
+    },
+    {
+      "key": "service:branding-designing",
+      "path": "/services/branding-designing",
+      "priority": "0.8",
+      "title": "Branding & Logo Design Agency in Delhi NCR | Orizova Co.",
+      "description": "Logo design, brand identity, social media creatives, packaging and pitch decks for brands in Delhi, Noida, Ghaziabad and Chandigarh.",
+      "h1": "Branding & Logo Design Agency in Delhi NCR"
+    },
+    {
+      "key": "service:seo",
+      "path": "/services/seo",
+      "priority": "0.9",
+      "title": "SEO Services in Delhi NCR – Local & Technical SEO | Orizova Co.",
+      "description": "SEO company helping businesses in Ghaziabad, Noida, Delhi & Chandigarh rank on Google: local SEO, Google Business Profile, technical SEO, keywords and content.",
+      "h1": "SEO Services in Delhi NCR"
+    },
+    {
+      "key": "service:ecommerce-solutions",
+      "path": "/services/ecommerce-solutions",
+      "priority": "0.8",
+      "title": "E-commerce Website Development – Shopify & WooCommerce | Orizova",
+      "description": "Shopify, WooCommerce and custom e-commerce website development with payment gateways and smooth mobile UX for brands in Delhi NCR and across India.",
+      "h1": "E-commerce Website Development"
+    },
+    {
+      "key": "city:ghaziabad",
+      "path": "/locations/ghaziabad",
+      "priority": "0.9",
+      "title": "Web Development & Digital Marketing Agency in Ghaziabad | Orizova",
+      "description": "Looking for a website developer or digital marketing agency in Ghaziabad? Orizova builds fast websites and runs SEO & Meta/Google Ads for Indirapuram, Vaishali, Raj Nagar & more.",
+      "h1": "Web Development & Digital Marketing Agency in Ghaziabad"
+    },
+    {
+      "key": "city:noida",
+      "path": "/locations/noida",
+      "priority": "0.9",
+      "title": "Website Development & Digital Marketing Company in Noida | Orizova",
+      "description": "Website development, app development, SEO and performance marketing for startups and businesses in Noida, Greater Noida West and Greater Noida. Get a free consultation.",
+      "h1": "Website Development & Digital Marketing Company in Noida"
+    },
+    {
+      "key": "city:delhi",
+      "path": "/locations/delhi",
+      "priority": "0.9",
+      "title": "Web Design & Digital Marketing Agency in Delhi | Orizova Co.",
+      "description": "Delhi web design and digital marketing agency: SEO-ready websites, Google & Meta Ads, social media and branding for shops, clinics, brands and professionals across Delhi.",
+      "h1": "Web Design & Digital Marketing Agency in Delhi"
+    },
+    {
+      "key": "city:chandigarh",
+      "path": "/locations/chandigarh",
+      "priority": "0.9",
+      "title": "Web Development & Digital Marketing Agency in Chandigarh | Orizova",
+      "description": "Website development, SEO and lead-generation ads for businesses in Chandigarh, Mohali, Panchkula and Zirakpur. Fast, mobile-first sites and marketing that brings enquiries.",
+      "h1": "Web Development & Digital Marketing Agency in Chandigarh"
+    },
+    {
+      "key": "portfolio",
+      "path": "/portfolio",
+      "priority": "0.7",
+      "title": "Website Development Portfolio & Case Studies | Orizova Co.",
+      "description": "Websites built by Orizova Co. – a fractional real-estate investment portal, a wedding photography portfolio and a multilingual localisation studio site.",
+      "h1": "Our Web Development Portfolio"
+    },
+    {
+      "key": "creativeWork",
+      "path": "/creative-work",
+      "priority": "0.6",
+      "title": "Video Editing, Reels & Brand Films | Orizova Co.",
+      "description": "Reels, brand films, ad videos and kinetic typography edited by Orizova Co. for brands in Delhi NCR and across India.",
+      "h1": "Video Editing, Reels & Brand Films"
+    },
+    {
+      "key": "about",
+      "path": "/about",
+      "priority": "0.6",
+      "title": "About Orizova Co. – Digital Agency in Delhi NCR",
+      "description": "Orizova Co. is a web development and digital marketing agency helping businesses in Ghaziabad, Noida, Delhi, Chandigarh and across India grow online.",
+      "h1": "About Orizova Co."
+    },
+    {
+      "key": "contact",
+      "path": "/contact",
+      "priority": "0.8",
+      "title": "Contact Orizova Co. – Get a Free Website & Marketing Consultation",
+      "description": "Call or WhatsApp Orizova Co. for website development, SEO or digital marketing in Ghaziabad, Noida, Delhi or Chandigarh. Free consultation, reply within 24 hours.",
+      "h1": "Contact Orizova Co."
+    }
+  ]
+}

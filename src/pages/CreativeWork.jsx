@@ -12,7 +12,7 @@ const CreativeWork = () => {
 
       <PageBanner
         tag="Creative Work"
-        title="Videos That"
+        title="Video Editing & Reels That"
         highlight="Do the Talking"
         subtitle="Animated typography, brand reels, and our best shoots — organised by style so you can see exactly what we do best."
       />

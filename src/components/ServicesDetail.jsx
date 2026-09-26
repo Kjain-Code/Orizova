@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
   FiMonitor,
@@ -35,7 +35,7 @@ const ServicesDetail = () => {
             const Character = characters[i % characters.length];
 
             return (
-              <motion.div
+              <m.div
                 key={service.id}
                 className="service-detail-card"
                 initial={{ opacity: 0, y: 50 }}
@@ -72,7 +72,7 @@ const ServicesDetail = () => {
                 <Link to={`/services/${service.slug}`} className="service-detail-link">
                   Explore service <FiArrowRight />
                 </Link>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

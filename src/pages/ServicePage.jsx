@@ -3,8 +3,9 @@ import { Link, useParams } from 'react-router-dom';
 import { FiArrowRight, FiCheckCircle } from 'react-icons/fi';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
-import Seo, { SITE_URL } from '../components/Seo';
+import Seo, { SITE_URL, AREAS_SERVED, routesByPath } from '../components/Seo';
 import services from '../data/services';
+import locations from '../data/locations';
 import NotFound from './NotFound';
 
 const serviceFaqs = {
@@ -43,23 +44,23 @@ const ServicePage = () => {
   }
 
   const faqs = serviceFaqs[service.slug] || [];
-  const title = `${service.title} Services | Orizova Co.`;
-  const description = `${service.fullDesc} Orizova Co. works with businesses in India and globally.`;
+  const path = `/services/${service.slug}`;
+  const route = routesByPath[path] || {};
+  const [h1Main, h1Place] = (route.h1 || service.title).split(/ (?=in [A-Z])/);
 
   return (
     <PageTransition>
       <Seo
-        title={title}
-        description={description}
-        path={`/services/${service.slug}`}
+        path={path}
+        breadcrumbs={[{ name: 'Services', path: '/services' }, { name: service.title, path }]}
         schema={[
           {
             '@context': 'https://schema.org',
             '@type': 'Service',
             name: service.title,
             description: service.fullDesc,
-            provider: { '@type': 'Organization', name: 'Orizova Co.' },
-            areaServed: 'India and global clients',
+            provider: { '@id': `${SITE_URL}/#organization` },
+            areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
             serviceType: service.title,
             url: `${SITE_URL}/services/${service.slug}`,
           },
@@ -75,9 +76,9 @@ const ServicePage = () => {
         ]}
       />
       <PageBanner
-        tag="Service"
-        title={service.title}
-        highlight="Built Around Your Goals"
+        tag={service.title}
+        title={h1Main}
+        highlight={h1Place}
         subtitle={service.fullDesc}
       />
       <section className="services-detail-section">
@@ -106,6 +107,18 @@ const ServicePage = () => {
               <Link to="/contact" className="btn-primary" style={{ marginTop: 16 }}>
                 Discuss this service <FiArrowRight />
               </Link>
+            </div>
+          </div>
+          <div style={{ marginTop: 72 }}>
+            <span className="section-tag">Areas we serve</span>
+            <h2 className="section-title">{service.title} in Ghaziabad, Noida, Delhi &amp; Chandigarh</h2>
+            <div className="about-points">
+              {locations.map((loc) => (
+                <Link className="about-point" key={loc.slug} to={`/locations/${loc.slug}`}>
+                  <FiCheckCircle size={18} color="var(--primary)" />
+                  <span>{service.title} in {loc.city}</span>
+                </Link>
+              ))}
             </div>
           </div>
           {faqs.length > 0 && (

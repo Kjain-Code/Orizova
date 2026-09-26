@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { FiArrowRight } from 'react-icons/fi';
+import { m } from 'framer-motion';
+import { FiArrowRight, FiMapPin } from 'react-icons/fi';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { ArrowDoodle, StarDoodle, SparkleDoodle, RocketCharacter } from './Doodles';
 import './Hero.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
+import locations from '../data/locations';
+
+const cities = locations.map(({ slug, city }) => ({ slug, city }));
 
 const stats = [
   { value: 150, suffix: '+', label: 'Projects Delivered' },
@@ -36,91 +39,70 @@ const Hero = () => {
 
       <div className="container hero-inner">
         <div className="hero-content">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="section-tag">🚀 Digital Growth Agency</span>
-          </motion.div>
+          {/* Rendered without a JS entrance animation on purpose: this block is
+              the Largest Contentful Paint, so it must paint on first frame. */}
+          <h1 className="hero-kicker">
+            <span className="hero-kicker-dot" aria-hidden="true" />
+            Website Development &amp; Digital Marketing Agency in Ghaziabad, Noida, Delhi &amp; Chandigarh
+          </h1>
 
-          <motion.h1
-            className="hero-title"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-          >
+          <p className="hero-title">
             From Strategy to <span className="highlight-gold gradient-text">Scale</span> —<br />
             We Build Growth <span className="highlight-purple accent-serif">That Lasts</span>
             <StarDoodle className="hero-title-star" />
-          </motion.h1>
+          </p>
 
-          <motion.p
-            className="hero-desc"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
-            Orizova Co. helps businesses design smart systems, build powerful digital presence, and scale faster with clarity and confidence.
-          </motion.p>
+          <p className="hero-desc">
+            Orizova Co. is a web development company and digital marketing agency for Delhi NCR &amp; Chandigarh. We build fast, SEO-ready websites and apps, and run Google &amp; Meta Ads that turn visitors into enquiries.
+          </p>
 
-          <motion.div
-            className="hero-btns"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
+          <div className="hero-btns">
             <div className="hero-cta-wrap">
-              <Link to="/contact">
-                <button className="btn-primary">
-                  Get Free Consultation <FiArrowRight />
-                </button>
+              <Link to="/contact" className="btn-primary">
+                Get Free Consultation <FiArrowRight />
               </Link>
               <ArrowDoodle className="hero-cta-doodle" />
             </div>
-            <Link to="/services">
-              <button className="btn-outline">
-                Our Services
-              </button>
+            <Link to="/services" className="btn-outline">
+              Our Services
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            className="hero-stats"
-            ref={ref}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
-          >
+          <nav className="hero-cities" aria-label="Cities we serve">
+            <FiMapPin aria-hidden="true" />
+            {cities.map((c, i) => (
+              <React.Fragment key={c.slug}>
+                {i > 0 && <span className="hero-cities-sep" aria-hidden="true">·</span>}
+                <Link to={`/locations/${c.slug}`}>{c.city}</Link>
+              </React.Fragment>
+            ))}
+          </nav>
+
+          <div className="hero-stats" ref={ref}>
             {stats.map((stat, i) => (
               <div className="stat-item" key={i}>
-                <h3>
-                  {inView && (
+                <p className="stat-value">
+                  {inView ? (
                     <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />
-                  )}
-                </h3>
-                <p>{stat.label}</p>
+                  ) : `${stat.value}${stat.suffix}`}
+                </p>
+                <p className="stat-label">{stat.label}</p>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
-        <motion.div
-          className="hero-visual"
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-        >
+        <div className="hero-visual" aria-hidden="true">
           <SparkleDoodle className="hero-visual-sparkle" />
-          <motion.div
+          <m.div
             className="hero-visual-rocket"
             animate={{ y: [0, -12, 0], rotate: [-4, 4, -4] }}
             transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
           >
             <RocketCharacter />
-          </motion.div>
+          </m.div>
           <div className="hero-card-main">
-            <img src={logo} alt="Orizova Co." style={{ height: '80px', objectFit: 'contain', marginBottom: '12px' }} />
+            <img src={logo} alt="Orizova Co. logo" width="108" height="80" decoding="async" style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '12px' }} />
             <p>Your Digital Growth Partner</p>
             <div className="services-chips">
               {marqueeItems.map(s => (
@@ -130,7 +112,7 @@ const Hero = () => {
           </div>
 
           {floatingCards.map((card, i) => (
-            <motion.div
+            <m.div
               key={i}
               className={`floating-card fc-${i + 1}`}
               animate={{ y: [0, -10, 0] }}
@@ -142,9 +124,9 @@ const Hero = () => {
                 <h4 className="fc-value">{card.value}</h4>
                 <p className="fc-sub">{card.sub}</p>
               </div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </div>
       </div>
 
       <div className="hero-marquee">
@@ -157,13 +139,13 @@ const Hero = () => {
         </div>
       </div>
 
-      <motion.div
+      <m.div
         className="scroll-indicator"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
         <div className="scroll-dot" />
-      </motion.div>
+      </m.div>
     </section>
   );
 };

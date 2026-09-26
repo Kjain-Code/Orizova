@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /search
-Disallow: /admin
-Disallow: /api/
 
 Sitemap: https://orizovadigital.co.in/sitemap.xml

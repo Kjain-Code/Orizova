@@ -11,8 +11,8 @@ const ContactPage = () => {
 
       <PageBanner
         tag="Get In Touch"
-        title="Let's"
-        highlight="Grow Together"
+        title="Contact Orizova —"
+        highlight="Let's Grow Together"
         subtitle="Ready to take your business to the next level? Let's talk about how Orizova Co. can help you scale."
       />
       <Contact />

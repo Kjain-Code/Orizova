@@ -4,7 +4,9 @@ import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../data/contact';
 import './Footer.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
+import services from '../data/services';
+import locations from '../data/locations';
 
 const quickLinks = [
   { name: 'Home', to: '/' },
@@ -21,9 +23,9 @@ const Footer = () => {
       <div className="container footer-inner">
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            <img src={logo} alt="Orizova Co." style={{ height: '48px', objectFit: 'contain' }} />
+            <img src={logo} alt="Orizova Co. – web development & digital marketing agency" width="65" height="48" loading="lazy" decoding="async" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
           </Link>
-          <p>Your trusted digital growth partner. We build brands, drive traffic, and scale businesses across India and globally.</p>
+          <p>Website development, SEO and digital marketing agency serving Ghaziabad, Noida, Delhi &amp; Chandigarh — and businesses across India and globally.</p>
           <div className="footer-contacts">
             <a href={`mailto:${CONTACT.email}`}><FiMail size={14}/> {CONTACT.email}</a>
             <a href={`tel:${CONTACT.phoneTel}`}><FiPhone size={14}/> {CONTACT.phoneDisplay}</a>
@@ -40,7 +42,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-links">
-          <h4>Quick Links</h4>
+          <h2 className="footer-heading">Quick Links</h2>
           <ul>
             {quickLinks.map(l => (
               <li key={l.name}>
@@ -51,10 +53,21 @@ const Footer = () => {
         </div>
 
         <div className="footer-links">
-          <h4>Services</h4>
+          <h2 className="footer-heading">Services</h2>
           <ul>
-            {['Website Development','App Development','Digital Marketing','Branding & Designing','SEO','E-Commerce Solutions'].map(s => (
-              <li key={s}><Link to="/services">{s}</Link></li>
+            {services.map((svc) => (
+              <li key={svc.slug}><Link to={`/services/${svc.slug}`}>{svc.title}</Link></li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="footer-links">
+          <h2 className="footer-heading">Areas We Serve</h2>
+          <ul>
+            {locations.map((loc) => (
+              <li key={loc.slug}>
+                <Link to={`/locations/${loc.slug}`}>Digital agency in {loc.city}</Link>
+              </li>
             ))}
           </ul>
         </div>

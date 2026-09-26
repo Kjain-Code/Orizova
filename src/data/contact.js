@@ -8,7 +8,7 @@ const CONTACT = {
   whatsappMessage: 'Hi Orizova Co., I want to discuss a project',
   email: 'orizovadigital@gmail.com',
   instagramUrl: 'https://www.instagram.com/orizova.digital/',
-  location: 'India (Serving Globally)',
+  location: 'Delhi NCR, India — serving Ghaziabad, Noida, Delhi & Chandigarh',
 };
 
 export const whatsappLink = `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(CONTACT.whatsappMessage)}`;

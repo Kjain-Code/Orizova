@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { FiMenu, FiX, FiPhone } from 'react-icons/fi';
 import CONTACT from '../data/contact';
 import './Navbar.css';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo.webp';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -11,7 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -25,10 +25,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} aria-label="Main navigation">
       <div className="container navbar-inner">
         <Link to="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
-          <img src={logo} alt="Orizova Co." style={{ height: '50px', objectFit: 'contain' }} />
+          <img src={logo} alt="Orizova Co. home" width="68" height="50" fetchpriority="high" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         <ul className="navbar-links">

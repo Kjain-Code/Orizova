@@ -21,9 +21,12 @@
 .shape {
   position: absolute;
   border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.32;
+  /* radial-gradient instead of filter: blur(90px) — the blur filter on huge,
+     constantly animating layers was very expensive to paint on phones. */
+  background: radial-gradient(circle, var(--blob) 0%, transparent 68%);
+  opacity: 0.42;
   animation: shape-drift 10s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 @keyframes shape-drift {
@@ -34,7 +37,7 @@
 .shape-1 {
   width: 520px;
   height: 520px;
-  background: var(--violet);
+  --blob: var(--violet);
   top: -160px;
   right: -100px;
 }
@@ -42,7 +45,7 @@
 .shape-2 {
   width: 340px;
   height: 340px;
-  background: var(--gold);
+  --blob: var(--gold);
   bottom: 40px;
   left: -100px;
   animation-delay: 1.5s;
@@ -51,7 +54,7 @@
 .shape-3 {
   width: 260px;
   height: 260px;
-  background: var(--coral);
+  --blob: var(--coral);
   top: 45%;
   left: 42%;
   animation-delay: 3s;
@@ -73,7 +76,39 @@
   gap: 24px;
 }
 
+.hero-kicker {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 10px;
+  align-self: flex-start;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: var(--lavender);
+  border: 1.5px solid rgba(140, 92, 247, 0.22);
+  padding: 9px 18px;
+  border-radius: 18px;
+  max-width: 560px;
+}
+
+.hero-kicker-dot {
+  flex: 0 0 8px;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(245, 166, 35, 0.25);
+}
+
 .hero-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.01em;
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   color: var(--ink);
   line-height: 1.1;
@@ -123,6 +158,26 @@
   transform: scaleX(-1) rotate(8deg);
 }
 
+.hero-cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.hero-cities svg { color: var(--gold-deep); }
+
+.hero-cities a {
+  color: var(--primary);
+  border-bottom: 1.5px dashed rgba(76, 14, 130, 0.35);
+}
+
+.hero-cities a:hover { border-bottom-style: solid; }
+.hero-cities-sep { color: var(--gold-deep); }
+
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -132,13 +187,15 @@
   border-top: 1px solid rgba(76, 14, 130, 0.12);
 }
 
-.stat-item h3 {
+.stat-item .stat-value {
+  font-weight: 800;
+  line-height: 1.2;
   font-size: 1.8rem;
   color: var(--primary);
-  font-family: 'Syne', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
 }
 
-.stat-item p {
+.stat-item .stat-label {
   font-size: 12px;
   color: var(--text-light);
   font-weight: 500;
@@ -222,7 +279,7 @@
 
 .fc-icon { font-size: 1.6rem; }
 .fc-title { font-size: 11px; color: var(--text-light); font-weight: 600; }
-.fc-value { font-size: 1.1rem; color: var(--primary); font-family: 'Syne', sans-serif; font-weight: 800; }
+.fc-value { font-size: 1.1rem; color: var(--primary); font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; }
 .fc-sub { font-size: 10px; color: var(--text-light); }
 
 /* Marquee strip */
@@ -241,7 +298,7 @@
   align-items: center;
   gap: 24px;
   padding: 0 24px;
-  font-family: 'Syne', sans-serif;
+  font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
   color: #fff;
@@ -283,13 +340,62 @@
     text-align: center;
   }
   .hero-visual { display: none; }
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.hero-cities svg { color: var(--gold-deep); }
+
+.hero-cities a {
+  color: var(--primary);
+  border-bottom: 1.5px dashed rgba(76, 14, 130, 0.35);
+}
+
+.hero-cities a:hover { border-bottom-style: solid; }
+.hero-cities-sep { color: var(--gold-deep); }
+
+.hero-stats { grid-template-columns: repeat(2, 1fr); }
   .hero-btns { justify-content: center; }
   .hero-desc { margin: 0 auto; }
   .hero-cta-doodle { display: none; }
+  .hero-kicker { align-self: center; text-align: left; font-size: 12.5px; }
+  .hero-cities { justify-content: center; font-size: 13px; gap: 6px; padding: 0 28px; }
   .marquee-item { font-size: 0.95rem; }
 }
 
 @media (max-width: 480px) {
-  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .hero-cities {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+.hero-cities svg { color: var(--gold-deep); }
+
+.hero-cities a {
+  color: var(--primary);
+  border-bottom: 1.5px dashed rgba(76, 14, 130, 0.35);
+}
+
+.hero-cities a:hover { border-bottom-style: solid; }
+.hero-cities-sep { color: var(--gold-deep); }
+
+.hero-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Phones: stop the always-running background animations — they cost battery
+   and main-thread paint time and nobody notices them on a small screen. */
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  .shape, .hero-title-star { animation: none; }
+  .shape-3 { display: none; }
 }

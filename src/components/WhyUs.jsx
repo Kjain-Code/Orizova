@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { FiZap, FiTarget, FiUsers, FiBarChart2, FiShield, FiClock } from 'react-icons/fi';
 import { SquiggleUnderline } from './Doodles';
 import './WhyUs.css';
@@ -17,7 +17,7 @@ const WhyUs = () => {
   return (
     <section className="whyus-section">
       <div className="container">
-        <motion.div
+        <m.div
           className="text-center"
           initial={{ opacity: 0, y: 35 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,11 +31,11 @@ const WhyUs = () => {
           <p className="section-subtitle">
             We don't just deliver services — we deliver growth. Here's what makes us different.
           </p>
-        </motion.div>
+        </m.div>
 
         <div className="whyus-grid">
           {reasons.map((reason, i) => (
-            <motion.div
+            <m.div
               key={i}
               className="whyus-card"
               initial={{ opacity: 0, y: 40 }}
@@ -49,7 +49,7 @@ const WhyUs = () => {
               </div>
               <h3>{reason.title}</h3>
               <p>{reason.desc}</p>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

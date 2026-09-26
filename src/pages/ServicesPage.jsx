@@ -1,6 +1,5 @@
 import React from 'react';
-import Seo from '../components/Seo';
-import { SITE_URL } from '../components/Seo';
+import Seo, { SITE_URL, AREAS_SERVED } from '../components/Seo';
 import services from '../data/services';
 import PageBanner from '../components/PageBanner';
 import ServicesDetail from '../components/ServicesDetail';
@@ -17,16 +16,16 @@ const ServicesPage = () => {
           '@type': 'Service',
           name: service.title,
           description: service.fullDesc,
-          provider: { '@type': 'Organization', name: 'Orizova Co.' },
-          areaServed: 'India and global clients',
-          url: `${SITE_URL}/services`,
+          provider: { '@id': `${SITE_URL}/#organization` },
+          areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
+          url: `${SITE_URL}/services/${service.slug}`,
         }))}
       />
 
       <PageBanner
         tag="What We Do"
-        title="Services Built"
-        highlight="Around Your Growth"
+        title="Web Development, SEO &"
+        highlight="Digital Marketing Services"
         subtitle="Every service comes with a full set of specialised sub-services — pick what your business needs, or let us build the complete package."
       />
       <ServicesDetail />

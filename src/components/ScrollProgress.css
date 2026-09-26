@@ -5,6 +5,9 @@
   right: 0;
   height: 3px;
   transform-origin: left;
+  transform: scaleX(0);
+  transition: transform .12s linear;
+  will-change: transform;
   background: linear-gradient(90deg, var(--primary), var(--violet), var(--gold), var(--coral));
   z-index: 1200;
 }
