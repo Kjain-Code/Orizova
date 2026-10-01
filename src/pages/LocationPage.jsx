@@ -1,13 +1,14 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { FiArrowRight, FiCheckCircle, FiMapPin } from 'react-icons/fi';
+import { useParams } from 'react-router-dom';
+import { FiCheckCircle, FiMapPin } from 'react-icons/fi';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
+import { Blocks, Cards, CtaButtons, Faqs, LinkChips, RealWork, faqSchema } from '../components/ContentBlocks';
+import { cityServicesIndex as cityServices } from '../data/siteIndex';
 import Seo, { SITE_URL, routesByPath } from '../components/Seo';
 import locations from '../data/locations';
 import services from '../data/services';
-import projects from '../data/projects';
 import NotFound from './NotFound';
 import './LocationPage.css';
 
@@ -39,21 +40,13 @@ const LocationPage = () => {
             ],
             url: `${SITE_URL}${path}`,
           },
-          {
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: loc.faqs.map(([q, a]) => ({
-              '@type': 'Question',
-              name: q,
-              acceptedAnswer: { '@type': 'Answer', text: a },
-            })),
-          },
+          faqSchema(loc.faqs),
         ]}
       />
 
-      <PageBanner tag={`📍 ${loc.city}, ${loc.region}`} title={h1Main} highlight={h1Place} subtitle={loc.tagline} />
+      <PageBanner title={h1Main} highlight={h1Place} subtitle={loc.tagline} chips={loc.areas.slice(0, 5)} />
 
-      <section className="loc-section">
+      <section className="loc-section content-section">
         <div className="container">
           <div className="loc-intro">
             <div>
@@ -61,9 +54,7 @@ const LocationPage = () => {
               <h2 className="section-title">Websites, SEO &amp; ads that bring customers in {loc.city}</h2>
               <p className="loc-text">{loc.intro}</p>
               <p className="loc-text">{loc.focus}</p>
-              <Link to="/contact" className="btn-primary" style={{ marginTop: 8 }}>
-                Get a free consultation <FiArrowRight />
-              </Link>
+              <CtaButtons />
             </div>
             <aside className="loc-card">
               <h3>Areas we serve in {loc.city}</h3>
@@ -81,57 +72,26 @@ const LocationPage = () => {
             </aside>
           </div>
 
-          <div className="loc-block">
-            <span className="section-tag">Services in {loc.city}</span>
-            <h2 className="section-title">Everything you need to grow online in {loc.city}</h2>
-            <div className="loc-services">
-              {services.map((s) => (
-                <Link key={s.slug} to={`/services/${s.slug}`} className="loc-service">
-                  <h3>{s.title} in {loc.city}</h3>
-                  <p>{s.shortDesc}</p>
-                  <span className="loc-service-link">Learn more <FiArrowRight /></span>
-                </Link>
-              ))}
-            </div>
-          </div>
+          <Blocks blocks={loc.sections || []} />
 
-          <div className="loc-block">
-            <span className="section-tag">Recent work</span>
-            <h2 className="section-title">Websites we have built</h2>
-            <ul className="loc-projects">
-              {projects.map((p) => (
-                <li key={p.id}>
-                  <strong>{p.title}</strong> — {p.desc}{' '}
-                  {p.link && (
-                    <a href={p.link} target="_blank" rel="noopener noreferrer">View live site</a>
-                  )}
-                </li>
-              ))}
-            </ul>
-            <Link to="/portfolio" className="loc-inline-link">See full portfolio <FiArrowRight /></Link>
-          </div>
+          <Cards
+            tag={`Services in ${loc.city}`}
+            h2={`Everything you need to grow online in ${loc.city}`}
+            items={services.map((s) => ({ title: `${s.title} in ${loc.city}`, desc: s.shortDesc, to: `/services/${s.slug}` }))}
+          />
 
-          <div className="loc-block">
-            <span className="section-tag">FAQs</span>
-            <h2 className="section-title">Questions from {loc.city} businesses</h2>
-            {loc.faqs.map(([q, a]) => (
-              <details key={q} className="loc-faq">
-                <summary>{q}</summary>
-                <p>{a}</p>
-              </details>
-            ))}
-          </div>
+          <RealWork />
 
-          <div className="loc-block">
-            <h2 className="loc-other-title">We also serve</h2>
-            <div className="loc-other">
-              {others.map((o) => (
-                <Link key={o.slug} to={`/locations/${o.slug}`} className="chip-link">
-                  Web development &amp; digital marketing in {o.city}
-                </Link>
-              ))}
-            </div>
-          </div>
+          <Faqs faqs={loc.faqs} h2={`Questions from ${loc.city} businesses`} />
+
+          <LinkChips
+            h2={`Specialist pages for ${loc.city}`}
+            links={cityServices.filter((c) => c.city === loc.slug).map((c) => ({ to: `/locations/${loc.slug}/${c.service}`, label: c.label }))}
+          />
+          <LinkChips
+            h2="We also serve"
+            links={others.map((o) => ({ to: `/locations/${o.slug}`, label: `Digital marketing in ${o.city}` }))}
+          />
         </div>
       </section>
 

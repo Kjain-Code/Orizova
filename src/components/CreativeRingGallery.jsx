@@ -82,16 +82,24 @@ const CreativeRingGallery = ({ items }) => {
               onMouseEnter={() => handleEnter(item.id)}
               onMouseLeave={() => handleLeave(item.id)}
               onClick={() => item.video && setActiveItem(item)}
+              {...(item.video ? {
+                role: 'button',
+                tabIndex: 0,
+                'aria-label': `Play video: ${item.title}`,
+                onKeyDown: (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setActiveItem(item); } },
+              } : {})}
             >
               <div className="ring-card-inner" style={{ background: gradient }}>
                 {item.video && (
                   <video
                     ref={(el) => (videoRefs.current[item.id] = el)}
                     src={item.video}
+                    poster={item.poster}
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="none"
+                    aria-hidden="true"
                   />
                 )}
                 <span className="ring-badge">

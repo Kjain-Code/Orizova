@@ -7,7 +7,7 @@
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.8fr 1fr 1.3fr 1.3fr;
+  grid-template-columns: 1.6fr 1fr 1.1fr 1.1fr 1.2fr;
   gap: 48px;
   padding-bottom: 60px;
 }
@@ -117,8 +117,13 @@
 @media (max-width: 1024px) {
   .footer-inner {
     gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
   }
+  .footer-brand { grid-column: 1 / -1; }
 }
+.footer-legal { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin-top: 6px; }
+.footer-legal a { color: var(--text-light); font-size: 13px; }
+.footer-legal a:hover { color: var(--primary); }
 
 /* ===========================
    RESPONSIVE — TABLET PORTRAIT

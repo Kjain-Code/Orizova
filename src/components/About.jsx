@@ -9,9 +9,9 @@ const points = [
   'Result-driven strategies tailored to your business',
   'Transparent communication at every step',
   'Cutting-edge technology stack',
-  'Dedicated team for every project',
+  'One team for websites, SEO, ads and content',
   'Post-delivery support & maintenance',
-  'Proven track record across industries',
+  'Real, live work you can check yourself',
 ];
 
 const About = () => {
@@ -29,28 +29,29 @@ const About = () => {
           <StarDoodle className="about-star" />
           <div className="about-card-main">
             <div className="about-logo">◎</div>
-            <h3>Orizova Co.</h3>
+            <h3>Orizova Digital</h3>
             <p>We are a full-service digital agency helping businesses grow smarter, faster, and stronger in the digital world.</p>
             <div className="about-badge">
-              <span>🏆</span>
+              <span>🤝</span>
               <div>
-                <strong>Top Rated Agency</strong>
-                <p>India's Emerging Digital Partner</p>
+                <strong>Your Digital Growth Partner</strong>
+                <p>For businesses across India</p>
               </div>
             </div>
           </div>
           <div className="about-stat-cards">
+            {/* {{TODO: replace with real stats (years, projects, clients) once confirmed}} */}
             <div className="about-stat">
-              <h4>5+</h4>
-              <p>Years of Excellence</p>
+              <h4>11</h4>
+              <p>Services</p>
             </div>
             <div className="about-stat">
-              <h4>150+</h4>
-              <p>Projects Done</p>
+              <h4>India</h4>
+              <p>Pan-India Clients</p>
             </div>
             <div className="about-stat">
-              <h4>50+</h4>
-              <p>Happy Clients</p>
+              <h4>1</h4>
+              <p>Team, End to End</p>
             </div>
           </div>
         </m.div>
@@ -69,7 +70,7 @@ const About = () => {
             <LoopArc className="about-title-arc" />
           </h2>
           <p className="about-desc">
-            At Orizova Co., we are more than just a digital agency — we are your growth partners. Based in India, we serve businesses globally with cutting-edge digital solutions that deliver real, measurable results.
+            At Orizova Digital, we are more than just a digital agency — we are your growth partners. Based in India, we serve businesses globally with cutting-edge digital solutions that deliver real, measurable results.
           </p>
           <p className="about-desc">
             Whether you're a startup looking to establish your presence or an established brand seeking to scale — we have the expertise, tools, and passion to make it happen.

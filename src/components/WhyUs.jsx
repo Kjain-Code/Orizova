@@ -10,7 +10,7 @@ const reasons = [
   { icon: FiUsers, title: 'Client-First Approach', desc: 'Your success is our success — we treat your business like our own.', color: '#8B5CF6' },
   { icon: FiBarChart2, title: 'Data-Driven', desc: 'Every decision is backed by data, research, and market insights.', color: '#4C0E82' },
   { icon: FiShield, title: 'Transparent Process', desc: 'No hidden costs. Clear communication at every stage.', color: '#C2650C' },
-  { icon: FiClock, title: '24/7 Support', desc: 'We are always available to support your business needs.', color: '#8B5CF6' },
+  { icon: FiClock, title: 'Responsive Support', desc: 'Reach us on WhatsApp, phone or email — and get clear answers, not runarounds.', color: '#8B5CF6' },
 ];
 
 const WhyUs = () => {

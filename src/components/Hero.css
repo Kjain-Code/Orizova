@@ -180,7 +180,7 @@
 
 .hero-stats {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   margin-top: 8px;
   padding-top: 32px;
@@ -360,7 +360,7 @@
 .hero-cities a:hover { border-bottom-style: solid; }
 .hero-cities-sep { color: var(--gold-deep); }
 
-.hero-stats { grid-template-columns: repeat(2, 1fr); }
+.hero-stats { grid-template-columns: repeat(3, 1fr); }
   .hero-btns { justify-content: center; }
   .hero-desc { margin: 0 auto; }
   .hero-cta-doodle { display: none; }
@@ -390,7 +390,7 @@
 .hero-cities a:hover { border-bottom-style: solid; }
 .hero-cities-sep { color: var(--gold-deep); }
 
-.hero-stats { grid-template-columns: repeat(2, 1fr); }
+.hero-stats { grid-template-columns: repeat(3, 1fr); }
 }
 
 /* Phones: stop the always-running background animations — they cost battery
@@ -398,4 +398,8 @@
 @media (max-width: 768px), (prefers-reduced-motion: reduce) {
   .shape, .hero-title-star { animation: none; }
   .shape-3 { display: none; }
+}
+
+@media (max-width: 600px) {
+  .stat-item .stat-value { font-size: 1.35rem; }
 }

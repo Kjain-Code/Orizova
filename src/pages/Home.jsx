@@ -6,6 +6,7 @@ import WhyUs from '../components/WhyUs';
 import FeaturedWork from '../components/FeaturedWork';
 import AreasServed, { homeFaqs } from '../components/AreasServed';
 import CtaBand from '../components/CtaBand';
+import { IndustriesStrip, LatestPosts } from '../components/HomeExtras';
 import PageTransition from '../components/PageTransition';
 
 const Home = () => {
@@ -19,7 +20,7 @@ const Home = () => {
           mainEntity: homeFaqs.map(([q, a]) => ({
             '@type': 'Question',
             name: q,
-            acceptedAnswer: { '@type': 'Answer', text: a },
+            acceptedAnswer: { '@type': 'Answer', text: a.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') },
           })),
         }]}
       />
@@ -27,8 +28,10 @@ const Home = () => {
       <Hero />
       <Services />
       <WhyUs />
+      <IndustriesStrip />
       <FeaturedWork />
       <AreasServed />
+      <LatestPosts />
       <CtaBand
         title="Ready to Scale Your Brand?"
         subtitle="From strategy to execution — let's build the growth engine your business deserves."

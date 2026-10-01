@@ -43,7 +43,7 @@ const FeaturedWork = () => {
                 <div className="project-image-wrap">
                   <img
                     src={project.image}
-                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Co.`}
+                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Digital`}
                     className="project-image"
                     width="800"
                     height="338"

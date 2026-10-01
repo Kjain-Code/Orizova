@@ -1,27 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { m } from 'framer-motion';
-import { FiArrowRight, FiMapPin } from 'react-icons/fi';
+import { FiArrowRight } from 'react-icons/fi';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 import { ArrowDoodle, StarDoodle, SparkleDoodle, RocketCharacter } from './Doodles';
 import './Hero.css';
 import logo from '../assets/logo.webp';
-import locations from '../data/locations';
 
-const cities = locations.map(({ slug, city }) => ({ slug, city }));
-
+// Only verifiable facts here. The previous numbers (150+ projects, 98%
+// satisfaction, 50+ clients, 5+ years, 150% revenue, 100K+ leads, 5.0 rating)
+// could not be verified and were removed. {{TODO: add real, verifiable stats}}
 const stats = [
-  { value: 150, suffix: '+', label: 'Projects Delivered' },
-  { value: 98, suffix: '%', label: 'Client Satisfaction' },
-  { value: 50, suffix: '+', label: 'Happy Clients' },
-  { value: 5, suffix: '+', label: 'Years Experience' },
+  { value: 11, suffix: '', label: 'Services Under One Roof' },
+  { text: 'Pan-India', label: 'Clients Across India' },
+  { text: 'Free', label: 'First Consultation' },
 ];
 
 const floatingCards = [
-  { icon: '📈', title: 'Business Growth', value: '150%', sub: 'Avg Revenue Increase' },
-  { icon: '🎯', title: 'Total Leads', value: '100K+', sub: 'Generated for Clients' },
-  { icon: '⭐', title: 'Client First', value: '5.0', sub: 'Average Rating' },
+  { icon: '📈', title: 'Leads, Not Likes', value: 'Meta & Google', sub: 'Ads tracked to enquiries' },
+  { icon: '📍', title: 'Local SEO', value: 'Google Maps', sub: 'Show up near you' },
+  { icon: '🌏', title: 'Work With Us', value: 'Anywhere', sub: 'Remote-first, pan-India' },
 ];
 
 const marqueeItems = ['Web Development', 'App Development', 'SEO', 'Branding', 'Digital Marketing', 'E-Commerce'];
@@ -53,7 +52,7 @@ const Hero = () => {
           </p>
 
           <p className="hero-desc">
-            Orizova Co. is a web development company and digital marketing agency for Delhi NCR &amp; Chandigarh. We build fast, SEO-ready websites and apps, and run Google &amp; Meta Ads that turn visitors into enquiries.
+            Orizova Digital is a web development company and digital marketing agency based in Delhi NCR, working with businesses across India. We build fast, SEO-ready websites and apps, and run Google &amp; Meta Ads that turn visitors into enquiries.
           </p>
 
           <div className="hero-btns">
@@ -68,21 +67,12 @@ const Hero = () => {
             </Link>
           </div>
 
-          <nav className="hero-cities" aria-label="Cities we serve">
-            <FiMapPin aria-hidden="true" />
-            {cities.map((c, i) => (
-              <React.Fragment key={c.slug}>
-                {i > 0 && <span className="hero-cities-sep" aria-hidden="true">·</span>}
-                <Link to={`/locations/${c.slug}`}>{c.city}</Link>
-              </React.Fragment>
-            ))}
-          </nav>
 
           <div className="hero-stats" ref={ref}>
             {stats.map((stat, i) => (
               <div className="stat-item" key={i}>
                 <p className="stat-value">
-                  {inView ? (
+                  {stat.text ? stat.text : inView ? (
                     <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />
                   ) : `${stat.value}${stat.suffix}`}
                 </p>
@@ -102,7 +92,7 @@ const Hero = () => {
             <RocketCharacter />
           </m.div>
           <div className="hero-card-main">
-            <img src={logo} alt="Orizova Co. logo" width="108" height="80" decoding="async" style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '12px' }} />
+            <img src={logo} alt="Orizova Digital logo" width="108" height="80" decoding="async" style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '12px' }} />
             <p>Your Digital Growth Partner</p>
             <div className="services-chips">
               {marqueeItems.map(s => (

@@ -1,52 +1,32 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { FiArrowRight, FiCheckCircle } from 'react-icons/fi';
+import { FiCheckCircle } from 'react-icons/fi';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
-import Seo, { SITE_URL, AREAS_SERVED, routesByPath } from '../components/Seo';
+import CtaBand from '../components/CtaBand';
+import Seo, { AREAS_SERVED, routesByPath } from '../components/Seo';
+import {
+  Blocks, CtaButtons, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+} from '../components/ContentBlocks';
 import services from '../data/services';
+import servicePages from '../data/pages/servicePages';
 import locations from '../data/locations';
 import NotFound from './NotFound';
-
-const serviceFaqs = {
-  'website-development': [
-    ['What kind of websites do you build?', 'We build business and corporate websites, landing pages, portfolios, ecommerce websites and custom web applications.'],
-    ['Can you maintain an existing website?', 'Yes. Share your current website and goals so we can recommend the right development or support plan.'],
-  ],
-  'app-development': [
-    ['Do you build for both iOS and Android?', 'The service includes iOS, Android and cross-platform app development, depending on the product requirements.'],
-    ['Can you help with app UI and maintenance?', 'Yes. App UI/UX design, deployment support and ongoing maintenance are part of the listed service scope.'],
-  ],
-  'digital-marketing': [
-    ['Which digital marketing channels do you support?', 'The current offering includes social media, performance marketing and PPC ads, influencer marketing, content marketing and email marketing.'],
-    ['How do you choose the right channel mix?', 'We start with your business goal, audience and available assets, then recommend a practical mix of channels and content.'],
-  ],
-  'branding-designing': [
-    ['What does branding work include?', 'Branding and design work can include logos, identity guidelines, social media and LinkedIn carousels, packaging and pitch decks.'],
-    ['Can you work with an existing brand identity?', 'Yes. We can extend an existing identity or help create a clearer, more consistent visual system.'],
-  ],
-  seo: [
-    ['What SEO services do you provide?', 'The offering includes on-page, technical, local and off-page SEO, plus keyword research and content SEO.'],
-    ['How long does SEO take?', 'Timing depends on your site, competition and starting point. We begin with research and technical priorities before setting a realistic plan.'],
-  ],
-  'ecommerce-solutions': [
-    ['Which ecommerce platforms do you work with?', 'The listed service includes Shopify and WooCommerce development, as well as custom ecommerce experiences.'],
-    ['Can you integrate payments and inventory workflows?', 'Yes. Payment gateway integration, catalog UX, inventory and order management are included in the service scope.'],
-  ],
-};
 
 const ServicePage = () => {
   const { slug } = useParams();
   const service = services.find((item) => item.slug === slug);
+  const page = servicePages[slug];
 
-  if (!service) {
+  if (!service || !page) {
     return <NotFound />;
   }
 
-  const faqs = serviceFaqs[service.slug] || [];
   const path = `/services/${service.slug}`;
   const route = routesByPath[path] || {};
-  const [h1Main, h1Place] = (route.h1 || service.title).split(/ (?=in [A-Z])/);
+  const [h1Main, h1Place] = (route.h1 || service.title).split(/ (?=in [A-Z]|— )/);
+  const faqs = collectFaqs(page.blocks);
+  const others = services.filter((s) => s.slug !== service.slug && s.group === service.group);
 
   return (
     <PageTransition>
@@ -54,87 +34,60 @@ const ServicePage = () => {
         path={path}
         breadcrumbs={[{ name: 'Services', path: '/services' }, { name: service.title, path }]}
         schema={[
-          {
-            '@context': 'https://schema.org',
-            '@type': 'Service',
-            name: service.title,
-            description: service.fullDesc,
-            provider: { '@id': `${SITE_URL}/#organization` },
-            areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
+          serviceSchema({
+            name: route.h1 || service.title,
+            description: route.description || service.fullDesc,
+            path,
             serviceType: service.title,
-            url: `${SITE_URL}/services/${service.slug}`,
-          },
-          ...(faqs.length ? [{
-            '@context': 'https://schema.org',
-            '@type': 'FAQPage',
-            mainEntity: faqs.map(([question, answer]) => ({
-              '@type': 'Question',
-              name: question,
-              acceptedAnswer: { '@type': 'Answer', text: answer },
-            })),
-          }] : []),
+            areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
+          }),
+          ...(faqs.length ? [faqSchema(faqs)] : []),
         ]}
       />
-      <PageBanner
-        tag={service.title}
-        title={h1Main}
-        highlight={h1Place}
-        subtitle={service.fullDesc}
-      />
-      <section className="services-detail-section">
+      <PageBanner title={h1Main} highlight={h1Place} subtitle={page.banner} chips={service.subServices.map((x) => x.split(/[(/]/)[0].trim()).slice(0, 5)} />
+
+      <section className="loc-section content-section">
         <div className="container">
-          <div className="service-detail-content">
+          <div className="loc-intro">
             <div>
-              <span className="section-tag">What is included</span>
-              <h2 className="section-title">A practical scope for your next project</h2>
-              <p className="section-subtitle" style={{ marginLeft: 0 }}>
-                We shape the work around your business context, audience and delivery needs. Start with the areas that matter most and build from there.
-              </p>
-              <div className="about-points">
+              <span className="section-tag">{service.title}</span>
+              <h2 className="section-title content-h2">{page.intro.h2}</h2>
+              {page.intro.paras.map((p) => <p className="loc-text" key={p.slice(0, 30)}><Inline text={p} /></p>)}
+              <CtaButtons />
+            </div>
+            <aside className="loc-card">
+              <h3>What&apos;s included</h3>
+              <ul className="loc-areas">
                 {service.subServices.map((item) => (
-                  <div className="about-point" key={item}>
-                    <FiCheckCircle size={18} color="var(--primary)" />
-                    <span>{item}</span>
-                  </div>
+                  <li key={item}><FiCheckCircle size={14} aria-hidden="true" /> {item}</li>
                 ))}
-              </div>
-            </div>
-            <div>
-              <span className="section-tag">Our approach</span>
-              <h2 className="section-title">Clear thinking, careful execution</h2>
-              <p className="about-desc">We begin by understanding the problem, audience and success criteria. From there, the work moves through planning, production, review and launch or handover.</p>
-              <p className="about-desc">You can combine this service with other capabilities such as development, design, marketing or SEO when the project calls for a broader digital solution.</p>
-              <Link to="/contact" className="btn-primary" style={{ marginTop: 16 }}>
-                Discuss this service <FiArrowRight />
-              </Link>
-            </div>
+              </ul>
+              <h3 style={{ marginTop: 24 }}>Available in</h3>
+              <ul className="loc-areas">
+                {locations.map((loc) => (
+                  <li key={loc.slug}><Link to={`/locations/${loc.slug}`}>{loc.city}</Link></li>
+                ))}
+              </ul>
+            </aside>
           </div>
-          <div style={{ marginTop: 72 }}>
-            <span className="section-tag">Areas we serve</span>
-            <h2 className="section-title">{service.title} in Ghaziabad, Noida, Delhi &amp; Chandigarh</h2>
-            <div className="about-points">
-              {locations.map((loc) => (
-                <Link className="about-point" key={loc.slug} to={`/locations/${loc.slug}`}>
-                  <FiCheckCircle size={18} color="var(--primary)" />
-                  <span>{service.title} in {loc.city}</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-          {faqs.length > 0 && (
-            <div style={{ marginTop: 72 }}>
-              <span className="section-tag">FAQs</span>
-              <h2 className="section-title">Common questions</h2>
-              {faqs.map(([question, answer]) => (
-                <div key={question} style={{ margin: '24px 0', maxWidth: 760 }}>
-                  <h3>{question}</h3>
-                  <p className="about-desc">{answer}</p>
-                </div>
-              ))}
-            </div>
+
+          <Blocks blocks={page.blocks} />
+
+          <LinkChips
+            h2={`${service.title} across Delhi NCR & Chandigarh`}
+            links={locations.map((loc) => ({ to: `/locations/${loc.slug}`, label: `Digital agency in ${loc.city}` }))}
+          />
+          {others.length > 0 && (
+            <LinkChips h2="Related services" links={others.map((s) => ({ to: `/services/${s.slug}`, label: s.title }))} />
           )}
         </div>
       </section>
+
+      <CtaBand
+        title={`Talk to us about ${service.title}`}
+        subtitle="Share your goal on WhatsApp or the contact form — we'll reply with a clear plan and a fixed quote."
+        buttonText="Get Free Consultation"
+      />
     </PageTransition>
   );
 };

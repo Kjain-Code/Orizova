@@ -1,33 +1,61 @@
 import React, { useState } from 'react';
 import { m } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiClock } from 'react-icons/fi';
 import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import { ChatCharacter } from './Doodles';
 import CONTACT, { whatsappLink } from '../data/contact';
+import services from '../data/services';
 import './Contact.css';
+
+// Optional: set REACT_APP_WEB3FORMS_KEY (free key from web3forms.com) in
+// .env.production to receive enquiries by email without a backend.
+// Without a key, the form hands the enquiry to WhatsApp — far more reliable
+// on phones than the old mailto: link. {{TODO: add REACT_APP_WEB3FORMS_KEY}}
+const FORM_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', email: '', phone: '', service: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  // No backend yet — this opens the visitor's email client with the enquiry
-  // pre-filled, addressed to us. Once the backend is ready this can be
-  // swapped for a real API call without touching the form UI.
-  const handleSubmit = (e) => {
+  const trackLead = () => {
+    if (typeof window !== 'undefined' && typeof window.fbq === 'function') window.fbq('track', 'Lead');
+  };
+
+  const sendToWhatsApp = () => {
+    const text = `Hi Orizova Digital, I'm ${form.name}.${form.service ? ` I'm interested in ${form.service}.` : ''}\n\n${form.message}\n\nPhone: ${form.phone || '-'}\nEmail: ${form.email}`;
+    window.open(`https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener');
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const subject = encodeURIComponent(`New Enquiry from ${form.name || 'Website'}${form.service ? ` — ${form.service}` : ''}`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || '-'}\nService: ${form.service || '-'}\n\nMessage:\n${form.message}`
-    );
-
-    window.location.href = `mailto:${CONTACT.email}?subject=${subject}&body=${body}`;
-
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
-    setForm({ name: '', email: '', phone: '', service: '', message: '' });
+    if (!FORM_KEY) {
+      sendToWhatsApp();
+      trackLead();
+      setStatus('sent');
+      return;
+    }
+    setStatus('sending');
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: FORM_KEY,
+          subject: `New enquiry from ${form.name || 'website'}${form.service ? ` — ${form.service}` : ''}`,
+          from_name: 'Orizova Digital website',
+          ...form,
+        }),
+      });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.message || 'Failed');
+      trackLead();
+      setStatus('sent');
+      setForm({ name: '', email: '', phone: '', service: '', message: '' });
+    } catch (err) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -67,6 +95,15 @@ const Contact = () => {
                   <span>{CONTACT.location}</span>
                 </div>
               </div>
+              {CONTACT.hours && (
+                <div className="info-item">
+                  <div className="info-icon"><FiClock size={20} /></div>
+                  <div>
+                    <strong>Working hours</strong>
+                    <span>{CONTACT.hours}</span>
+                  </div>
+                </div>
+              )}
             </div>
 
             <div className="contact-social">
@@ -92,44 +129,42 @@ const Contact = () => {
           >
             <div className="form-row">
               <div className="form-group">
-                <label>Your Name *</label>
-                <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe" required />
+                <label htmlFor="cf-name">Your Name *</label>
+                <input id="cf-name" type="text" name="name" autoComplete="name" value={form.name} onChange={handleChange} placeholder="Your name" required />
               </div>
               <div className="form-group">
-                <label>Email Address *</label>
-                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="john@company.com" required />
+                <label htmlFor="cf-email">Email Address *</label>
+                <input id="cf-email" type="email" name="email" autoComplete="email" value={form.email} onChange={handleChange} placeholder="you@company.com" required />
               </div>
             </div>
             <div className="form-row">
               <div className="form-group">
-                <label>Phone Number</label>
-                <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+91 XXXXX XXXXX" />
+                <label htmlFor="cf-phone">Phone Number</label>
+                <input id="cf-phone" type="tel" name="phone" autoComplete="tel" value={form.phone} onChange={handleChange} placeholder="+91 XXXXX XXXXX" />
               </div>
               <div className="form-group">
-                <label>Service Needed</label>
-                <select name="service" value={form.service} onChange={handleChange}>
+                <label htmlFor="cf-service">Service Needed</label>
+                <select id="cf-service" name="service" value={form.service} onChange={handleChange}>
                   <option value="">Select a Service</option>
-                  <option>Website Development</option>
-                  <option>App Development</option>
-                  <option>Digital Marketing</option>
-                  <option>Branding & Designing</option>
-                  <option>SEO</option>
-                  <option>E-Commerce Solutions</option>
-                  <option>Content & Email Marketing</option>
+                  {services.map((svc) => <option key={svc.slug}>{svc.title}</option>)}
+                  <option>Not sure yet</option>
                 </select>
               </div>
             </div>
             <div className="form-group">
-              <label>Your Message *</label>
-              <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={5} required />
+              <label htmlFor="cf-message">Your Message *</label>
+              <textarea id="cf-message" name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={5} required />
             </div>
-            <button type="submit" className="btn-primary submit-btn">
-              {sent ? "✅ Opening your email app..." : (
-                <>
-                  <FiSend /> Send Message
-                </>
-              )}
+            <button type="submit" className="btn-primary submit-btn" disabled={status === 'sending'}>
+              <FiSend aria-hidden="true" /> {status === 'sending' ? 'Sending…' : FORM_KEY ? 'Send Message' : 'Send via WhatsApp'}
             </button>
+            <p className="form-status" role="status" aria-live="polite">
+              {status === 'sent' && (FORM_KEY
+                ? 'Thank you — your enquiry has been sent. We will get back to you soon.'
+                : 'WhatsApp has opened with your message — just tap send. If it did not open, call or email us.')}
+              {status === 'error' && 'Sorry, something went wrong. Please WhatsApp or call us instead.'}
+            </p>
+            <p className="form-note">Prefer email? Write to <a href={`mailto:${CONTACT.email}`} className="content-link">{CONTACT.email}</a>. See our <a href="/privacy-policy" className="content-link">privacy policy</a>.</p>
           </m.form>
         </div>
       </div>

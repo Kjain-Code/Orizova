@@ -5,7 +5,8 @@ import seo from '../data/seo.json';
 
 const SITE_URL = (process.env.REACT_APP_SITE_URL || seo.defaultSiteUrl).replace(/\/$/, '');
 const SITE_NAME = seo.siteName;
-const DEFAULT_IMAGE = `${SITE_URL}/logo512.png`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
+const LOGO = `${SITE_URL}/logo512.png`;
 const AREAS_SERVED = ['Ghaziabad', 'Noida', 'Greater Noida', 'Delhi', 'Delhi NCR', 'Chandigarh', 'Mohali', 'Panchkula', 'India'];
 
 const routesByKey = Object.fromEntries(seo.routes.map((r) => [r.key, r]));
@@ -15,8 +16,8 @@ const routesByPath = Object.fromEntries(seo.routes.map((r) => [r.path, r]));
 const pageDefaults = {
   ...routesByKey,
   notFound: {
-    title: 'Page Not Found | Orizova Co.',
-    description: 'The page you requested could not be found. Explore Orizova Co. web development, SEO and digital marketing services.',
+    title: 'Page Not Found | Orizova Digital',
+    description: 'The page you requested could not be found. Explore Orizova Digital web development, SEO and digital marketing services.',
     path: '/',
     noindex: true,
   },
@@ -29,8 +30,8 @@ const businessSchema = {
   name: SITE_NAME,
   alternateName: ['Orizova', 'Orizova Digital'],
   url: SITE_URL,
-  logo: DEFAULT_IMAGE,
-  image: DEFAULT_IMAGE,
+  logo: LOGO,
+  image: LOGO,
   email: CONTACT.email,
   telephone: CONTACT.phoneTel,
   priceRange: '₹₹',
@@ -49,7 +50,8 @@ const businessSchema = {
     areaServed: 'IN',
     availableLanguage: ['English', 'Hindi'],
   },
-  sameAs: [CONTACT.instagramUrl],
+  sameAs: CONTACT.sameAs,
+  // {{TODO: add "address" (PostalAddress) + "geo" only if you have a real public office, and "openingHoursSpecification" once hours are confirmed}}
 };
 
 const websiteSchema = {
@@ -79,7 +81,7 @@ const breadcrumbSchema = (crumbs) => ({
  * prerender script (scripts/prerender.js) outputs the exact same tags as
  * static HTML for Google and social previews.
  */
-const Seo = ({ page, path, title, description, schema = [], breadcrumbs, noindex }) => {
+const Seo = ({ page, path, title, description, schema = [], breadcrumbs, noindex, type = 'website' }) => {
   const route = (page && pageDefaults[page]) || (path && routesByPath[path]) || pageDefaults.home;
   const resolvedPath = path || route.path || '/';
   const resolvedTitle = title || route.title;
@@ -105,14 +107,17 @@ const Seo = ({ page, path, title, description, schema = [], breadcrumbs, noindex
         name="robots"
         content={isNoindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'}
       />
-      <link rel="canonical" href={canonical} />
-      <meta property="og:type" content="website" />
+      {!isNoindex && <link rel="canonical" href={canonical} />}
+      <meta property="og:type" content={type} />
       <meta property="og:locale" content="en_IN" />
       <meta property="og:site_name" content={SITE_NAME} />
       <meta property="og:title" content={resolvedTitle} />
       <meta property="og:description" content={resolvedDescription} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={DEFAULT_IMAGE} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content={`${SITE_NAME} — websites, SEO & digital marketing`} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={resolvedTitle} />
       <meta name="twitter:description" content={resolvedDescription} />

@@ -22,7 +22,7 @@ const Preloader = () => {
         />
         <m.img
           src={logo}
-          alt="Orizova Co."
+          alt="Orizova Digital"
           className="preloader-logo"
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: [0.85, 1, 0.97, 1] }}

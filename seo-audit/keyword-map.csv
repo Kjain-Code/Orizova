@@ -1,0 +1,100 @@
+keyword,intent,target page URL,priority (high/med/low),notes
+digital marketing agency in delhi ncr,commercial,/,high,Home primary. Keep brand + Delhi NCR in title
+website development and digital marketing agency,commercial,/,med,Home secondary
+digital marketing company ghaziabad noida delhi,commercial,/,med,Home secondary (multi-city)
+web development seo and digital marketing services,commercial,/services,med,Services hub primary
+website development company in delhi ncr,commercial,/services/website-development,high,Existing page – expand to 900+ words
+business website design,commercial,/services/website-development,med,Secondary
+wordpress website development,commercial,/services/website-development,low,Secondary (section on page)
+landing page design for ads,commercial,/services/website-development,low,Secondary
+mobile app development company delhi ncr,commercial,/services/app-development,med,Existing page – expand
+digital marketing services in delhi ncr,commercial,/services/digital-marketing,high,Hub for SMM/Meta/Google ads; avoid clash with home by focusing on 'services' + channel mix
+performance marketing agency,commercial,/services/digital-marketing,med,Secondary
+lead generation agency delhi ncr,commercial,/services/digital-marketing,med,Secondary
+social media marketing agency delhi ncr,commercial,/services/social-media-marketing,high,NEW page
+instagram marketing services,commercial,/services/social-media-marketing,med,Secondary
+social media management for small business,commercial,/services/social-media-marketing,med,Secondary
+meta ads agency delhi ncr,commercial,/services/meta-ads,high,NEW page (Facebook + Instagram ads)
+facebook ads services,commercial,/services/meta-ads,high,Secondary
+instagram ads for local business,commercial,/services/meta-ads,med,Secondary
+meta lead ads for real estate,commercial,/services/meta-ads,med,Link to real-estate industry page
+google ads agency delhi ncr,commercial,/services/google-ads,high,NEW page
+google ads management services,commercial,/services/google-ads,high,Secondary
+ppc company in delhi,commercial,/services/google-ads,med,Secondary
+search ads for clinics,commercial,/services/google-ads,low,Link to clinics page
+seo services in delhi ncr,commercial,/services/seo,high,Existing page – expand
+seo company in delhi ncr,commercial,/services/seo,high,Secondary
+technical seo services,commercial,/services/seo,low,Secondary
+local seo services,commercial,/services/local-seo,high,NEW page
+google business profile optimization,commercial,/services/local-seo,high,Secondary
+google maps ranking for business,commercial,/services/local-seo,med,Secondary
+near me seo,commercial,/services/local-seo,low,Secondary
+video editing services in delhi ncr,commercial,/services/video-editing,high,NEW page; /creative-work stays as gallery and links here
+reels editing services,commercial,/services/video-editing,high,Secondary
+instagram reel editing for business,commercial,/services/video-editing,med,Secondary
+ad video editing,commercial,/services/video-editing,low,Secondary
+video editing portfolio reels,navigational,/creative-work,low,Gallery page – keep light
+e-commerce website development,commercial,/services/ecommerce-solutions,high,Existing page – expand
+shopify store development india,commercial,/services/ecommerce-solutions,med,Secondary
+woocommerce development,commercial,/services/ecommerce-solutions,low,Secondary
+branding and logo design agency delhi ncr,commercial,/services/branding-designing,med,Existing page – expand
+logo design services,commercial,/services/branding-designing,med,Secondary
+digital marketing agency in ghaziabad,commercial/local,/locations/ghaziabad,high,Existing city hub
+digital marketing company indirapuram vaishali,commercial/local,/locations/ghaziabad,med,Secondary (locality mentions)
+website development company in ghaziabad,commercial/local,/locations/ghaziabad/website-development,high,NEW service+city page
+website designing company in ghaziabad,commercial/local,/locations/ghaziabad/website-development,high,Secondary (competitor term)
+website design cost ghaziabad,commercial/local,/locations/ghaziabad/website-development,med,Secondary (cost FAQ)
+seo company in ghaziabad,commercial/local,/locations/ghaziabad/seo,high,NEW service+city page
+digital marketing agency in noida,commercial/local,/locations/noida,high,Existing city hub
+digital marketing company greater noida west,commercial/local,/locations/noida,med,Secondary
+website development company in noida,commercial/local,/locations/noida/website-development,high,NEW
+website designing company in noida,commercial/local,/locations/noida/website-development,high,Secondary
+seo company in noida,commercial/local,/locations/noida/seo,high,NEW
+digital marketing agency in delhi,commercial/local,/locations/delhi,high,Existing city hub
+web design company in delhi,commercial/local,/locations/delhi/website-development,high,NEW
+website development company in delhi,commercial/local,/locations/delhi/website-development,high,Secondary
+seo company in delhi,commercial/local,/locations/delhi/seo,med,NEW (very competitive – long-term)
+digital marketing agency in chandigarh,commercial/local,/locations/chandigarh,high,Existing city hub
+digital marketing agency mohali panchkula,commercial/local,/locations/chandigarh,med,Secondary
+website development company in chandigarh,commercial/local,/locations/chandigarh/website-development,high,NEW
+seo company in chandigarh,commercial/local,/locations/chandigarh/seo,med,NEW
+digital marketing for businesses by industry,commercial,/industries,low,NEW hub
+digital marketing for clinics,commercial,/industries/clinics,high,NEW
+website for doctors and clinics,commercial,/industries/clinics,high,Secondary
+healthcare marketing agency delhi ncr,commercial,/industries/clinics,med,Secondary
+dental clinic marketing,commercial,/industries/clinics,low,Secondary
+website design for architects,commercial,/industries/architects,high,NEW
+architect portfolio website,commercial,/industries/architects,med,Secondary
+interior designer website and marketing,commercial,/industries/architects,low,Secondary
+real estate digital marketing agency,commercial,/industries/real-estate,high,NEW
+real estate lead generation noida,commercial,/industries/real-estate,high,Secondary
+property dealer website,commercial,/industries/real-estate,med,Secondary
+restaurant digital marketing agency,commercial,/industries/restaurants-cafes,high,NEW (restaurants + cafes in one page to avoid two pages fighting for the same terms)
+cafe marketing ideas instagram,commercial,/industries/restaurants-cafes,med,Secondary
+restaurant website design,commercial,/industries/restaurants-cafes,med,Secondary
+zomato swiggy google listing for restaurant,informational,/industries/restaurants-cafes,low,Secondary
+digital marketing for loan agents,commercial,/industries/finance-loan-agents,high,NEW
+lead generation for loan dsa,commercial,/industries/finance-loan-agents,high,Secondary
+website for financial advisor,commercial,/industries/finance-loan-agents,med,Secondary
+how much does a website cost in india,informational,/blog/website-cost-in-delhi-ncr,high,Blog 1
+website design cost in delhi ncr,informational,/blog/website-cost-in-delhi-ncr,high,Blog 1 secondary
+google business profile optimization guide,informational,/blog/google-business-profile-guide,high,Blog 2
+how to rank on google maps,informational,/blog/google-business-profile-guide,high,Blog 2 secondary
+meta ads vs google ads,informational,/blog/meta-ads-vs-google-ads,high,Blog 3
+facebook ads or google ads for small business,informational,/blog/meta-ads-vs-google-ads,med,Blog 3 secondary
+how to get more patients for clinic online,informational,/blog/get-more-patients-clinic-online,high,Blog 4
+clinic website must have features,informational,/blog/get-more-patients-clinic-online,med,Blog 4 secondary
+real estate leads from facebook ads,informational,/blog/real-estate-leads-meta-ads,high,Blog 5
+how to get property leads online,informational,/blog/real-estate-leads-meta-ads,med,Blog 5 secondary
+instagram marketing ideas for cafes and restaurants,informational,/blog/instagram-ideas-restaurants-cafes,med,Blog 6
+architect portfolio website tips,informational,/blog/architect-portfolio-website-tips,med,Blog 7
+how loan agents get leads online,informational,/blog/loan-agent-lead-generation,med,Blog 8
+local seo checklist for small business,informational,/blog/local-seo-checklist,high,Blog 9
+digital marketing faq,informational,/faq,low,FAQ hub
+orizova digital,navigational,/about,med,Brand – also confirm brand name
+orizova digital reviews,navigational,/about,low,Needs real reviews / GBP link
+contact orizova,navigational,/contact,low,
+website development portfolio,navigational,/portfolio,low,
+fractional real estate investment platform website,informational,/portfolio/wipo-group,low,Case study page
+photography portfolio website,informational,/portfolio/ganesh-creation,low,Case study page
+subtitling localisation company website,informational,/portfolio/fps-subtitle,low,Case study page

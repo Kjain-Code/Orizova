@@ -8,6 +8,11 @@ import {
   FiPenTool,
   FiSearch,
   FiShoppingCart,
+  FiInstagram,
+  FiTarget,
+  FiMousePointer,
+  FiMapPin,
+  FiVideo,
   FiMail,
   FiArrowRight,
 } from "react-icons/fi";
@@ -22,6 +27,11 @@ const iconMap = {
   FiPenTool,
   FiSearch,
   FiShoppingCart,
+  FiInstagram,
+  FiTarget,
+  FiMousePointer,
+  FiMapPin,
+  FiVideo,
   FiMail,
 };
 

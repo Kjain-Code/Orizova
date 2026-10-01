@@ -1,5 +1,5 @@
 import React from 'react';
-import Seo from '../components/Seo';
+import Seo, { SITE_URL } from '../components/Seo';
 import projects from '../data/projects';
 import PageBanner from '../components/PageBanner';
 import Projects from '../components/Projects';
@@ -18,16 +18,16 @@ const Portfolio = () => {
             '@type': 'ListItem',
             position: index + 1,
             name: project.title,
-            url: project.link,
+            url: `${SITE_URL}/portfolio/${project.slug}`,
           })),
         }]}
       />
 
       <PageBanner
-        tag="Our Work"
         title="Website Development Portfolio —"
         highlight="Projects That Speak"
-        subtitle="A look at the websites, apps, and campaigns we've built — and the results they delivered."
+        subtitle="Live websites we have designed and developed — open them, click around and judge the work for yourself."
+        chips={['Web apps', 'Portfolios', 'Corporate sites', 'Dashboards', 'Live work']}
       />
       <Projects />
       <CtaBand

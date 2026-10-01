@@ -18,8 +18,10 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', to: '/' },
     { name: 'Services', to: '/services' },
+    { name: 'Industries', to: '/industries' },
     { name: 'Portfolio', to: '/portfolio' },
     { name: 'Creative Work', to: '/creative-work' },
+    { name: 'Blog', to: '/blog' },
     { name: 'About', to: '/about' },
     { name: 'Contact', to: '/contact' },
   ];
@@ -28,7 +30,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} aria-label="Main navigation">
       <div className="container navbar-inner">
         <Link to="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
-          <img src={logo} alt="Orizova Co. home" width="68" height="50" fetchpriority="high" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+          <img src={logo} alt="Orizova Digital home" width="68" height="50" fetchPriority="high" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         <ul className="navbar-links">
@@ -50,12 +52,18 @@ const Navbar = () => {
           Call Us
         </a>
 
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+        >
           {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
         </button>
       </div>
 
-      <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+      <div id="mobile-menu" className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
         {navLinks.map((link) => (
           <NavLink
             key={link.name}

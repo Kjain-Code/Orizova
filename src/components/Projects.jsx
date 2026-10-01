@@ -84,7 +84,7 @@ const Projects = () => {
                   <div className="project-image-wrap">
                     <img
                     src={project.image}
-                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Co.`}
+                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Digital`}
                     className="project-image"
                     width="800"
                     height="338"
@@ -142,6 +142,9 @@ const Projects = () => {
                     ✅ {project.result}
                   </div>
 
+                  <Link to={`/portfolio/${project.slug}`} className="project-btn" style={{ marginBottom: 10 }}>
+                    Project details<span className="sr-only"> for {project.title}</span>
+                  </Link>
                   {project.link ? (
                     <a
                       href={project.link}

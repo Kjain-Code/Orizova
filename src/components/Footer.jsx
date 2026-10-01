@@ -8,12 +8,14 @@ import logo from '../assets/logo.webp';
 import services from '../data/services';
 import locations from '../data/locations';
 
+import { industriesIndex as industries, cityServicesIndex as cityServices } from '../data/siteIndex';
+
 const quickLinks = [
-  { name: 'Home', to: '/' },
-  { name: 'Services', to: '/services' },
+  { name: 'About', to: '/about' },
   { name: 'Portfolio', to: '/portfolio' },
   { name: 'Creative Work', to: '/creative-work' },
-  { name: 'About', to: '/about' },
+  { name: 'Blog', to: '/blog' },
+  { name: 'FAQ', to: '/faq' },
   { name: 'Contact', to: '/contact' },
 ];
 
@@ -23,7 +25,7 @@ const Footer = () => {
       <div className="container footer-inner">
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            <img src={logo} alt="Orizova Co. – web development & digital marketing agency" width="65" height="48" loading="lazy" decoding="async" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+            <img src={logo} alt="Orizova Digital – web development & digital marketing agency" width="65" height="48" loading="lazy" decoding="async" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
           </Link>
           <p>Website development, SEO and digital marketing agency serving Ghaziabad, Noida, Delhi &amp; Chandigarh — and businesses across India and globally.</p>
           <div className="footer-contacts">
@@ -42,7 +44,7 @@ const Footer = () => {
         </div>
 
         <div className="footer-links">
-          <h2 className="footer-heading">Quick Links</h2>
+          <h2 className="footer-heading">Company</h2>
           <ul>
             {quickLinks.map(l => (
               <li key={l.name}>
@@ -62,11 +64,25 @@ const Footer = () => {
         </div>
 
         <div className="footer-links">
+          <h2 className="footer-heading">Industries</h2>
+          <ul>
+            {industries.map((ind) => (
+              <li key={ind.slug}><Link to={`/industries/${ind.slug}`}>{ind.name}</Link></li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="footer-links">
           <h2 className="footer-heading">Areas We Serve</h2>
           <ul>
             {locations.map((loc) => (
               <li key={loc.slug}>
                 <Link to={`/locations/${loc.slug}`}>Digital agency in {loc.city}</Link>
+              </li>
+            ))}
+            {cityServices.map((c) => (
+              <li key={`${c.city}-${c.service}`}>
+                <Link to={`/locations/${c.city}/${c.service}`}>{c.label}</Link>
               </li>
             ))}
           </ul>
@@ -75,7 +91,12 @@ const Footer = () => {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>© 2026 Orizova Co. All Rights Reserved. | Designed with ❤️ in India</p>
+          <p>© {new Date().getFullYear()} Orizova Digital. All Rights Reserved. | Designed with ❤️ in India</p>
+          <nav className="footer-legal" aria-label="Legal">
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms">Terms of Use</Link>
+            <Link to="/faq">FAQ</Link>
+          </nav>
         </div>
       </div>
     </footer>
