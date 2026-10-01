@@ -1,6 +1,6 @@
-// Animation features for framer-motion's LazyMotion. Kept in their own
-// file so they load as a separate chunk after the first paint instead of
-// sitting in the main bundle.
-import { domMax } from 'framer-motion';
+// Animation features for framer-motion (LazyMotion). Loaded with the app so
+// animated sections never wait for an extra download. domAnimation covers
+// all animations used on the site (layout animations are not needed).
+import { domAnimation } from "framer-motion";
 
-export default domMax;
+export default domAnimation;

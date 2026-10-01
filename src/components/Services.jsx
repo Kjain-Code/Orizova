@@ -38,16 +38,16 @@ const iconMap = {
 const cardVariants = {
   hidden: {
     opacity: 0,
-    y: 60,
-    scale: 0.9,
+    y: 30,
+    scale: 0.97,
   },
   visible: (i) => ({
     opacity: 1,
     y: 0,
     scale: 1,
     transition: {
-      delay: i * 0.08,
-      duration: 0.65,
+      delay: (i % 3) * 0.06,
+      duration: 0.45,
       ease: [0.22, 1, 0.36, 1],
     },
   }),
@@ -92,7 +92,7 @@ const Services = () => {
                 variants={cardVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true }}
+                viewport={{ once: true, margin: "0px 0px 15% 0px" }}
                 whileHover={{
                   y: -12,
                   scale: 1.03,

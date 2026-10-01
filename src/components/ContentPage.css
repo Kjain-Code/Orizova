@@ -502,7 +502,7 @@
 .form-status { margin-top: 12px; font-weight: 600; color: var(--primary); }
 
 /* ---------- scroll reveal (classes added by ScrollReveal.jsx) ---------- */
-.rv { opacity: 0; transform: translateY(34px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); transition-delay: var(--rv-delay, 0s); }
+.rv { opacity: 0; transform: translateY(22px); transition: opacity .5s ease-out, transform .5s cubic-bezier(.2,.8,.2,1); transition-delay: var(--rv-delay, 0s); }
 .rv.rv-in { opacity: 1; transform: none; }
 
 /* keyboard focus — visible on every interactive element */

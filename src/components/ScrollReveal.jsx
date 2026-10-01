@@ -10,7 +10,7 @@ import { useLocation } from 'react-router-dom';
       the pointer (CSS vars --mx / --my). */
 
 const SELECTOR = [
-  '.content-section .loc-block',
+  '.sh', '.cb-prose', '.cb-split-left', '.cb-chips-block',
   '.cb-card', '.cb-step', '.cb-checks li', '.cb-faq', '.cb-work-card',
   '.blog-card', '.svc-group', '.content-section .loc-service',
 ].join(',');
@@ -33,18 +33,18 @@ const ScrollReveal = () => {
             io.unobserve(e.target);
           }
         });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      }, { rootMargin: '0px 0px 12% 0px', threshold: 0 });
 
       els.forEach((el) => {
         if (el.classList.contains('rv')) return;
         if (el.getBoundingClientRect().top < fold) return; // already visible
         const siblings = el.parentElement ? Array.from(el.parentElement.children) : [];
         const idx = Math.max(0, siblings.indexOf(el));
-        el.style.setProperty('--rv-delay', `${Math.min(idx, 6) * 0.07}s`);
+        el.style.setProperty('--rv-delay', `${Math.min(idx, 4) * 0.05}s`);
         el.classList.add('rv');
         io.observe(el);
       });
-    }, 120); // wait for the page transition to mount
+    }, 60); // wait for the page transition to mount
 
     return () => {
       clearTimeout(timer);

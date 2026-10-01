@@ -9,6 +9,7 @@ import FloatingButtons from './components/FloatingButtons';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollProgress from './components/ScrollProgress';
 import ScrollReveal from './components/ScrollReveal';
+import motionFeatures from './motionFeatures';
 
 // Home ships in the main bundle (it's the landing page); every other page is
 // code-split so the first load downloads far less JavaScript.
@@ -43,7 +44,9 @@ const PixelPageView = () => {
   return null;
 };
 
-const loadMotionFeatures = () => import('./motionFeatures').then((mod) => mod.default);
+// Animation features load with the app (not as a separate later chunk) so
+// animated sections never sit invisible waiting for a download.
+const loadMotionFeatures = motionFeatures;
 
 // While a lazy page chunk downloads on the very first visit, keep showing the
 // pre-rendered HTML that came with the page (captured in index.js) instead of

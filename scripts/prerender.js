@@ -112,10 +112,24 @@ const splitHead = (html) => {
   return { tags, body };
 };
 
+/** framer-motion renders "before animation" styles (opacity:0, translate) on
+ *  the server. In static HTML that would hide content until JavaScript runs,
+ *  so make every animated element visible in the pre-rendered page. */
+const unhideAnimated = (html) =>
+  html.replace(/style="([^"]*)"/g, (full, css) => {
+    if (!/opacity:\s*0(?![.\d])/.test(css)) return full;
+    const cleaned = css
+      .replace(/opacity:\s*0(?![.\d]);?/g, '')
+      .replace(/transform:[^;]*;?/g, '')
+      .trim();
+    return cleaned ? `style="${cleaned}"` : '';
+  });
+
 const markRh = (tag) => tag.replace(/^<(title|meta|link)\b/i, '<$1 data-rh="true"');
 
 const buildPage = (template, html) => {
-  const { tags, body } = splitHead(html);
+  const { tags, body: rawBody } = splitHead(html);
+  const body = unhideAnimated(rawBody);
   let out = template;
   // Remove the template's own placeholder SEO tags (all marked data-rh).
   out = out.replace(/<title data-rh="true">[\s\S]*?<\/title>/gi, '');
