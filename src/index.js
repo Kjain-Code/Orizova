@@ -3,6 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// Styles for the code-split pages ship in the main stylesheet. The
+// pre-rendered HTML only links main.css, so when these lived in lazy chunks the
+// page first painted unstyled and then jumped (CLS ≈ 0.43 on desktop).
+import './components/PageBanner.css';
+import './components/ContentPage.css';
+import './pages/LocationPage.css';
+import './components/CtaBand.css';
+import './components/About.css';
+import './components/Contact.css';
+import './components/AreasServed.css';
+import './components/CreativeRingGallery.css';
+import './components/CreativeWorkSections.css';
 
 // The static SEO tags in each pre-rendered HTML file (marked data-rh) exist for
 // crawlers and link previews. Once React is running, react-helmet-async renders

@@ -535,3 +535,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 @media (prefers-reduced-motion: reduce) {
   .rv { opacity: 1; transform: none; transition: none; }
 }
+
+/* Make city links in the "Available in" card fill their pill so the whole
+   pill is tappable (was a 21px-tall text link). */
+.content-section .loc-areas li > a:only-child { display: inline-flex; align-items: center; min-height: 28px; padding: 2px 4px; margin: -2px -4px; }

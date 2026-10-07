@@ -8,6 +8,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../data/contact';
 import projects from '../data/projects';
 import { SITE_URL } from './Seo';
+import { guidesFor } from '../data/siteIndex';
 import '../pages/LocationPage.css';
 import './ContentPage.css';
 
@@ -216,6 +217,13 @@ export const LinkChips = ({ h2, links }) => (
     </div>
   </div>
 );
+
+/** Contextual links to the blog guides that support the current page. */
+export const RelatedGuides = ({ path, h2 = 'Helpful guides' }) => {
+  const guides = guidesFor(path);
+  if (!guides.length) return null;
+  return <LinkChips h2={h2} links={guides.map((g) => ({ to: `/blog/${g.slug}`, label: g.label }))} />;
+};
 
 export const RealWork = ({ h2 = 'Websites we have built' }) => (
   <div className="loc-block">

@@ -5,7 +5,8 @@ import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo, { SITE_URL } from '../components/Seo';
-import { CtaButtons } from '../components/ContentBlocks';
+import { CtaButtons, LinkChips } from '../components/ContentBlocks';
+import { guideIndex } from '../data/siteIndex';
 import industries from '../data/pages/industries';
 
 const IndustriesPage = () => (
@@ -54,6 +55,12 @@ const IndustriesPage = () => (
             ))}
           </div>
         </div>
+        <LinkChips
+          h2="Industry guides from our blog"
+          links={guideIndex
+            .filter((g) => g.pages.some((pg) => pg.startsWith('/industries/')))
+            .map((g) => ({ to: `/blog/${g.slug}`, label: g.label }))}
+        />
         <div className="loc-block content-prose">
           <h2 className="section-title content-h2">Don&apos;t see your industry?</h2>
           <p className="loc-text">

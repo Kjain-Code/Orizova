@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders the Orizova homepage', () => {
   render(<App />);
-  const logos = screen.getAllByAltText(/orizova co\./i);
+  const logos = screen.getAllByAltText(/orizova digital/i);
   expect(logos.length).toBeGreaterThan(0);
 });

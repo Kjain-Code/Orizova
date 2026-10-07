@@ -27,5 +27,22 @@ export const postsIndex = [
   { slug: 'meta-ads-vs-google-ads', category: 'Ads', readMins: 8, title: 'Meta Ads vs Google Ads: Which Is Better for Your Local Business?', excerpt: 'Google catches demand; Meta creates it. A plain-language comparison with examples for clinics, real estate, cafes, coaching and service businesses.' },
 ];
 
+// Short guide titles + which pages each guide supports. Used by
+// <RelatedGuides> so every blog post gets contextual links from the service,
+// industry and city pages it helps (previously most posts were reachable only
+// from /blog and their siblings).
+export const guideIndex = [
+  { slug: 'website-cost-in-delhi-ncr', label: 'Guide: what a website costs in Delhi NCR', pages: ['/services/website-development', '/services/ecommerce-solutions', '/locations/ghaziabad/website-development', '/locations/noida/website-development', '/locations/delhi/website-development', '/locations/chandigarh/website-development'] },
+  { slug: 'google-business-profile-guide', label: 'Guide: optimise your Google Business Profile', pages: ['/services/local-seo', '/services/seo', '/industries/clinics', '/industries/restaurants-cafes', '/locations/ghaziabad', '/locations/noida', '/locations/delhi', '/locations/chandigarh', '/locations/ghaziabad/seo', '/locations/noida/seo', '/locations/delhi/seo', '/locations/chandigarh/seo'] },
+  { slug: 'local-seo-checklist', label: 'Local SEO checklist: 25 steps', pages: ['/services/local-seo', '/services/seo', '/locations/ghaziabad/seo', '/locations/noida/seo', '/locations/delhi/seo', '/locations/chandigarh/seo', '/locations/ghaziabad', '/locations/noida', '/locations/delhi', '/locations/chandigarh'] },
+  { slug: 'meta-ads-vs-google-ads', label: 'Meta Ads vs Google Ads: which first?', pages: ['/services/meta-ads', '/services/google-ads', '/services/digital-marketing'] },
+  { slug: 'get-more-patients-clinic-online', label: 'How clinics get more patients online', pages: ['/industries/clinics', '/services/local-seo', '/services/google-ads'] },
+  { slug: 'real-estate-leads-meta-ads', label: 'Better real-estate leads from Meta ads', pages: ['/industries/real-estate', '/services/meta-ads'] },
+  { slug: 'instagram-ideas-restaurants-cafes', label: '30 Instagram ideas for restaurants & cafes', pages: ['/industries/restaurants-cafes', '/services/social-media-marketing', '/services/video-editing'] },
+  { slug: 'architect-portfolio-website-tips', label: 'Portfolio website tips for architects', pages: ['/industries/architects', '/services/website-development', '/services/branding-designing'] },
+  { slug: 'loan-agent-lead-generation', label: 'Lead generation for loan agents & DSAs', pages: ['/industries/finance-loan-agents', '/services/meta-ads', '/services/digital-marketing'] },
+];
+export const guidesFor = (path) => guideIndex.filter((g) => g.pages.includes(path));
+
 const bySlug = (list) => Object.fromEntries(list.map((x) => [x.slug, x]));
 export const industryMeta = bySlug(industriesIndex);

@@ -31,8 +31,8 @@ const ContactPage = () => {
       />
 
       <PageBanner
-        title="Contact Orizova —"
-        highlight="Let's Grow Together"
+        title="Contact Orizova Digital —"
+        highlight="Free Website & Marketing Consultation"
         subtitle="Call, WhatsApp or send the form — tell us about your business and we'll suggest the right website and marketing plan for it."
         chips={['WhatsApp', 'Call', 'Email', 'Free consult', 'Pan-India']}
         actions={false}

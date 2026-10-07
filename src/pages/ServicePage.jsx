@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { FiCheckCircle } from 'react-icons/fi';
-import PageBanner from '../components/PageBanner';
+import PageBanner, { splitHeading } from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo, { AREAS_SERVED, routesByPath } from '../components/Seo';
 import {
-  Blocks, CtaButtons, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
 } from '../components/ContentBlocks';
 import services from '../data/services';
 import servicePages from '../data/pages/servicePages';
@@ -24,7 +24,7 @@ const ServicePage = () => {
 
   const path = `/services/${service.slug}`;
   const route = routesByPath[path] || {};
-  const [h1Main, h1Place] = (route.h1 || service.title).split(/ (?=in [A-Z]|— )/);
+  const [h1Main, h1Place] = splitHeading(route.h1 || service.title, / (?=in [A-Z]|— )/);
   const faqs = collectFaqs(page.blocks);
   const others = services.filter((s) => s.slug !== service.slug && s.group === service.group);
 
@@ -72,6 +72,8 @@ const ServicePage = () => {
           </div>
 
           <Blocks blocks={page.blocks} />
+
+          <RelatedGuides path={path} />
 
           <LinkChips
             h2={`${service.title} across Delhi NCR & Chandigarh`}

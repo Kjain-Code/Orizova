@@ -4,10 +4,16 @@ import { FiExternalLink, FiArrowRight } from 'react-icons/fi';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
-import Seo, { SITE_URL } from '../components/Seo';
+import Seo, { SITE_URL, routesByPath } from '../components/Seo';
 import { CtaButtons, Inline, Prose, LinkChips } from '../components/ContentBlocks';
 import projects from '../data/projects';
 import NotFound from './NotFound';
+
+// Contextual link from a case study to the matching industry page.
+const INDUSTRY_LINKS = {
+  'morphic-spaces': { to: '/industries/architects', label: 'Websites for architects & interior designers' },
+  'wipo-group': { to: '/industries/finance-loan-agents', label: 'Digital marketing for finance businesses' },
+};
 
 const PortfolioDetail = () => {
   const { slug } = useParams();
@@ -32,7 +38,7 @@ const PortfolioDetail = () => {
           genre: p.category,
         }]}
       />
-      <PageBanner title={p.title} highlight="project overview" subtitle={p.desc} chips={[p.industry, ...p.tags].slice(0, 5)} />
+      <PageBanner title={`${p.title} —`} highlight={((routesByPath[path] || {}).h1 || '').split(' — ')[1] || 'Website Case Study'} subtitle={p.desc} chips={[p.industry, ...p.tags].slice(0, 5)} />
       <section className="loc-section content-section">
         <div className="container">
           <div className="loc-intro">
@@ -76,8 +82,16 @@ const PortfolioDetail = () => {
             h2="More projects"
             links={projects.filter((x) => x.slug !== p.slug).map((x) => ({ to: `/portfolio/${x.slug}`, label: x.title }))}
           />
-          <Link to="/services/website-development" className="loc-inline-link" style={{ marginTop: 20 }}>
-            Our website development service <FiArrowRight aria-hidden="true" />
+          <LinkChips
+            h2="Related services & industries"
+            links={[
+              { to: '/services/website-development', label: 'Website development service' },
+              ...(INDUSTRY_LINKS[p.slug] ? [INDUSTRY_LINKS[p.slug]] : []),
+              { to: '/portfolio', label: 'All portfolio projects' },
+            ]}
+          />
+          <Link to="/contact" className="loc-inline-link" style={{ marginTop: 20 }}>
+            Get a quote for a similar website <FiArrowRight aria-hidden="true" />
           </Link>
         </div>
       </section>

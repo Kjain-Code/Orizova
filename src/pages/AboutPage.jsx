@@ -26,8 +26,8 @@ const AboutPage = () => {
       />
 
       <PageBanner
-        title="About Orizova — A Team That Turns"
-        highlight="Vision Into Reality"
+        title="About Orizova Digital —"
+        highlight="Web Development & Digital Marketing Agency in Delhi NCR"
         subtitle="We're a full-service digital agency helping businesses in Delhi NCR, Chandigarh and across India grow smarter, faster and stronger online."
         chips={['Websites', 'SEO', 'Ads', 'Content', 'Pan-India']}
       />

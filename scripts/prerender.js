@@ -36,6 +36,26 @@ const readEnvUrl = () => {
 };
 const SITE_URL = readEnvUrl().replace(/\/$/, '');
 
+/** Read an optional setting from the environment or .env.production. */
+const readEnv = (name) => {
+  if (process.env[name]) return process.env[name].trim();
+  const envFile = path.join(ROOT, '.env.production');
+  if (fs.existsSync(envFile)) {
+    const m = fs.readFileSync(envFile, 'utf8').match(new RegExp(`^${name}=(.*)$`, 'm'));
+    if (m && m[1].trim()) return m[1].trim();
+  }
+  return '';
+};
+const esc = (v) => v.replace(/[&"<>]/g, (c) => ({ '&': '&amp;', '"': '&quot;', '<': '&lt;', '>': '&gt;' }[c]));
+// Search-engine ownership verification (optional). DNS verification in
+// Search Console needs no code; these are for the "HTML tag" method.
+const VERIFY_TAGS = [
+  ['google-site-verification', readEnv('GOOGLE_SITE_VERIFICATION')],
+  ['msvalidate.01', readEnv('BING_SITE_VERIFICATION')],
+].filter(([, v]) => v).map(([n, v]) => `<meta name="${n}" content="${esc(v)}"/>`).join('');
+// IndexNow (Bing, Yandex, Seznam, Naver): key file served from the site root.
+const INDEXNOW_KEY = readEnv('INDEXNOW_KEY');
+
 // ---------- 1. bundle the SSR entry ----------
 const MEDIA_EXT = /\.(png|jpe?g|gif|webp|avif|svg|ico|mp4|webm|mov)$/i;
 
@@ -136,7 +156,7 @@ const buildPage = (template, html) => {
   out = out.replace(/<meta data-rh="true"[^>]*>/gi, '');
   out = out.replace(/<link data-rh="true"[^>]*>/gi, '');
   out = out.replace(/<script data-rh="true" type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
-  out = out.replace('</head>', `${tags.map(markRh).join('')}</head>`);
+  out = out.replace('</head>', `${VERIFY_TAGS}${tags.map(markRh).join('')}</head>`);
   out = out.replace(/<div id="root">[\s\S]*?<\/div>(?=\s*<!--\s*Meta Pixel|\s*<script)/i, `<div id="root">${body}</div>`);
   return out;
 };
@@ -201,6 +221,13 @@ ${indexable
     path.join(BUILD, 'robots.txt'),
     `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`
   );
+
+  if (INDEXNOW_KEY) {
+    if (!/^[a-zA-Z0-9-]{8,128}$/.test(INDEXNOW_KEY)) throw new Error('INDEXNOW_KEY must be 8-128 letters, digits or dashes');
+    fs.writeFileSync(path.join(BUILD, `${INDEXNOW_KEY}.txt`), INDEXNOW_KEY);
+    console.log(`  ✓ IndexNow key file /${INDEXNOW_KEY}.txt`);
+  }
+  if (VERIFY_TAGS) console.log('  ✓ search-engine verification meta tags added');
 
   console.log(`prerender: ${seo.routes.length} pages + 404.html + sitemap.xml (${indexable.length} URLs) for ${SITE_URL}`);
   if (failures) {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { FiCheckCircle } from 'react-icons/fi';
-import PageBanner from '../components/PageBanner';
+import PageBanner, { splitHeading } from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo, { AREAS_SERVED, routesByPath } from '../components/Seo';
 import {
-  Blocks, CtaButtons, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
 } from '../components/ContentBlocks';
 import industries from '../data/pages/industries';
 import locations from '../data/locations';
@@ -19,7 +19,7 @@ const IndustryPage = () => {
 
   const path = `/industries/${ind.slug}`;
   const route = routesByPath[path] || {};
-  const [h1Main, h1Place] = (route.h1 || ind.name).split(/ (?=for [A-Z]|— )/);
+  const [h1Main, h1Place] = splitHeading(route.h1 || ind.name, / (?=for [A-Z]|— )/);
   const faqs = collectFaqs(ind.blocks);
   const crumbs = [{ name: 'Industries', path: '/industries' }, { name: ind.name, path }];
   const serviceCards = ind.blocks.find((b) => b.type === 'cards');
@@ -66,6 +66,8 @@ const IndustryPage = () => {
           </div>
 
           <Blocks blocks={ind.blocks} />
+
+          <RelatedGuides path={path} />
 
           <LinkChips
             h2="Other industries we work with"

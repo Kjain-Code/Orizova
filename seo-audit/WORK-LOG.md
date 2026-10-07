@@ -34,3 +34,21 @@ No source files, pages or URLs were modified.
 - src/pages: Home, ServicePage, ServicesPage, LocationPage, AboutPage, ContactPage, Portfolio, CreativeWork
 
 **Not deleted:** original videos in src/assets/videos/ (now unused) and portfolio .jpg originals.
+
+## 7 Oct 2026 — Indexing-readiness audit & fixes
+Live site checked: all 52 URLs in sitemap, robots.txt OK, www→apex and trailing-slash redirects OK, unknown URLs return a real 404, full HTML is pre-rendered. Site is **not yet indexed** (no results for the domain or brand) — the main blocker is discovery (Search Console, Business Profile, links), not code.
+
+**Fixed in code**
+- Desktop CLS ≈ 0.43 on every inner page → 0: styles for code-split pages now ship in main.css (src/index.js), so pre-rendered pages no longer paint unstyled then jump.
+- Truncated H1s: heading split dropped text after the second break (e.g. Local SEO page H1 lost "in Delhi NCR & Chandigarh", Meta Ads/Video/Real-estate lost their tails). New `splitHeading()` in PageBanner.jsx; em dash kept as separator.
+- Weak H1s rewritten: About, Contact, 4 portfolio case studies (seo.json + pages).
+- Internal links: new `guideIndex`/`RelatedGuides` — every blog post now linked from the service, industry and city pages it supports (posts went from 3–5 to 7–26 internal links); industries hub links industry guides; case studies link to service + industry pages.
+- Mobile tap targets: footer, legal and "Available in" city links now ≥ 28–32px tall.
+- Verification: GOOGLE_SITE_VERIFICATION / BING_SITE_VERIFICATION in .env.production are injected into every page by prerender.js.
+- IndexNow (Bing/Yandex): key in .env.production, key file generated at build, `npm run indexnow` submits all URLs.
+- Source maps no longer published (GENERATE_SOURCEMAP=false).
+- Removed inaccurate geo.region=IN-UP meta (site also serves Delhi & Chandigarh).
+- Sitemap lastmod updated for changed pages.
+- Stale unit test fixed (brand name + jsdom matchMedia/scrollTo stubs).
+
+**Verified**: build ✅, ESLint 0 errors ✅, test ✅, 52 pages + 404 pre-rendered, unique title/description/canonical on all, 1 H1 each, all JSON-LD valid, 0 broken internal links, 0 horizontal scroll at 390px, CLS 0 desktop & mobile, no console errors.

@@ -27,8 +27,22 @@ const Words = ({ text, offset = 0, className = '' }) =>
       </React.Fragment>
     ));
 
+/** Split a heading into [main, highlighted tail] at the FIRST match of `re`,
+ *  keeping everything after it (older code used String.split, which dropped
+ *  any third part — e.g. "Local SEO Services — Rank on Google Maps in Delhi
+ *  NCR" lost "in Delhi NCR" from the H1). */
+export const splitHeading = (text, re) => {
+  const str = String(text || '');
+  const m = str.match(re);
+  if (!m || m.index === 0) return [str, ''];
+  return [str.slice(0, m.index).trim(), str.slice(m.index).trim()];
+};
+
 const PageBanner = ({ title, highlight, subtitle, chips = DEFAULT_CHIPS, actions = true, compact = false }) => {
   const titleWords = String(title || '').split(' ').filter(Boolean).length;
+  // A leading/trailing em dash is kept as a plain-text separator so the H1
+  // reads "Local SEO Services — Rank on Google Maps", not "...Services Rank...".
+  const dashed = /^—/.test(String(highlight || '')) || /—\s*$/.test(String(title || ''));
   const cleanHighlight = highlight ? String(highlight).replace(/^—\s*/, '') : '';
   const cleanTitle = String(title || '').replace(/\s*—\s*$/, '');
 
@@ -42,7 +56,7 @@ const PageBanner = ({ title, highlight, subtitle, chips = DEFAULT_CHIPS, actions
         <div className="pb-copy">
           <h1 className="pb-title">
             <Words text={cleanTitle} />
-            {cleanHighlight && ' '}
+            {cleanHighlight && (dashed ? '\u00A0— ' : ' ')}
             {cleanHighlight && (
               <span className="pb-highlight">
                 <Words text={cleanHighlight} offset={titleWords} className="pb-grad" />

@@ -187,3 +187,13 @@
 @media (max-width: 560px) {
   .footer-inner { grid-template-columns: 1fr 1fr; }
 }
+
+/* Mobile tap targets: give every footer link at least ~32px of tappable
+   height (Google mobile-usability / Lighthouse tap-target guidance) without
+   changing the visual design. */
+@media (max-width: 768px) {
+  .footer-links ul { gap: 2px; }
+  .footer-links ul li a { display: inline-flex; align-items: center; min-height: 32px; }
+  .footer-contacts a { display: inline-flex; align-items: center; min-height: 32px; }
+  .footer-legal a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 4px; }
+}

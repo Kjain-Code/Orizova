@@ -17,3 +17,12 @@ global.IntersectionObserver = class IntersectionObserver {
 const { TextEncoder, TextDecoder } = require('util');
 if (typeof global.TextEncoder === 'undefined') global.TextEncoder = TextEncoder;
 if (typeof global.TextDecoder === 'undefined') global.TextDecoder = TextDecoder;
+
+// jsdom lacks matchMedia and scrollTo (used by the navbar / scroll helpers).
+if (!window.matchMedia) {
+  window.matchMedia = (query) => ({
+    matches: false, media: query, onchange: null,
+    addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {}, dispatchEvent() { return false; },
+  });
+}
+window.scrollTo = () => {};

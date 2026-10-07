@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { FiMapPin } from 'react-icons/fi';
-import PageBanner from '../components/PageBanner';
+import PageBanner, { splitHeading } from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo, { routesByPath } from '../components/Seo';
 import {
-  Blocks, CtaButtons, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
 } from '../components/ContentBlocks';
 import cityServices from '../data/pages/cityServices';
 import locations from '../data/locations';
@@ -22,7 +22,7 @@ const CityServicePage = () => {
 
   const path = `/locations/${city}/${service}`;
   const route = routesByPath[path] || {};
-  const [h1Main, h1Place] = (route.h1 || page.label).split(/ (?=in [A-Z])/);
+  const [h1Main, h1Place] = splitHeading(route.h1 || page.label, / (?=in [A-Z])/);
   const faqs = collectFaqs(page.blocks);
   const crumbs = [
     { name: `Digital agency in ${loc.city}`, path: `/locations/${loc.slug}` },
@@ -75,6 +75,8 @@ const CityServicePage = () => {
           </div>
 
           <Blocks blocks={page.blocks} />
+
+          <RelatedGuides path={path} />
 
           <LinkChips
             h2={`More for ${loc.city} businesses`}
