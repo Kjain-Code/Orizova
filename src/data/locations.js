@@ -151,7 +151,7 @@ const locations = [
         tag: 'Where to start',
         h2: 'Popular starting points in the Tricity',
         items: [
-          { title: 'Premium websites', desc: 'Portfolio-led sites for architects, developers and consultants.', to: '/locations/chandigarh/website-development' },
+          { title: 'Website development in Chandigarh', desc: 'Fast, custom-coded business, portfolio and e-commerce websites for Chandigarh, Mohali and Panchkula businesses.', to: '/locations/chandigarh/website-development', cta: 'Website development company in Chandigarh' },
           { title: 'SEO across Chandigarh, Mohali & Panchkula', desc: 'Local SEO and content for Tricity searches.', to: '/locations/chandigarh/seo' },
           { title: 'Architects & interior designers', desc: 'Websites and Instagram built around your projects.', to: '/industries/architects' },
         ],
@@ -161,8 +161,49 @@ const locations = [
       ['Do you work with businesses in Mohali and Panchkula too?', 'Yes. We work with clients across the Chandigarh Tricity — Chandigarh, Mohali, Panchkula and Zirakpur.'],
       ['Can you build a portfolio website for architects or interior designers?', 'Yes. We build animated, image-rich portfolio websites that still load fast and rank on Google.'],
       ['Do you handle Meta lead ads for real-estate and immigration businesses?', 'Yes. We create the ad creatives, lead forms and landing pages, and optimise campaigns for lead quality, not just cheap leads.'],
-      ['Are you based in Chandigarh?', 'Our team is based in Delhi NCR and works with Tricity clients remotely over calls, video meetings and WhatsApp.'],
+      ['Are you based in Chandigarh?', 'Our team is based in Delhi NCR and works with Tricity clients remotely over calls, video meetings and WhatsApp. Our Tricity work includes the website for [Morphic Spaces](/portfolio/morphic-spaces).'],
+      ['Do you build websites for Chandigarh businesses?', 'Yes — business websites, portfolio sites, landing pages and online stores. See our [website development services in Chandigarh](/locations/chandigarh/website-development) and the [website cost guide for Chandigarh](/blog/website-development-cost-chandigarh).'],
       ['Can you manage Google Ads for immigration consultants?', 'Yes, within Google’s policies for immigration services. Clear disclosures and honest claims keep accounts in good standing.'],
+    ],
+  },
+  {
+    slug: 'varanasi',
+    city: 'Varanasi',
+    region: 'Varanasi (Banaras), Uttar Pradesh',
+    tagline: 'Websites, Google visibility and lead generation for Varanasi businesses',
+    intro:
+      "Varanasi's businesses — hotels and homestays near the ghats, Banarasi silk and saree sellers, coaching institutes around BHU, hospitals, clinics and travel operators — now win customers online first. Orizova Digital builds fast websites for Varanasi businesses and helps them show up when customers from Banaras, across India and abroad search on Google.",
+    areas: ['Sigra', 'Lanka', 'Mahmoorganj', 'Cantt', 'Bhelupur', 'Godowlia', 'Assi', 'Sarnath', 'Pandeypur'],
+    industries: ['Hotels, homestays & guest houses', 'Banarasi silk & sarees', 'Coaching & education', 'Hospitals & clinics', 'Travel, tours & puja services', 'Restaurants & cafes'],
+    focus:
+      'For Varanasi businesses we focus on being found by people who are not yet in the city — pilgrims, tourists, students and online buyers — with fast websites, Google Business Profiles and search-friendly pages for every service.',
+    sections: [
+      {
+        type: 'prose',
+        tag: 'The Varanasi market',
+        h2: 'Many of your customers search from outside Banaras',
+        paras: [
+          'A family planning a trip to Kashi Vishwanath, a student choosing a coaching institute near BHU, or a buyer in Bengaluru looking for an authentic Banarasi saree — all of them search on Google long before they arrive or order. If your business is not visible with a clear, trustworthy website, the booking goes to an aggregator or a competitor.',
+          'That makes a good website especially valuable in Varanasi: direct bookings instead of commission-heavy portals, online orders from across India, and enquiries from people who have never walked past your shop.',
+        ],
+      },
+      {
+        type: 'cards',
+        tag: 'Where to start',
+        h2: 'Popular starting points in Varanasi',
+        items: [
+          { title: 'Website development in Varanasi', desc: 'Business, hotel, coaching and e-commerce websites built to rank and bring direct enquiries.', to: '/locations/varanasi/website-development', cta: 'Website development company in Varanasi' },
+          { title: 'Google Business Profile & Maps', desc: 'Get found for "near me" searches by pilgrims, tourists and locals.', to: '/services/local-seo' },
+          { title: 'Online store for Banarasi products', desc: 'Sell sarees, silk and handicrafts across India with payments and shipping.', to: '/services/ecommerce-solutions' },
+        ],
+      },
+    ],
+    faqs: [
+      ['Do you work with businesses in Varanasi?', 'Yes. We work with Varanasi businesses remotely over calls, video meetings and WhatsApp. Our team is based in Delhi NCR.'],
+      ['Can you build a hotel or homestay website with direct booking enquiries?', 'Yes — rooms, photos, location near the ghats or temples, reviews and WhatsApp or form enquiries so guests can book directly.'],
+      ['Can you build an online store for Banarasi sarees?', 'Yes — product catalogues, variants, payment gateways, shipping across India and order emails. See [e-commerce solutions](/services/ecommerce-solutions).'],
+      ['Do you do Google Maps optimisation for Varanasi businesses?', 'Yes. We set up and optimise your [Google Business Profile](/services/local-seo) with categories, photos, posts and a review routine.'],
+      ['How much does a website cost?', 'It depends on pages, design and features. We send a fixed, itemised quote after a short call — see the [website development page](/locations/varanasi/website-development) for details.'],
     ],
   },
 ];

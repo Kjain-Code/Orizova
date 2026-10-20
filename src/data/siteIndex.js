@@ -11,14 +11,15 @@ export const industriesIndex = [
 ];
 
 export const cityServicesIndex = [
-  { city: 'ghaziabad', service: 'website-development', label: 'Website development in Ghaziabad' },
+  { city: 'ghaziabad', service: 'website-development', label: 'Website development company in Ghaziabad' },
   { city: 'ghaziabad', service: 'seo', label: 'SEO company in Ghaziabad' },
-  { city: 'noida', service: 'website-development', label: 'Website development in Noida' },
+  { city: 'noida', service: 'website-development', label: 'Website development company in Noida' },
   { city: 'noida', service: 'seo', label: 'SEO company in Noida' },
-  { city: 'delhi', service: 'website-development', label: 'Web design in Delhi' },
+  { city: 'delhi', service: 'website-development', label: 'Website designing company in Delhi' },
   { city: 'delhi', service: 'seo', label: 'SEO company in Delhi' },
-  { city: 'chandigarh', service: 'website-development', label: 'Website development in Chandigarh' },
+  { city: 'chandigarh', service: 'website-development', label: 'Website development company in Chandigarh' },
   { city: 'chandigarh', service: 'seo', label: 'SEO company in Chandigarh' },
+  { city: 'varanasi', service: 'website-development', label: 'Website development company in Varanasi' },
 ];
 
 export const postsIndex = [
@@ -32,7 +33,10 @@ export const postsIndex = [
 // industry and city pages it helps (previously most posts were reachable only
 // from /blog and their siblings).
 export const guideIndex = [
-  { slug: 'website-cost-in-delhi-ncr', label: 'Guide: what a website costs in Delhi NCR', pages: ['/services/website-development', '/services/ecommerce-solutions', '/locations/ghaziabad/website-development', '/locations/noida/website-development', '/locations/delhi/website-development', '/locations/chandigarh/website-development'] },
+  { slug: 'business-website-kaise-banwaye', label: 'Hindi guide: business website kaise banwaye', pages: ['/services/website-development', '/locations/varanasi/website-development', '/locations/delhi/website-development', '/locations/noida/website-development', '/locations/ghaziabad/website-development', '/locations/varanasi'] },
+  { slug: 'website-development-cost-chandigarh', label: 'Guide: website development cost in Chandigarh', pages: ['/locations/chandigarh/website-development', '/locations/chandigarh', '/services/website-development'] },
+  { slug: 'choose-web-development-company-chandigarh', label: 'Checklist: choosing a web development company in Chandigarh', pages: ['/locations/chandigarh/website-development', '/locations/chandigarh', '/industries/architects'] },
+  { slug: 'website-cost-in-delhi-ncr', label: 'Guide: what a website costs in Delhi NCR', pages: ['/services/website-development', '/services/ecommerce-solutions', '/locations/ghaziabad/website-development', '/locations/noida/website-development', '/locations/delhi/website-development', '/locations/chandigarh/website-development', '/locations/varanasi/website-development'] },
   { slug: 'google-business-profile-guide', label: 'Guide: optimise your Google Business Profile', pages: ['/services/local-seo', '/services/seo', '/industries/clinics', '/industries/restaurants-cafes', '/locations/ghaziabad', '/locations/noida', '/locations/delhi', '/locations/chandigarh', '/locations/ghaziabad/seo', '/locations/noida/seo', '/locations/delhi/seo', '/locations/chandigarh/seo'] },
   { slug: 'local-seo-checklist', label: 'Local SEO checklist: 25 steps', pages: ['/services/local-seo', '/services/seo', '/locations/ghaziabad/seo', '/locations/noida/seo', '/locations/delhi/seo', '/locations/chandigarh/seo', '/locations/ghaziabad', '/locations/noida', '/locations/delhi', '/locations/chandigarh'] },
   { slug: 'meta-ads-vs-google-ads', label: 'Meta Ads vs Google Ads: which first?', pages: ['/services/meta-ads', '/services/google-ads', '/services/digital-marketing'] },

@@ -13,13 +13,13 @@ const projects = [
     title: "Morphic Spaces",
     category: "Website Development",
     industry: 'Architecture & interior design',
-    desc: "A premium, image-led website for a spatial design studio working on contemporary residential, commercial and hospitality projects — with a cinematic full-screen hero, editorial serif typography and a project showcase.",
+    desc: "A premium, image-led website for a Chandigarh Tricity spatial design studio working on contemporary residential, commercial and hospitality projects — with a cinematic full-screen hero, editorial serif typography and a project showcase.",
     tags: ["Architecture", "Interior Design", "Premium Portfolio"],
     color: "#4C0E82",
     image: morphicImg,
     link: "https://www.morphicspaces.com/",
     result: "Live Studio Website",
-    brief: 'Morphic Spaces, a spatial design studio focused on contemporary residential, commercial and hospitality projects, needed a website that feels as premium as the spaces it designs — and lets the architecture speak first.',
+    brief: 'Morphic Spaces, a spatial design studio working across Chandigarh and the Tricity, focused on contemporary residential, commercial and hospitality projects, needed a website that feels as premium as the spaces it designs — and lets the architecture speak first.',
     built: [
       'A full-screen cinematic hero with large-format architectural imagery and a bold editorial serif headline',
       'A minimal, letter-spaced navigation with a services dropdown, projects, about and contact pages',
@@ -27,7 +27,7 @@ const projects = [
       'A restrained dark, luxury visual language that keeps the focus on the studio’s work',
       'Responsive layouts so the imagery and typography hold up on phones as well as large screens',
     ],
-    takeaway: 'For architects and interior designers the website is the portfolio. Big imagery, confident typography and very little clutter let prospective clients feel the quality of the work before they read a word — see our approach for [architects & interior designers](/industries/architects).',
+    takeaway: 'For architects and interior designers the website is the portfolio. Big imagery, confident typography and very little clutter let prospective clients feel the quality of the work before they read a word — see our approach for [architects & interior designers](/industries/architects) and our [website development services in Chandigarh](/locations/chandigarh/website-development).',
     clientResult: null, // {{TODO: add real client result}}
     testimonial: null, // {{TODO: add client quote with permission}}
   },

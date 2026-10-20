@@ -5,12 +5,12 @@
 const servicePages = {
   /* ------------------------------------------------------------------ */
   'website-development': {
-    banner: 'Fast, mobile-first business websites, landing pages and web apps for businesses in Ghaziabad, Noida, Delhi and Chandigarh — built to rank on Google and turn visitors into calls and WhatsApp enquiries.',
+    banner: 'Website development company in India for businesses that want enquiries: fast, mobile-first websites, landing pages, online stores and web apps — for Delhi NCR, Chandigarh, Varanasi and clients across India.',
     intro: {
       h2: 'A website that works as hard as your best salesperson',
       paras: [
         'Most people who find your business will look at your website before they call. If it loads slowly on a phone, hides your number or looks out of date, they simply go back to Google and pick the next result. A good website fixes that: it explains what you do in the first few seconds, shows proof that you are real, and makes it effortless to call, WhatsApp or book.',
-        'Orizova Digital designs and develops websites for local businesses, startups and professionals across Delhi NCR and the Chandigarh Tricity. Every site is coded mobile-first, set up for search engines from day one, and connected to the tools you already use — WhatsApp, Google Business Profile, Meta Pixel and Google Analytics.',
+        'Orizova Digital is a website development company working with local businesses, startups and professionals across India — with a strong local focus on Delhi, Noida, Ghaziabad, the Chandigarh Tricity and Varanasi. Every site is coded mobile-first, set up for search engines from day one, and connected to the tools you already use — WhatsApp, Google Business Profile, Meta Pixel and Google Analytics.',
       ],
     },
     blocks: [
@@ -83,8 +83,26 @@ const servicePages = {
       },
       { type: 'work' },
       {
+        type: 'prose',
+        tag: 'Across India',
+        h2: 'Website development for businesses anywhere in India',
+        paras: [
+          'Most of our projects run over calls, video meetings and WhatsApp, so where you are matters less than how clearly we work together. Whether your business is in Mumbai, Bengaluru, Jaipur, Lucknow, Indore, Pune or a smaller town, the process is the same as for our Delhi NCR clients: a discovery call, a written plan and fixed quote, design reviews on screen and a handover with every login.',
+          'For businesses that serve a specific city, we build pages around that city and its localities — see our pages for [Delhi](/locations/delhi/website-development), [Noida](/locations/noida/website-development), [Ghaziabad](/locations/ghaziabad/website-development), [Chandigarh](/locations/chandigarh/website-development) and [Varanasi](/locations/varanasi/website-development).',
+        ],
+        bullets: [
+          'One team for planning, content, design, development and Google setup',
+          'Fixed, itemised quotes in writing before any payment',
+          'Domain, hosting and code in your name — no lock-in',
+          'Built in English, Hindi or both',
+          'Optional SEO, Google Ads and Meta ads after launch',
+        ],
+      },
+      {
         type: 'faq',
         faqs: [
+          ['Do you build websites for businesses outside Delhi NCR?', 'Yes — we work with businesses across India remotely, with dedicated city pages for [Chandigarh](/locations/chandigarh/website-development) and [Varanasi](/locations/varanasi/website-development).'],
+          ['Can I get a website in Hindi?', 'Yes. We build Hindi, English or bilingual websites so every customer can read your site comfortably.'],
           ['How long does it take to build a website?', 'A focused business website or landing page usually takes a few weeks once your content and photos are ready. Larger sites, e-commerce stores and web apps are planned in clear milestones so you always know what is next.'],
           ['Will my website be SEO-friendly?', 'Yes. Every page gets a unique title, meta description, heading structure and schema markup, and the site is submitted to Google Search Console at launch. For ongoing rankings, see our [SEO services](/services/seo).'],
           ['Can you redesign my existing website without losing rankings?', 'Yes. We map your old URLs to the new ones, keep content that already ranks, and set up redirects so Google transfers the existing value to the new site.'],

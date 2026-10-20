@@ -11,6 +11,7 @@ import {
 import services from '../data/services';
 import servicePages from '../data/pages/servicePages';
 import locations from '../data/locations';
+import { cityServicesIndex as cityServices } from '../data/siteIndex';
 import NotFound from './NotFound';
 
 const ServicePage = () => {
@@ -77,7 +78,11 @@ const ServicePage = () => {
 
           <LinkChips
             h2={`${service.title} across Delhi NCR & Chandigarh`}
-            links={locations.map((loc) => ({ to: `/locations/${loc.slug}`, label: `Digital agency in ${loc.city}` }))}
+            links={
+              cityServices.some((c) => c.service === slug)
+                ? cityServices.filter((c) => c.service === slug).map((c) => ({ to: `/locations/${c.city}/${c.service}`, label: c.label }))
+                : locations.map((loc) => ({ to: `/locations/${loc.slug}`, label: `Digital agency in ${loc.city}` }))
+            }
           />
           {others.length > 0 && (
             <LinkChips h2="Related services" links={others.map((s) => ({ to: `/services/${s.slug}`, label: s.title }))} />

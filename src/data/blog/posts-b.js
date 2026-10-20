@@ -3,6 +3,275 @@
 const postsB = [
   /* ------------------------------------------------------------------ */
   {
+    slug: 'business-website-kaise-banwaye',
+    title: 'Business Ke Liye Website Kaise Banwaye? Poora Process, Kharcha Aur Zaroori Tips (2026)',
+    category: 'Websites',
+    date: '2026-10-19',
+    readMins: 9,
+    chips: ['Websites', '9 min read', 'Hindi guide', 'India'],
+    excerpt: 'Website banwana hai? Jaaniye business website banwane ka step-by-step process, kharcha kis cheez pe depend karta hai, website banane wala kaise chunein aur kin galtiyon se bachna hai.',
+    intro: [
+      'Aaj zyada tar customers kisi bhi business ko call karne se pehle Google pe search karte hain aur website dekhte hain. Chahe aapka clinic ho, coaching institute, shop, hotel ya service business — agar website nahi hai ya purani aur slow hai, to customer agle result pe chala jaata hai.',
+      'Is guide mein simple bhasha mein samjhaya gaya hai ki business ke liye website kaise banwayein: kya taiyari karni hai, kharcha kis cheez pe depend karta hai, website banane wali company kaise chunein, aur launch ke baad kya karna zaroori hai.',
+    ],
+    sections: [
+      {
+        h2: 'Kya mere business ko sach mein website chahiye?',
+        paras: [
+          'Instagram page aur Google Business Profile zaroori hain, lekin website ki jagah nahi le sakte. Website aapki apni property hai — usme aap apni services, prices ki range, photos, reviews aur contact details apne tareeke se dikha sakte hain, aur Google pe "aapki service + aapka shehar" search karne walon tak pahunch sakte hain.',
+        ],
+        bullets: [
+          'Customer ko bharosa hota hai ki business asli aur established hai',
+          'Google search se naye customers aate hain, bina har baar ads ka paisa diye',
+          'Ads chalane ke liye achhi landing page milti hai, jisse leads sasti aur behtar aati hain',
+          'WhatsApp, call aur enquiry form se seedhe leads milti hain',
+        ],
+      },
+      {
+        h2: 'Website banwane se pehle ye taiyari kar lijiye',
+        bullets: [
+          '**Goal tay kijiye:** calls chahiye, WhatsApp enquiries, online orders ya appointment bookings?',
+          '**Services ki list:** har service jiske liye aap Google pe dikhna chahte hain — har ek ka alag page banna chahiye.',
+          '**Area:** kin shehron ya localities mein aap kaam karte hain.',
+          '**Photos:** apni dukaan, office, team aur kaam ki asli photos. Stock photos se bharosa kam hota hai.',
+          '**Domain name:** jaise yourbusiness.in ya yourbusiness.com — chhota aur yaad rakhne layak.',
+          '**3–4 competitor websites:** jo aapko pasand hain aur jo nahi, taaki designer ko clear idea mile.',
+        ],
+      },
+      {
+        h2: 'Website banwane ka step-by-step process',
+        bullets: [
+          '**1. Discovery call:** website banane wali company aapke business, customers aur goals samajhti hai.',
+          '**2. Plan aur quote:** kitne pages, kaun se features, timeline aur fixed price — likhit mein, payment se pehle.',
+          '**3. Content:** har page ka text likha jaata hai, aapke customers jis tarah search karte hain usi hisaab se.',
+          '**4. Design:** home page aur main pages ka design aapko dikhaya jaata hai, mobile aur desktop dono pe.',
+          '**5. Development:** website code ki jaati hai — fast loading, forms, WhatsApp button, Google Maps aur analytics ke saath.',
+          '**6. Launch aur Google setup:** website live hoti hai, Google Search Console mein submit hoti hai aur Google Business Profile se link hoti hai.',
+          '**7. Handover:** domain, hosting aur saare logins aapko diye jaate hain.',
+        ],
+      },
+      {
+        h2: 'Website banwane ka kharcha kis cheez pe depend karta hai?',
+        paras: [
+          'Website ka price zyada tar kaam ke time aur zimmedari ka hota hai. Isliye do quotes mein bahut fark dikh sakta hai — dono ek hi cheez ka price nahi de rahe hote.',
+        ],
+        bullets: [
+          '**Pages ki sankhya:** ek landing page aur 20 pages wali website bilkul alag kaam hain.',
+          '**Design:** template se banana sasta aur jaldi; custom design zyada time leta hai.',
+          '**Content writing:** agar company text likhti hai to wo price mein shaamil hota hai.',
+          '**Features:** online payment, booking, product catalogue, login ya Hindi-English dono bhasha.',
+          '**Technology:** WordPress, Shopify ya custom code (jaise React) — sabka effort aur saalana kharcha alag hai.',
+          '**SEO setup:** titles, descriptions, schema, sitemap aur fast loading — poochiye ki ye shaamil hai ya nahi.',
+        ],
+        after: [
+          'Har saal ke kharche bhi poochiye: domain renewal, hosting renewal, business email, paid plugins aur maintenance. Detail mein samajhne ke liye hamari [website cost guide](/blog/website-cost-in-delhi-ncr) padhiye.',
+        ],
+      },
+      {
+        h2: 'Website banane wala (company ya freelancer) kaise chunein?',
+        bullets: [
+          'Unki banayi hui **live websites** apne phone pe khol ke dekhiye — fast hai ya nahi, number aur services jaldi milte hain ya nahi',
+          '**Itemised quote** maangiye — har cheez alag likhi ho',
+          'Poochiye ki **content kaun likhega** aur **SEO setup** mein kya shaamil hai',
+          '**Domain aur hosting aapke naam pe** hone chahiye — ye sabse zaroori baat hai',
+          '"Google pe #1 guarantee" jaise vaadon se saavdhaan rahiye — ranking Google tay karta hai',
+          'Launch ke baad **support** kaise milega, ye pehle hi clear kar lijiye',
+        ],
+        after: ['Poori checklist ke liye padhiye: [web development company kaise chunein](/blog/choose-web-development-company-chandigarh).'],
+      },
+      {
+        h2: 'In galtiyon se bachiye',
+        bullets: [
+          'Sirf sabse sasta quote dekh ke company chun lena',
+          'Domain ya hosting kisi aur ke naam pe register hone dena',
+          'Website mein phone number aur WhatsApp button chhupa hona',
+          'Mobile pe slow website — zyada tar customers phone se hi aate hain',
+          'Har service ke liye alag page na banana — Google ko samajh nahi aata ki aap kya-kya karte hain',
+          'Launch ke baad Google Search Console aur Business Profile set na karna',
+        ],
+      },
+      {
+        h2: 'Website launch ke baad kya karein?',
+        bullets: [
+          'Google Business Profile banaiye aur website se link kijiye — [Google Business Profile guide](/blog/google-business-profile-guide)',
+          'Har khush customer se Google review maangiye',
+          'Har mahine 1–2 helpful blog ya update daaliye',
+          'Instagram, Facebook aur WhatsApp status pe website ka link share kijiye',
+          'Search Console mein dekhiye ki log kin shabdon se aapki website tak aa rahe hain',
+        ],
+      },
+      {
+        h2: 'Orizova Digital se website kaise banwayein',
+        paras: [
+          'Hum Delhi, Noida, Ghaziabad, Chandigarh, Varanasi aur poore India ke businesses ke liye website banate hain — call, video meeting aur WhatsApp ke zariye. Short call ke baad aapko likhit plan aur fixed quote milta hai, aur domain-hosting aapke naam pe hota hai.',
+          'Shuru karne ke liye hamari [website development services](/services/website-development) dekhiye ya WhatsApp pe apni requirement bhejiye.',
+        ],
+      },
+    ],
+    faqs: [
+      ['Business website banwane mein kitna time lagta hai?', 'Content taiyar hone ke baad ek landing page lagbhag 1 hafte mein aur 5–10 pages ki business website lagbhag 2–4 hafte mein ban jaati hai. Online store aur web app mein zyada time lagta hai.'],
+      ['Website banwane ka kharcha kitna hota hai?', 'Ye pages, design, content aur features pe depend karta hai. Landing page sabse sasta hota hai; multi-page website aur online store zyada. Hamesha itemised quote maangiye.'],
+      ['Kya website Hindi mein ban sakti hai?', 'Haan. Website Hindi, English ya dono bhasha mein ban sakti hai.'],
+      ['Kya website banne ke baad Google pe apne aap dikhegi?', 'Website Google Search Console mein submit hone ke baad index hoti hai, lekin upar rank hone ke liye Google Business Profile, reviews, achha content aur doosri websites se links chahiye. Koi bhi #1 ki guarantee nahi de sakta.'],
+      ['Domain aur hosting kiske naam pe hona chahiye?', 'Hamesha aapke apne naam pe, aur saare logins aapke paas hone chahiye.'],
+    ],
+  },
+  /* ------------------------------------------------------------------ */
+  {
+    slug: 'website-development-cost-chandigarh',
+    title: 'Website Development Cost in Chandigarh (2026): What You Actually Pay For',
+    category: 'Websites',
+    date: '2026-10-19',
+    readMins: 9,
+    chips: ['Websites', '9 min read', 'Guide', 'Chandigarh', 'Mohali', 'Panchkula'],
+    excerpt: 'Why website quotes in Chandigarh, Mohali and Panchkula vary so much, the factors that decide the price, the hidden costs to ask about, and how to compare quotes fairly.',
+    intro: [
+      'If you have asked a few web development companies in Chandigarh for a quote, you have probably seen numbers that are miles apart. A freelancer in Mohali quotes one figure, an agency in Sector 34 quotes several times that, and an online marketplace promises a full website for the price of a dinner at Elante.',
+      'They are not all quoting for the same thing. This guide explains what actually drives the cost of a website in the Tricity, which extras catch people out, and how to decide what your business needs right now — so you can compare quotes with confidence.',
+    ],
+    sections: [
+      {
+        h2: 'Why website quotes in Chandigarh differ so much',
+        paras: [
+          'A website price is mostly a price for time and responsibility. Dropping your logo into a template takes very little time. Planning pages around your customers, writing clear copy, designing for your brand, coding for speed, setting up Google and testing on real phones takes much more. Both are "a website", but they are not the same product.',
+          'Low quotes often leave out things you only discover later — content writing, mobile testing, SEO setup, hosting renewal, business email, backups or the ability to edit pages yourself. High quotes sometimes include features you do not need yet. The real job is matching the scope to your goal.',
+        ],
+      },
+      {
+        h2: 'The factors that decide your website cost',
+        bullets: [
+          '**Number of pages.** A one-page landing site is a very different job from a 20-page site with a page for every service and every Tricity area you serve.',
+          '**Design approach.** A refined template is quicker; a fully custom design that matches your brand takes longer.',
+          '**Content writing.** Good page copy is real work. If the company writes it, that time is in the price — and it is usually worth it.',
+          '**Features.** Booking forms, online payments, product catalogues, logins, multiple languages or a CRM integration all add development time.',
+          '**Technology.** WordPress, Shopify and custom-coded (for example React) sites have different build effort, speed and running costs.',
+          '**SEO setup.** Titles, descriptions, schema, sitemap, Search Console and fast loading should be included — ask whether they are.',
+          '**Photos and video.** Real photos of your work, team and premises outperform stock images, but a shoot adds cost.',
+        ],
+      },
+      {
+        h2: 'Typical website types for Tricity businesses',
+        bullets: [
+          '**Landing page** — one focused page for an ad campaign or a single service. Good for testing demand quickly.',
+          '**Business website (5–10 pages)** — home, about, a page per service, contact and FAQs. The right starting point for most clinics, consultants, coaching institutes and service businesses.',
+          '**Portfolio website** — image-led sites for architects, interior designers and studios where the work itself sells. Image handling decides whether it feels premium or slow.',
+          '**E-commerce store** — product catalogue, cart, payment gateway, shipping and order emails. Cost grows with the number of products and integrations.',
+          '**Web app or portal** — dashboards, bookings or customer logins, priced after a requirements discussion.',
+        ],
+      },
+      {
+        h2: 'Hidden and recurring costs to ask about',
+        paras: ['Before you compare totals, ask every company what happens after launch. These are the costs that most often surprise Tricity business owners:'],
+        bullets: [
+          'Domain renewal every year — and whose name the domain is registered in',
+          'Hosting renewal and whether hosting is included in year one only',
+          'Business email (for example you@yourcompany.com)',
+          'Paid plugins, themes or apps that renew annually',
+          'Changes after launch: are small edits free for a period, or charged per change?',
+          'Maintenance, backups and security updates',
+          'Payment gateway charges on every transaction for online stores',
+        ],
+      },
+      {
+        h2: 'How to compare website quotes fairly',
+        paras: [
+          'Put every quote into the same table: number of pages, design approach, who writes content, features, SEO setup, hosting, support and ownership. Quotes that look far apart often become comparable once you see what each includes.',
+          'Then ask each company for two or three live websites they built — ideally for businesses like yours — and open them on your own phone. Speed and clarity are easy to judge yourself. Our checklist on [how to choose a web development company in Chandigarh](/blog/choose-web-development-company-chandigarh) lists the questions worth asking.',
+        ],
+      },
+      {
+        h2: 'Should you choose the cheapest quote?',
+        paras: [
+          'Only if it includes what your business needs. A cheap website that loads slowly, cannot be found on Google and does not make it easy to call or WhatsApp you costs more in lost enquiries than it saved. On the other hand, a small business does not need an expensive custom web app to start getting leads.',
+          'A sensible path for most Tricity businesses: start with a fast, well-written business website, connect it to your Google Business Profile, collect genuine reviews, and add features or pages as enquiries grow.',
+        ],
+      },
+      {
+        h2: 'How Orizova prices websites',
+        paras: [
+          'We send a fixed, itemised quote after a short call — page list, features, timeline and what is included after launch — before any payment. Domain and hosting are registered in your name, and you get every login at handover.',
+          'If you are planning a website in Chandigarh, Mohali, Panchkula or Zirakpur, see our [website development services in Chandigarh](/locations/chandigarh/website-development) or message us on WhatsApp with what you need.',
+        ],
+      },
+    ],
+    faqs: [
+      ['How much does a website cost in Chandigarh?', 'It depends on the pages, design approach, content and features. A landing page costs much less than a multi-page business website, and an online store or web app costs more again. Ask for an itemised quote so you can see what is included.'],
+      ['Is WordPress cheaper than a custom-coded website?', 'Often at the start, but paid plugins and themes renew every year. Custom-coded sites can be faster and need fewer recurring add-ons. The right choice depends on who will edit the site and what it needs to do.'],
+      ['Are domain and hosting included in the website price?', 'Sometimes only for the first year. Always ask about renewals and make sure the domain is registered in your own name.'],
+      ['How long does a website take to build?', 'About 1 week for a landing page and 2–4 weeks for a 5–10 page business website once content is ready. Online stores and apps take longer.'],
+      ['Does website cost include SEO?', 'Basic SEO setup — titles, descriptions, headings, schema, sitemap and Search Console — should be included. Ongoing work to improve rankings is a separate monthly service.'],
+    ],
+  },
+  /* ------------------------------------------------------------------ */
+  {
+    slug: 'choose-web-development-company-chandigarh',
+    title: 'How to Choose a Web Development Company in Chandigarh: 12 Checks Before You Pay',
+    category: 'Websites',
+    date: '2026-10-19',
+    readMins: 8,
+    chips: ['Websites', '8 min read', 'Checklist', 'Chandigarh', 'Mohali', 'Tricity'],
+    excerpt: 'A practical 12-point checklist for hiring a website developer in Chandigarh, Mohali or Panchkula — from checking live work on your phone to owning your domain.',
+    intro: [
+      'Search for a web development company in Chandigarh and you will find dozens of agencies, each calling itself the best. Most will show you a polished home page and a long list of technologies. Very few make it easy to tell whether they will actually deliver a website that brings your business enquiries.',
+      'These 12 checks take less than an hour and will tell you far more than any "No.1" badge. Use them for any company or freelancer in the Tricity — including us.',
+    ],
+    sections: [
+      {
+        h2: 'Check their real work',
+        bullets: [
+          '**1. Ask for live websites, not screenshots.** Open each one on your own phone. Does it load quickly? Can you find the phone number and services within a few seconds?',
+          '**2. Look for work in your industry or area.** A company that has built for clinics, architects or real-estate firms in the Tricity already understands what those customers look for.',
+          '**3. Check their own website.** If an agency’s own site is slow, cluttered or full of claims it cannot prove, your site may end up the same way.',
+        ],
+      },
+      {
+        h2: 'Check the claims',
+        bullets: [
+          '**4. Be careful with guarantees.** No one controls Google, so nobody can honestly guarantee a #1 ranking. Promises like that are a warning sign, not a selling point.',
+          '**5. Ask what the numbers mean.** "500+ websites" or "98% satisfaction" mean little without examples you can see. Real case studies and reviews you can verify on Google matter more.',
+          '**6. Read their Google reviews.** Look for detail — what was built, how communication went, what happened after launch — rather than just the star rating.',
+        ],
+      },
+      {
+        h2: 'Check the scope and the quote',
+        bullets: [
+          '**7. Get an itemised quote.** Pages, design, content writing, features, SEO setup, hosting and support should each be listed. Our [website cost guide for Chandigarh](/blog/website-development-cost-chandigarh) explains each item.',
+          '**8. Ask who writes the content.** Many projects stall for weeks waiting for text. Know upfront whether the company writes it or you do.',
+          '**9. Confirm what SEO setup is included.** At minimum: unique titles and descriptions, proper headings, mobile speed, sitemap, schema and Google Search Console.',
+        ],
+      },
+      {
+        h2: 'Check ownership and after-launch support',
+        bullets: [
+          '**10. Make sure you own the domain and hosting.** They should be registered in your name, with logins handed to you. This one check prevents the most painful disputes.',
+          '**11. Ask what happens after launch.** Who fixes something that breaks? Are small edits included for a while? Is there a maintenance plan?',
+          '**12. Test their communication.** Send a WhatsApp message or email with a question. How quickly and clearly they reply before you pay is usually the best they will ever be — choose accordingly.',
+        ],
+      },
+      {
+        h2: 'Local agency or remote team?',
+        paras: [
+          'Being in the same sector helps if you like meeting in person, but it does not decide quality. Many Tricity businesses work happily with teams elsewhere over video calls and WhatsApp. What matters more is relevant work, clear communication and accountability after launch.',
+          'Whoever you choose, make sure they understand your local market — the way customers in Chandigarh search by sector, Mohali by phase, and the Tricity as one market — and plan the website around it.',
+        ],
+      },
+      {
+        h2: 'A quick shortlist method',
+        paras: [
+          'Shortlist three companies. Run them through the 12 checks above, put their quotes in one table, and choose the one with the best mix of relevant work, clear scope and communication — not simply the lowest or highest price.',
+          'If you would like Orizova on your shortlist, see our [website development services in Chandigarh](/locations/chandigarh/website-development) and our [Morphic Spaces case study](/portfolio/morphic-spaces), then message us on WhatsApp.',
+        ],
+      },
+    ],
+    faqs: [
+      ['What should I ask a web development company before hiring?', 'Ask for live examples, an itemised quote, who writes the content, what SEO setup is included, who owns the domain and hosting, and what support you get after launch.'],
+      ['Is a cheap website developer a good idea?', 'It can be for a very simple site, but check what is left out — content, SEO setup, mobile testing and support are common gaps that cost you enquiries later.'],
+      ['Can a company guarantee first-page Google rankings?', 'No. Google decides rankings. A good company builds the site the way Google rewards and supports it with local SEO and reviews, but it cannot guarantee positions.'],
+      ['Do I need a web developer based in Chandigarh?', 'Not necessarily. Relevant work, communication and accountability matter more than location. Many Tricity businesses work with remote teams over calls and WhatsApp.'],
+    ],
+  },
+  /* ------------------------------------------------------------------ */
+  {
     slug: 'instagram-ideas-restaurants-cafes',
     title: '30 Instagram Content Ideas for Restaurants and Cafes (That Bring People In)',
     category: 'Social Media',

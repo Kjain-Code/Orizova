@@ -66,3 +66,5 @@
   .areas-grid { grid-template-columns: 1fr; }
   .home-faq { margin-top: 64px; }
 }
+
+@media (min-width: 992px) { .areas-grid--cities { grid-template-columns: repeat(5, minmax(0, 1fr)); } }

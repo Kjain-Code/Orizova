@@ -7,7 +7,7 @@ const SITE_URL = (process.env.REACT_APP_SITE_URL || seo.defaultSiteUrl).replace(
 const SITE_NAME = seo.siteName;
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 const LOGO = `${SITE_URL}/logo512.png`;
-const AREAS_SERVED = ['Ghaziabad', 'Noida', 'Greater Noida', 'Delhi', 'Delhi NCR', 'Chandigarh', 'Mohali', 'Panchkula', 'India'];
+const AREAS_SERVED = ['Ghaziabad', 'Noida', 'Greater Noida', 'Delhi', 'Delhi NCR', 'Chandigarh', 'Mohali', 'Panchkula', 'Varanasi', 'India'];
 
 const routesByKey = Object.fromEntries(seo.routes.map((r) => [r.key, r]));
 const routesByPath = Object.fromEntries(seo.routes.map((r) => [r.path, r]));
@@ -36,7 +36,7 @@ const businessSchema = {
   telephone: CONTACT.phoneTel,
   priceRange: '₹₹',
   description:
-    'Web development and digital marketing agency serving Ghaziabad, Noida, Delhi and Chandigarh: websites, mobile apps, SEO, Meta & Google Ads, branding and e-commerce.',
+    'Web development and digital marketing agency serving Ghaziabad, Noida, Delhi, Chandigarh, Varanasi and clients across India: websites, mobile apps, SEO, Meta & Google Ads, branding and e-commerce.',
   areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
   knowsAbout: [
     'Website Development', 'Web Design', 'Mobile App Development', 'Search Engine Optimization',

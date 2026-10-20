@@ -9,7 +9,7 @@
       "title": "Digital Marketing Agency in Delhi NCR | Orizova Digital",
       "description": "Orizova Digital builds fast websites and runs SEO, Google Ads, Meta Ads and social media for businesses in Ghaziabad, Noida, Delhi and Chandigarh.",
       "h1": "Website Development & Digital Marketing Agency in Ghaziabad, Noida, Delhi & Chandigarh",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-19"
     },
     {
       "key": "services",
@@ -24,10 +24,10 @@
       "key": "service:website-development",
       "path": "/services/website-development",
       "priority": "0.9",
-      "title": "Website Development Company in Delhi NCR | Orizova",
-      "description": "Fast, mobile-first business websites, landing pages and web apps for Ghaziabad, Noida, Delhi and Chandigarh — built to rank on Google and bring enquiries.",
-      "h1": "Website Development Company in Delhi NCR",
-      "lastmod": "2026-10-07"
+      "title": "Website Development Company in India | Orizova Digital",
+      "description": "Website development company in India: fast, mobile-first business websites, online stores and web apps for Delhi NCR, Chandigarh, Varanasi and all of India.",
+      "h1": "Website Development Company in India",
+      "lastmod": "2026-10-19"
     },
     {
       "key": "service:ecommerce-solutions",
@@ -153,16 +153,16 @@
       "title": "Digital Marketing Agency in Chandigarh | Orizova",
       "description": "Websites, SEO and lead-generation ads for businesses in Chandigarh, Mohali, Panchkula and Zirakpur — premium design and qualified enquiries.",
       "h1": "Digital Marketing Agency in Chandigarh",
-      "lastmod": "2026-10-07"
+      "lastmod": "2026-10-19"
     },
     {
       "key": "cityservice:ghaziabad/website-development",
       "path": "/locations/ghaziabad/website-development",
-      "priority": "0.8",
+      "priority": "0.9",
       "title": "Website Development Company in Ghaziabad | Orizova",
       "description": "Website designing company in Ghaziabad for clinics, coaching, showrooms, builders and traders — fast mobile websites in Indirapuram, Vaishali and beyond.",
       "h1": "Website Development Company in Ghaziabad",
-      "lastmod": "2026-10-07"
+      "lastmod": "2026-10-19"
     },
     {
       "key": "cityservice:ghaziabad/seo",
@@ -176,11 +176,11 @@
     {
       "key": "cityservice:noida/website-development",
       "path": "/locations/noida/website-development",
-      "priority": "0.8",
-      "title": "Website Development Company in Noida | Orizova",
-      "description": "Website designing company in Noida for startups, IT firms, schools, real estate and local businesses in Greater Noida West — fast and SEO-ready.",
+      "priority": "0.9",
+      "title": "Website Development Company in Noida | Orizova Digital",
+      "description": "Website development company in Noida for startups, IT firms, schools, real estate and local businesses in Greater Noida West — fast, SEO-ready websites.",
       "h1": "Website Development Company in Noida",
-      "lastmod": "2026-10-07"
+      "lastmod": "2026-10-19"
     },
     {
       "key": "cityservice:noida/seo",
@@ -194,11 +194,11 @@
     {
       "key": "cityservice:delhi/website-development",
       "path": "/locations/delhi/website-development",
-      "priority": "0.8",
-      "title": "Web Design Company in Delhi | Orizova Digital",
-      "description": "Professional web design for Delhi boutiques, clinics, restaurants, consultants and traders — premium-looking, fast and ready to rank on Google.",
-      "h1": "Web Design Company in Delhi",
-      "lastmod": "2026-10-07"
+      "priority": "0.9",
+      "title": "Website Designing Company in Delhi | Orizova Digital",
+      "description": "Website designing & development company in Delhi: fast, custom-coded websites for boutiques, clinics, restaurants, consultants and traders. Fixed quotes.",
+      "h1": "Website Designing Company in Delhi",
+      "lastmod": "2026-10-19"
     },
     {
       "key": "cityservice:delhi/seo",
@@ -212,11 +212,11 @@
     {
       "key": "cityservice:chandigarh/website-development",
       "path": "/locations/chandigarh/website-development",
-      "priority": "0.8",
-      "title": "Website Development Company in Chandigarh | Orizova",
-      "description": "Premium, fast websites for architects, developers, consultants, clinics and hospitality brands in Chandigarh, Mohali, Panchkula and Zirakpur.",
+      "priority": "0.9",
+      "title": "Website Development Company in Chandigarh | Orizova Digital",
+      "description": "Website development & web design company for businesses in Chandigarh, Mohali and Panchkula: fast custom websites, e-commerce and SEO-ready pages.",
       "h1": "Website Development Company in Chandigarh",
-      "lastmod": "2026-10-07"
+      "lastmod": "2026-10-19"
     },
     {
       "key": "cityservice:chandigarh/seo",
@@ -226,6 +226,24 @@
       "description": "SEO and Google Maps optimisation for businesses in Chandigarh, Mohali, Panchkula and Zirakpur — service pages, reviews and local content.",
       "h1": "SEO Company in Chandigarh",
       "lastmod": "2026-10-07"
+    },
+    {
+      "key": "city:varanasi",
+      "path": "/locations/varanasi",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Varanasi | Orizova Digital",
+      "description": "Websites, Google Maps visibility and lead generation for Varanasi hotels, homestays, Banarasi silk sellers, coaching institutes, clinics and travel businesses.",
+      "h1": "Digital Marketing Agency in Varanasi",
+      "lastmod": "2026-10-19"
+    },
+    {
+      "key": "cityservice:varanasi/website-development",
+      "path": "/locations/varanasi/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Varanasi | Orizova Digital",
+      "description": "Website development company in Varanasi for hotels, homestays, Banarasi saree stores, coaching institutes and clinics — fast sites that bring enquiries.",
+      "h1": "Website Development Company in Varanasi",
+      "lastmod": "2026-10-19"
     },
     {
       "key": "industries",
@@ -288,7 +306,34 @@
       "title": "Digital Marketing Blog – Website, SEO & Ads Guides",
       "description": "Practical guides for business owners in Delhi NCR and Chandigarh: website costs, Google Maps, Meta vs Google Ads, and marketing for clinics, cafes and more.",
       "h1": "Practical Guides on Websites, SEO & Digital Marketing",
-      "lastmod": "2026-10-01"
+      "lastmod": "2026-10-19"
+    },
+    {
+      "key": "post:business-website-kaise-banwaye",
+      "path": "/blog/business-website-kaise-banwaye",
+      "priority": "0.7",
+      "title": "Business Website Kaise Banwaye? Process & Kharcha (2026)",
+      "description": "Website banwana hai? Business website banwane ka step-by-step process, kharcha kis par depend karta hai aur website banane wala kaise chunein.",
+      "h1": "Business Website Kaise Banwaye? Process & Kharcha (2026)",
+      "lastmod": "2026-10-19"
+    },
+    {
+      "key": "post:website-development-cost-chandigarh",
+      "path": "/blog/website-development-cost-chandigarh",
+      "priority": "0.7",
+      "title": "Website Development Cost in Chandigarh (2026 Guide)",
+      "description": "What a website costs in Chandigarh, Mohali and Panchkula: the factors that decide the price, hidden recurring costs, and how to compare quotes fairly.",
+      "h1": "Website Development Cost in Chandigarh (2026 Guide)",
+      "lastmod": "2026-10-19"
+    },
+    {
+      "key": "post:choose-web-development-company-chandigarh",
+      "path": "/blog/choose-web-development-company-chandigarh",
+      "priority": "0.7",
+      "title": "How to Choose a Web Development Company in Chandigarh",
+      "description": "12 checks before you hire a website developer in Chandigarh, Mohali or Panchkula — live work, honest claims, itemised quotes and owning your domain.",
+      "h1": "How to Choose a Web Development Company in Chandigarh",
+      "lastmod": "2026-10-19"
     },
     {
       "key": "post:website-cost-in-delhi-ncr",
@@ -384,10 +429,10 @@
       "key": "project:morphic-spaces",
       "path": "/portfolio/morphic-spaces",
       "priority": "0.6",
-      "title": "Morphic Spaces – Architecture Studio Website | Orizova",
-      "description": "Project overview: a premium, image-led website for Morphic Spaces, a spatial design studio for contemporary residential, commercial and hospitality projects.",
+      "title": "Morphic Spaces – Chandigarh Architecture Studio Website",
+      "description": "Case study: a premium, image-led website for Morphic Spaces, a spatial design studio working across Chandigarh and the Tricity.",
       "h1": "Morphic Spaces — Architecture Studio Website Case Study",
-      "lastmod": "2026-10-07"
+      "lastmod": "2026-10-19"
     },
     {
       "key": "project:wipo-group",

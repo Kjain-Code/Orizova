@@ -45,7 +45,7 @@ const BlogPost = () => {
           ...(post.faqs && post.faqs.length ? [faqSchema(post.faqs)] : []),
         ]}
       />
-      <PageBanner title={post.title} subtitle={post.excerpt} chips={[post.category, `${post.readMins} min read`, 'Guide', 'Delhi NCR', 'India']} actions={false} />
+      <PageBanner title={post.title} subtitle={post.excerpt} chips={post.chips || [post.category, `${post.readMins} min read`, 'Guide', 'Delhi NCR', 'India']} actions={false} />
       <section className="loc-section content-section">
         <div className="container">
           <article className="article">

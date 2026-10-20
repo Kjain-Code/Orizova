@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiMapPin } from 'react-icons/fi';
 import locations from '../data/locations';
-import { Inline } from './ContentBlocks';
+import { Inline, LinkChips } from './ContentBlocks';
+import { cityServicesIndex } from '../data/siteIndex';
 import './AreasServed.css';
 
 export const homeFaqs = [
@@ -30,7 +31,7 @@ const AreasServed = () => (
         </p>
       </div>
 
-      <div className="areas-grid">
+      <div className="areas-grid areas-grid--cities">
         {locations.map((loc) => (
           <Link key={loc.slug} to={`/locations/${loc.slug}`} className="area-card">
             <span className="area-pin"><FiMapPin /></span>
@@ -40,6 +41,11 @@ const AreasServed = () => (
           </Link>
         ))}
       </div>
+
+      <LinkChips
+        h2="Website development & SEO by city"
+        links={cityServicesIndex.map((c) => ({ to: `/locations/${c.city}/${c.service}`, label: c.label }))}
+      />
 
       <div className="home-faq">
         <h2 className="section-title text-center">Frequently Asked <span>Questions</span></h2>
