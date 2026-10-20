@@ -70,7 +70,7 @@ const Contact = () => {
             viewport={{ once: true }}
           >
             <ChatCharacter className="contact-chat-character" />
-            <h3>Contact Information</h3>
+            <h2>Contact Information</h2>
             <p>We're here to help. Reach out to us through any of these channels.</p>
 
             <div className="info-items">

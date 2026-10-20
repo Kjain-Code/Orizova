@@ -29,7 +29,7 @@ const About = () => {
           <StarDoodle className="about-star" />
           <div className="about-card-main">
             <div className="about-logo">◎</div>
-            <h3>Orizova Digital</h3>
+            <p className="about-card-title">Orizova Digital</p>
             <p>We are a full-service digital agency helping businesses grow smarter, faster, and stronger in the digital world.</p>
             <div className="about-badge">
               <span>🤝</span>
@@ -42,15 +42,15 @@ const About = () => {
           <div className="about-stat-cards">
             {/* {{TODO: replace with real stats (years, projects, clients) once confirmed}} */}
             <div className="about-stat">
-              <h4>11</h4>
+              <p className="about-stat-num">11</p>
               <p>Services</p>
             </div>
             <div className="about-stat">
-              <h4>India</h4>
+              <p className="about-stat-num">India</p>
               <p>Pan-India Clients</p>
             </div>
             <div className="about-stat">
-              <h4>1</h4>
+              <p className="about-stat-num">1</p>
               <p>Team, End to End</p>
             </div>
           </div>

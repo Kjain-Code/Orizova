@@ -29,6 +29,7 @@ const Portfolio = () => {
         subtitle="Live websites we have designed and developed — open them, click around and judge the work for yourself."
         chips={['Web apps', 'Portfolios', 'Corporate sites', 'Dashboards', 'Live work']}
       />
+      <h2 className="sr-only">Website projects</h2>
       <Projects />
       <CtaBand
         title="Want Results Like These?"

@@ -83,6 +83,7 @@
   padding: 30px;
   box-shadow: 0 24px 60px rgba(76, 14, 130, .10);
 }
+.content-section .loc-card h2,
 .content-section .loc-card h3 {
   font-size: .8rem;
   letter-spacing: 1.8px;
@@ -282,7 +283,7 @@
   margin-top: 6px;
   padding: 12px 22px;
   border-radius: 100px;
-  background: #25D366;
+  background: #0e7a43;
   color: #fff;
   font-weight: 700;
   box-shadow: 0 10px 24px rgba(37, 211, 102, .3);
@@ -447,6 +448,7 @@
 }
 .blog-card:hover { transform: translateY(-8px); border-color: rgba(139, 92, 246, .38); box-shadow: 0 26px 50px rgba(76, 14, 130, .14); }
 .blog-card:hover::after { background-position: 100% 0; }
+.blog-card h2,
 .blog-card h3 { font-size: 1.22rem; line-height: 1.3; color: var(--ink); }
 .blog-card p { color: var(--text-light); font-size: 14.5px; line-height: 1.65; }
 .blog-meta {

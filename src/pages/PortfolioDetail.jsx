@@ -54,7 +54,7 @@ const PortfolioDetail = () => {
               />
             </div>
             <aside className="loc-card">
-              <h3>Project</h3>
+              <h2>Project</h2>
               <ul className="loc-areas">
                 {p.tags.map((t) => <li key={t}>{t}</li>)}
               </ul>

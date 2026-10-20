@@ -21,6 +21,7 @@
   animation: doodle-float 4s ease-in-out infinite;
 }
 
+.contact-info h2,
 .contact-info h3 {
   font-size: 1.5rem;
   color: var(--ink);

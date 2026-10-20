@@ -10,6 +10,8 @@ ErrorDocument 404 /404.html
   # Force https
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  # Old URL -> new URL
+  RewriteRule ^blog/business-website-kaise-banwaye/?$ /blog/how-to-get-a-business-website-india [L,R=301]
   # Remove trailing slash (except real directories' index handled below)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.+)/$ /$1 [L,R=301]

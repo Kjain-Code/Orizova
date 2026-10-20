@@ -46,7 +46,8 @@
   margin-bottom: 12px;
 }
 
-.about-card-main h3 {
+.about-card-main h3,
+.about-card-main .about-card-title {
   font-size: 1.4rem;
   color: var(--primary);
   margin-bottom: 10px;
@@ -104,7 +105,8 @@
   box-shadow: 0 8px 30px rgba(72, 11, 121, 0.12);
 }
 
-.about-stat h4 {
+.about-stat h4,
+.about-stat .about-stat-num {
   font-size: 1.8rem;
   color: var(--primary);
   font-family: 'Bricolage Grotesque', sans-serif;
@@ -180,3 +182,6 @@
   }
   .about-title-arc { display: none; }
 }
+
+.about-card-main .about-card-title { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; line-height: 1.2; }
+.about-stat .about-stat-num { font-weight: 800; line-height: 1.1; margin: 0; }

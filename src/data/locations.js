@@ -142,7 +142,7 @@ const locations = [
         tag: 'The Tricity market',
         h2: 'A premium market that researches before it buys',
         paras: [
-          'Customers in the Tricity often compare several providers before they call — whether they are choosing an architect for a Mohali kothi, a visa consultant, a clinic in Panchkula or a venue in Zirakpur. They read reviews, browse Instagram and check whether a website looks established. A weak online presence quietly sends them to a competitor.',
+          'Customers in the Tricity often compare several providers before they call — whether they are choosing an architect for a new home in Mohali, a visa consultant, a clinic in Panchkula or a venue in Zirakpur. They read reviews, browse Instagram and check whether a website looks established. A weak online presence quietly sends them to a competitor.',
           'Distances in the Tricity are short, so customers will travel across Chandigarh, Mohali and Panchkula for the right business. That makes Tricity-wide targeting sensible, but it also means competition from across the region. Our approach is to win on trust: portfolio-rich websites, active Google profiles with genuine reviews, and lead forms that ask the right questions before the enquiry reaches you.',
         ],
       },

@@ -21,6 +21,7 @@
   padding: 28px;
 }
 
+.loc-card h2,
 .loc-card h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 12px; }
 
 .loc-areas {

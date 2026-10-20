@@ -33,7 +33,7 @@ export const postsIndex = [
 // industry and city pages it helps (previously most posts were reachable only
 // from /blog and their siblings).
 export const guideIndex = [
-  { slug: 'business-website-kaise-banwaye', label: 'Hindi guide: business website kaise banwaye', pages: ['/services/website-development', '/locations/varanasi/website-development', '/locations/delhi/website-development', '/locations/noida/website-development', '/locations/ghaziabad/website-development', '/locations/varanasi'] },
+  { slug: 'how-to-get-a-business-website-india', label: 'Guide: how to get a business website made', pages: ['/services/website-development', '/locations/varanasi/website-development', '/locations/delhi/website-development', '/locations/noida/website-development', '/locations/ghaziabad/website-development', '/locations/varanasi'] },
   { slug: 'website-development-cost-chandigarh', label: 'Guide: website development cost in Chandigarh', pages: ['/locations/chandigarh/website-development', '/locations/chandigarh', '/services/website-development'] },
   { slug: 'choose-web-development-company-chandigarh', label: 'Checklist: choosing a web development company in Chandigarh', pages: ['/locations/chandigarh/website-development', '/locations/chandigarh', '/industries/architects'] },
   { slug: 'website-cost-in-delhi-ncr', label: 'Guide: what a website costs in Delhi NCR', pages: ['/services/website-development', '/services/ecommerce-solutions', '/locations/ghaziabad/website-development', '/locations/noida/website-development', '/locations/delhi/website-development', '/locations/chandigarh/website-development', '/locations/varanasi/website-development'] },

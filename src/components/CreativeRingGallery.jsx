@@ -111,7 +111,7 @@ const CreativeRingGallery = ({ items }) => {
                   </span>
                 )}
                 <div className="ring-card-caption">
-                  <h4>{item.title}</h4>
+                  <h3>{item.title}</h3>
                 </div>
               </div>
             </div>
@@ -141,7 +141,7 @@ const CreativeRingGallery = ({ items }) => {
               />
               <div className="ring-modal-caption">
                 <span className="ring-modal-category">{activeItem.category}</span>
-                <h4>{activeItem.title}</h4>
+                <h3>{activeItem.title}</h3>
               </div>
             </div>
           </div>,

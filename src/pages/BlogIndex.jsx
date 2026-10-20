@@ -41,7 +41,7 @@ const BlogIndex = () => (
             We write these guides to answer the questions business owners ask us most often. No jargon, no secret formulas — just what works, what to avoid and how to decide for your own business.
           </p>
         </div>
-        <BlogCards items={posts} />
+        <BlogCards items={posts} headingLevel={2} />
       </div>
     </section>
     <CtaBand title="Prefer to talk it through?" subtitle="Send us your question on WhatsApp — we're happy to point you in the right direction." buttonText="Contact Us" />

@@ -111,7 +111,7 @@ const Hero = () => {
               <span className="fc-icon">{card.icon}</span>
               <div>
                 <p className="fc-title">{card.title}</p>
-                <h4 className="fc-value">{card.value}</h4>
+                <p className="fc-value">{card.value}</p>
                 <p className="fc-sub">{card.sub}</p>
               </div>
             </m.div>

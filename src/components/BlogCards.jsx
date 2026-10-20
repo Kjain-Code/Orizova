@@ -3,18 +3,21 @@ import { Link } from 'react-router-dom';
 import { FiArrowRight } from 'react-icons/fi';
 import './ContentPage.css';
 
-const BlogCards = ({ items }) => (
+const BlogCards = ({ items, headingLevel = 3 }) => {
+  const Heading = `h${headingLevel}`;
+  return (
   <div className="blog-grid">
     {items.map((p) => (
       <Link key={p.slug} to={`/blog/${p.slug}`} className="blog-card">
         <span className="blog-meta">{p.category} · {p.readMins} min read</span>
-        <h3>{p.title}</h3>
+        <Heading>{p.title}</Heading>
         <p>{p.excerpt}</p>
         <span className="loc-service-link">Read article <FiArrowRight aria-hidden="true" /></span>
       </Link>
     ))}
   </div>
-);
+  );
+};
 
 export default BlogCards;
 
