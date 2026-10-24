@@ -30,6 +30,8 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Spam trap: real visitors never see or tick this hidden box; bots do.
+    if (e.currentTarget.elements.botcheck && e.currentTarget.elements.botcheck.checked) { setStatus('sent'); return; }
     if (!FORM_KEY) {
       sendToWhatsApp();
       trackLead();
@@ -155,6 +157,7 @@ const Contact = () => {
               <label htmlFor="cf-message">Your Message *</label>
               <textarea id="cf-message" name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your project..." rows={5} required />
             </div>
+            <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
             <button type="submit" className="btn-primary submit-btn" disabled={status === 'sending'}>
               <FiSend aria-hidden="true" /> {status === 'sending' ? 'Sending…' : FORM_KEY ? 'Send Message' : 'Send via WhatsApp'}
             </button>

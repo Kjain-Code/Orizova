@@ -151,6 +151,15 @@ const unhideAnimated = (html) =>
 
 const markRh = (tag) => tag.replace(/^<(title|meta|link)\b/i, '<$1 data-rh="true"');
 
+let MAIN_CSS = null;
+const loadMainCss = (template) => {
+  const m = template.match(/<link href="(\/static\/css\/main\.[a-f0-9]+\.css)" rel="stylesheet">/);
+  if (!m) return null;
+  const css = fs.readFileSync(path.join(BUILD, m[1]), 'utf8').replace(/\/\*# sourceMappingURL=.*?\*\//g, '');
+  if (css.length > 150000 || /<\/style/i.test(css)) return null; // too big / unsafe to inline
+  return { tag: m[0], css };
+};
+
 const buildPage = (template, html) => {
   const { tags, body: rawBody } = splitHead(html);
   const body = unhideAnimated(rawBody);
@@ -161,6 +170,9 @@ const buildPage = (template, html) => {
   out = out.replace(/<link data-rh="true"[^>]*>/gi, '');
   out = out.replace(/<script data-rh="true" type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
   out = out.replace('</head>', `${VERIFY_TAGS}${tags.map(markRh).join('')}</head>`);
+  // Inline the main stylesheet (≈14 KB gzipped): removes the render-blocking
+  // CSS request, so text paints sooner on slow mobile connections.
+  if (MAIN_CSS) out = out.replace(MAIN_CSS.tag, `<style>${MAIN_CSS.css}</style>`);
   out = out.replace(/<div id="root">[\s\S]*?<\/div>(?=\s*<!--\s*Meta Pixel|\s*<script)/i, `<div id="root">${body}</div>`);
   return out;
 };
@@ -287,6 +299,8 @@ const main = async () => {
   }
   const template = fs.readFileSync(templatePath, 'utf8');
   if (!/<div id="root">/.test(template)) throw new Error('prerender: #root not found in template');
+  MAIN_CSS = loadMainCss(template);
+  if (MAIN_CSS) console.log(`  ✓ main CSS inlined (${Math.round(MAIN_CSS.css.length / 1024)} KB)`);
 
   const ssr = await buildSsrBundle();
   const { render } = ssr;

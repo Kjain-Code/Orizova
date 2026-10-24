@@ -49,12 +49,25 @@ if (GA_ID) {
   });
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+// Every URL ships fully pre-rendered HTML (scripts/prerender.js). Hydrating it
+// — instead of throwing it away and rendering again — keeps the text that is
+// already on screen, so the Largest Contentful Paint happens at first paint,
+// not after the JavaScript has downloaded and run (big mobile speed win).
+const container = document.getElementById('root');
+const app = (
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+if (container.querySelector('main')) {
+  ReactDOM.hydrateRoot(container, app, {
+    // A small mismatch makes React re-render that part on the client, which is
+    // exactly what the old createRoot did for the whole page — so it's safe.
+    onRecoverableError: (err) => { if (window.__HYDRATION_DEBUG__) console.warn('[hydration]', err && err.message); },
+  });
+} else {
+  ReactDOM.createRoot(container).render(app);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
