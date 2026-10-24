@@ -1,4 +1,5 @@
 import React from 'react';
+import { QuickAnswer } from '../components/ContentBlocks';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
@@ -36,6 +37,7 @@ const BlogIndex = () => (
       />
     <section className="loc-section content-section">
       <div className="container">
+        <QuickAnswer path="/blog" />
         <div className="content-prose" style={{ marginBottom: 40 }}>
           <p className="loc-text">
             We write these guides to answer the questions business owners ask us most often. No jargon, no secret formulas — just what works, what to avoid and how to decide for your own business.

@@ -1,6 +1,7 @@
 import React from 'react';
 import Seo, { SITE_URL, AREAS_SERVED } from '../components/Seo';
 import services from '../data/services';
+import { QuickAnswer } from '../components/ContentBlocks';
 import PageBanner from '../components/PageBanner';
 import ServicesDetail from '../components/ServicesDetail';
 import CtaBand from '../components/CtaBand';
@@ -32,6 +33,7 @@ const ServicesPage = () => {
       />
       <section className="loc-section content-section" style={{ paddingBottom: 0 }}>
         <div className="container">
+          <QuickAnswer path="/services" />
           <div className="cb-prose">
             <span className="section-tag">What we do</span>
             <h2 className="section-title content-h2">Build, grow and create — with one team</h2>

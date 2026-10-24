@@ -1,0 +1,528 @@
+{
+  "siteName": "Orizova Digital",
+  "defaultSiteUrl": "https://orizovadigital.co.in",
+  "routes": [
+    {
+      "key": "home",
+      "path": "/",
+      "priority": "1.0",
+      "title": "Web Development & Digital Marketing Agency in India | Orizova",
+      "description": "Orizova Digital builds fast websites, apps and online stores and runs SEO, Google Ads, Meta Ads and social media for businesses across India.",
+      "h1": "Website Development & Digital Marketing Agency in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "services",
+      "path": "/services",
+      "priority": "0.9",
+      "title": "Web Development, SEO & Marketing Services | Orizova",
+      "description": "Websites, e-commerce, apps, SEO, local SEO, Google Ads, Meta Ads, social media, video editing and branding for businesses across India.",
+      "h1": "Web Development, SEO & Digital Marketing Services in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:website-development",
+      "path": "/services/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in India | Orizova Digital",
+      "description": "Website development company in India: fast, mobile-first business websites, online stores and web apps for businesses in every city, delivered remotely.",
+      "h1": "Website Development Company in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:ecommerce-solutions",
+      "path": "/services/ecommerce-solutions",
+      "priority": "0.8",
+      "title": "E-commerce Website Development – Shopify & WooCommerce",
+      "description": "Shopify, WooCommerce and custom online stores with UPI and card payments, smooth checkout and mobile-first product pages for brands across India.",
+      "h1": "E-commerce Website Development — Shopify, WooCommerce & Custom",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:app-development",
+      "path": "/services/app-development",
+      "priority": "0.7",
+      "title": "Mobile App Development Company in India | Orizova",
+      "description": "Android, iOS and cross-platform React Native or Flutter apps, with admin panels and websites, for startups and businesses across India.",
+      "h1": "Mobile App Development Company in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:digital-marketing",
+      "path": "/services/digital-marketing",
+      "priority": "0.9",
+      "title": "Digital Marketing Services in India | Orizova",
+      "description": "SEO, Google Ads, Meta Ads, social media and content planned around your leads — digital marketing services for businesses across India.",
+      "h1": "Digital Marketing Services in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:social-media-marketing",
+      "path": "/services/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Marketing Agency in India | Orizova",
+      "description": "Content calendars, reels, posts and community management for Instagram, Facebook, LinkedIn and YouTube — social media marketing for businesses across India.",
+      "h1": "Social Media Marketing Agency in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:meta-ads",
+      "path": "/services/meta-ads",
+      "priority": "0.9",
+      "title": "Meta Ads Agency in India – Facebook & Instagram Ads",
+      "description": "Facebook and Instagram ads that bring real enquiries for businesses across India: lead forms with qualifying questions, click-to-WhatsApp ads and retargeting.",
+      "h1": "Meta Ads Agency in India — Facebook & Instagram Ads",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:google-ads",
+      "path": "/services/google-ads",
+      "priority": "0.9",
+      "title": "Google Ads Agency in India | PPC Management – Orizova",
+      "description": "Google Search, local, Performance Max and YouTube campaigns with tight keywords, negative keywords and call tracking — Google Ads management across India.",
+      "h1": "Google Ads Agency in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:seo",
+      "path": "/services/seo",
+      "priority": "0.9",
+      "title": "SEO Services in India | SEO Company – Orizova Digital",
+      "description": "Technical, on-page and content SEO that helps businesses across India rank on Google for the searches that bring real enquiries.",
+      "h1": "SEO Services in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:local-seo",
+      "path": "/services/local-seo",
+      "priority": "0.9",
+      "title": "Local SEO Services – Rank on Google Maps | Orizova",
+      "description": "Google Business Profile optimisation, genuine reviews, citations and location pages so nearby customers find you on Google Maps — anywhere in India.",
+      "h1": "Local SEO Services — Rank on Google Maps in Your City",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:video-editing",
+      "path": "/services/video-editing",
+      "priority": "0.8",
+      "title": "Video Editing Services in India – Reels, Ads & Films",
+      "description": "Instagram reels, YouTube Shorts, ad creatives, brand films and kinetic typography edited from your footage — video editing services for brands across India.",
+      "h1": "Video Editing Services in India — Reels, Ads & Brand Films",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "service:branding-designing",
+      "path": "/services/branding-designing",
+      "priority": "0.7",
+      "title": "Branding & Logo Design Agency in India | Orizova",
+      "description": "Logo design, brand identity systems, social media templates, packaging and pitch decks that keep your brand consistent — for businesses across India.",
+      "h1": "Branding & Logo Design Agency in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "locations",
+      "path": "/locations",
+      "priority": "0.8",
+      "title": "Locations We Serve – City Pages | Orizova Digital",
+      "description": "Orizova Digital works with businesses across India, with local pages for Ghaziabad, Noida, Delhi, Chandigarh Tricity and Varanasi — websites, SEO and ads.",
+      "h1": "Cities We Serve — Local Websites, SEO & Ads",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "city:ghaziabad",
+      "path": "/locations/ghaziabad",
+      "priority": "0.9",
+      "title": "Digital Marketing Agency in Ghaziabad | Orizova",
+      "description": "Websites, SEO, Google Maps and Meta/Google Ads for Ghaziabad businesses in Indirapuram, Vaishali, Vasundhara, Raj Nagar Extension and Sahibabad.",
+      "h1": "Digital Marketing Agency in Ghaziabad",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "city:noida",
+      "path": "/locations/noida",
+      "priority": "0.9",
+      "title": "Digital Marketing Agency in Noida | Orizova Digital",
+      "description": "Websites, apps, SEO and performance marketing for startups and local businesses in Noida, Greater Noida and Greater Noida West. Free consultation.",
+      "h1": "Digital Marketing Agency in Noida",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "city:delhi",
+      "path": "/locations/delhi",
+      "priority": "0.9",
+      "title": "Digital Marketing Agency in Delhi | Orizova Digital",
+      "description": "Web design, SEO, Google Maps and Meta/Google Ads for Delhi shops, clinics, restaurants and professionals — hyper-local campaigns that bring enquiries.",
+      "h1": "Digital Marketing Agency in Delhi",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "city:chandigarh",
+      "path": "/locations/chandigarh",
+      "priority": "0.9",
+      "title": "Digital Marketing Agency in Chandigarh | Orizova",
+      "description": "Websites, SEO and lead-generation ads for businesses in Chandigarh, Mohali, Panchkula and Zirakpur — premium design and qualified enquiries.",
+      "h1": "Digital Marketing Agency in Chandigarh",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:ghaziabad/website-development",
+      "path": "/locations/ghaziabad/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Ghaziabad | Orizova",
+      "description": "Website designing company in Ghaziabad for clinics, coaching, showrooms, builders and traders — fast mobile websites in Indirapuram, Vaishali and beyond.",
+      "h1": "Website Development Company in Ghaziabad",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:ghaziabad/seo",
+      "path": "/locations/ghaziabad/seo",
+      "priority": "0.8",
+      "title": "SEO Company in Ghaziabad – Local SEO & Google Maps",
+      "description": "Local SEO, Google Business Profile and content for Ghaziabad businesses — rank in Indirapuram, Vaishali, Raj Nagar Extension and nearby searches.",
+      "h1": "SEO Company in Ghaziabad",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:noida/website-development",
+      "path": "/locations/noida/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Noida | Orizova Digital",
+      "description": "Website development company in Noida for startups, IT firms, schools, real estate and local businesses in Greater Noida West — fast, SEO-ready websites.",
+      "h1": "Website Development Company in Noida",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:noida/seo",
+      "path": "/locations/noida/seo",
+      "priority": "0.8",
+      "title": "SEO Company in Noida – B2B & Local SEO | Orizova",
+      "description": "SEO for Noida IT companies and local businesses: technical SEO, content and Google Maps optimisation for Noida, Greater Noida and Greater Noida West.",
+      "h1": "SEO Company in Noida",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:delhi/website-development",
+      "path": "/locations/delhi/website-development",
+      "priority": "0.9",
+      "title": "Website Designing Company in Delhi | Orizova Digital",
+      "description": "Website designing & development company in Delhi: fast, custom-coded websites for boutiques, clinics, restaurants, consultants and traders. Fixed quotes.",
+      "h1": "Website Designing Company in Delhi",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:delhi/seo",
+      "path": "/locations/delhi/seo",
+      "priority": "0.8",
+      "title": "SEO Company in Delhi – Local SEO & Google Maps",
+      "description": "Neighbourhood-level SEO and Google Maps optimisation for Delhi businesses — service pages and content that compete in a crowded market.",
+      "h1": "SEO Company in Delhi",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:chandigarh/website-development",
+      "path": "/locations/chandigarh/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Chandigarh | Orizova Digital",
+      "description": "Website development & web design company for businesses in Chandigarh, Mohali and Panchkula: fast custom websites, e-commerce and SEO-ready pages.",
+      "h1": "Website Development Company in Chandigarh",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:chandigarh/seo",
+      "path": "/locations/chandigarh/seo",
+      "priority": "0.8",
+      "title": "SEO Company in Chandigarh – Mohali & Panchkula SEO",
+      "description": "SEO and Google Maps optimisation for businesses in Chandigarh, Mohali, Panchkula and Zirakpur — service pages, reviews and local content.",
+      "h1": "SEO Company in Chandigarh",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "city:varanasi",
+      "path": "/locations/varanasi",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Varanasi | Orizova Digital",
+      "description": "Websites, Google Maps visibility and lead generation for Varanasi hotels, homestays, Banarasi silk sellers, coaching institutes, clinics and travel businesses.",
+      "h1": "Digital Marketing Agency in Varanasi",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:varanasi/website-development",
+      "path": "/locations/varanasi/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Varanasi | Orizova Digital",
+      "description": "Website development company in Varanasi for hotels, homestays, Banarasi saree stores, coaching institutes and clinics — fast sites that bring enquiries.",
+      "h1": "Website Development Company in Varanasi",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "industries",
+      "path": "/industries",
+      "priority": "0.7",
+      "title": "Digital Marketing by Industry | Orizova Digital",
+      "description": "How we approach websites, SEO and ads for clinics, architects, real estate, restaurants and cafes, and finance professionals across India.",
+      "h1": "Digital Marketing by Industry",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "industry:clinics",
+      "path": "/industries/clinics",
+      "priority": "0.8",
+      "title": "Digital Marketing for Clinics & Doctors | Orizova",
+      "description": "Websites, Google Maps, genuine reviews and ethical ads that help clinics, dentists and doctors across India reach more patients.",
+      "h1": "Digital Marketing for Clinics & Doctors in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "industry:architects",
+      "path": "/industries/architects",
+      "priority": "0.8",
+      "title": "Website Design for Architects & Interior Designers",
+      "description": "Portfolio-first websites, Instagram and enquiry systems for architects, interior designers and design-build studios across India.",
+      "h1": "Website Design & Marketing for Architects and Interior Designers",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "industry:real-estate",
+      "path": "/industries/real-estate",
+      "priority": "0.8",
+      "title": "Real Estate Digital Marketing Agency | Orizova",
+      "description": "Project landing pages, Meta lead ads, Google search and WhatsApp follow-up for builders, brokers and channel partners across India.",
+      "h1": "Real Estate Digital Marketing Agency — Leads for Builders & Brokers",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "industry:restaurants-cafes",
+      "path": "/industries/restaurants-cafes",
+      "priority": "0.8",
+      "title": "Restaurant & Cafe Digital Marketing Agency | Orizova",
+      "description": "Google Maps, reviews, Instagram reels, websites and local ads for restaurants, cafes, bakeries and cloud kitchens across India.",
+      "h1": "Digital Marketing for Restaurants & Cafes",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "industry:finance-loan-agents",
+      "path": "/industries/finance-loan-agents",
+      "priority": "0.8",
+      "title": "Digital Marketing for Loan Agents & DSAs | Orizova",
+      "description": "Trust-first websites, compliant Google and Meta lead generation and WhatsApp follow-up for loan agents, DSAs, insurance and financial advisors.",
+      "h1": "Digital Marketing for Loan Agents, DSAs & Financial Advisors",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "blog",
+      "path": "/blog",
+      "priority": "0.7",
+      "title": "Digital Marketing Blog – Website, SEO & Ads Guides",
+      "description": "Practical guides for business owners in Delhi NCR and Chandigarh: website costs, Google Maps, Meta vs Google Ads, and marketing for clinics, cafes and more.",
+      "h1": "Practical Guides on Websites, SEO & Digital Marketing",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:how-to-get-a-business-website-india",
+      "path": "/blog/how-to-get-a-business-website-india",
+      "priority": "0.7",
+      "title": "How to Get a Business Website Made in India (2026)",
+      "description": "A step-by-step guide to getting a business website made in India: what to prepare, the process, what drives the cost and how to choose a developer.",
+      "h1": "How to Get a Business Website Made in India: Process, Cost & Tips",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:website-development-cost-chandigarh",
+      "path": "/blog/website-development-cost-chandigarh",
+      "priority": "0.7",
+      "title": "Website Development Cost in Chandigarh (2026 Guide)",
+      "description": "What a website costs in Chandigarh, Mohali and Panchkula: the factors that decide the price, hidden recurring costs, and how to compare quotes fairly.",
+      "h1": "Website Development Cost in Chandigarh (2026 Guide)",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:choose-web-development-company-chandigarh",
+      "path": "/blog/choose-web-development-company-chandigarh",
+      "priority": "0.7",
+      "title": "How to Choose a Web Development Company in Chandigarh",
+      "description": "12 checks before you hire a website developer in Chandigarh, Mohali or Panchkula — live work, honest claims, itemised quotes and owning your domain.",
+      "h1": "How to Choose a Web Development Company in Chandigarh",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:website-cost-in-delhi-ncr",
+      "path": "/blog/website-cost-in-delhi-ncr",
+      "priority": "0.6",
+      "title": "Website Cost in Delhi NCR (2026): A Practical Guide",
+      "description": "How much does a website cost in Delhi NCR? What drives the price, hidden costs to ask about, and how to compare website quotes without getting burnt.",
+      "h1": "Website Cost in Delhi NCR (2026): A Practical Guide",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:google-business-profile-guide",
+      "path": "/blog/google-business-profile-guide",
+      "priority": "0.6",
+      "title": "Google Business Profile Optimisation Guide (2026)",
+      "description": "Step-by-step Google Business Profile optimisation: categories, photos, reviews, posts and common mistakes — so your business shows up on Google Maps.",
+      "h1": "Google Business Profile Optimisation Guide (2026)",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:meta-ads-vs-google-ads",
+      "path": "/blog/meta-ads-vs-google-ads",
+      "priority": "0.6",
+      "title": "Meta Ads vs Google Ads: Which Is Better for You?",
+      "description": "Meta ads vs Google Ads explained simply, with examples for clinics, real estate, cafes, coaching and loan agents — and how to decide where to start.",
+      "h1": "Meta Ads vs Google Ads: Which Is Better for You?",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:get-more-patients-clinic-online",
+      "path": "/blog/get-more-patients-clinic-online",
+      "priority": "0.6",
+      "title": "How to Get More Patients for Your Clinic Online",
+      "description": "A practical, ethical plan for clinics and doctors: Google profile, reviews, a patient-friendly website, helpful content and targeted ads.",
+      "h1": "How to Get More Patients for Your Clinic Online",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:real-estate-leads-meta-ads",
+      "path": "/blog/real-estate-leads-meta-ads",
+      "priority": "0.6",
+      "title": "Real Estate Leads from Facebook Ads: Improve Quality",
+      "description": "Why real-estate leads from Facebook and Instagram disappoint, and the fixes — forms, offers, fast follow-up and compliance — that bring site visits.",
+      "h1": "Real Estate Leads from Facebook Ads: Improve Quality",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:instagram-ideas-restaurants-cafes",
+      "path": "/blog/instagram-ideas-restaurants-cafes",
+      "priority": "0.6",
+      "title": "30 Instagram Content Ideas for Restaurants and Cafes",
+      "description": "30 practical Instagram reel and post ideas for restaurants, cafes, bakeries and cloud kitchens, plus how to shoot on a phone and turn views into visits.",
+      "h1": "30 Instagram Content Ideas for Restaurants and Cafes",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:architect-portfolio-website-tips",
+      "path": "/blog/architect-portfolio-website-tips",
+      "priority": "0.6",
+      "title": "Architect Portfolio Website: 12 Tips That Win Clients",
+      "description": "12 tips for architect and interior designer portfolio websites: project structure, fast images, explaining your process and filtering enquiries.",
+      "h1": "Architect Portfolio Website: 12 Tips That Win Clients",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:loan-agent-lead-generation",
+      "path": "/blog/loan-agent-lead-generation",
+      "priority": "0.6",
+      "title": "How Loan Agents & DSAs Get Quality Leads Online",
+      "description": "A trust-first, compliant approach to online lead generation for loan agents, DSAs and financial advisors — website, Google, Meta and WhatsApp.",
+      "h1": "How Loan Agents & DSAs Get Quality Leads Online",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "post:local-seo-checklist",
+      "path": "/blog/local-seo-checklist",
+      "priority": "0.6",
+      "title": "Local SEO Checklist: 25 Steps for Small Businesses",
+      "description": "A 25-point local SEO checklist covering Google Business Profile, reviews, website pages, citations and tracking for shops, clinics and cafes.",
+      "h1": "Local SEO Checklist: 25 Steps for Small Businesses",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "faq",
+      "path": "/faq",
+      "priority": "0.5",
+      "title": "FAQ – Websites, SEO & Digital Marketing | Orizova",
+      "description": "Answers to common questions about website costs and timelines, SEO and Google Maps, Google and Meta ads, social media, video and working with Orizova Digital.",
+      "h1": "Questions About Websites, SEO & Digital Marketing",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "project:morphic-spaces",
+      "path": "/portfolio/morphic-spaces",
+      "priority": "0.6",
+      "title": "Morphic Spaces – Chandigarh Architecture Studio Website",
+      "description": "Case study: a premium, image-led website for Morphic Spaces, a spatial design studio working across Chandigarh and the Tricity.",
+      "h1": "Morphic Spaces — Architecture Studio Website Case Study",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "project:wipo-group",
+      "path": "/portfolio/wipo-group",
+      "priority": "0.5",
+      "title": "WIPO Group Website – Investment Portal | Orizova",
+      "description": "Project overview: an interactive fractional real-estate investment portal for WIPO Group with a wallet dashboard, property listings and coin trading.",
+      "h1": "WIPO Group — Investment Portal Website Case Study",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "project:ganesh-creation",
+      "path": "/portfolio/ganesh-creation",
+      "priority": "0.5",
+      "title": "Ganesh Creation – Photography Portfolio Website",
+      "description": "Project overview: a cinematic portfolio website for a wedding and fashion photography studio with an animated intro, filterable gallery and team showcase.",
+      "h1": "Ganesh Creation — Photography Portfolio Website Case Study",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "project:fps-subtitle",
+      "path": "/portfolio/fps-subtitle",
+      "priority": "0.5",
+      "title": "FPS Subtitle – Localisation Studio Website | Orizova",
+      "description": "Project overview: a corporate website for a subtitling, translation and localisation studio with multilingual hero messaging and a full service breakdown.",
+      "h1": "FPS Subtitle — Localisation Studio Website Case Study",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "portfolio",
+      "path": "/portfolio",
+      "priority": "0.7",
+      "title": "Website Development Portfolio | Orizova Digital",
+      "description": "Live websites by Orizova Digital: an architecture studio, a real-estate investment portal, a photography portfolio and a localisation studio.",
+      "h1": "Website Development Portfolio",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "creativeWork",
+      "path": "/creative-work",
+      "priority": "0.6",
+      "title": "Video Editing Portfolio – Reels & Brand Films | Orizova",
+      "description": "Reels, ad videos, brand films and kinetic typography edited by Orizova Digital for brands in Delhi NCR and across India. See samples of our video work.",
+      "h1": "Video Editing & Reels That Do the Talking",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "about",
+      "path": "/about",
+      "priority": "0.6",
+      "title": "About Orizova Digital – Digital Agency in India",
+      "description": "Orizova Digital is a web development and digital marketing agency based in Delhi NCR, helping businesses across India get found and chosen online.",
+      "h1": "About Orizova Digital — Web Development & Digital Marketing Agency in India",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "contact",
+      "path": "/contact",
+      "priority": "0.8",
+      "title": "Contact Orizova Digital – Free Website & Marketing Consult",
+      "description": "Call or WhatsApp Orizova Digital about websites, SEO, ads or social media — we work with businesses across India. Your first consultation is free.",
+      "h1": "Contact Orizova Digital — Free Website & Marketing Consultation",
+      "lastmod": "2026-10-24"
+    },
+    {
+      "key": "privacy",
+      "path": "/privacy-policy",
+      "priority": "0.2",
+      "title": "Privacy Policy | Orizova Digital",
+      "description": "How Orizova Digital collects, uses and protects information shared through this website, contact form, WhatsApp, cookies and analytics tools.",
+      "h1": "Privacy Policy",
+      "lastmod": "2026-10-01"
+    },
+    {
+      "key": "terms",
+      "path": "/terms",
+      "priority": "0.2",
+      "title": "Terms of Use | Orizova Digital",
+      "description": "Terms governing the use of the Orizova Digital website, including content, intellectual property, third-party links and limitation of liability.",
+      "h1": "Terms of Use",
+      "lastmod": "2026-10-01"
+    }
+  ]
+}

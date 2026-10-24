@@ -5,7 +5,7 @@ import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo, { SITE_URL, routesByPath } from '../components/Seo';
-import { CtaButtons, Inline, Prose, LinkChips } from '../components/ContentBlocks';
+import { CtaButtons, Inline, Prose, LinkChips, QuickAnswer } from '../components/ContentBlocks';
 import projects from '../data/projects';
 import NotFound from './NotFound';
 
@@ -41,6 +41,7 @@ const PortfolioDetail = () => {
       <PageBanner title={`${p.title} —`} highlight={((routesByPath[path] || {}).h1 || '').split(' — ')[1] || 'Website Case Study'} subtitle={p.desc} chips={[p.industry, ...p.tags].slice(0, 5)} />
       <section className="loc-section content-section">
         <div className="container">
+          <QuickAnswer path={path} />
           <div className="loc-intro">
             <div>
               <img

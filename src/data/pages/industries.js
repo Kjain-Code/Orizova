@@ -6,7 +6,7 @@ const industries = [
   /* ------------------------------------------------------------------ */
   {
     ...industryMeta['clinics'],
-    banner: 'Websites, Google Maps visibility, reviews and ethical ads that help clinics, dentists, dermatologists, physiotherapists and diagnostic centres across Delhi NCR and Chandigarh reach more patients.',
+    banner: 'Websites, Google Maps visibility, reviews and ethical ads that help clinics, dentists, dermatologists, physiotherapists and diagnostic centres across India reach more patients.',
     intro: {
       h2: 'Patients search before they book',
       paras: [
@@ -87,7 +87,7 @@ const industries = [
   /* ------------------------------------------------------------------ */
   {
     ...industryMeta['architects'],
-    banner: 'Portfolio-first websites, Instagram presence and enquiry systems for architects, interior designers and design-build studios in Delhi NCR and the Chandigarh Tricity.',
+    banner: 'Portfolio-first websites, Instagram presence and enquiry systems for architects, interior designers and design-build studios across India.',
     intro: {
       h2: 'Your projects are your best salespeople',
       paras: [
@@ -166,7 +166,7 @@ const industries = [
   /* ------------------------------------------------------------------ */
   {
     ...industryMeta['real-estate'],
-    banner: 'Project landing pages, Meta lead ads, Google search campaigns and WhatsApp follow-up for builders, brokers and channel partners in Noida, Ghaziabad, Delhi and the Chandigarh Tricity.',
+    banner: 'Project landing pages, Meta lead ads, Google search campaigns and WhatsApp follow-up for builders, brokers and channel partners across India.',
     intro: {
       h2: 'More site visits, fewer wasted calls',
       paras: [
@@ -242,7 +242,7 @@ const industries = [
   /* ------------------------------------------------------------------ */
   {
     ...industryMeta['restaurants-cafes'],
-    banner: 'Google Maps visibility, reviews, Instagram reels, websites and local ads for restaurants, cafes, bakeries and cloud kitchens in Delhi NCR and Chandigarh.',
+    banner: 'Google Maps visibility, reviews, Instagram reels, websites and local ads for restaurants, cafes, bakeries and cloud kitchens across India.',
     intro: {
       h2: 'Get discovered, get visited, get talked about',
       paras: [

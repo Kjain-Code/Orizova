@@ -5,12 +5,12 @@
 const servicePages = {
   /* ------------------------------------------------------------------ */
   'website-development': {
-    banner: 'Website development company in India for businesses that want enquiries: fast, mobile-first websites, landing pages, online stores and web apps — for Delhi NCR, Chandigarh, Varanasi and clients across India.',
+    banner: 'Website development company in India for businesses that want enquiries: fast, mobile-first websites, landing pages, online stores and web apps — for businesses across India, from metro cities to smaller towns.',
     intro: {
       h2: 'A website that works as hard as your best salesperson',
       paras: [
         'Most people who find your business will look at your website before they call. If it loads slowly on a phone, hides your number or looks out of date, they simply go back to Google and pick the next result. A good website fixes that: it explains what you do in the first few seconds, shows proof that you are real, and makes it effortless to call, WhatsApp or book.',
-        'Orizova Digital is a website development company working with local businesses, startups and professionals across India — with a strong local focus on Delhi, Noida, Ghaziabad, the Chandigarh Tricity and Varanasi. Every site is coded mobile-first, set up for search engines from day one, and connected to the tools you already use — WhatsApp, Google Business Profile, Meta Pixel and Google Analytics.',
+        'Orizova Digital is a website development company working with local businesses, startups and professionals across India — with dedicated local pages for Delhi, Noida, Ghaziabad, the Chandigarh Tricity and Varanasi. Every site is coded mobile-first, set up for search engines from day one, and connected to the tools you already use — WhatsApp, Google Business Profile, Meta Pixel and Google Analytics.',
       ],
     },
     blocks: [
@@ -101,7 +101,7 @@ const servicePages = {
       {
         type: 'faq',
         faqs: [
-          ['Do you build websites for businesses outside Delhi NCR?', 'Yes — we work with businesses across India remotely, with dedicated city pages for [Chandigarh](/locations/chandigarh/website-development) and [Varanasi](/locations/varanasi/website-development).'],
+          ['Do you build websites for businesses in other cities?', 'Yes — we work with businesses across India remotely, with dedicated city pages for [Chandigarh](/locations/chandigarh/website-development) and [Varanasi](/locations/varanasi/website-development).'],
           ['Can I get a website in Hindi?', 'Yes. We build Hindi, English or bilingual websites so every customer can read your site comfortably.'],
           ['How long does it take to build a website?', 'A focused business website or landing page usually takes a few weeks once your content and photos are ready. Larger sites, e-commerce stores and web apps are planned in clear milestones so you always know what is next.'],
           ['Will my website be SEO-friendly?', 'Yes. Every page gets a unique title, meta description, heading structure and schema markup, and the site is submitted to Google Search Console at launch. For ongoing rankings, see our [SEO services](/services/seo).'],
@@ -189,7 +189,7 @@ const servicePages = {
 
   /* ------------------------------------------------------------------ */
   'app-development': {
-    banner: 'Android, iOS and cross-platform apps (React Native / Flutter) with the admin panel and website that go with them — for startups and businesses in Noida, Delhi NCR and Chandigarh.',
+    banner: 'Android, iOS and cross-platform apps (React Native / Flutter) with the admin panel and website that go with them — for startups and businesses across India.',
     intro: {
       h2: 'Apps that solve one problem really well',
       paras: [
@@ -574,7 +574,7 @@ const servicePages = {
 
   /* ------------------------------------------------------------------ */
   seo: {
-    banner: 'On-page, technical and content SEO that helps businesses in Ghaziabad, Noida, Delhi and Chandigarh rank on Google for the searches that bring real enquiries.',
+    banner: 'On-page, technical and content SEO that helps businesses across India rank on Google for the searches that bring real enquiries.',
     intro: {
       h2: 'SEO that targets searches with buying intent',
       paras: [
@@ -655,7 +655,7 @@ const servicePages = {
 
   /* ------------------------------------------------------------------ */
   'local-seo': {
-    banner: 'Google Business Profile optimisation, reviews, citations and location pages — so nearby customers find you on Google Maps in Delhi NCR and the Chandigarh Tricity.',
+    banner: 'Google Business Profile optimisation, reviews, citations and location pages — so nearby customers find you on Google Maps — wherever your business is in India.',
     intro: {
       h2: 'Get found when people search “near me”',
       paras: [
@@ -815,7 +815,7 @@ const servicePages = {
 
   /* ------------------------------------------------------------------ */
   'branding-designing': {
-    banner: 'Logos, brand identity systems, social media templates, packaging and pitch decks for businesses in Delhi, Noida, Ghaziabad and Chandigarh.',
+    banner: 'Logos, brand identity systems, social media templates, packaging and pitch decks for businesses across India.',
     intro: {
       h2: 'A brand people recognise and remember',
       paras: [

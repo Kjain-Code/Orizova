@@ -14,7 +14,7 @@ const path = require('path');
 const https = require('https');
 
 const ROOT = path.join(__dirname, '..');
-const seo = require('../src/data/seo.json');
+const seo = require('../src/data/site/seo.json');
 const env = fs.existsSync(path.join(ROOT, '.env.production')) ? fs.readFileSync(path.join(ROOT, '.env.production'), 'utf8') : '';
 const get = (k) => process.env[k] || ((env.match(new RegExp(`^${k}=(.*)$`, 'm')) || [])[1] || '').trim();
 

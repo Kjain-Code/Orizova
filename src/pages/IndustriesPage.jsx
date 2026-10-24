@@ -5,7 +5,7 @@ import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo, { SITE_URL } from '../components/Seo';
-import { CtaButtons, LinkChips } from '../components/ContentBlocks';
+import { CtaButtons, LinkChips, QuickAnswer } from '../components/ContentBlocks';
 import { guideIndex } from '../data/siteIndex';
 import industries from '../data/pages/industries';
 
@@ -35,6 +35,7 @@ const IndustriesPage = () => (
       />
     <section className="loc-section content-section">
       <div className="container">
+        <QuickAnswer path="/industries" />
         <div className="content-prose">
           <h2 className="section-title content-h2">Marketing that fits how your customers decide</h2>
           <p className="loc-text">

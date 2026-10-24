@@ -5,6 +5,7 @@ import PageBanner from '../components/PageBanner';
 import Projects from '../components/Projects';
 import CtaBand from '../components/CtaBand';
 import PageTransition from '../components/PageTransition';
+import { QuickAnswer } from '../components/ContentBlocks';
 
 const Portfolio = () => {
   return (
@@ -29,6 +30,11 @@ const Portfolio = () => {
         subtitle="Live websites we have designed and developed — open them, click around and judge the work for yourself."
         chips={['Web apps', 'Portfolios', 'Corporate sites', 'Dashboards', 'Live work']}
       />
+      <section className="qa-home-section">
+        <div className="container">
+          <QuickAnswer path="/portfolio" className="qa--home" />
+        </div>
+      </section>
       <h2 className="sr-only">Website projects</h2>
       <Projects />
       <CtaBand

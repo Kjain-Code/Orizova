@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import CONTACT from '../data/contact';
 import seo from '../data/seo.json';
+import services from '../data/services';
+import { answerFor } from '../data/answers';
 
 const SITE_URL = (process.env.REACT_APP_SITE_URL || seo.defaultSiteUrl).replace(/\/$/, '');
 const SITE_NAME = seo.siteName;
@@ -50,6 +52,17 @@ const businessSchema = {
     areaServed: 'IN',
     availableLanguage: ['English', 'Hindi'],
   },
+  knowsLanguage: ['en-IN', 'hi-IN'],
+  // Explicit service list — helps search and AI engines map the brand to
+  // every service it offers (entity understanding for GEO).
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Website development and digital marketing services',
+    itemListElement: services.map((s) => ({
+      '@type': 'Offer',
+      itemOffered: { '@type': 'Service', name: s.title, url: `${SITE_URL}/services/${s.slug}` },
+    })),
+  },
   sameAs: CONTACT.sameAs,
   // {{TODO: add "address" (PostalAddress) + "geo" only if you have a real public office, and "openingHoursSpecification" once hours are confirmed}}
 };
@@ -91,9 +104,29 @@ const Seo = ({ page, path, title, description, schema = [], breadcrumbs, noindex
 
   const crumbs = breadcrumbs || (resolvedPath !== '/' ? [{ name: route.h1 || resolvedTitle, path: resolvedPath }] : []);
 
+  // WebPage node with a modified date (freshness) and, where the page has a
+  // quick answer, `speakable` pointing at it (voice assistants / AEO).
+  const ownPageType = schema.some((s) => ['AboutPage', 'ContactPage', 'CollectionPage'].includes(s['@type']));
+  const hasAnswer = !!answerFor(resolvedPath);
+  const webPageSchema = ownPageType || isNoindex ? null : {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${canonical}#webpage`,
+    url: canonical,
+    name: resolvedTitle,
+    description: resolvedDescription,
+    inLanguage: 'en-IN',
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#organization` },
+    primaryImageOfPage: { '@type': 'ImageObject', url: DEFAULT_IMAGE },
+    ...((routesByPath[resolvedPath] || {}).lastmod ? { dateModified: routesByPath[resolvedPath].lastmod } : {}),
+    ...(hasAnswer ? { speakable: { '@type': 'SpeakableSpecification', cssSelector: ['.qa-q', '.qa-a'] } } : {}),
+  };
+
   const schemas = [
     businessSchema,
     websiteSchema,
+    ...(webPageSchema ? [webPageSchema] : []),
     ...(crumbs.length ? [breadcrumbSchema(crumbs)] : []),
     ...schema,
   ];

@@ -26,4 +26,9 @@ ErrorDocument 404 /404.html
   </FilesMatch>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # llms.txt files are for AI assistants, not for Google's search results
+  <FilesMatch "^llms(-full)?\.txt$">
+    Header set X-Robots-Tag "noindex"
+    Header set Content-Type "text/plain; charset=utf-8"
+  </FilesMatch>
 </IfModule>

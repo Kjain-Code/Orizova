@@ -3,7 +3,7 @@ import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo from '../components/Seo';
-import { CtaButtons, Faqs, faqSchema } from '../components/ContentBlocks';
+import { CtaButtons, Faqs, faqSchema, QuickAnswer } from '../components/ContentBlocks';
 import faqGroups from '../data/pages/faqs';
 
 const FaqPage = () => (
@@ -22,6 +22,7 @@ const FaqPage = () => (
       />
     <section className="loc-section content-section">
       <div className="container">
+        <QuickAnswer path="/faq" />
         {faqGroups.map((g) => (
           <Faqs key={g.title} tag={g.title} h2={`${g.title}: common questions`} faqs={g.faqs} />
         ))}

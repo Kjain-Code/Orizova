@@ -4,9 +4,9 @@ import { FiCheckCircle } from 'react-icons/fi';
 import PageBanner, { splitHeading } from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
-import Seo, { AREAS_SERVED, routesByPath } from '../components/Seo';
+import Seo, { routesByPath } from '../components/Seo';
 import {
-  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema, QuickAnswer,
 } from '../components/ContentBlocks';
 import services from '../data/services';
 import servicePages from '../data/pages/servicePages';
@@ -40,7 +40,7 @@ const ServicePage = () => {
             description: route.description || service.fullDesc,
             path,
             serviceType: service.title,
-            areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
+            areaServed: { '@type': 'Country', name: 'India' },
           }),
           ...(faqs.length ? [faqSchema(faqs)] : []),
         ]}
@@ -49,6 +49,7 @@ const ServicePage = () => {
 
       <section className="loc-section content-section">
         <div className="container">
+          <QuickAnswer path={path} />
           <div className="loc-intro">
             <div>
               <span className="section-tag">{service.title}</span>
@@ -77,7 +78,7 @@ const ServicePage = () => {
           <RelatedGuides path={path} />
 
           <LinkChips
-            h2={`${service.title} across Delhi NCR & Chandigarh`}
+            h2={`${service.title} in your city`}
             links={
               cityServices.some((c) => c.service === slug)
                 ? cityServices.filter((c) => c.service === slug).map((c) => ({ to: `/locations/${c.city}/${c.service}`, label: c.label }))

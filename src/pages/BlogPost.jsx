@@ -3,8 +3,8 @@ import { useParams } from 'react-router-dom';
 import PageBanner from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
-import Seo, { SITE_URL, SITE_NAME } from '../components/Seo';
-import { CtaButtons, Faqs, Prose, Inline, faqSchema } from '../components/ContentBlocks';
+import Seo, { SITE_URL, SITE_NAME, routesByPath } from '../components/Seo';
+import { CtaButtons, Faqs, Prose, Inline, faqSchema, QuickAnswer } from '../components/ContentBlocks';
 import posts, { AUTHOR } from '../data/blog';
 import BlogCards, { formatDate } from '../components/BlogCards';
 import NotFound from './NotFound';
@@ -17,6 +17,8 @@ const BlogPost = () => {
   if (!post) return <NotFound />;
 
   const path = `/blog/${post.slug}`;
+  // Freshness signal for search and AI engines: last meaningful update.
+  const modified = post.updated || (routesByPath[path] || {}).lastmod || post.date;
   const crumbs = [{ name: 'Blog', path: '/blog' }, { name: post.title, path }];
   const related = posts.filter((p) => p.slug !== post.slug && p.category === post.category)
     .concat(posts.filter((p) => p.slug !== post.slug && p.category !== post.category))
@@ -35,7 +37,10 @@ const BlogPost = () => {
             headline: post.title,
             description: post.excerpt,
             datePublished: post.date,
-            dateModified: post.updated || post.date,
+            dateModified: modified,
+            articleSection: post.category,
+            isPartOf: { '@id': `${SITE_URL}/#website` },
+            about: post.category,
             mainEntityOfPage: `${SITE_URL}${path}`,
             image: `${SITE_URL}/og-image.png`,
             author: { '@type': 'Organization', name: AUTHOR.name, url: SITE_URL },
@@ -52,9 +57,11 @@ const BlogPost = () => {
             <div className="article-byline">
               <span>By <strong>{AUTHOR.name}</strong></span>
               <span>Published <time dateTime={post.date}>{formatDate(post.date)}</time></span>
+              {modified !== post.date && <span>Updated <time dateTime={modified}>{formatDate(modified)}</time></span>}
               <span>{post.readMins} min read</span>
               <span>{post.category}</span>
             </div>
+            <QuickAnswer path={path} label="Short answer" />
             {post.intro.map((p) => <p className="loc-text" key={p.slice(0, 30)}><Inline text={p} /></p>)}
 
             <nav className="article-toc" aria-label="In this article">

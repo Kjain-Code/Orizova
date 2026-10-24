@@ -3,7 +3,7 @@ import Seo, { SITE_URL } from '../components/Seo';
 import PageBanner from '../components/PageBanner';
 import Contact from '../components/Contact';
 import PageTransition from '../components/PageTransition';
-import { Faqs, Process, faqSchema } from '../components/ContentBlocks';
+import { Faqs, Process, faqSchema, QuickAnswer } from '../components/ContentBlocks';
 
 const contactFaqs = [
   ['How quickly will you reply?', 'We aim to reply to WhatsApp messages and enquiries as soon as possible on working days. For urgent questions, calling is fastest.'],
@@ -40,6 +40,7 @@ const ContactPage = () => {
       <Contact />
       <section className="loc-section content-section">
         <div className="container">
+          <QuickAnswer path="/contact" />
           <Process
             tag="What happens next"
             h2="After you get in touch"

@@ -7,7 +7,7 @@ import { cityServicesIndex } from '../data/siteIndex';
 import './AreasServed.css';
 
 export const homeFaqs = [
-  ['Which areas does Orizova serve?', 'We work with businesses in Ghaziabad, Noida, Greater Noida, Delhi and the Chandigarh Tricity (Chandigarh, Mohali, Panchkula), and with clients across India and abroad.'],
+  ['Which areas does Orizova serve?', 'We work with businesses in Ghaziabad, Noida, Greater Noida, Delhi, the Chandigarh Tricity (Chandigarh, Mohali, Panchkula) and Varanasi, and with clients across India and abroad.'],
   ['What services does Orizova offer?', 'Website development, mobile app development, SEO, digital marketing (Meta & Google Ads, social media), branding and design, and e-commerce stores on Shopify, WooCommerce or custom code.'],
   ['How much does a website cost?', 'It depends on the pages and features you need. A business website or landing page costs much less than a custom web app or online store. Share your requirement and we will send a clear, fixed quote.'],
   ['Will my website be SEO-friendly and fast?', 'Yes. Every site we build is mobile-first, optimised for Core Web Vitals and set up with titles, meta descriptions, schema markup, sitemap and Google Search Console.'],

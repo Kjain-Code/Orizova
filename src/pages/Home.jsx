@@ -8,6 +8,7 @@ import AreasServed, { homeFaqs } from '../components/AreasServed';
 import CtaBand from '../components/CtaBand';
 import { IndustriesStrip, LatestPosts } from '../components/HomeExtras';
 import PageTransition from '../components/PageTransition';
+import { QuickAnswer } from '../components/ContentBlocks';
 
 const Home = () => {
   return (
@@ -26,6 +27,12 @@ const Home = () => {
       />
 
       <Hero />
+      {/* Answer-first brand summary for AI assistants and featured snippets */}
+      <section className="qa-home-section">
+        <div className="container">
+          <QuickAnswer path="/" label="In short" className="qa--home" />
+        </div>
+      </section>
       <Services />
       <WhyUs />
       <IndustriesStrip />

@@ -4,9 +4,9 @@ import { FiCheckCircle } from 'react-icons/fi';
 import PageBanner, { splitHeading } from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
-import Seo, { AREAS_SERVED, routesByPath } from '../components/Seo';
+import Seo, { routesByPath } from '../components/Seo';
 import {
-  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema, QuickAnswer,
 } from '../components/ContentBlocks';
 import industries from '../data/pages/industries';
 import locations from '../data/locations';
@@ -35,7 +35,7 @@ const IndustryPage = () => {
             description: route.description,
             path,
             serviceType: `Digital marketing for ${ind.name}`,
-            areaServed: AREAS_SERVED.map((name) => ({ '@type': 'Place', name })),
+            areaServed: { '@type': 'Country', name: 'India' },
           }),
           faqSchema(faqs),
         ]}
@@ -44,6 +44,7 @@ const IndustryPage = () => {
 
       <section className="loc-section content-section">
         <div className="container">
+          <QuickAnswer path={path} />
           <div className="loc-intro">
             <div>
               <span className="section-tag">{ind.name}</span>

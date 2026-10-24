@@ -6,15 +6,15 @@ import reportWebVitals from './reportWebVitals';
 // Styles for the code-split pages ship in the main stylesheet. The
 // pre-rendered HTML only links main.css, so when these lived in lazy chunks the
 // page first painted unstyled and then jumped (CLS ≈ 0.43 on desktop).
-import './components/PageBanner.css';
-import './components/ContentPage.css';
-import './pages/LocationPage.css';
-import './components/CtaBand.css';
-import './components/About.css';
-import './components/Contact.css';
-import './components/AreasServed.css';
-import './components/CreativeRingGallery.css';
-import './components/CreativeWorkSections.css';
+import './components/common/PageBanner.css';
+import './components/content/ContentPage.css';
+import './pages/locations/LocationPage.css';
+import './components/common/CtaBand.css';
+import './components/sections/About.css';
+import './components/sections/Contact.css';
+import './components/home/AreasServed.css';
+import './components/sections/CreativeRingGallery.css';
+import './components/sections/CreativeWorkSections.css';
 
 // The static SEO tags in each pre-rendered HTML file (marked data-rh) exist for
 // crawlers and link previews. Once React is running, react-helmet-async renders

@@ -4,7 +4,7 @@ import PageBanner from '../components/PageBanner';
 import About from '../components/About';
 import CtaBand from '../components/CtaBand';
 import PageTransition from '../components/PageTransition';
-import { Cards, Process, Prose, LinkChips } from '../components/ContentBlocks';
+import { Cards, Process, Prose, LinkChips, QuickAnswer, FactSheet } from '../components/ContentBlocks';
 import { industriesIndex } from '../data/siteIndex';
 import locations from '../data/locations';
 
@@ -34,6 +34,7 @@ const AboutPage = () => {
       <About />
       <section className="loc-section content-section">
         <div className="container">
+          <QuickAnswer path="/about" />
           <Prose
             tag="What we do"
             h2="Websites, marketing and content — under one roof"
@@ -42,6 +43,7 @@ const AboutPage = () => {
               'We mostly work with local and growing businesses — clinics, architects, real-estate firms, restaurants and cafes, financial professionals, startups and service companies — across [Ghaziabad](/locations/ghaziabad), [Noida](/locations/noida), [Delhi](/locations/delhi) and the [Chandigarh Tricity](/locations/chandigarh).',
             ]}
           />
+          <FactSheet />
           <Cards
             tag="How we work"
             h2="What you can expect from us"

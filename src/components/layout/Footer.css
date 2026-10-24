@@ -1,0 +1,199 @@
+.footer {
+  background: var(--lavender);
+  color: var(--ink);
+  padding-top: 80px;
+  border-top: 1.5px solid rgba(76, 14, 130, 0.1);
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1.1fr 1.1fr 1.2fr;
+  gap: 48px;
+  padding-bottom: 60px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  max-width: 300px;
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-contacts a,
+.footer-contacts span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-light);
+  transition: color 0.3s;
+}
+
+.footer-contacts a:hover { color: var(--primary); }
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.footer-socials a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--paper);
+  border: 1.5px solid var(--lavender);
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+.footer-socials a:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.footer-links h4,
+.footer-links .footer-heading {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.3;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links ul li a,
+.footer-links ul li span {
+  font-size: 14px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer-links ul li a:hover { color: var(--gold-deep); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(76, 14, 130, 0.1);
+  padding: 20px 0;
+}
+
+.footer-bottom p {
+  font-size: 13px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* ===========================
+   RESPONSIVE — TABLET LANDSCAPE
+============================= */
+@media (max-width: 1024px) {
+  .footer-inner {
+    gap: 32px;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .footer-brand { grid-column: 1 / -1; }
+}
+.footer-legal { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 16px; margin-top: 6px; }
+.footer-legal a { color: var(--text-light); font-size: 13px; }
+.footer-legal a:hover { color: var(--primary); }
+
+/* ===========================
+   RESPONSIVE — TABLET PORTRAIT
+============================= */
+@media (max-width: 900px) {
+  .footer-inner {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer {
+    padding-top: 60px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE LANDSCAPE
+============================= */
+@media (max-width: 768px) {
+  .footer-inner {
+    gap: 32px;
+    padding-bottom: 40px;
+  }
+
+  .footer-logo {
+    font-size: 1.2rem;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .footer-links h4,
+  .footer-links .footer-heading {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .footer-links ul li a,
+  .footer-links ul li span {
+    font-size: 13px;
+  }
+
+  .footer-bottom {
+    padding: 16px 0;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE PORTRAIT
+============================= */
+@media (max-width: 560px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+
+/* Mobile tap targets: give every footer link at least ~32px of tappable
+   height (Google mobile-usability / Lighthouse tap-target guidance) without
+   changing the visual design. */
+@media (max-width: 768px) {
+  .footer-links ul { gap: 2px; }
+  .footer-links ul li a { display: inline-flex; align-items: center; min-height: 32px; }
+  .footer-contacts a { display: inline-flex; align-items: center; min-height: 32px; }
+  .footer-legal a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 4px; }
+}

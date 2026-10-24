@@ -7,8 +7,10 @@ import {
 import { FaWhatsapp } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../data/contact';
 import projects from '../data/projects';
-import { SITE_URL } from './Seo';
+import { SITE_URL, routesByPath } from './Seo';
 import { guidesFor } from '../data/siteIndex';
+import { answerFor } from '../data/answers';
+import { factRows } from '../data/facts';
 import '../pages/LocationPage.css';
 import './ContentPage.css';
 
@@ -261,6 +263,62 @@ export const Blocks = ({ blocks }) =>
       default: return null;
     }
   });
+
+/* ---------- AEO / GEO: answer-first summary ---------- */
+const formatDay = (iso) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  return Number.isNaN(d.getTime())
+    ? iso
+    : d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+};
+
+/**
+ * Short, self-contained answer shown near the top of a page (copy lives in
+ * data/answers.js). Answer engines — Google featured snippets / AI Overviews,
+ * ChatGPT, Perplexity, voice assistants — prefer a direct 40–80 word answer
+ * they can quote, plus a visible "last updated" date as a freshness signal.
+ * The .qa-q / .qa-a classes are referenced by the page's `speakable` schema.
+ */
+export const QuickAnswer = ({ path, label = 'Quick answer', className = '' }) => {
+  const item = answerFor(path);
+  if (!item) return null;
+  const updated = (routesByPath[path] || {}).lastmod;
+  return (
+    <section className={`qa ${className}`} aria-label={label}>
+      <span className="qa-label"><FiZap aria-hidden="true" /> {label}</span>
+      <h2 className="qa-q">{item.q}</h2>
+      <p className="qa-a"><Inline text={item.a} /></p>
+      {item.takeaways && item.takeaways.length > 0 && (
+        <>
+          <h3 className="qa-sub">Key takeaways</h3>
+          <ul className="qa-list">
+            {item.takeaways.map((t) => <li key={t.slice(0, 40)}><Inline text={t} /></li>)}
+          </ul>
+        </>
+      )}
+      {updated && (
+        <p className="qa-meta">
+          By Orizova Digital · Last updated <time dateTime={updated}>{formatDay(updated)}</time>
+        </p>
+      )}
+    </section>
+  );
+};
+
+/** Visible brand fact sheet ("At a glance") — mirrors data/facts.js. */
+export const FactSheet = ({ h2 = 'Orizova Digital at a glance' }) => (
+  <div className="loc-block">
+    <SectionHead tag="Fact sheet" h2={h2} />
+    <dl className="facts">
+      {factRows.map(([k, v]) => (
+        <div className="facts-row" key={k}>
+          <dt>{k}</dt>
+          <dd>{v}</dd>
+        </div>
+      ))}
+    </dl>
+  </div>
+);
 
 /* ---------- schema helpers ---------- */
 export const faqSchema = (faqs) => ({

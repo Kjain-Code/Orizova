@@ -4,7 +4,7 @@ import { FiCheckCircle, FiMapPin } from 'react-icons/fi';
 import PageBanner, { splitHeading } from '../components/PageBanner';
 import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
-import { Blocks, Cards, CtaButtons, Faqs, LinkChips, RealWork, RelatedGuides, faqSchema } from '../components/ContentBlocks';
+import { Blocks, Cards, CtaButtons, Faqs, LinkChips, RealWork, RelatedGuides, faqSchema, QuickAnswer } from '../components/ContentBlocks';
 import { cityServicesIndex as cityServices } from '../data/siteIndex';
 import Seo, { SITE_URL, routesByPath } from '../components/Seo';
 import locations from '../data/locations';
@@ -48,6 +48,7 @@ const LocationPage = () => {
 
       <section className="loc-section content-section">
         <div className="container">
+          <QuickAnswer path={path} />
           <div className="loc-intro">
             <div>
               <span className="section-tag">Why {loc.city} businesses choose Orizova</span>

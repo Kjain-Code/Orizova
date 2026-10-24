@@ -6,7 +6,7 @@ import PageTransition from '../components/PageTransition';
 import CtaBand from '../components/CtaBand';
 import Seo, { routesByPath } from '../components/Seo';
 import {
-  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema, QuickAnswer,
 } from '../components/ContentBlocks';
 import cityServices from '../data/pages/cityServices';
 import locations from '../data/locations';
@@ -54,6 +54,7 @@ const CityServicePage = () => {
 
       <section className="loc-section content-section">
         <div className="container">
+          <QuickAnswer path={path} />
           <div className="loc-intro">
             <div>
               <span className="section-tag">{page.label}</span>

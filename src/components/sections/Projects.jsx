@@ -1,0 +1,192 @@
+import React, { useState } from "react";
+import { m, AnimatePresence } from "framer-motion";
+import { FiArrowRight, FiExternalLink } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import projects from "../../data/work/projects";
+import "./Projects.css";
+
+const categories = [
+  "All",
+  "Website Development",
+  "App Development",
+  "E-Commerce",
+  "Digital Marketing",
+  "Branding",
+  "SEO",
+];
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const Projects = () => {
+  const [active, setActive] = useState("All");
+
+  const filtered =
+    active === "All"
+      ? projects
+      : projects.filter((p) => p.category === active);
+
+  return (
+    <section className="projects-section">
+      <div className="container">
+
+        <div className="project-filters">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              className={`filter-btn ${active === cat ? "active" : ""}`}
+              onClick={() => setActive(cat)}
+            >
+              {cat}
+            </button>
+          ))}
+        </div>
+
+        <m.div
+          layout
+          variants={containerVariants}
+          initial="hidden"
+          animate="show"
+          className="projects-grid"
+        >
+          <AnimatePresence>
+            {filtered.map((project) => (
+              <m.div
+                key={project.id}
+                layout
+                variants={cardVariants}
+                exit={{ opacity: 0, scale: 0.8 }}
+                whileHover={{ y: -8 }}
+                className="project-card"
+              >
+                {project.image ? (
+                  <div className="project-image-wrap">
+                    <img
+                    src={project.image}
+                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Digital`}
+                    className="project-image"
+                    width="800"
+                    height="338"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                    <span
+                      className="project-category project-category-badge"
+                      style={{ color: project.color, background: '#fff' }}
+                    >
+                      {project.category}
+                    </span>
+                  </div>
+                ) : (
+                  <div
+                    className="project-top"
+                    style={{
+                      background: `${project.color}15`,
+                    }}
+                  >
+                    <span className="project-emoji">
+                      {project.emoji}
+                    </span>
+
+                    <span
+                      className="project-category"
+                      style={{
+                        color: project.color,
+                      }}
+                    >
+                      {project.category}
+                    </span>
+                  </div>
+                )}
+
+                <div className="project-content">
+                  <h3>{project.title}</h3>
+                  <p>{project.desc}</p>
+
+                  <div className="project-tags">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="project-tag">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div
+                    className="project-result"
+                    style={{
+                      borderColor: `${project.color}40`,
+                      color: project.color,
+                    }}
+                  >
+                    ✅ {project.result}
+                  </div>
+
+                  <Link to={`/portfolio/${project.slug}`} className="project-btn" style={{ marginBottom: 10 }}>
+                    Project details<span className="sr-only"> for {project.title}</span>
+                  </Link>
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-btn"
+                    >
+                      {project.linkLabel || "Visit Website"}
+                      <FiExternalLink />
+                    </a>
+                  ) : (
+                    <Link to="/contact" className="project-btn">
+                      Start a Project Like This
+                      <FiExternalLink />
+                    </Link>
+                  )}
+
+                </div>
+              </m.div>
+            ))}
+          </AnimatePresence>
+        </m.div>
+
+        <m.div
+          className="projects-cta text-center"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <p>
+            Want results like these for your business?
+          </p>
+
+          <Link to="/contact" className="btn-primary">
+            Start Your Project
+            <FiArrowRight />
+          </Link>
+        </m.div>
+      </div>
+    </section>
+  );
+};
+
+export default Projects;

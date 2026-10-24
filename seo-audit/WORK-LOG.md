@@ -52,3 +52,38 @@ Live site checked: all 52 URLs in sitemap, robots.txt OK, www→apex and trailin
 - Stale unit test fixed (brand name + jsdom matchMedia/scrollTo stubs).
 
 **Verified**: build ✅, ESLint 0 errors ✅, test ✅, 52 pages + 404 pre-rendered, unique title/description/canonical on all, 1 H1 each, all JSON-LD valid, 0 broken internal links, 0 horizontal scroll at 390px, CLS 0 desktop & mobile, no console errors.
+
+## 24 Oct 2026 — AEO + GEO layer (answer engines & AI assistants)
+See seo-audit/AEO-GEO.md for the full explanation and off-site checklist.
+
+**New files**
+- src/data/answers.js — quick answer (+ blog takeaways) for 55 pages
+- src/data/facts.js — brand fact sheet (single source for About, llms.txt)
+- seo-audit/AEO-GEO.md
+
+**Changed files**
+- src/components/ContentBlocks.jsx — QuickAnswer + FactSheet components
+- src/components/ContentPage.css — styles for .qa and .facts
+- src/components/Seo.jsx — WebPage schema (dateModified, speakable), OfferCatalog, knowsLanguage
+- src/pages/* (Home, Services, Service, Location, CityService, Industries, Industry, Blog index, BlogPost, Portfolio, PortfolioDetail, CreativeWork, About, Contact, FAQ) — QuickAnswer added; BlogPost dateModified/Updated; About fact sheet
+- src/components/AreasServed.jsx — Varanasi added to home FAQ (consistency)
+- src/ssr-entry.jsx — exports data for llms.txt
+- scripts/prerender.js — robots.txt with named AI crawlers, /llms.txt, /llms-full.txt
+- public/robots.txt, vercel.json, public/.htaccess — AI bots + noindex header for llms files
+- src/data/seo.json — lastmod 2026-10-24 for the 55 updated pages
+
+**Verified**: build ✅, ESLint 0 errors ✅, test ✅, 57 pages pre-rendered, all JSON-LD valid, 1 H1 per page, quick answer on all 55 target pages, no horizontal scroll at 390px, no page errors.
+
+## 24 Oct 2026 — Structure, India-wide main pages, locations hub, full test
+**Site structure (URLs unchanged — no redirects needed)**
+- Main pages target all of India: home, /services/*, /industries/* (H1, title, description, banner, schema areaServed = India).
+- Location pages stay local: /locations/<city>, /locations/<city>/<service>.
+- NEW hub page /locations (LocationsPage.jsx) linking every city and city×service page; added to navbar, footer ("Local Pages"), sitemap, llms.txt.
+- Breadcrumbs now visible on every inner page (PageBanner `crumbs`) and match the BreadcrumbList schema; city pages: Home › Locations › City › Service.
+
+**Code folder structure** (see README.md): src/components/{layout,seo,common,content,home,sections}, src/pages/{core,services,locations,industries,blog,work}, src/data/{site,services,locations,industries,work,blog}. Quick answers split per section (data/<section>/answers.js). Unused Preloader removed.
+- Old copies of moved files are removed by running `cleanup-old-files.bat` once (double-click in the frontend folder).
+
+**Content & design fixes**: honest "Why us" points, home section headings India-wide, service cards button always visible (was hover-only, invisible on phones), compact service cards on phones, floating buttons stacked on the right on phones (left button covered text), service counts read from data, ≥44px tap targets on small links.
+
+**Tested**: build ✅ (58 pages + 404), ESLint 0 ✅, test ✅, axe WCAG 2 A/AA: 0 violations on all pages ✅, 0 broken internal links ✅, 1 H1 per page ✅, no horizontal scroll at 390px ✅, no JS errors ✅. Lighthouse mobile (with compression like Vercel): Performance ~91, Accessibility 100, Best Practices 100, SEO 100; CLS 0.

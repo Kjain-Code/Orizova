@@ -4,7 +4,7 @@ import PageBanner from '../components/PageBanner';
 import CreativeWorkSections from '../components/CreativeWorkSections';
 import CtaBand from '../components/CtaBand';
 import PageTransition from '../components/PageTransition';
-import { Prose } from '../components/ContentBlocks';
+import { Prose, QuickAnswer } from '../components/ContentBlocks';
 
 const CreativeWork = () => {
   return (
@@ -19,6 +19,7 @@ const CreativeWork = () => {
       />
       <section className="loc-section content-section" style={{ paddingBottom: 0 }}>
         <div className="container">
+          <QuickAnswer path="/creative-work" />
           <Prose
             h2="Reels, ad videos and brand films from Orizova Digital"
             paras={[

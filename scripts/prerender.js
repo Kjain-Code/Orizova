@@ -8,12 +8,16 @@
  *
  * What it does:
  *  1. Bundles src/ssr-entry.jsx with esbuild (Node target).
- *  2. For every route in src/data/seo.json, renders the REAL React page to
+ *  2. For every route in src/data/site/seo.json, renders the REAL React page to
  *     HTML (React 19 `prerenderToNodeStream`, waits for lazy pages) and writes
  *     build/<route>/index.html with that page's full content and its own
  *     <title>, description, canonical, Open Graph/Twitter tags and JSON-LD.
  *  3. Writes build/404.html (served with HTTP 404 by vercel.json / .htaccess).
- *  4. Regenerates sitemap.xml (indexable routes only) and robots.txt.
+ *  4. Regenerates sitemap.xml (indexable routes only) and robots.txt (with
+ *     explicit permission for AI search / answer-engine crawlers).
+ *  5. Writes /llms.txt (brand summary + key pages with short answers) and
+ *     /llms-full.txt (the full text of every page as Markdown) — the emerging
+ *     standard that helps ChatGPT, Claude, Perplexity & co. read the site.
  *
  * The browser app then boots on top of the static HTML as usual.
  */
@@ -23,7 +27,7 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const BUILD = path.join(ROOT, 'build');
 const CACHE = path.join(ROOT, 'node_modules', '.cache', 'orizova-ssr');
-const seo = require('../src/data/seo.json');
+const seo = require('../src/data/site/seo.json');
 
 const readEnvUrl = () => {
   if (process.env.REACT_APP_SITE_URL) return process.env.REACT_APP_SITE_URL;
@@ -161,6 +165,119 @@ const buildPage = (template, html) => {
   return out;
 };
 
+
+// ---------- AEO / GEO helpers ----------
+// AI crawlers that power ChatGPT, Claude, Perplexity, Gemini, Copilot, Apple
+// Intelligence, Meta AI etc. A site has to be crawlable by them to be cited.
+const AI_BOTS = [
+  'GPTBot', 'OAI-SearchBot', 'ChatGPT-User',
+  'ClaudeBot', 'Claude-SearchBot', 'Claude-User',
+  'PerplexityBot', 'Perplexity-User',
+  'Google-Extended', 'Applebot', 'Applebot-Extended',
+  'Bingbot', 'DuckAssistBot', 'meta-externalagent', 'MistralAI-User', 'CCBot',
+];
+
+const robotsTxt = () => `# Search engines and AI assistants are welcome to crawl this site.
+# Orizova Digital wants to be found in Google, Bing, Google AI Overviews,
+# ChatGPT, Claude, Perplexity, Gemini and Copilot answers.
+
+${AI_BOTS.map((b) => `User-agent: ${b}`).join('\n')}
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: ${SITE_URL}/sitemap.xml
+# Plain-text summary for AI assistants: ${SITE_URL}/llms.txt
+`;
+
+const decode = (t) => t
+  .replace(/&nbsp;|&#160;|&#xA0;/gi, ' ')
+  .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+  .replace(/&quot;/g, '"').replace(/&#x27;|&#39;/g, "'")
+  .replace(/&#x([0-9a-f]+);/gi, (m, h) => String.fromCodePoint(parseInt(h, 16)))
+  .replace(/&#(\d+);/g, (m, d) => String.fromCodePoint(Number(d)));
+
+/** Very small HTML → Markdown for the <main> of a pre-rendered page. */
+const mainToMarkdown = (html) => {
+  const m = html.match(/<main[^>]*>([\s\S]*?)<\/main>/i);
+  let t = m ? m[1] : '';
+  t = t
+    .replace(/<(script|style|svg|noscript|video|picture)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<nav\b[\s\S]*?<\/nav>/gi, ' ')
+    .replace(/<span[^>]*aria-hidden="true"[^>]*>[^<]*<\/span>/gi, ' ')
+    .replace(/<h1[^>]*>/gi, '\n\n# ').replace(/<h2[^>]*>/gi, '\n\n## ').replace(/<h3[^>]*>/gi, '\n\n### ').replace(/<h4[^>]*>/gi, '\n\n#### ')
+    .replace(/<\/h[1-4]>/gi, '\n\n')
+    .replace(/<li[^>]*>/gi, '\n- ')
+    .replace(/<dt[^>]*>/gi, '\n- **').replace(/<\/dt>/gi, '**: ')
+    .replace(/<(p|div|section|ul|ol|dl|article|aside|br)\b[^>]*>/gi, '\n')
+    .replace(/<[^>]+>/g, ' ');
+  return decode(t)
+    .split('\n')
+    .map((line) => line.replace(/[ \t]+/g, ' ').trim())
+    .filter((line, i, arr) => line && line !== '-' && !(line.startsWith('#') && line === arr[i - 1]))
+    .join('\n')
+    .replace(/\n(#{1,4} )/g, '\n\n$1')
+    .replace(/(#{1,4} [^\n]+)\n/g, '$1\n\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+};
+
+const SECTIONS = [
+  ['Company', (r) => ['home', 'about', 'contact', 'faq'].includes(r.key)],
+  ['Services', (r) => r.key === 'services' || r.key.startsWith('service:')],
+  ['Locations', (r) => r.key === 'locations' || r.key.startsWith('city:') || r.key.startsWith('cityservice:')],
+  ['Industries', (r) => r.key === 'industries' || r.key.startsWith('industry:')],
+  ['Work', (r) => ['portfolio', 'creativeWork'].includes(r.key) || r.key.startsWith('project:')],
+  ['Guides', (r) => r.key === 'blog' || r.key.startsWith('post:')],
+];
+
+const llmsTxt = ({ answers, facts, contact }, routes) => {
+  const url = (p) => `${SITE_URL}${p === '/' ? '/' : p}`;
+  const line = (r) => {
+    const a = answers[r.path];
+    const desc = a ? a.a.replace(/^Yes\. /, '') : r.description;
+    return `- [${r.h1 || r.title}](${url(r.path)}): ${desc}`;
+  };
+  const used = new Set();
+  const groups = SECTIONS.map(([name, test]) => {
+    const items = routes.filter((r) => !used.has(r.path) && test(r));
+    items.forEach((r) => used.add(r.path));
+    return items.length ? `## ${name}\n\n${items.map(line).join('\n')}` : '';
+  }).filter(Boolean);
+  const rest = routes.filter((r) => !used.has(r.path));
+  if (rest.length) groups.push(`## Optional\n\n${rest.map(line).join('\n')}`);
+
+  const factLines = [
+    `- Name: ${facts.name}${facts.alsoKnownAs.length ? ` (also: ${facts.alsoKnownAs.join(', ')})` : ''}`,
+    `- What it is: ${facts.type}`,
+    `- Based in: ${facts.basedIn}`,
+    facts.founded && `- Founded: ${facts.founded}`,
+    facts.founders.length && `- Founder(s): ${facts.founders.join(', ')}`,
+    `- Serves: ${facts.serves.join(', ')}`,
+    `- Services: ${facts.services.join('; ')}`,
+    `- Industries: ${facts.industries.join('; ')}`,
+    `- Languages: ${facts.languages.join(', ')}`,
+    `- How it works: ${facts.workingPrinciples.join('; ')}`,
+    `- Website portfolio: ${facts.notableWork.join('; ')}`,
+    `- Contact: phone/WhatsApp ${facts.phone}, email ${facts.email}, Instagram ${facts.instagram}, contact page ${url('/contact')}`,
+    contact.sameAs.length > 1 && `- Official profiles: ${contact.sameAs.join(', ')}`,
+  ].filter(Boolean);
+
+  return `# ${facts.name}
+
+> ${answers['/'].a}
+
+This file summarises ${facts.name}'s website for AI assistants and answer engines. Every page below is also available as plain HTML; the full text of all pages is in ${SITE_URL}/llms-full.txt.
+
+## Key facts
+
+${factLines.join('\n')}
+
+${groups.join('\n\n')}
+`;
+};
+
 // ---------- 3. main ----------
 const main = async () => {
   const templatePath = path.join(BUILD, 'index.html');
@@ -171,7 +288,9 @@ const main = async () => {
   const template = fs.readFileSync(templatePath, 'utf8');
   if (!/<div id="root">/.test(template)) throw new Error('prerender: #root not found in template');
 
-  const { render } = await buildSsrBundle();
+  const ssr = await buildSsrBundle();
+  const { render } = ssr;
+  const fullText = [];
   let failures = 0;
 
   // Warm-up pass: the first render of each lazy page suspends while its module
@@ -190,6 +309,10 @@ const main = async () => {
       const outDir = route.path === '/' ? BUILD : path.join(BUILD, route.path);
       fs.mkdirSync(outDir, { recursive: true });
       fs.writeFileSync(path.join(outDir, 'index.html'), page);
+      if (!route.noindex) {
+        const loc = `${SITE_URL}${route.path === '/' ? '/' : route.path}`;
+        fullText.push(`<page url="${loc}">\n\n${mainToMarkdown(page)}\n\n</page>`);
+      }
       const words = body2words(page);
       console.log(`  ✓ ${route.path}  (${words} words)`);
     } catch (err) {
@@ -217,10 +340,15 @@ ${indexable
 </urlset>
 `;
   fs.writeFileSync(path.join(BUILD, 'sitemap.xml'), sitemap);
+  fs.writeFileSync(path.join(BUILD, 'robots.txt'), robotsTxt());
+
+  // llms.txt + llms-full.txt for AI assistants (GEO).
+  fs.writeFileSync(path.join(BUILD, 'llms.txt'), llmsTxt(ssr, indexable));
   fs.writeFileSync(
-    path.join(BUILD, 'robots.txt'),
-    `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`
+    path.join(BUILD, 'llms-full.txt'),
+    `# ${ssr.facts.name} — full site text\n\n> Plain-text copy of every page on ${SITE_URL}, for AI assistants. Summary: ${SITE_URL}/llms.txt\n\n${fullText.join('\n\n')}\n`
   );
+  console.log('  ✓ robots.txt (AI crawlers allowed), llms.txt, llms-full.txt');
 
   if (INDEXNOW_KEY) {
     if (!/^[a-zA-Z0-9-]{8,128}$/.test(INDEXNOW_KEY)) throw new Error('INDEXNOW_KEY must be 8-128 letters, digits or dashes');

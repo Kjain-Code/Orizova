@@ -1,0 +1,363 @@
+/* ===============================
+   PROJECTS SECTION
+================================ */
+
+.projects-section{
+    background: var(--lilac);
+    padding:40px 0 110px;
+    overflow:hidden;
+}
+
+.title-squiggle {
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+  width: 100%;
+  height: 12px;
+}
+
+/* ===============================
+   FILTERS
+================================ */
+
+.project-filters{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:50px 0;
+}
+
+.filter-btn{
+    padding:10px 22px;
+    border:none;
+    border-radius:50px;
+    background:var(--paper);
+    color:var(--text-light);
+    font-size:13px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.35s;
+    border:1.5px solid var(--lavender);
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background: var(--grad-primary);
+    color:#fff;
+    border-color: transparent;
+    transform:translateY(-2px);
+    box-shadow:0 12px 30px rgba(76,14,130,.22);
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    align-items:stretch;
+    gap:30px;
+    margin-bottom:70px;
+}
+
+/* ===============================
+   CARD
+================================ */
+
+.project-card{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    background: var(--paper);
+    border:1.5px solid var(--lavender);
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    transition:box-shadow .5s cubic-bezier(.23,1,.32,1);
+}
+
+.project-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    background:linear-gradient(
+        135deg,
+        rgba(139,92,246,.08),
+        rgba(245,166,35,.06)
+    );
+    opacity:0;
+    transition:.5s;
+}
+
+.project-card::after{
+    content:"";
+    position:absolute;
+    pointer-events:none;
+    z-index:3;
+    /* parked fully above the card at rest — before, the white shine band sat
+       across the card and made the whole thing look washed-out */
+    top:-280%;
+    left:-40%;
+    width:180%;
+    height:260%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.6),
+        transparent
+    );
+    transform:rotate(20deg);
+    transition:.8s;
+}
+
+.project-card:hover::after{
+    top:140%;
+}
+
+.project-card:hover::before{
+    opacity:1;
+}
+
+.project-card:hover{
+    box-shadow:
+        0 30px 60px rgba(76,14,130,.10),
+        0 10px 30px rgba(139,92,247,.18);
+}
+
+/* ===============================
+   IMAGE (real project thumbnail)
+================================ */
+
+.project-image-wrap {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    /* matches the screenshots' real ratio, so the image fills the frame edge
+       to edge — no empty bands above/below it any more */
+    aspect-ratio: 1367 / 578;
+    overflow: hidden;
+    background: var(--lavender);
+    border-bottom: 1.5px solid var(--lavender);
+    flex-shrink: 0;
+}
+
+.project-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform .6s cubic-bezier(.23,1,.32,1);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-category-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
+}
+
+/* ===============================
+   TOP
+================================ */
+
+.project-top{
+    padding:34px 28px 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.project-emoji{
+    font-size:50px;
+    transition:.5s;
+}
+
+.project-card:hover .project-emoji{
+    transform:scale(1.18) rotate(8deg);
+}
+
+.project-category{
+    font-size:12px;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* ===============================
+   CONTENT
+================================ */
+
+.project-content{
+    position:relative;
+    z-index:1;
+    padding:24px 28px 28px;
+    display:flex;
+    flex-direction:column;
+    flex:1;
+}
+
+.project-top + .project-content{
+    padding-top:0;
+}
+
+.project-content h3{
+    font-family:'Bricolage Grotesque', sans-serif;
+    font-size:22px;
+    margin-bottom:12px;
+    color:var(--ink);
+    transition:.35s;
+}
+
+.project-card:hover h3{
+    color:var(--primary);
+}
+
+.project-content p{
+    color:var(--text-light);
+    line-height:1.8;
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+/* ===============================
+   TAGS
+================================ */
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:18px;
+}
+
+.project-tag{
+    padding:6px 12px;
+    border-radius:30px;
+    background:var(--cream);
+    border:1px solid var(--lavender);
+    font-size:12px;
+    transition:.3s;
+}
+
+.project-tag:hover{
+    background:var(--primary);
+    color:#fff;
+    border-color: var(--primary);
+    transform:translateY(-2px);
+}
+
+/* ===============================
+   RESULT
+================================ */
+
+.project-result{
+    align-self:flex-start;
+    display:inline-flex;
+    align-items:center;
+    padding:8px 16px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:13px;
+    margin-bottom:18px;
+    border: 1.5px solid;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+
+.project-btn{
+    width:100%;
+    margin-top:auto;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:var(--ink);
+    color:#fff;
+    font-weight:600;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    /* always visible — it used to be invisible until hover, which left a
+       blank gap at the bottom of every card (and on phones there is no hover) */
+    transition:background .3s ease, transform .3s ease;
+}
+
+.project-btn:hover{
+    background:var(--primary);
+}
+
+/* ===============================
+   CTA
+================================ */
+
+.projects-cta{
+    text-align:center;
+    margin-top:30px;
+}
+
+.projects-cta p{
+    margin-bottom:25px;
+    font-size:17px;
+    color:var(--text-light);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media(max-width:991px){
+
+.projects-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+@media(max-width:768px){
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+.project-card{
+max-width:500px;
+margin:auto;
+}
+
+}
+
+@media(max-width:480px){
+
+.project-top,
+.project-content{
+padding-left:20px;
+padding-right:20px;
+}
+
+.project-emoji{
+font-size:42px;
+}
+
+.project-content h3{
+font-size:20px;
+}
+
+}

@@ -3,33 +3,34 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence, LazyMotion } from 'framer-motion';
 
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import FloatingButtons from './components/FloatingButtons';
-import ScrollToTop from './components/ScrollToTop';
-import ScrollProgress from './components/ScrollProgress';
-import ScrollReveal from './components/ScrollReveal';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import FloatingButtons from './components/layout/FloatingButtons';
+import ScrollToTop from './components/layout/ScrollToTop';
+import ScrollProgress from './components/layout/ScrollProgress';
+import ScrollReveal from './components/layout/ScrollReveal';
 import motionFeatures from './motionFeatures';
 
 // Home ships in the main bundle (it's the landing page); every other page is
 // code-split so the first load downloads far less JavaScript.
-import Home from './pages/Home';
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const ServicePage = lazy(() => import('./pages/ServicePage'));
-const LocationPage = lazy(() => import('./pages/LocationPage'));
-const CityServicePage = lazy(() => import('./pages/CityServicePage'));
-const IndustriesPage = lazy(() => import('./pages/IndustriesPage'));
-const IndustryPage = lazy(() => import('./pages/IndustryPage'));
-const BlogIndex = lazy(() => import('./pages/BlogIndex'));
-const BlogPost = lazy(() => import('./pages/BlogPost'));
-const FaqPage = lazy(() => import('./pages/FaqPage'));
-const LegalPage = lazy(() => import('./pages/LegalPage'));
-const Portfolio = lazy(() => import('./pages/Portfolio'));
-const PortfolioDetail = lazy(() => import('./pages/PortfolioDetail'));
-const CreativeWork = lazy(() => import('./pages/CreativeWork'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const ContactPage = lazy(() => import('./pages/ContactPage'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+import Home from './pages/core/Home';
+const ServicesPage = lazy(() => import('./pages/services/ServicesPage'));
+const ServicePage = lazy(() => import('./pages/services/ServicePage'));
+const LocationsPage = lazy(() => import('./pages/locations/LocationsPage'));
+const LocationPage = lazy(() => import('./pages/locations/LocationPage'));
+const CityServicePage = lazy(() => import('./pages/locations/CityServicePage'));
+const IndustriesPage = lazy(() => import('./pages/industries/IndustriesPage'));
+const IndustryPage = lazy(() => import('./pages/industries/IndustryPage'));
+const BlogIndex = lazy(() => import('./pages/blog/BlogIndex'));
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
+const FaqPage = lazy(() => import('./pages/core/FaqPage'));
+const LegalPage = lazy(() => import('./pages/core/LegalPage'));
+const Portfolio = lazy(() => import('./pages/work/Portfolio'));
+const PortfolioDetail = lazy(() => import('./pages/work/PortfolioDetail'));
+const CreativeWork = lazy(() => import('./pages/work/CreativeWork'));
+const AboutPage = lazy(() => import('./pages/core/AboutPage'));
+const ContactPage = lazy(() => import('./pages/core/ContactPage'));
+const NotFound = lazy(() => import('./pages/core/NotFound'));
 
 // Meta Pixel: the base script loads lazily from index.html, so SPA route
 // changes need their own PageView (the first one is sent by index.html).
@@ -68,6 +69,7 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/services/:slug" element={<ServicePage />} />
+        <Route path="/locations" element={<LocationsPage />} />
         <Route path="/locations/:city" element={<LocationPage />} />
         <Route path="/locations/:city/:service" element={<CityServicePage />} />
         <Route path="/industries" element={<IndustriesPage />} />
