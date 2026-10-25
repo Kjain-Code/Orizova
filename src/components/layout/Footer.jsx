@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
 import './Footer.css';
 import logo from '../../assets/logo.webp';
@@ -37,6 +37,12 @@ const Footer = () => {
             </a>
             <a href={CONTACT.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FaInstagram size={18} />
+            </a>
+            <a href={CONTACT.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedinIn size={17} />
+            </a>
+            <a href={CONTACT.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <FaFacebookF size={16} />
             </a>
           </div>
         </div>
