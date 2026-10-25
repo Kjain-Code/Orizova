@@ -5,12 +5,12 @@
 const servicePages = {
   /* ------------------------------------------------------------------ */
   'website-development': {
-    banner: 'Website development company in India for businesses that want enquiries: fast, mobile-first websites, landing pages, online stores and web apps — for businesses across India, from metro cities to smaller towns.',
+    banner: 'Fast, mobile-first business websites, landing pages, online stores and web apps for businesses that want enquiries — from metro cities to smaller towns.',
     intro: {
       h2: 'A website that works as hard as your best salesperson',
       paras: [
         'Most people who find your business will look at your website before they call. If it loads slowly on a phone, hides your number or looks out of date, they simply go back to Google and pick the next result. A good website fixes that: it explains what you do in the first few seconds, shows proof that you are real, and makes it effortless to call, WhatsApp or book.',
-        'Orizova Digital is a website development company working with local businesses, startups and professionals across India — with dedicated local pages for Delhi, Noida, Ghaziabad, the Chandigarh Tricity and Varanasi. Every site is coded mobile-first, set up for search engines from day one, and connected to the tools you already use — WhatsApp, Google Business Profile, Meta Pixel and Google Analytics.',
+        'Orizova Digital is a website development company working with local businesses, startups and professionals across India, from [Delhi](/locations/delhi/website-development) and [Noida](/locations/noida/website-development) to [Lucknow](/locations/lucknow/website-development), [Jaipur](/locations/jaipur/website-development), [Chandigarh](/locations/chandigarh/website-development) and [Bengaluru](/locations/bengaluru/website-development). Every site is coded mobile-first, set up for search engines from day one, and connected to the tools you already use — WhatsApp, Google Business Profile, Meta Pixel and Google Analytics.',
       ],
     },
     blocks: [
@@ -96,6 +96,14 @@ const servicePages = {
           'Domain, hosting and code in your name — no lock-in',
           'Built in English, Hindi or both',
           'Optional SEO, Google Ads and Meta ads after launch',
+        ],
+      },
+      {
+        type: 'prose',
+        tag: 'Official guidance',
+        h2: 'What Google itself says about fast, findable websites',
+        paras: [
+          'We build to the standards Google publishes rather than to guesswork. Google’s [Search Central documentation](https://developers.google.com/search/docs) explains how pages are crawled, indexed and ranked, and its [Core Web Vitals guidance on web.dev](https://web.dev/articles/vitals) defines the loading, interactivity and visual-stability targets our sites are tested against before launch.',
         ],
       },
       {
@@ -487,6 +495,14 @@ const servicePages = {
         after: ['Not sure whether Meta or Google suits you better? Read [Meta Ads vs Google Ads](/blog/meta-ads-vs-google-ads) or look at our [Google Ads service](/services/google-ads).'],
       },
       {
+        type: 'prose',
+        tag: 'Official guidance',
+        h2: 'Staying within Meta’s rules',
+        paras: [
+          'Every campaign we run follows Meta’s [Advertising Standards](https://transparency.meta.com/policies/ad-standards/) — especially for health, finance, real estate and other sensitive categories, where misleading claims or the wrong targeting can get ads rejected or an account restricted.',
+        ],
+      },
+      {
         type: 'faq',
         faqs: [
           ['What is the minimum budget for Meta ads?', 'You can start small, but the campaign needs enough budget to exit the learning phase. We recommend a starting daily budget after looking at your area and goal.'],
@@ -558,6 +574,14 @@ const servicePages = {
           'Management scope: number of campaigns, ad tests and reports',
         ],
         after: ['For businesses depending on nearby customers, combine ads with [local SEO](/services/local-seo) so you also appear in the free map results.'],
+      },
+      {
+        type: 'prose',
+        tag: 'Official guidance',
+        h2: 'Staying within Google’s rules',
+        paras: [
+          'Some industries have extra Google Ads requirements. Clinics and healthcare businesses, for example, must follow Google’s [healthcare and medicines policy](https://support.google.com/adspolicy/answer/176031). We check the rules for your category before a campaign goes live, so ads are approved quickly and accounts stay in good standing.',
+        ],
       },
       {
         type: 'faq',
@@ -641,6 +665,14 @@ const servicePages = {
         ],
       },
       {
+        type: 'prose',
+        tag: 'Official guidance',
+        h2: 'The rules we work by',
+        paras: [
+          'Our SEO follows Google’s own [Search Central documentation](https://developers.google.com/search/docs) — useful content, clean technical setup and genuine links — and avoids the tactics Google treats as spam, such as thin copy-paste location pages, keyword stuffing or paid link schemes. That keeps your rankings stable through algorithm updates.',
+        ],
+      },
+      {
         type: 'faq',
         faqs: [
           ['How long does SEO take?', 'It depends on your website’s age, condition and competition. Technical fixes and local improvements can show movement within a few months; competitive keywords take longer. We share a realistic timeline after the audit.'],
@@ -648,6 +680,99 @@ const servicePages = {
           ['Is SEO better than Google Ads?', 'They do different jobs. Ads bring immediate traffic while you pay; SEO builds free traffic over time. Many businesses run ads while SEO grows.'],
           ['Can you do SEO for a website built by someone else?', 'Yes. If the platform blocks important fixes, we will tell you and suggest options.'],
           ['What reports will I get?', 'A monthly report with work done, keyword positions, Search Console clicks and enquiries from organic search.'],
+        ],
+      },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  'ai-search-optimization': {
+    banner: 'More people now ask Google’s AI Overviews, ChatGPT and Gemini “which clinic / agency / builder should I choose?”. We make sure your business is one the answer can find, trust and name.',
+    intro: {
+      h2: 'Be the business AI answers recommend',
+      paras: [
+        'Search is changing. Instead of ten blue links, many people now read an AI-written answer first — in Google’s AI Overviews and AI Mode, in ChatGPT search, in Gemini or in Perplexity. Those answers name a few businesses and link to a few pages. If your website is unclear, your details are inconsistent or nobody else on the web mentions you, you are simply left out.',
+        'AI search optimization — also called AEO (answer engine optimization) or GEO (generative engine optimization) — is the work of making your business easy for these tools to understand, trust and cite. At Orizova Digital we treat it as an extension of good [SEO](/services/seo) and [local SEO](/services/local-seo), not a replacement: the same strong, crawlable, genuinely useful pages are what AI systems read.',
+      ],
+    },
+    blocks: [
+      {
+        type: 'cards',
+        tag: 'What is included',
+        h2: 'Our AI search optimization services',
+        items: [
+          { title: 'AI visibility check', desc: 'We ask ChatGPT, Gemini, Perplexity and Google the questions your customers ask, and record whether you appear, who appears instead and which pages are cited.' },
+          { title: 'Answer-first content', desc: 'Clear, direct answers at the top of your key pages — what you do, where, for whom, how long and what it costs — written for people first.' },
+          { title: 'FAQ & comparison pages', desc: 'Pages that answer the real questions buyers ask before choosing, in plain language that is easy to quote accurately.' },
+          { title: 'Entity & brand consistency', desc: 'The same name, address, phone, services and description on your website, Google Business Profile, social profiles and directories.' },
+          { title: 'Schema & technical setup', desc: 'Organization, LocalBusiness, Service and FAQ structured data that matches the visible page, plus crawl access for search and AI crawlers you choose to allow.' },
+          { title: 'Mentions, reviews & citations', desc: 'Genuine reviews, listings and mentions on trusted, relevant sites — the outside signals AI answers lean on.', to: '/services/local-seo' },
+        ],
+      },
+      {
+        type: 'prose',
+        tag: 'How it works',
+        h2: 'How AI answers decide which businesses to mention',
+        paras: [
+          'There is no secret switch. Google states that there are no extra requirements to appear in AI Overviews or AI Mode beyond being indexed and eligible to show a snippet, and it recommends the same fundamentals as normal search: crawlable pages, internal links, important content in text, a good page experience and structured data that matches the page (see Google’s guide to [AI features and your website](https://developers.google.com/search/docs/appearance/ai-features)).',
+          'ChatGPT search uses OpenAI’s own crawler, OAI-SearchBot, and OpenAI advises site owners to allow it in robots.txt if they want to appear in ChatGPT’s search answers (see OpenAI’s [crawler documentation](https://developers.openai.com/api/docs/bots)). Beyond access, these tools favour sources that answer the question clearly and are backed up by other trusted sites.',
+        ],
+        bullets: [
+          'Your pages must be crawlable and indexed — blocked or JavaScript-only content is invisible',
+          'The answer must be on the page in plain text, close to the top',
+          'Your business details must match everywhere, so the tool is sure it is the same business',
+          'Other sites — reviews, directories, news, industry lists — should mention you',
+        ],
+      },
+      {
+        type: 'process',
+        h2: 'Our AI search optimization process',
+        steps: [
+          { title: 'Prompt research', desc: 'List the questions your buyers ask AI tools — by service, city and problem.' },
+          { title: 'Visibility check', desc: 'Test those questions across ChatGPT, Gemini, Perplexity and Google, and note who gets cited.' },
+          { title: 'Fix the basics', desc: 'Crawl access, indexing, speed, schema and consistent business details.' },
+          { title: 'Answer-first content', desc: 'Rewrite key pages and add FAQ and comparison pages that answer clearly.' },
+          { title: 'Build trust signals', desc: 'Reviews, listings and genuine mentions on relevant sites.' },
+          { title: 'Re-check monthly', desc: 'Repeat the same questions and report what changed.' },
+        ],
+      },
+      {
+        type: 'prose',
+        tag: 'Honest AEO',
+        h2: 'What we will not promise',
+        bullets: [
+          'Guaranteed mentions in ChatGPT, Gemini or Google AI Overviews — no one controls these answers',
+          'Magic files or tags that “unlock” AI search — Google says none are needed',
+          'Fake reviews, paid fake listicles or AI-spun pages that only change the city name',
+        ],
+        after: ['AI answers change from one question to the next and from one week to the next. What reliably helps is being the clearest, most consistent and best-referenced business for your topic — and that also strengthens your normal Google rankings.'],
+      },
+      {
+        type: 'prose',
+        tag: 'Who it helps most',
+        h2: 'Businesses where AI search matters now',
+        paras: ['AI answers are most common for research-heavy questions — “best dental implant clinic in Noida”, “how much does a website cost”, “which immigration consultant is genuine”. It matters most for [clinics](/industries/clinics), [dental clinics](/industries/dental-clinics), [professional firms](/industries/professional-services), [immigration consultants](/industries/immigration-consultants), [education](/industries/education), [startups & SaaS](/industries/startups-saas) and [manufacturers](/industries/manufacturers-exporters) whose buyers compare carefully before they call.'],
+      },
+      {
+        type: 'prose',
+        tag: 'Pricing',
+        h2: 'What affects the cost of AI search optimization?',
+        bullets: [
+          'How many services, cities and buyer questions you want to cover',
+          'The current condition of your website and SEO',
+          'How much new answer-first content is needed',
+          'Whether reviews, listings and profiles need cleaning up first',
+        ],
+        after: ['It is usually most cost-effective as part of an [SEO](/services/seo) plan, because the same pages and fixes serve both.'],
+      },
+      {
+        type: 'faq',
+        faqs: [
+          ['What is the difference between SEO, AEO and GEO?', 'SEO helps your pages rank in normal search results. AEO (answer engine optimization) shapes your content so it can be used as a direct answer. GEO (generative engine optimization) focuses on being mentioned and cited in AI-generated answers such as ChatGPT or Google AI Overviews. In practice they overlap heavily, and good SEO is the foundation for all three.'],
+          ['Can you guarantee my business will appear in ChatGPT?', 'No. Nobody controls what AI tools say. We improve the signals they rely on — clear pages, consistent details, reviews and mentions — and we check the same questions every month so you can see what changes.'],
+          ['Do I need an llms.txt file to appear in AI search?', 'Google says no special files or markup are needed for AI Overviews or AI Mode. An llms.txt file is harmless and some tools read it, but it is not a ranking switch. Crawlable, clear, well-linked pages matter far more.'],
+          ['How long does it take to show up in AI answers?', 'Technical and content fixes can be picked up as soon as pages are re-crawled, but being trusted enough to be recommended usually builds over months, like SEO. We share a realistic view after the visibility check.'],
+          ['Will this also help my Google rankings?', 'Yes. Answer-first content, structured data, consistent business details and genuine mentions are also good SEO, so the work supports both normal rankings and AI answers.'],
         ],
       },
     ],
@@ -706,6 +831,14 @@ const servicePages = {
           { to: '/locations/chandigarh/seo', label: 'Chandigarh' },
           { to: '/blog/google-business-profile-guide', label: 'Google Business Profile guide' },
           { to: '/blog/local-seo-checklist', label: 'Local SEO checklist' },
+        ],
+      },
+      {
+        type: 'prose',
+        tag: 'Official guidance',
+        h2: 'How Google ranks local results',
+        paras: [
+          'Google says local results are based mainly on relevance, distance and prominence — see [how to improve your local ranking on Google](https://support.google.com/business/answer/7091). We work on all three, and we follow Google’s [guidelines for representing your business](https://support.google.com/business/answer/3038177) exactly: your real business name, a genuine address or service area, and no keyword-stuffed names that risk suspension.',
         ],
       },
       {

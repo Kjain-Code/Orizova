@@ -22,7 +22,7 @@
 }
 
 .loc-card h2,
-.loc-card h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 12px; }
+.loc-card h3 { font-size: var(--fs-h3); color: var(--ink); margin-bottom: 12px; }
 
 .loc-areas {
   list-style: none;
@@ -62,7 +62,7 @@
 }
 
 .loc-service:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-.loc-service h3 { font-size: 1.1rem; color: var(--ink); margin-bottom: 8px; }
+.loc-service h3 { font-size: var(--fs-h3); color: var(--ink); margin-bottom: 8px; }
 .loc-service p { color: var(--text-light); font-size: 14px; margin-bottom: 12px; }
 
 .loc-service-link, .loc-inline-link {
@@ -115,3 +115,10 @@
   .loc-services { grid-template-columns: 1fr; }
   .loc-block { margin-top: 56px; }
 }
+
+/* /locations hub: city cards with their service pages */
+.loc-city-link { color: inherit; }
+.loc-city-link:hover { color: var(--primary); }
+.loc-city-pages { list-style: none; margin: 4px 0 12px; padding: 0; display: grid; gap: 2px; }
+.loc-city-pages a { display: inline-flex; align-items: center; min-height: 32px; font-size: 14px; color: var(--primary); font-weight: 600; }
+.loc-city-pages a:hover { text-decoration: underline; }

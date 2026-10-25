@@ -4,6 +4,8 @@
 // Rendered by components/content/QuickAnswer.jsx; also used for /llms.txt.
 // Section: industry pages.
 
+import moreIndustries from './more';
+
 const answers = {
   '/industries/clinics': {
     q: 'How can a clinic get more patients online?',
@@ -26,5 +28,7 @@ const answers = {
     a: 'Loan agents and DSAs get quality leads by building trust first — a clear, transparent website and Google profile — then using Google search for people already looking for loans, Meta ads for reach, and fast WhatsApp follow-up, while staying compliant (for example, no bank logos without permission). Orizova Digital sets this up for loan agents, DSAs, insurance and financial advisors.',
   },
 };
+
+moreIndustries.forEach((ind) => { answers[`/industries/${ind.slug}`] = ind.answer; });
 
 export default answers;

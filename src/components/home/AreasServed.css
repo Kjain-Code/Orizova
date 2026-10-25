@@ -34,8 +34,8 @@
   font-size: 20px;
 }
 
-.area-card h3 { font-size: 1.35rem; color: var(--ink); }
-.area-card p { color: var(--text-light); font-size: 13.5px; line-height: 1.6; }
+.area-card h3 { font-size: var(--fs-h3); color: var(--ink); }
+.area-card p { color: var(--text-light); font-size: var(--fs-card); line-height: 1.6; }
 
 .area-link {
   margin-top: auto;
@@ -68,3 +68,22 @@
 }
 
 @media (min-width: 992px) { .areas-grid--cities { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+
+/* Pan-India city list (replaces the old city-card grid) */
+.areas-cities { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; max-width: 900px; margin: 0 auto; }
+.areas-city { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; font-size: 14.5px; font-weight: 600; color: var(--text-light); border-radius: 999px; transition: color .2s ease, background .2s ease; }
+.areas-city:hover { color: var(--primary); background: var(--lavender); }
+.areas-city--all { color: var(--primary); }
+
+/* Industry tiles on the home page: coloured icon badge */
+.ind-ico {
+  width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center;
+  font-size: 22px; color: var(--c); margin-bottom: 6px;
+  background: color-mix(in srgb, var(--c) 12%, #fff);
+  transition: transform .3s ease, background .3s ease, color .3s ease;
+}
+.area-card:hover .ind-ico { transform: rotate(-6deg) scale(1.08); background: var(--c); color: #fff; }
+.area-card--all { background: var(--grad-primary); border-color: transparent; }
+.area-card--all h3, .area-card--all .area-link { color: #fff; }
+.area-card--all p { color: rgba(255, 255, 255, .82); }
+.area-card--all .ind-ico { background: rgba(255, 255, 255, .16); color: #fff; }

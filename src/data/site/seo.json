@@ -9,16 +9,16 @@
       "title": "Web Development & Digital Marketing Agency in India | Orizova",
       "description": "Orizova Digital builds fast websites, apps and online stores and runs SEO, Google Ads, Meta Ads and social media for businesses across India.",
       "h1": "Website Development & Digital Marketing Agency in India",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-10-25"
     },
     {
       "key": "services",
       "path": "/services",
       "priority": "0.9",
       "title": "Web Development, SEO & Marketing Services | Orizova",
-      "description": "Websites, e-commerce, apps, SEO, local SEO, Google Ads, Meta Ads, social media, video editing and branding for businesses across India.",
-      "h1": "Web Development, SEO & Digital Marketing Services in India",
-      "lastmod": "2026-10-24"
+      "description": "Websites, e-commerce, apps, SEO, local SEO, AI search, Google Ads, Meta Ads, social media, video and branding for businesses across India.",
+      "h1": "Web Development, SEO & Digital Marketing Services",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:website-development",
@@ -26,8 +26,8 @@
       "priority": "0.9",
       "title": "Website Development Company in India | Orizova Digital",
       "description": "Website development company in India: fast, mobile-first business websites, online stores and web apps for businesses in every city, delivered remotely.",
-      "h1": "Website Development Company in India",
-      "lastmod": "2026-10-24"
+      "h1": "Website Development Company — Websites That Bring Enquiries",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:ecommerce-solutions",
@@ -36,7 +36,7 @@
       "title": "E-commerce Website Development – Shopify & WooCommerce",
       "description": "Shopify, WooCommerce and custom online stores with UPI and card payments, smooth checkout and mobile-first product pages for brands across India.",
       "h1": "E-commerce Website Development — Shopify, WooCommerce & Custom",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:app-development",
@@ -44,8 +44,8 @@
       "priority": "0.7",
       "title": "Mobile App Development Company in India | Orizova",
       "description": "Android, iOS and cross-platform React Native or Flutter apps, with admin panels and websites, for startups and businesses across India.",
-      "h1": "Mobile App Development Company in India",
-      "lastmod": "2026-10-24"
+      "h1": "Mobile App Development Company — Android, iOS & Cross-Platform",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:digital-marketing",
@@ -53,8 +53,8 @@
       "priority": "0.9",
       "title": "Digital Marketing Services in India | Orizova",
       "description": "SEO, Google Ads, Meta Ads, social media and content planned around your leads — digital marketing services for businesses across India.",
-      "h1": "Digital Marketing Services in India",
-      "lastmod": "2026-10-24"
+      "h1": "Digital Marketing Services — Leads, Not Just Likes",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:social-media-marketing",
@@ -62,8 +62,8 @@
       "priority": "0.9",
       "title": "Social Media Marketing Agency in India | Orizova",
       "description": "Content calendars, reels, posts and community management for Instagram, Facebook, LinkedIn and YouTube — social media marketing for businesses across India.",
-      "h1": "Social Media Marketing Agency in India",
-      "lastmod": "2026-10-24"
+      "h1": "Social Media Marketing Agency — Content, Reels & Community",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:meta-ads",
@@ -71,8 +71,8 @@
       "priority": "0.9",
       "title": "Meta Ads Agency in India – Facebook & Instagram Ads",
       "description": "Facebook and Instagram ads that bring real enquiries for businesses across India: lead forms with qualifying questions, click-to-WhatsApp ads and retargeting.",
-      "h1": "Meta Ads Agency in India — Facebook & Instagram Ads",
-      "lastmod": "2026-10-24"
+      "h1": "Meta Ads Agency — Facebook & Instagram Ads That Bring Enquiries",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:google-ads",
@@ -80,8 +80,8 @@
       "priority": "0.9",
       "title": "Google Ads Agency in India | PPC Management – Orizova",
       "description": "Google Search, local, Performance Max and YouTube campaigns with tight keywords, negative keywords and call tracking — Google Ads management across India.",
-      "h1": "Google Ads Agency in India",
-      "lastmod": "2026-10-24"
+      "h1": "Google Ads Agency — Search, Maps & YouTube Campaigns",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:seo",
@@ -89,8 +89,8 @@
       "priority": "0.9",
       "title": "SEO Services in India | SEO Company – Orizova Digital",
       "description": "Technical, on-page and content SEO that helps businesses across India rank on Google for the searches that bring real enquiries.",
-      "h1": "SEO Services in India",
-      "lastmod": "2026-10-24"
+      "h1": "SEO Services — Rank for the Searches That Bring Customers",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:local-seo",
@@ -99,7 +99,16 @@
       "title": "Local SEO Services – Rank on Google Maps | Orizova",
       "description": "Google Business Profile optimisation, genuine reviews, citations and location pages so nearby customers find you on Google Maps — anywhere in India.",
       "h1": "Local SEO Services — Rank on Google Maps in Your City",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "service:ai-search-optimization",
+      "path": "/services/ai-search-optimization",
+      "priority": "0.9",
+      "title": "AI Search Optimization (AEO & GEO) Services | Orizova",
+      "description": "Get your business mentioned in Google AI Overviews, ChatGPT and Gemini answers with answer-first content, schema, reviews and genuine mentions.",
+      "h1": "AI Search Optimization — Get Recommended in AI Answers",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:video-editing",
@@ -107,8 +116,8 @@
       "priority": "0.8",
       "title": "Video Editing Services in India – Reels, Ads & Films",
       "description": "Instagram reels, YouTube Shorts, ad creatives, brand films and kinetic typography edited from your footage — video editing services for brands across India.",
-      "h1": "Video Editing Services in India — Reels, Ads & Brand Films",
-      "lastmod": "2026-10-24"
+      "h1": "Video Editing Services — Reels, Ads & Brand Films",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "service:branding-designing",
@@ -116,17 +125,17 @@
       "priority": "0.7",
       "title": "Branding & Logo Design Agency in India | Orizova",
       "description": "Logo design, brand identity systems, social media templates, packaging and pitch decks that keep your brand consistent — for businesses across India.",
-      "h1": "Branding & Logo Design Agency in India",
-      "lastmod": "2026-10-24"
+      "h1": "Branding & Logo Design Agency — Identity That Builds Trust",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "locations",
       "path": "/locations",
       "priority": "0.8",
-      "title": "Locations We Serve – City Pages | Orizova Digital",
-      "description": "Orizova Digital works with businesses across India, with local pages for Ghaziabad, Noida, Delhi, Chandigarh Tricity and Varanasi — websites, SEO and ads.",
-      "h1": "Cities We Serve — Local Websites, SEO & Ads",
-      "lastmod": "2026-10-24"
+      "title": "Cities We Serve Across India | Orizova Digital",
+      "description": "Orizova Digital works with businesses across India — local website, SEO and ads pages for Delhi NCR, Lucknow, Chandigarh, Jaipur, Hyderabad, Bengaluru and more.",
+      "h1": "Working Across India — Websites, SEO & Ads in Your City",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "city:ghaziabad",
@@ -255,13 +264,472 @@
       "lastmod": "2026-10-24"
     },
     {
+      "key": "city:lucknow",
+      "path": "/locations/lucknow",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Lucknow | Orizova Digital",
+      "description": "Websites, SEO, Google & Meta Ads for Lucknow businesses — clinics in Gomti Nagar, coaching in Aliganj, Chikankari brands and builders on Shaheed Path.",
+      "h1": "Digital Marketing Agency in Lucknow",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:lucknow/website-development",
+      "path": "/locations/lucknow/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Lucknow | Orizova",
+      "description": "Fast, mobile-first websites for Lucknow clinics, coaching institutes, Chikankari stores, builders and restaurants. Hindi-friendly, SEO-ready, fixed quotes.",
+      "h1": "Website Development Company in Lucknow",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:lucknow/seo",
+      "path": "/locations/lucknow/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Lucknow – Local SEO & Google Maps",
+      "description": "Local SEO for Lucknow: Google Business Profile, reviews, locality pages for Gomti Nagar, Aliganj & Indira Nagar, technical fixes and Hindi content.",
+      "h1": "SEO Company in Lucknow",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:indirapuram",
+      "path": "/locations/indirapuram",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Indirapuram | Orizova",
+      "description": "Websites, Google Maps ranking, reviews and local ads for Indirapuram clinics, salons, coaching centres, restaurants and gyms in Niti, Shakti & Ahinsa Khand.",
+      "h1": "Digital Marketing Agency in Indirapuram",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:indirapuram/website-development",
+      "path": "/locations/indirapuram/website-development",
+      "priority": "0.9",
+      "title": "Website Development in Indirapuram, Ghaziabad | Orizova",
+      "description": "Fast websites for Indirapuram clinics, salons, coaching centres, restaurants and gyms — with WhatsApp booking, landmarks and Google setup. Fixed quote.",
+      "h1": "Website Development Company in Indirapuram",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:indirapuram/seo",
+      "path": "/locations/indirapuram/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Indirapuram – Rank in Google Maps",
+      "description": "Local SEO for Indirapuram: Google Business Profile, genuine reviews, locality pages and map-ranking tracking across every Khand. Win \"near me\" searches.",
+      "h1": "SEO Company in Indirapuram",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:gurugram",
+      "path": "/locations/gurugram",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Gurugram | Orizova",
+      "description": "Websites, SEO and performance marketing for Gurugram startups, D2C brands, real-estate developers, clinics and restaurants — tracked to leads.",
+      "h1": "Digital Marketing Agency in Gurugram",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:gurugram/website-development",
+      "path": "/locations/gurugram/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Gurugram | Orizova",
+      "description": "Fast, conversion-focused websites for Gurugram: D2C stores, SaaS product sites, real-estate microsites, clinic and corporate websites.",
+      "h1": "Website Development Company in Gurugram",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:gurugram/seo",
+      "path": "/locations/gurugram/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Gurugram – SaaS, D2C & Local SEO",
+      "description": "Technical, content and local SEO for Gurugram SaaS companies, D2C brands, real-estate firms, clinics and restaurants. Reporting tied to revenue.",
+      "h1": "SEO Company in Gurugram",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:faridabad",
+      "path": "/locations/faridabad",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Faridabad | Orizova",
+      "description": "Websites, SEO and lead generation for Faridabad manufacturers, hospitals, schools, builders and service businesses — B2B and local marketing.",
+      "h1": "Digital Marketing Agency in Faridabad",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:faridabad/website-development",
+      "path": "/locations/faridabad/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Faridabad | Orizova",
+      "description": "Capability and catalogue websites for Faridabad manufacturers, plus fast websites for hospitals, schools, builders and local businesses.",
+      "h1": "Website Development Company in Faridabad",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:faridabad/seo",
+      "path": "/locations/faridabad/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Faridabad – Industrial & Local SEO",
+      "description": "Product and process SEO for Faridabad manufacturers, and Google Maps and local SEO for hospitals, schools and service businesses.",
+      "h1": "SEO Company in Faridabad",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:greater-noida",
+      "path": "/locations/greater-noida",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Greater Noida | Orizova",
+      "description": "Websites, Google Maps and ads for Greater Noida & Greater Noida West colleges, schools, clinics, restaurants, builders and industrial units.",
+      "h1": "Digital Marketing Agency in Greater Noida",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:greater-noida/website-development",
+      "path": "/locations/greater-noida/website-development",
+      "priority": "0.9",
+      "title": "Website Development in Greater Noida | Orizova Digital",
+      "description": "Websites for Greater Noida colleges, schools, clinics, restaurants, real-estate projects and industrial units — fast, clear and SEO-ready.",
+      "h1": "Website Development Company in Greater Noida",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:greater-noida/seo",
+      "path": "/locations/greater-noida/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Greater Noida & Noida Extension",
+      "description": "Local SEO for Greater Noida and Greater Noida West: Google Maps, reviews and society-level content, plus admission-season SEO for education.",
+      "h1": "SEO Company in Greater Noida",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:meerut",
+      "path": "/locations/meerut",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Meerut | Orizova Digital",
+      "description": "Websites, SEO and ads for Meerut sports goods makers, jewellers, hospitals, schools and showrooms — reach buyers in Meerut and across India.",
+      "h1": "Digital Marketing Agency in Meerut",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:meerut/website-development",
+      "path": "/locations/meerut/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Meerut | Orizova",
+      "description": "Catalogue websites for Meerut manufacturers and exporters, plus fast websites for hospitals, schools, jewellers and showrooms. SEO-ready, fixed quotes.",
+      "h1": "Website Development Company in Meerut",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:meerut/seo",
+      "path": "/locations/meerut/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Meerut – Product & Local SEO",
+      "description": "National product SEO for Meerut manufacturers and local SEO for hospitals, schools, jewellers and retailers — Google Maps, reviews and keyword maps.",
+      "h1": "SEO Company in Meerut",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:mohali",
+      "path": "/locations/mohali",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Mohali | Orizova Digital",
+      "description": "Websites, SEO and lead generation for Mohali immigration & IELTS consultants, IT companies, hospitals, builders and restaurants — focused on lead quality.",
+      "h1": "Digital Marketing Agency in Mohali",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:mohali/website-development",
+      "path": "/locations/mohali/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Mohali | Orizova",
+      "description": "Websites for Mohali immigration consultants, IELTS institutes, IT firms, hospitals and real-estate projects — credible, fast and built to qualify leads.",
+      "h1": "Website Development Company in Mohali",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:mohali/seo",
+      "path": "/locations/mohali/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Mohali – Local & IT Service SEO",
+      "description": "SEO in Mohali: Google Maps by phase and sector, reviews and service pages for clinics and consultants, plus service SEO for IT companies.",
+      "h1": "SEO Company in Mohali",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:panchkula",
+      "path": "/locations/panchkula",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Panchkula | Orizova",
+      "description": "Websites, Google Maps ranking and local ads for Panchkula clinics, schools, banquet halls, builders, salons and home services across every sector.",
+      "h1": "Digital Marketing Agency in Panchkula",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:panchkula/website-development",
+      "path": "/locations/panchkula/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Panchkula | Orizova",
+      "description": "Clear, fast websites for Panchkula clinics, schools, banquet halls, builders and local businesses — real photos, reviews, WhatsApp and SEO setup.",
+      "h1": "Website Development Company in Panchkula",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:panchkula/seo",
+      "path": "/locations/panchkula/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Panchkula – Local SEO & Google Maps",
+      "description": "Sector-level Google Maps ranking, review routines and local SEO for Panchkula clinics, schools, venues and service businesses. Monthly reporting.",
+      "h1": "SEO Company in Panchkula",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:jaipur",
+      "path": "/locations/jaipur",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Jaipur | Orizova Digital",
+      "description": "Websites, SEO and ads for Jaipur hotels, jewellers, handicraft exporters, wedding venues, coaching institutes and local businesses.",
+      "h1": "Digital Marketing Agency in Jaipur",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:jaipur/website-development",
+      "path": "/locations/jaipur/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Jaipur | Orizova",
+      "description": "Photo-led, fast websites for Jaipur hotels, jewellers, exporters, wedding venues and coaching institutes — direct enquiries, SEO-ready, fixed quote.",
+      "h1": "Website Development Company in Jaipur",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:jaipur/seo",
+      "path": "/locations/jaipur/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Jaipur – Local, Hotel & Export SEO",
+      "description": "SEO for Jaipur: Google Maps for local businesses, direct-booking visibility for hotels and product SEO for jewellers and handicraft exporters.",
+      "h1": "SEO Company in Jaipur",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:agra",
+      "path": "/locations/agra",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Agra | Orizova Digital",
+      "description": "Websites, SEO and ads for Agra hotels, tour operators, footwear and marble-craft businesses, clinics and schools — direct bookings and enquiries.",
+      "h1": "Digital Marketing Agency in Agra",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:agra/website-development",
+      "path": "/locations/agra/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Agra | Orizova",
+      "description": "Websites for Agra hotels, tour operators, footwear manufacturers, handicraft businesses, clinics and schools — fast, photo-led and SEO-ready.",
+      "h1": "Website Development Company in Agra",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:agra/seo",
+      "path": "/locations/agra/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Agra – Hotel, Travel & Local SEO",
+      "description": "SEO for Agra hotels, tour operators, footwear and craft manufacturers, and local businesses — Google Maps, travel content and product pages.",
+      "h1": "SEO Company in Agra",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:kanpur",
+      "path": "/locations/kanpur",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Kanpur | Orizova Digital",
+      "description": "Websites, SEO and ads for Kanpur leather and textile exporters, engineering units, coaching institutes in Kakadeo, hospitals and traders.",
+      "h1": "Digital Marketing Agency in Kanpur",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:kanpur/website-development",
+      "path": "/locations/kanpur/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Kanpur | Orizova",
+      "description": "Export catalogue websites for Kanpur leather, textile and engineering manufacturers, plus coaching institute, hospital and trader websites.",
+      "h1": "Website Development Company in Kanpur",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:kanpur/seo",
+      "path": "/locations/kanpur/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Kanpur – Export, Product & Local SEO",
+      "description": "Product and export SEO for Kanpur manufacturers, and local SEO for coaching institutes, hospitals and traders. Monthly reporting on enquiries.",
+      "h1": "SEO Company in Kanpur",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:dehradun",
+      "path": "/locations/dehradun",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Dehradun | Orizova",
+      "description": "Websites, SEO and ads for Dehradun schools, coaching institutes, hotels, homestays, clinics, cafes and real estate — reach locals and visitors.",
+      "h1": "Digital Marketing Agency in Dehradun",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:dehradun/website-development",
+      "path": "/locations/dehradun/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Dehradun | Orizova",
+      "description": "Websites for Dehradun schools, boarding schools, coaching institutes, hotels, homestays, clinics and cafes — clear, fast and SEO-ready.",
+      "h1": "Website Development Company in Dehradun",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:dehradun/seo",
+      "path": "/locations/dehradun/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Dehradun – Schools, Hotels & Local",
+      "description": "SEO for Dehradun schools, coaching institutes, hotels and homestays, plus Google Maps and reviews for local clinics, cafes and service businesses.",
+      "h1": "SEO Company in Dehradun",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:ludhiana",
+      "path": "/locations/ludhiana",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Ludhiana | Orizova",
+      "description": "Websites, SEO and B2B lead generation for Ludhiana hosiery, knitwear, bicycle and auto-parts manufacturers, plus hospitals, consultants and venues.",
+      "h1": "Digital Marketing Agency in Ludhiana",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:ludhiana/website-development",
+      "path": "/locations/ludhiana/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Ludhiana | Orizova",
+      "description": "Catalogue and export websites for Ludhiana manufacturers, plus websites for hospitals, immigration consultants, wedding venues and retailers.",
+      "h1": "Website Development Company in Ludhiana",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:ludhiana/seo",
+      "path": "/locations/ludhiana/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Ludhiana – Product & Local SEO",
+      "description": "Product, part-number and export SEO for Ludhiana manufacturers, and local SEO for hospitals, consultants, venues and retailers.",
+      "h1": "SEO Company in Ludhiana",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:hyderabad",
+      "path": "/locations/hyderabad",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Hyderabad | Orizova",
+      "description": "Websites, SEO, Google & Meta Ads for Hyderabad SaaS and IT companies, hospitals, real-estate developers, restaurants and training institutes.",
+      "h1": "Digital Marketing Agency in Hyderabad",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:hyderabad/website-development",
+      "path": "/locations/hyderabad/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Hyderabad | Orizova",
+      "description": "SaaS product sites, corporate websites, landing pages and web apps for Hyderabad companies — plus hospital, real-estate and restaurant websites.",
+      "h1": "Website Development Company in Hyderabad",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:hyderabad/seo",
+      "path": "/locations/hyderabad/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Hyderabad – B2B, SaaS & Local SEO",
+      "description": "Technical and content SEO for Hyderabad SaaS and IT companies, and local SEO for hospitals, restaurants and institutes in Kukatpally, Ameerpet & more.",
+      "h1": "SEO Company in Hyderabad",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:pune",
+      "path": "/locations/pune",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Pune | Orizova Digital",
+      "description": "Websites, SEO and ads for Pune startups, IT firms, auto suppliers, colleges, real-estate projects, restaurants and clinics.",
+      "h1": "Digital Marketing Agency in Pune",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:pune/website-development",
+      "path": "/locations/pune/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Pune | Orizova",
+      "description": "SaaS, IT, manufacturer, institute, real-estate and restaurant websites for Pune businesses — fast, scalable and SEO-ready, with fixed quotes.",
+      "h1": "Website Development Company in Pune",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:pune/seo",
+      "path": "/locations/pune/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Pune – B2B, Education & Local SEO",
+      "description": "SEO for Pune SaaS and IT companies, manufacturers, colleges and local businesses — technical, content and Google Maps, with monthly reporting.",
+      "h1": "SEO Company in Pune",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:bengaluru",
+      "path": "/locations/bengaluru",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Bengaluru | Orizova",
+      "description": "Websites, SEO and performance marketing for Bengaluru startups, SaaS companies, D2C brands, clinics, restaurants and real estate.",
+      "h1": "Digital Marketing Agency in Bengaluru",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:bengaluru/website-development",
+      "path": "/locations/bengaluru/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Bengaluru | Orizova",
+      "description": "Product websites for Bengaluru startups and SaaS, Shopify and custom D2C stores, and fast websites for clinics, restaurants and real estate.",
+      "h1": "Website Development Company in Bengaluru",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:bengaluru/seo",
+      "path": "/locations/bengaluru/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Bengaluru – SaaS, D2C & Local SEO",
+      "description": "Technical, content and local SEO for Bengaluru SaaS companies, D2C brands, clinics and restaurants — reporting tied to pipeline and revenue.",
+      "h1": "SEO Company in Bengaluru",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "city:mumbai",
+      "path": "/locations/mumbai",
+      "priority": "0.8",
+      "title": "Digital Marketing Agency in Mumbai | Orizova Digital",
+      "description": "Websites, SEO and performance marketing for Mumbai D2C and fashion brands, professional services, real estate, clinics and restaurants.",
+      "h1": "Digital Marketing Agency in Mumbai",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:mumbai/website-development",
+      "path": "/locations/mumbai/website-development",
+      "priority": "0.9",
+      "title": "Website Development Company in Mumbai | Orizova",
+      "description": "Premium websites for Mumbai brands: Shopify and custom stores, professional services sites, real-estate microsites, clinic and restaurant websites.",
+      "h1": "Website Development Company in Mumbai",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:mumbai/seo",
+      "path": "/locations/mumbai/seo",
+      "priority": "0.9",
+      "title": "SEO Company in Mumbai – E-commerce & Local SEO",
+      "description": "Focused SEO for Mumbai D2C brands, professional services, clinics and restaurants — products, services and neighbourhoods with real intent.",
+      "h1": "SEO Company in Mumbai",
+      "lastmod": "2026-10-25"
+    },
+    {
       "key": "industries",
       "path": "/industries",
       "priority": "0.7",
       "title": "Digital Marketing by Industry | Orizova Digital",
-      "description": "How we approach websites, SEO and ads for clinics, architects, real estate, restaurants and cafes, and finance professionals across India.",
+      "description": "How Orizova Digital plans websites, SEO and ads for 19 industries — healthcare, real estate, education, D2C, manufacturing, hospitality, salons and more.",
       "h1": "Digital Marketing by Industry",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-10-25"
     },
     {
       "key": "industry:clinics",
@@ -309,13 +777,166 @@
       "lastmod": "2026-10-24"
     },
     {
+      "key": "industry:dental-clinics",
+      "path": "/industries/dental-clinics",
+      "priority": "0.8",
+      "title": "Digital Marketing for Dental Clinics | Orizova Digital",
+      "description": "Google Maps ranking, treatment pages, genuine reviews and Google Ads for dental clinics — implants, aligners, RCT and family dentistry.",
+      "h1": "Digital Marketing for Dental Clinics",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:skin-hair-clinics",
+      "path": "/industries/skin-hair-clinics",
+      "priority": "0.8",
+      "title": "Marketing for Skin, Hair & Aesthetic Clinics | Orizova",
+      "description": "Treatment pages, Google and Meta campaigns, doctor-led reels and qualified consultation leads for dermatology, hair transplant and aesthetic clinics.",
+      "h1": "Digital Marketing for Skin, Hair & Aesthetic Clinics",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:home-services",
+      "path": "/industries/home-services",
+      "priority": "0.8",
+      "title": "Digital Marketing for Home Services | Orizova Digital",
+      "description": "More calls for packers and movers, AC repair, pest control, cleaning and interiors — service-area Google profiles, reviews, quote websites and local ads.",
+      "h1": "Digital Marketing for Home-Service Businesses",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:hotels-travel",
+      "path": "/industries/hotels-travel",
+      "priority": "0.8",
+      "title": "Hotel, Homestay & Travel Marketing | Orizova Digital",
+      "description": "Direct-booking websites, Google visibility, reels and campaigns for hotels, homestays, resorts, tour operators and travel agents across India.",
+      "h1": "Digital Marketing for Hotels, Homestays & Travel",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:events-weddings",
+      "path": "/industries/events-weddings",
+      "priority": "0.8",
+      "title": "Marketing for Wedding Venues & Event Businesses | Orizova",
+      "description": "Websites, reels and wedding-season campaigns for banquet halls, venues, wedding planners, photographers, decorators and caterers.",
+      "h1": "Digital Marketing for Wedding & Event Businesses",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:ecommerce-d2c",
+      "path": "/industries/ecommerce-d2c",
+      "priority": "0.8",
+      "title": "E-commerce & D2C Brand Marketing | Orizova Digital",
+      "description": "Shopify and custom stores, tracking, Meta and Google performance marketing, and product SEO for D2C, fashion, beauty and lifestyle brands.",
+      "h1": "Digital Marketing for E-commerce & D2C Brands",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:retail-showrooms",
+      "path": "/industries/retail-showrooms",
+      "priority": "0.8",
+      "title": "Marketing for Retail Stores, Showrooms & Dealers | Orizova",
+      "description": "Store-visit marketing for jewellers, furniture, electronics, fashion and auto showrooms, dealers and distributors — Maps, reels and local ads.",
+      "h1": "Digital Marketing for Retailers, Showrooms & Dealers",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:manufacturers-exporters",
+      "path": "/industries/manufacturers-exporters",
+      "priority": "0.8",
+      "title": "Digital Marketing for Manufacturers & Exporters | Orizova",
+      "description": "Capability and catalogue websites, product SEO, B2B Google Ads and LinkedIn for manufacturers, exporters, traders and industrial suppliers.",
+      "h1": "Digital Marketing for Manufacturers & Exporters",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:education",
+      "path": "/industries/education",
+      "priority": "0.8",
+      "title": "Digital Marketing for Schools, Colleges & Coaching | Orizova",
+      "description": "Admission-focused websites, course SEO, admission campaigns and counsellor follow-up for schools, colleges, coaching institutes and training centres.",
+      "h1": "Digital Marketing for Schools, Colleges & Coaching Institutes",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:salons-beauty",
+      "path": "/industries/salons-beauty",
+      "priority": "0.8",
+      "title": "Digital Marketing for Salons & Beauty Studios | Orizova",
+      "description": "Google Maps, reviews, Instagram reels and local ads that bring bookings to salons, nail studios, makeup artists, spas and beauty academies.",
+      "h1": "Digital Marketing for Salons & Beauty Studios",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:fitness-wellness",
+      "path": "/industries/fitness-wellness",
+      "priority": "0.8",
+      "title": "Digital Marketing for Gyms, Fitness & Wellness | Orizova",
+      "description": "Trial-class campaigns, Google Maps, membership websites and reels for gyms, yoga and fitness studios, dietitians and wellness coaches.",
+      "h1": "Digital Marketing for Gyms, Fitness & Wellness",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:professional-services",
+      "path": "/industries/professional-services",
+      "priority": "0.8",
+      "title": "Marketing for CAs, Consultants & Professional Firms",
+      "description": "Credible websites, expertise content, local SEO and LinkedIn for CA and tax firms, consultants and law practices — within professional rules.",
+      "h1": "Digital Marketing for CAs, Consultants & Professional Firms",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:immigration-consultants",
+      "path": "/industries/immigration-consultants",
+      "priority": "0.8",
+      "title": "Marketing for Immigration & Study-Abroad Consultants",
+      "description": "Trust-first websites, policy-compliant Google and Meta ads and qualified leads for visa, immigration, study-abroad and IELTS/PTE businesses.",
+      "h1": "Digital Marketing for Immigration & Study-Abroad Consultants",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "industry:startups-saas",
+      "path": "/industries/startups-saas",
+      "priority": "0.8",
+      "title": "Websites & Marketing for Startups, SaaS & IT Companies",
+      "description": "Positioning-led websites, product pages, SaaS SEO and demand generation for startups, SaaS products and IT service companies.",
+      "h1": "Digital Marketing for Startups, SaaS & IT Companies",
+      "lastmod": "2026-10-25"
+    },
+    {
       "key": "blog",
       "path": "/blog",
       "priority": "0.7",
       "title": "Digital Marketing Blog – Website, SEO & Ads Guides",
       "description": "Practical guides for business owners in Delhi NCR and Chandigarh: website costs, Google Maps, Meta vs Google Ads, and marketing for clinics, cafes and more.",
       "h1": "Practical Guides on Websites, SEO & Digital Marketing",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "post:get-recommended-by-chatgpt-google-ai",
+      "path": "/blog/get-recommended-by-chatgpt-google-ai",
+      "priority": "0.7",
+      "title": "How to Get Recommended by ChatGPT & Google AI (2026)",
+      "description": "What ChatGPT, Gemini and Google AI Overviews rely on, and a 6-step checklist to make your business easy for AI answers to find, trust and name.",
+      "h1": "How to Get Your Business Recommended by ChatGPT and Google AI Overviews",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "post:website-visitors-but-no-enquiries",
+      "path": "/blog/website-visitors-but-no-enquiries",
+      "priority": "0.7",
+      "title": "Website Visitors but No Enquiries? 15 Fixes That Work",
+      "description": "Traffic but no calls or WhatsApp messages? 15 practical fixes for clarity, trust, speed and contact options — in the order we check them.",
+      "h1": "Website Gets Visitors but No Enquiries? 15 Fixes That Actually Work",
+      "lastmod": "2026-10-25"
+    },
+    {
+      "key": "post:how-to-choose-digital-marketing-agency",
+      "path": "/blog/how-to-choose-digital-marketing-agency",
+      "priority": "0.7",
+      "title": "How to Choose a Digital Marketing Agency: 15 Questions",
+      "description": "15 questions to ask any digital marketing agency in India about ownership, reporting, pricing, lead quality and promises — before you pay.",
+      "h1": "How to Choose a Digital Marketing Agency in India: 15 Questions to Ask First",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "post:how-to-get-a-business-website-india",
@@ -494,8 +1115,8 @@
       "priority": "0.6",
       "title": "About Orizova Digital – Digital Agency in India",
       "description": "Orizova Digital is a web development and digital marketing agency based in Delhi NCR, helping businesses across India get found and chosen online.",
-      "h1": "About Orizova Digital — Web Development & Digital Marketing Agency in India",
-      "lastmod": "2026-10-24"
+      "h1": "About Orizova Digital — Web Development & Digital Marketing Agency",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "contact",
@@ -503,8 +1124,8 @@
       "priority": "0.8",
       "title": "Contact Orizova Digital – Free Website & Marketing Consult",
       "description": "Call or WhatsApp Orizova Digital about websites, SEO, ads or social media — we work with businesses across India. Your first consultation is free.",
-      "h1": "Contact Orizova Digital — Free Website & Marketing Consultation",
-      "lastmod": "2026-10-24"
+      "h1": "Contact Orizova Digital — Free Consultation",
+      "lastmod": "2026-10-25"
     },
     {
       "key": "privacy",

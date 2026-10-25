@@ -42,13 +42,13 @@
 }
 
 .whyus-card h3 {
-  font-size: 1.1rem;
+  font-size: var(--fs-h3);
   color: var(--ink);
   margin-bottom: 10px;
 }
 
 .whyus-card p {
-  font-size: 14px;
+  font-size: var(--fs-card);
   color: var(--text-light);
   line-height: 1.65;
 }

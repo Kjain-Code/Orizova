@@ -4,10 +4,12 @@
 // Rendered by components/content/QuickAnswer.jsx; also used for /llms.txt.
 // Section: city and city × service pages (local).
 
+import moreCities from './cities';
+
 const answers = {
   '/locations': {
     q: 'Which cities does Orizova Digital serve?',
-    a: 'Orizova Digital works with businesses across India online, and has dedicated local pages for Ghaziabad, Noida, Delhi, the Chandigarh Tricity (Chandigarh, Mohali, Panchkula, Zirakpur) and Varanasi. Each city page covers the local areas, industries and questions for that market, plus city-specific website development and SEO pages.',
+    a: 'Orizova Digital works with businesses across India over calls, video and WhatsApp. Its team is based in Delhi NCR, and it has local pages for 22 cities and areas — including Delhi, Noida, Gurugram, Ghaziabad, Lucknow, Meerut, Agra, Kanpur, Varanasi, Chandigarh, Mohali, Ludhiana, Jaipur, Dehradun, Hyderabad, Pune, Bengaluru and Mumbai — each with website development and SEO pages.',
   },
   '/locations/ghaziabad': {
     q: 'Which digital marketing agency serves Ghaziabad businesses?',
@@ -66,5 +68,7 @@ const answers = {
     a: 'Orizova Digital is a website development company working with Varanasi hotels, homestays, Banarasi silk sellers, coaching institutes, hospitals and travel businesses. It plans, writes, designs and codes fast websites set up for Google from day one and connected to WhatsApp, so searches from across India turn into direct calls, bookings and orders without portal commissions.',
   },
 };
+
+moreCities.forEach((c) => Object.assign(answers, c.answers));
 
 export default answers;

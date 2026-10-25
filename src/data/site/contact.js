@@ -16,6 +16,10 @@ const CONTACT = {
   sameAs: ['https://www.instagram.com/orizova.digital/'],
 };
 
+/** WhatsApp link with a pre-written message (used for service-, city- and
+ *  goal-specific "talk to us" buttons so the chat starts with context). */
+export const waLink = (message) => `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(message || CONTACT.whatsappMessage)}`;
+
 export const whatsappLink = `https://wa.me/${CONTACT.whatsappNumber}?text=${encodeURIComponent(CONTACT.whatsappMessage)}`;
 
 export default CONTACT;

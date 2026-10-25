@@ -1,94 +1,70 @@
 import React from "react";
 import { m } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  FiMonitor,
-  FiSmartphone,
-  FiTrendingUp,
-  FiPenTool,
-  FiSearch,
-  FiShoppingCart,
-  FiInstagram,
-  FiTarget,
-  FiMousePointer,
-  FiMapPin,
-  FiVideo,
-  FiArrowRight,
-} from "react-icons/fi";
+import { FiArrowRight, FiCheck } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 import services from "../../data/services/services";
-import { BulbCharacter, MagnifierCharacter, TargetCharacter, RocketCharacter } from "../common/Doodles";
+import { waLink } from "../../data/site/contact";
+import ServiceIllustration from "../home/ServiceIllustrations";
 import "./ServicesDetail.css";
 
-const iconMap = {
-  FiMonitor,
-  FiSmartphone,
-  FiTrendingUp,
-  FiPenTool,
-  FiSearch,
-  FiShoppingCart,
-  FiInstagram,
-  FiTarget,
-  FiMousePointer,
-  FiMapPin,
-  FiVideo,
-};
-
-const characters = [RocketCharacter, BulbCharacter, TargetCharacter, MagnifierCharacter];
-
-const ServicesDetail = () => {
-  return (
-    <section className="services-detail-section">
-      <div className="container">
-        <div className="services-detail-list">
-          {services.map((service, i) => {
-            const Icon = iconMap[service.icon];
-            const Character = characters[i % characters.length];
-
-            return (
-              <m.div
-                key={service.id}
-                className="service-detail-card"
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: (i % 2) * 0.05 }}
-                viewport={{ once: true, margin: '0px 0px 15% 0px' }}
-              >
-                <div className="service-detail-character">
-                  <Character />
-                </div>
-
-                <div
-                  className="service-detail-icon"
-                  style={{ background: `${service.color}18`, color: service.color }}
-                >
-                  {Icon && <Icon size={32} />}
-                </div>
-
-                <h3 className="service-detail-title">{service.title}</h3>
-                <p className="service-detail-desc">{service.fullDesc}</p>
-
-                <div className="service-detail-subs">
-                  {service.subServices.map((sub) => (
-                    <span
-                      key={sub}
-                      className="sub-chip"
-                      style={{ borderColor: `${service.color}40`, color: service.color }}
-                    >
-                      {sub}
-                    </span>
-                  ))}
-                </div>
-
-                <Link to={`/services/${service.slug}`} className="service-detail-link">
-                  Explore service <FiArrowRight />
-                </Link>
-              </m.div>
-            );
-          })}
-        </div>
+/* /services — one detailed card per service: illustration, what it is,
+   what's included, and two next steps (read more, or ask on WhatsApp with
+   the service already named in the message). */
+const ServicesDetail = () => (
+  <section className="services-detail-section" id="all-services">
+    <div className="container">
+      <div className="text-center sd-head">
+        <span className="section-tag">All services</span>
+        <h2 className="section-title">Everything You Need to <span>Grow Online</span></h2>
+        <p className="section-subtitle">Pick one service or combine a few — every project starts with a free call and a fixed, written quote.</p>
       </div>
-    </section>
-  );
-};
+      <div className="services-detail-list">
+        {services.map((service, i) => (
+          <m.article
+            key={service.id}
+            className="service-detail-card"
+            style={{ "--c": service.color }}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, delay: (i % 2) * 0.06 }}
+            viewport={{ once: true, margin: "0px 0px 15% 0px" }}
+          >
+            <div className="sd-top">
+              <span className="sd-art"><ServiceIllustration slug={service.slug} /></span>
+              <div>
+                <span className="sd-group">{service.group}</span>
+                <h3 className="service-detail-title">
+                  <Link to={`/services/${service.slug}`}>{service.title}</Link>
+                </h3>
+              </div>
+            </div>
+            <p className="service-detail-desc">{service.fullDesc}</p>
+
+            <ul className="sd-subs">
+              {service.subServices.map((sub) => (
+                <li key={sub}><span className="sd-tick" aria-hidden="true"><FiCheck /></span>{sub}</li>
+              ))}
+            </ul>
+
+            <div className="sd-actions">
+              <Link to={`/services/${service.slug}`} className="service-detail-link">
+                Explore {service.title.split(" (")[0]} <FiArrowRight aria-hidden="true" />
+              </Link>
+              <a
+                href={waLink(`Hi Orizova Digital, I'm interested in ${service.title}. Can you share a plan and quote?`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sd-wa"
+              >
+                <FaWhatsapp aria-hidden="true" /> Ask for a quote
+              </a>
+            </div>
+          </m.article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default ServicesDetail;

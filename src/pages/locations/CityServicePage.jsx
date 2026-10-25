@@ -57,13 +57,12 @@ const CityServicePage = () => {
 
       <section className="loc-section content-section">
         <div className="container">
-          <QuickAnswer answers={sectionAnswers} path={path} />
           <div className="loc-intro">
             <div>
               <span className="section-tag">{page.label}</span>
               <h2 className="section-title content-h2">{page.intro.h2}</h2>
               {page.intro.paras.map((p) => <p className="loc-text" key={p.slice(0, 30)}><Inline text={p} /></p>)}
-              <CtaButtons />
+              <CtaButtons message={`Hi Orizova Digital, I'm looking for ${svc.title.toLowerCase()} in ${loc.city}. Can we discuss?`} />
             </div>
             <aside className="loc-card">
               <h3>Areas we serve in {loc.city}</h3>
@@ -77,6 +76,7 @@ const CityServicePage = () => {
               </p>
             </aside>
           </div>
+          <QuickAnswer answers={sectionAnswers} path={path} />
 
           <Blocks blocks={page.blocks} />
 

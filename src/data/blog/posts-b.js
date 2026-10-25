@@ -104,7 +104,7 @@ const postsB = [
       {
         h2: 'Getting your website made with Orizova Digital',
         paras: [
-          'We build websites for businesses in Delhi, Noida, Ghaziabad, Chandigarh, Varanasi and across India, working over calls, video meetings and WhatsApp. After a short call you receive a written plan and a fixed quote, and your domain and hosting are always registered in your name.',
+          'We build websites for businesses across India — from Delhi NCR, Lucknow and Chandigarh to Jaipur, Hyderabad and Bengaluru — working over calls, video meetings and WhatsApp. After a short call you receive a written plan and a fixed quote, and your domain and hosting are always registered in your name.',
           'To get started, see our [website development services](/services/website-development) or send us your requirement on WhatsApp.',
         ],
       },

@@ -2,6 +2,8 @@
 // Every page is written separately for its market — never copy one and swap
 // the city name.
 
+import moreCities from './cities';
+
 const cityServices = [
   /* ============================ GHAZIABAD ============================ */
   {
@@ -891,5 +893,8 @@ const cityServices = [
     ],
   },
 ];
+
+// Newer cities (see ./cities): one file per market.
+moreCities.forEach((c) => cityServices.push(...c.pages));
 
 export default cityServices;

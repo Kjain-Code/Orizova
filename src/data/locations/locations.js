@@ -3,6 +3,8 @@
 // Keep the copy honest: we SERVE these cities; don't claim an office address
 // here unless one actually exists (add it to data/site/contact.js if it does).
 
+import moreCities from './cities';
+
 const locations = [
   {
     slug: 'ghaziabad',
@@ -207,5 +209,8 @@ const locations = [
     ],
   },
 ];
+
+// Newer city pages live in ./cities (one file per market).
+moreCities.forEach((c) => locations.push(c.hub));
 
 export default locations;

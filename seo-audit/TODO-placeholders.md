@@ -19,3 +19,6 @@ None of these show as "TODO" text on the live site. Where info is missing the se
 | 13 | Confirm hosting (Vercel vs GoDaddy) | vercel.json / public/.htaccess | Both configs included |
 | 14 | Optional: real "starting from ₹…" prices → we can add /pricing | — | No prices shown anywhere |
 | 15 | Client logos (with permission) for a logo strip | — | No logo strip |
+| 16 | Permission to name real clients by city (e.g. clinic chains, dealers) as case studies on city/industry pages | src/data/work/projects.js, city files | City pages describe work generally, no client names |
+| 17 | Real office address — only add Google Business Profiles for addresses that genuinely exist (never virtual offices per city) | src/data/site/contact.js | Service-area business, Delhi NCR |
+| 18 | Real client reviews (Google review text / WhatsApp messages, with permission), client names, Google rating | src/data/site/reviews.js | "What Our Clients Say" section stays hidden on Home and About until at least one entry is added |

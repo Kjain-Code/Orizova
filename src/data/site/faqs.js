@@ -20,6 +20,14 @@ const faqGroups = [
     ],
   },
   {
+    title: 'AI search (ChatGPT, Gemini, AI Overviews)',
+    faqs: [
+      ['What is AI search optimization (AEO / GEO)?', 'Making your business easy for AI answers — Google AI Overviews, ChatGPT search, Gemini, Perplexity — to find, understand and mention. See [AI search optimization](/services/ai-search-optimization).'],
+      ['Can you guarantee my business appears in ChatGPT?', 'No. Nobody controls AI answers. We improve the signals they rely on and re-check the same questions every month.'],
+      ['Is AI search optimization different from SEO?', 'It builds on SEO. Google says there are no special requirements for AI Overviews beyond normal Search eligibility, so crawlable, clear, well-referenced pages help both.'],
+    ],
+  },
+  {
     title: 'Ads (Google & Meta)',
     faqs: [
       ['Should I run Google Ads or Meta Ads?', 'Google catches people already searching; Meta reaches people before they search. Read [Meta Ads vs Google Ads](/blog/meta-ads-vs-google-ads).'],
@@ -39,7 +47,7 @@ const faqGroups = [
   {
     title: 'Working with Orizova Digital',
     faqs: [
-      ['Which areas do you serve?', 'Businesses across India — most of our work happens online. We also have dedicated local pages for Ghaziabad, Noida, Greater Noida, Delhi, the Chandigarh Tricity (Chandigarh, Mohali, Panchkula, Zirakpur) and Varanasi.'],
+      ['Which areas do you serve?', 'Businesses across India — most of our work happens online. Our team is based in Delhi NCR, and we have local pages for 22 cities and areas, from Delhi NCR, Lucknow and Chandigarh to Jaipur, Hyderabad, Pune, Bengaluru and Mumbai — see [all cities](/locations).'],
       ['Do I need to meet you in person?', 'Not necessarily. Most projects run over calls, video meetings and WhatsApp.'],
       ['How do I start?', 'Message us on WhatsApp, call, or fill the [contact form](/contact). We will ask a few questions and suggest next steps.'],
       ['Which industries do you work with?', 'Many — especially [clinics](/industries/clinics), [architects](/industries/architects), [real estate](/industries/real-estate), [restaurants & cafes](/industries/restaurants-cafes) and [finance professionals](/industries/finance-loan-agents).'],

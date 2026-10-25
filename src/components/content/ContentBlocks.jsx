@@ -5,7 +5,7 @@ import {
   FiLayers, FiTarget, FiTrendingUp, FiZap, FiCompass, FiStar, FiShield, FiUsers,
 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import CONTACT, { whatsappLink } from '../../data/site/contact';
+import CONTACT, { whatsappLink, waLink } from '../../data/site/contact';
 import projects from '../../data/work/projects';
 import { SITE_URL } from '../seo/Seo';
 import { guidesFor } from '../../data/site/siteIndex';
@@ -58,9 +58,11 @@ export const Breadcrumbs = ({ items }) => (
   </nav>
 );
 
-export const CtaButtons = ({ center = false, label = 'Get a free consultation' }) => (
+/** `message` pre-fills the WhatsApp chat (e.g. "Hi, I need SEO for my clinic
+ *  in Lucknow") so every page starts the conversation with context. */
+export const CtaButtons = ({ center = false, label = 'Get a free consultation', message }) => (
   <div className={`cta-buttons ${center ? 'is-center' : ''}`}>
-    <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-primary">
+    <a href={message ? waLink(message) : whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-primary">
       <FaWhatsapp aria-hidden="true" /> WhatsApp us
     </a>
     <a href={`tel:${CONTACT.phoneTel}`} className="btn-outline">

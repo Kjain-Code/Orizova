@@ -12,8 +12,9 @@ import {
 } from '../../components/content/ContentBlocks';
 import services from '../../data/services/services';
 import servicePages from '../../data/services/servicePages';
-import locations from '../../data/locations/locations';
-import { cityServicesIndex as cityServices } from '../../data/site/siteIndex';
+import {
+  cityServicesIndex as cityServices, citiesIndex as locations, serviceIndustries, industryMeta,
+} from '../../data/site/siteIndex';
 import NotFound from '../core/NotFound';
 
 const ServicePage = () => {
@@ -51,13 +52,12 @@ const ServicePage = () => {
 
       <section className="loc-section content-section">
         <div className="container">
-          <QuickAnswer answers={sectionAnswers} path={path} />
           <div className="loc-intro">
             <div>
               <span className="section-tag">{service.title}</span>
               <h2 className="section-title content-h2">{page.intro.h2}</h2>
               {page.intro.paras.map((p) => <p className="loc-text" key={p.slice(0, 30)}><Inline text={p} /></p>)}
-              <CtaButtons />
+              <CtaButtons message={`Hi Orizova Digital, I'm interested in ${service.title}. Can we discuss my requirement?`} />
             </div>
             <aside className="loc-card">
               <h3>What&apos;s included</h3>
@@ -66,14 +66,16 @@ const ServicePage = () => {
                   <li key={item}><FiCheckCircle size={14} aria-hidden="true" /> {item}</li>
                 ))}
               </ul>
-              <h3 style={{ marginTop: 24 }}>Available in</h3>
+              <h3 style={{ marginTop: 24 }}>Working across India</h3>
               <ul className="loc-areas">
-                {locations.map((loc) => (
+                {locations.slice(0, 9).map((loc) => (
                   <li key={loc.slug}><Link to={`/locations/${loc.slug}`}>{loc.city}</Link></li>
                 ))}
+                <li><Link to="/locations">+ {locations.length - 9} more cities</Link></li>
               </ul>
             </aside>
           </div>
+          <QuickAnswer answers={sectionAnswers} path={path} />
 
           <Blocks blocks={page.blocks} />
 
@@ -87,6 +89,12 @@ const ServicePage = () => {
                 : locations.map((loc) => ({ to: `/locations/${loc.slug}`, label: `Digital agency in ${loc.city}` }))
             }
           />
+          {(serviceIndustries[slug] || []).length > 0 && (
+            <LinkChips
+              h2={`${service.title} for your industry`}
+              links={serviceIndustries[slug].filter((i) => industryMeta[i]).map((i) => ({ to: `/industries/${i}`, label: industryMeta[i].name }))}
+            />
+          )}
           {others.length > 0 && (
             <LinkChips h2="Related services" links={others.map((s) => ({ to: `/services/${s.slug}`, label: s.title }))} />
           )}

@@ -1,51 +1,45 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiMapPin } from 'react-icons/fi';
-import locations from '../../data/locations/locations';
-import { Inline, LinkChips } from '../content/ContentBlocks';
-import { cityServicesIndex } from '../../data/site/siteIndex';
+import { Inline } from '../content/ContentBlocks';
+import { citiesIndex } from '../../data/site/siteIndex';
 import './AreasServed.css';
 
 export const homeFaqs = [
-  ['Which areas does Orizova serve?', 'Businesses across India — most of our work happens online. We also have dedicated local pages for Ghaziabad, Noida, Greater Noida, Delhi, the Chandigarh Tricity (Chandigarh, Mohali, Panchkula) and Varanasi.'],
-  ['What services does Orizova offer?', 'Website development, mobile app development, SEO, digital marketing (Meta & Google Ads, social media), branding and design, and e-commerce stores on Shopify, WooCommerce or custom code.'],
+  ['Which areas does Orizova serve?', 'Businesses across India — most of our work happens online over calls and WhatsApp, so location is never a barrier. Our team is based in Delhi NCR, and we work with clients from Delhi, Noida, Gurugram and Lucknow to Jaipur, Chandigarh, Hyderabad, Pune, Bengaluru and Mumbai. See [all cities we serve](/locations).'],
+  ['What services does Orizova offer?', 'Website development, e-commerce stores, mobile apps, SEO and local SEO, AI search optimization, Google Ads, Meta Ads, social media marketing, video editing and branding — see [all services](/services).'],
+  ['Can you get my business recommended in ChatGPT or Google AI Overviews?', 'Nobody can guarantee what an AI tool says, but we can make your business much easier for those tools to find, trust and quote — clear answer-first pages, consistent business details, schema, reviews and genuine mentions. See [AI search optimization](/services/ai-search-optimization).'],
+  ['Will I own my website, domain and ad accounts?', 'Yes. Domains are registered in your name, ad accounts and Google Business Profile stay yours, and the website is handed over to you. We work inside your accounts with partner access.'],
   ['How much does a website cost?', 'It depends on the pages and features you need. A business website or landing page costs much less than a custom web app or online store. Share your requirement and we will send a clear, fixed quote.'],
   ['Will my website be SEO-friendly and fast?', 'Yes. Every site we build is mobile-first, optimised for Core Web Vitals and set up with titles, meta descriptions, schema markup, sitemap and Google Search Console.'],
   ['How long does it take to launch a website?', 'A focused business website or landing page usually goes live within a few weeks once content is ready. Larger websites, online stores and apps are planned in clear milestones.'],
-  ['Do you work with clinics, real estate, restaurants, architects and loan agents?', 'Yes. These are industries we focus on, and each has its own page explaining our approach — see [industries we serve](/industries).'],
+  ['Which industries do you work with?', 'Clinics and dentists, skin and hair clinics, real estate, architects and interior designers, restaurants and cafes, schools and coaching, D2C brands, manufacturers and exporters, hotels, salons, gyms, startups and more. Each industry has its own page explaining our approach — see [industries we serve](/industries).'],
   ['Do you run Facebook, Instagram and Google Ads?', 'Yes. We plan, design and manage lead-generation campaigns on Meta and Google, and optimise for lead quality — not just cheap clicks.'],
+  ['How will I know if it is working?', 'Calls, WhatsApp clicks and form enquiries are tracked from day one, and you get a plain-language monthly report showing work done, rankings, leads and cost per enquiry.'],
+  ['Do you work with businesses outside Delhi NCR?', 'Yes — most of our work is remote. We plan over calls and WhatsApp and share progress online, so a business in Lucknow, Jaipur, Hyderabad or Mumbai gets the same service as one in Noida.'],
 ];
 
-/* Home-page block that tells visitors (and Google) exactly where we work,
-   links to each city page, and answers the common questions. */
+/* Home-page block: we work pan-India, so instead of a big "locations"
+   grid this is a quiet one-line list of cities (still links every city page
+   for visitors and Google), followed by the home FAQ. */
 const AreasServed = () => (
   <section className="areas-section">
     <div className="container">
       <div className="text-center">
-        <span className="section-tag">Areas We Serve</span>
+        <span className="section-tag">Pan-India</span>
         <h2 className="section-title">
-          Working Across India, <span>With Pages for Your City</span>
+          One Team, <span>Clients Across India</span>
         </h2>
         <p className="section-subtitle">
-          We work with businesses all over India online. These are the cities where we work most closely, each with its own local page.
+          Websites, SEO and ads run over calls, video and WhatsApp — so your city is never a barrier. Based in Delhi NCR, working with businesses everywhere.
         </p>
       </div>
 
-      <div className="areas-grid areas-grid--cities">
-        {locations.map((loc) => (
-          <Link key={loc.slug} to={`/locations/${loc.slug}`} className="area-card">
-            <span className="area-pin"><FiMapPin /></span>
-            <h3>{loc.city}</h3>
-            <p>{loc.areas.slice(0, 4).join(' · ')}</p>
-            <span className="area-link">Agency in {loc.city} <FiArrowRight /></span>
-          </Link>
+      <nav className="areas-cities" aria-label="Cities we work with">
+        {citiesIndex.map((c) => (
+          <Link key={c.slug} to={`/locations/${c.slug}`} className="areas-city">{c.city}</Link>
         ))}
-      </div>
-
-      <LinkChips
-        h2="Website development & SEO by city"
-        links={cityServicesIndex.map((c) => ({ to: `/locations/${c.city}/${c.service}`, label: c.label }))}
-      />
+        <Link to="/locations" className="areas-city areas-city--all">All cities →</Link>
+      </nav>
 
       <div className="home-faq">
         <h2 className="section-title text-center">Frequently Asked <span>Questions</span></h2>

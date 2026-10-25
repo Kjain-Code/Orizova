@@ -7,15 +7,15 @@
 const answers = {
   '/': {
     q: 'What is Orizova Digital?',
-    a: 'Orizova Digital is a website development and digital marketing agency based in Delhi NCR. It builds fast, mobile-first websites, online stores and apps, and grows businesses with SEO, local SEO, Google Ads, Meta (Facebook & Instagram) Ads, social media, branding and video editing — for businesses across India, including Delhi NCR, the Chandigarh Tricity and Varanasi.',
+    a: 'Orizova Digital is a website development and digital marketing agency based in Delhi NCR. It builds fast, mobile-first websites, online stores and apps, and grows businesses with SEO, local SEO, AI search optimization, Google Ads, Meta (Facebook & Instagram) Ads, social media, branding and video editing — for businesses across India, from Delhi NCR, Lucknow and Chandigarh to Jaipur, Hyderabad, Pune, Bengaluru and Mumbai.',
   },
   '/services': {
     q: 'What services does Orizova Digital offer?',
-    a: 'Orizova Digital offers three groups of services: build (website development, e-commerce stores, mobile apps), grow (SEO, local SEO, Google Ads, Meta Ads, social media marketing, digital marketing) and create (branding, logo design and video editing). Each service is planned around enquiries and sales, with tracking set up so results can be measured.',
+    a: 'Orizova Digital offers three groups of services: build (website development, e-commerce stores, mobile apps), grow (SEO, local SEO, AI search optimization for ChatGPT and Google AI Overviews, Google Ads, Meta Ads, social media marketing, digital marketing) and create (branding, logo design and video editing). Each service is planned around enquiries and sales, with tracking set up so results can be measured.',
   },
   '/industries': {
     q: 'Which industries does Orizova Digital work with?',
-    a: 'Orizova Digital mainly works with clinics and doctors, architects and interior designers, real-estate builders and brokers, restaurants and cafes, and loan agents, DSAs and financial advisors — plus startups and local service businesses. Each industry gets a website and marketing plan built around how its customers search and decide.',
+    a: 'Orizova Digital works with 19 industries: clinics, dental and skin clinics; real estate, architects and home services; restaurants, hotels and wedding businesses; D2C brands, retailers and manufacturers; schools and coaching; salons and gyms; and finance, professional, immigration and tech companies. Each gets a plan built around how its customers search and decide.',
   },
   '/blog': {
     q: 'What does the Orizova Digital blog cover?',

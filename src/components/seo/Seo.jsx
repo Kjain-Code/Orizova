@@ -3,12 +3,15 @@ import { Helmet } from 'react-helmet-async';
 import CONTACT from '../../data/site/contact';
 import seo from '../../data/site/seo.json';
 import services from '../../data/services/services';
+import { citiesIndex } from '../../data/site/siteIndex';
 
 const SITE_URL = (process.env.REACT_APP_SITE_URL || seo.defaultSiteUrl).replace(/\/$/, '');
 const SITE_NAME = seo.siteName;
 const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 const LOGO = `${SITE_URL}/logo512.png`;
-const AREAS_SERVED = ['India', 'Delhi NCR', 'Delhi', 'Noida', 'Greater Noida', 'Ghaziabad', 'Chandigarh', 'Mohali', 'Panchkula', 'Varanasi'];
+// Pan-India, plus every city we have a local page for (kept in sync with
+// data/site/siteIndex.js so new city pages are picked up automatically).
+const AREAS_SERVED = ['India', 'Delhi NCR', ...citiesIndex.map((c) => c.city)];
 
 const routesByKey = Object.fromEntries(seo.routes.map((r) => [r.key, r]));
 const routesByPath = Object.fromEntries(seo.routes.map((r) => [r.path, r]));
@@ -38,7 +41,7 @@ const businessSchema = {
   priceRange: '₹₹',
   description:
     'Web development and digital marketing agency based in Delhi NCR, serving businesses across India: websites, mobile apps, e-commerce, SEO, Meta & Google Ads, social media, branding and video.',
-  areaServed: AREAS_SERVED.map((name) => ({ '@type': name === 'India' ? 'Country' : 'Place', name })),
+  areaServed: AREAS_SERVED.map((name) => ({ '@type': name === 'India' ? 'Country' : (name === 'Delhi NCR' ? 'Place' : 'City'), name })),
   knowsAbout: [
     'Website Development', 'Web Design', 'Mobile App Development', 'Search Engine Optimization',
     'Local SEO', 'Digital Marketing', 'Performance Marketing', 'Meta Ads', 'Google Ads',

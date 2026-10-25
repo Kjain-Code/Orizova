@@ -5,6 +5,38 @@
 // Section: blog posts (with takeaways).
 
 const answers = {
+  '/blog/get-recommended-by-chatgpt-google-ai': {
+    q: 'How can my business get recommended by ChatGPT and Google AI Overviews?',
+    a: 'There is no special trick. Google says AI Overviews and AI Mode have no extra requirements beyond being indexed and eligible for a snippet, and OpenAI asks sites to allow its OAI-SearchBot crawler for ChatGPT search. Then make each key page answer buyer questions clearly near the top, keep your business details identical everywhere, add matching schema, and build genuine reviews and mentions on trusted sites.',
+    takeaways: [
+      'AI answers are built on crawled, indexed web pages — strong SEO is the foundation.',
+      'Put a quotable, factual answer at the top of every key page.',
+      'Use the same business name, address, phone and description everywhere.',
+      'Reviews and genuine mentions on other sites make you easier to recommend.',
+      'Re-check the same buyer questions in AI tools every month.',
+    ],
+  },
+  '/blog/website-visitors-but-no-enquiries': {
+    q: 'Why does my website get visitors but no enquiries?',
+    a: 'Usually because the traffic is the wrong audience, the page does not say clearly what you do and where, contacting you takes too much effort, there is too little proof to trust you, or the site is slow or broken on phones. Check traffic sources first, then add a clear headline, one page per service, click-to-call and WhatsApp buttons, real reviews and photos, and fix speed.',
+    takeaways: [
+      'Check the traffic is buyers in your area before redesigning anything.',
+      'Say what you do, for whom and where in the first screen.',
+      'Sticky call and WhatsApp buttons on mobile are often the biggest win.',
+      'Real reviews, photos and a clear process build trust.',
+      'Track calls, WhatsApp clicks and forms, and change one thing at a time.',
+    ],
+  },
+  '/blog/how-to-choose-digital-marketing-agency': {
+    q: 'How do I choose a good digital marketing agency in India?',
+    a: 'Ask who will own your domain, ad accounts and website (it should be you), how enquiries and lead quality are tracked, what the monthly report contains, whether the quote is fixed and itemised, whether ad spend is paid directly to Google and Meta, and what the exit terms are. Avoid agencies that guarantee #1 rankings or a fixed number of leads.',
+    takeaways: [
+      'Your domain, ad accounts and Google profile should always be in your name.',
+      'Judge agencies on tracked enquiries and lead quality, not clicks.',
+      'Get a fixed, itemised quote and keep ad budget separate from the fee.',
+      'Guaranteed rankings or lead numbers are a red flag.',
+    ],
+  },
   '/blog/website-cost-in-delhi-ncr': {
     q: 'How much does a website cost in Delhi NCR?',
     a: 'Website cost in Delhi NCR depends mainly on the number of pages, design approach (template or custom), who writes the content, features like booking or payments, the platform, SEO and speed setup, and ongoing costs like domain, hosting and maintenance. A one-page landing site costs least; multi-page sites and online stores cost more. Always compare itemised quotes.',

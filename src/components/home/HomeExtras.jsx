@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiGrid } from 'react-icons/fi';
+import { industryIcons as IND_ICON } from '../../data/site/industryIcons';
 import { industriesIndex as industries, postsIndex as posts } from '../../data/site/siteIndex';
 import BlogCards from '../common/BlogCards';
 import './AreasServed.css';
@@ -15,20 +16,25 @@ export const IndustriesStrip = () => (
         <span className="section-tag">Industries</span>
         <h2 className="section-title">Marketing Built for <span>Your Industry</span></h2>
         <p className="section-subtitle">
-          Clinics, architects, real estate, restaurants and finance professionals each buy differently — so we plan differently.
+          A dental clinic, a D2C brand and a manufacturer each win customers differently — so we plan websites, SEO and ads around your industry.
         </p>
       </div>
       <div className="areas-grid">
-        {industries.map((ind) => (
+        {industries.filter((ind) => ind.featured).slice(0, 7).map((ind) => (
           <Link key={ind.slug} to={`/industries/${ind.slug}`} className="area-card">
+            {IND_ICON[ind.slug] && (() => {
+              const [Icon, c] = IND_ICON[ind.slug];
+              return <span className="ind-ico" style={{ '--c': c }} aria-hidden="true"><Icon /></span>;
+            })()}
             <h3>{ind.name}</h3>
             <p>{ind.short}</p>
             <span className="area-link">How we help <FiArrowRight aria-hidden="true" /></span>
           </Link>
         ))}
-        <Link to="/industries" className="area-card">
-          <h3>All industries</h3>
-          <p>Coaching, retail, startups, manufacturers and more — see how we approach your business.</p>
+        <Link to="/industries" className="area-card area-card--all">
+          <span className="ind-ico" style={{ '--c': '#4C0E82' }} aria-hidden="true"><FiGrid /></span>
+          <h3>All {industries.length} industries</h3>
+          <p>Hotels, salons, gyms, home services, startups, professional firms and more — see how we approach your business.</p>
           <span className="area-link">View all <FiArrowRight aria-hidden="true" /></span>
         </Link>
       </div>

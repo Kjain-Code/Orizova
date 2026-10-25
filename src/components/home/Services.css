@@ -1,12 +1,12 @@
 /* ===============================
-   SERVICES SECTION
+   SERVICES SECTION (home)
 ================================ */
 
-.services-section{
-    position:relative;
-    background: var(--cream);
-    padding:120px 0;
-    overflow:hidden;
+.services-section {
+  position: relative;
+  background: var(--cream);
+  padding: 110px 0;
+  overflow: hidden;
 }
 
 .title-squiggle {
@@ -17,282 +17,151 @@
   height: 12px;
 }
 
-/* ===============================
-   GRID
-================================ */
-
-.services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-    perspective:1200px;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+  margin-top: 8px;
 }
 
-/* ===============================
-   CARD
-================================ */
+.svc-cell { display: flex; }
 
-.service-card{
-    position:relative;
-    overflow:hidden;
-    padding:35px;
-    border-radius:24px;
-    background: var(--paper);
-    border:1.5px solid var(--lavender);
-
-    transition:
-        transform .55s cubic-bezier(.23,1,.32,1),
-        box-shadow .55s,
-        border-color .55s;
-
-    transform-style:preserve-3d;
+/* Card: centred, clean, one big illustration */
+.svc-card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 34px 30px 30px;
+  background: var(--paper);
+  border: 1px solid #ECE4F7;
+  border-radius: 22px;
+  color: inherit;
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s ease, border-color .35s ease;
 }
 
-/* Glow */
-
-.service-glow{
-    position:absolute;
-    inset:0;
-    background:
-    radial-gradient(circle at top right,
-    rgba(139,92,246,.16),
-    transparent 65%);
-    opacity:0;
-    transition:.5s;
+.svc-card:hover,
+.svc-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: color-mix(in srgb, var(--c, #4C0E82) 35%, #ECE4F7);
+  box-shadow: 0 24px 50px rgba(76, 14, 130, .10), 0 6px 16px rgba(76, 14, 130, .06);
 }
 
-.service-card:hover .service-glow{
-    opacity:1;
+.svc-art-wrap {
+  display: block;
+  width: 160px;
+  height: 120px;
+  margin: 6px 0 20px;
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* Shine */
+.svc-art { width: 100%; height: 100%; display: block; overflow: visible; }
 
-.service-card::after{
-content:"";
-position:absolute;
-top:-180%;
-left:-50%;
-width:200%;
-height:350%;
-background:linear-gradient(
-120deg,
-transparent,
-rgba(255,255,255,.6),
-transparent
-);
-transform:rotate(25deg);
-transition:.9s;
+.svc-card:hover .svc-art-wrap { transform: translateY(-4px) scale(1.05); }
+
+.svc-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 10px;
+  transition: color .3s ease;
 }
 
-.service-card:hover::after{
-top:180%;
+.svc-card:hover .svc-title { color: var(--primary); }
+
+.svc-desc {
+  font-size: var(--fs-card);
+  line-height: 1.7;
+  color: var(--text-light);
+  margin: 0 0 20px;
+  max-width: 300px;
 }
 
-/* Border */
-
-.service-card::before{
-content:"";
-position:absolute;
-inset:0;
-padding:1.5px;
-border-radius:24px;
-background:linear-gradient(
-135deg,
-rgba(76,14,130,.7),
-rgba(245,166,35,.5),
-rgba(139,92,246,.5)
-);
--webkit-mask:
-linear-gradient(#fff 0 0) content-box,
-linear-gradient(#fff 0 0);
--webkit-mask-composite:xor;
-mask-composite:exclude;
-opacity:0;
-transition:.45s;
+.svc-link {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--primary);
+  background: var(--lilac);
+  transition: background .3s ease, color .3s ease, gap .3s ease;
 }
 
-.service-card:hover::before{
-opacity:1;
+.svc-card:hover .svc-link { background: var(--primary); color: #fff; gap: 12px; }
+
+/* Last tile: consultation CTA instead of an empty grid slot */
+.svc-card--cta {
+  justify-content: center;
+  background: var(--grad-primary);
+  border-color: transparent;
+  color: #fff;
+}
+.svc-card--cta .svc-title,
+.svc-card--cta:hover .svc-title { color: #fff; }
+.svc-card--cta .svc-desc { color: rgba(255, 255, 255, .82); }
+.svc-cta-kicker {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.svc-card--cta .svc-link { background: #fff; color: var(--primary); }
+.svc-card--cta:hover .svc-link { background: var(--gold); color: var(--ink); }
+
+.svc-all { margin-top: 44px; }
+
+/* When the services fill the grid exactly, the CTA becomes a full-width band */
+.svc-cell--wide { grid-column: 1 / -1; }
+@media (min-width: 641px) {
+  .svc-cell--wide .svc-card--cta {
+    display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto auto;
+    column-gap: 40px; align-items: center; text-align: left; padding: 34px 44px;
+  }
+  .svc-cell--wide .svc-cta-kicker,
+  .svc-cell--wide .svc-title,
+  .svc-cell--wide .svc-desc { grid-column: 1; }
+  .svc-cell--wide .svc-desc { max-width: 640px; margin-bottom: 0; }
+  .svc-cell--wide .svc-link { grid-column: 2; grid-row: 1 / span 3; margin: 0; }
 }
 
-.service-card:hover{
-transform:
-translateY(-14px)
-rotateX(4deg)
-rotateY(-4deg);
-box-shadow:
-0 35px 70px rgba(76,14,130,.14),
-0 15px 40px rgba(139,92,247,.18);
+@media (prefers-reduced-motion: reduce) {
+  .svc-card, .svc-art-wrap { transition: none; }
+  .svc-card:hover, .svc-card:hover .svc-art-wrap { transform: none; }
 }
 
-/* ===============================
-   ICON
-================================ */
-
-.service-icon-wrap{
-width:70px;
-height:70px;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:22px;
-transition:.45s;
+@media (max-width: 992px) {
+  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-.service-card:hover .service-icon-wrap{
-transform:
-scale(1.15)
-rotate(10deg);
-}
-
-/* ===============================
-   CONTENT
-================================ */
-
-.service-content{
-position:relative;
-z-index:2;
-}
-
-.service-title{
-font-family:'Bricolage Grotesque', sans-serif;
-font-size:22px;
-font-weight:700;
-margin-bottom:14px;
-color:var(--ink);
-transition:.35s;
-}
-
-.service-card:hover .service-title{
-color:var(--primary);
-}
-
-.service-desc{
-font-size:14px;
-line-height:1.8;
-color:var(--text-light);
-margin-bottom:24px;
-}
-
-/* ===============================
-   BUTTON
-================================ */
-
-.service-btn{
-margin-top:12px;
-width:100%;
-padding:14px;
-border:1.5px solid var(--lavender);
-border-radius:14px;
-background:var(--lilac);
-color:var(--primary);
-font-weight:600;
-display:flex;
-align-items:center;
-justify-content:center;
-gap:8px;
-cursor:pointer;
-transition:background .35s, color .35s, border-color .35s;
-}
-
-/* Always visible: the old hover-only button left an empty gap in every card
-   and could never be seen on phones (no hover on touch screens). */
-.service-card:hover .service-btn{
-background:var(--ink);
-border-color:var(--ink);
-color:#fff;
-}
-
-.service-btn:hover{
-background:var(--primary) !important;
-border-color:var(--primary) !important;
-color:#fff;
-}
-
-/* ===============================
-   BACKGROUND GLOW
-================================ */
-
-.service-hover-bg{
-position:absolute;
-width:220px;
-height:220px;
-right:-120px;
-top:-120px;
-border-radius:50%;
-filter:blur(90px);
-opacity:.10;
-transition:.5s;
-}
-
-.service-card:hover .service-hover-bg{
-transform:scale(1.4);
-opacity:.22;
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-
-@media(max-width:992px){
-
-.services-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-}
-
-@media(max-width:768px){
-
-.services-grid{
-grid-template-columns:1fr;
-}
-
-.service-card{
-max-width:500px;
-margin:auto;
-}
-
-}
-
-@media(max-width:480px){
-
-/* Compact horizontal cards on phones: icon beside the text, so 13 services
-   don't turn into a very long scroll. */
-.service-card{
-padding:20px 20px 18px;
-display:grid;
-grid-template-columns:48px 1fr;
-column-gap:16px;
-align-items:start;
-}
-
-.service-icon-wrap{
-width:48px;
-height:48px;
-border-radius:14px;
-margin-bottom:0;
-}
-
-.service-icon-wrap svg{
-width:22px;
-height:22px;
-}
-
-.service-title{
-font-size:18px;
-margin-bottom:6px;
-}
-
-.service-desc{
-margin-bottom:10px;
-line-height:1.65;
-}
-
-.service-btn{
-margin-top:4px;
-padding:10px;
-}
-
+@media (max-width: 640px) {
+  .services-section { padding: 80px 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 16px; }
+  /* Phones: illustration beside the text keeps 12 tiles from becoming a very long scroll */
+  .svc-card {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto auto;
+    column-gap: 16px;
+    align-items: start;
+    text-align: left;
+    padding: 20px 18px;
+  }
+  .svc-art-wrap { grid-row: 1 / span 3; width: 96px; height: 72px; margin: 2px 0 0; }
+  .svc-title { font-size: 18px; margin-bottom: 4px; }
+  .svc-desc { font-size: 14px; margin-bottom: 8px; max-width: none; }
+  .svc-link { margin-top: 0; padding: 0; min-height: 32px; background: none; justify-self: start; }
+  .svc-card:hover .svc-link { background: none; color: var(--primary); }
+  .svc-card--cta { display: flex; text-align: center; padding: 28px 22px; }
+  .svc-card--cta .svc-link { padding: 0 18px; background: #fff; }
 }

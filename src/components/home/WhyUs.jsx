@@ -44,8 +44,8 @@ const WhyUs = () => {
               viewport={{ once: true }}
               whileHover={{ y: -6, boxShadow: '0 12px 40px rgba(76,14,130,0.15)' }}
             >
-              <div className="whyus-icon" style={{ background: reason.color + '18' }}>
-                <reason.icon size={26} color={reason.color} />
+              <div className="whyus-icon" style={{ background: `linear-gradient(135deg, ${reason.color}, ${reason.color}CC)`, boxShadow: `0 10px 22px ${reason.color}40` }}>
+                <reason.icon size={24} color="#fff" />
               </div>
               <h3>{reason.title}</h3>
               <p>{reason.desc}</p>

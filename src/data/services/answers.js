@@ -37,6 +37,10 @@ const answers = {
     q: 'How does Orizova Digital do SEO?',
     a: 'Orizova Digital’s SEO combines technical fixes, page-by-page optimisation, useful content and local signals, for businesses across India, aimed at the searches that bring enquiries — not vanity keywords. Every project starts with an audit and a keyword map, followed by monthly work you can see. Results usually build over months, and like any honest agency it does not guarantee first-page rankings.',
   },
+  '/services/ai-search-optimization': {
+    q: 'What is AI search optimization (AEO / GEO)?',
+    a: 'AI search optimization means making your business easy for AI answers — Google AI Overviews and AI Mode, ChatGPT search, Gemini and Perplexity — to find, understand and mention. Orizova Digital does it with answer-first page content, consistent business details everywhere, correct structured data, reviews and genuine mentions on trusted sites. Google says there is no special trick: strong, crawlable, helpful pages come first, so the work builds on good SEO.',
+  },
   '/services/local-seo': {
     q: 'What is local SEO and how does Orizova Digital help?',
     a: 'Local SEO helps a business appear in Google Maps and the local pack for nearby searches. Google ranks these results on relevance, distance and prominence. Orizova Digital optimises your Google Business Profile, builds a steady flow of genuine reviews, fixes citations and adds location pages, for businesses across India. Profile fixes can show results within weeks.',

@@ -43,7 +43,7 @@
 
 /* ---- headline ---- */
 .pb-title {
-  font-size: clamp(2.2rem, 4.6vw, 3.9rem);
+  font-size: var(--fs-display);
   line-height: 1.06;
   letter-spacing: -0.025em;
   color: var(--ink);

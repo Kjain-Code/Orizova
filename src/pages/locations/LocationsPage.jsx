@@ -8,12 +8,12 @@ import PageTransition from '../../components/layout/PageTransition';
 import CtaBand from '../../components/common/CtaBand';
 import Seo, { SITE_URL } from '../../components/seo/Seo';
 import { CtaButtons, LinkChips } from '../../components/content/ContentBlocks';
-import locations from '../../data/locations/locations';
-import { cityServicesIndex } from '../../data/site/siteIndex';
+import { citiesIndex, cityZones, cityServicesIndex } from '../../data/site/siteIndex';
 
-/* Hub for every local (city) page. Main service pages target all of India;
-   these pages target "<service> in <city>" searches. Keeping one hub that
-   links to every city page gives a clean hub → city → city×service structure. */
+/* Pan-India hub. Not in the main navigation (we work everywhere, so a
+   "Locations" menu item looked odd) — reached from the footer strip, the home
+   page and in-page links. It links every city page and every city × service
+   page, giving Google a clean hub → city → city×service structure. */
 const LocationsPage = () => (
   <PageTransition>
     <Seo
@@ -28,53 +28,79 @@ const LocationsPage = () => (
         about: { '@id': `${SITE_URL}/#organization` },
         mainEntity: {
           '@type': 'ItemList',
-          itemListElement: locations.map((l, idx) => ({
+          itemListElement: citiesIndex.map((l, idx) => ({
             '@type': 'ListItem', position: idx + 1, name: `Digital marketing agency in ${l.city}`, url: `${SITE_URL}/locations/${l.slug}`,
           })),
         },
       }]}
     />
     <PageBanner crumbs={[{ name: 'Locations', path: '/locations' }]}
-      title="Cities We Serve —"
-      highlight="Local Websites, SEO & Ads"
-      subtitle="We work with businesses across India online. These are the cities where we work most closely — each with local areas, industries and questions answered."
-      chips={locations.map((l) => l.city)}
+      title="Working Across India —"
+      highlight="Websites, SEO & Ads in Your City"
+      subtitle="Our team is based in Delhi NCR and works with businesses all over India over calls, video and WhatsApp. These city pages cover the local markets, areas and industries we know well."
+      chips={['Delhi NCR', 'Lucknow', 'Chandigarh', 'Jaipur', 'Bengaluru']}
     />
     <section className="loc-section content-section">
       <div className="container">
-        <QuickAnswer answers={locationAnswers} path="/locations" />
-
         <div className="content-prose">
           <h2 className="section-title content-h2">Online for all of India, local where it matters</h2>
           <p className="loc-text">
-            Most of our projects — websites, SEO, Google and Meta ads — run over calls, video meetings and WhatsApp, so we can work with a business in any Indian city. See our <Link to="/services" className="content-link">services</Link> for what we do everywhere.
+            Websites, SEO, Google Ads and Meta Ads don’t need us to be in the same room — so we work with businesses in any Indian city. See our <Link to="/services" className="content-link">services</Link> for what we do everywhere, and <Link to="/industries" className="content-link">industries</Link> for how we adapt it to your kind of business.
           </p>
           <p className="loc-text">
-            Local search is different: someone looking for a clinic, a coaching centre or a builder searches with an area name. For the cities below we have pages that cover the localities, industries and questions specific to that market.
+            Local search is different: someone looking for a clinic, a coaching centre or a builder searches with an area name, and every city has its own neighbourhoods, industries and habits. That is what the city pages below cover.
           </p>
         </div>
 
-        <div className="loc-block">
-          <div className="loc-services">
-            {locations.map((l) => (
-              <Link key={l.slug} to={`/locations/${l.slug}`} className="loc-service">
-                <h3><FiMapPin aria-hidden="true" style={{ verticalAlign: '-2px', marginRight: 6 }} />Digital agency in {l.city}</h3>
-                <p>{l.areas.slice(0, 5).join(' · ')}</p>
-                <span className="loc-service-link">See {l.city} page <FiArrowRight aria-hidden="true" /></span>
-              </Link>
-            ))}
-          </div>
-        </div>
+        {cityZones.map((zone) => {
+          const list = citiesIndex.filter((c) => c.zone === zone);
+          if (!list.length) return null;
+          return (
+            <div className="loc-block" key={zone}>
+              <h2 className="cb-chips-title">{zone}</h2>
+              <div className="loc-services">
+                {list.map((c) => {
+                  const pages = cityServicesIndex.filter((cs) => cs.city === c.slug);
+                  return (
+                    <div key={c.slug} className="loc-service">
+                      <h3>
+                        <Link to={`/locations/${c.slug}`} className="loc-city-link">
+                          <FiMapPin aria-hidden="true" style={{ verticalAlign: '-2px', marginRight: 6 }} />Digital agency in {c.city}
+                        </Link>
+                      </h3>
+                      <p>{c.region}</p>
+                      <ul className="loc-city-pages">
+                        {pages.map((cs) => (
+                          <li key={cs.service}><Link to={`/locations/${cs.city}/${cs.service}`}>{cs.label}</Link></li>
+                        ))}
+                      </ul>
+                      <Link to={`/locations/${c.slug}`} className="loc-service-link">See {c.city} page <FiArrowRight aria-hidden="true" /></Link>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
+
+        <QuickAnswer answers={locationAnswers} path="/locations" />
 
         <LinkChips
-          h2="Website development & SEO by city"
-          links={cityServicesIndex.map((c) => ({ to: `/locations/${c.city}/${c.service}`, label: c.label }))}
+          h2="Services we offer everywhere"
+          links={[
+            { to: '/services/website-development', label: 'Website development' },
+            { to: '/services/seo', label: 'SEO services' },
+            { to: '/services/local-seo', label: 'Local SEO & Google Maps' },
+            { to: '/services/google-ads', label: 'Google Ads' },
+            { to: '/services/meta-ads', label: 'Meta Ads' },
+            { to: '/services/ecommerce-solutions', label: 'E-commerce stores' },
+          ]}
         />
 
         <div className="loc-block content-prose">
           <h2 className="section-title content-h2">Your city isn&apos;t listed?</h2>
           <p className="loc-text">
-            We still work with you. Tell us your city and business, and we&apos;ll suggest a plan — including local pages and Google Business Profile work for the areas you serve.
+            We still work with you. Tell us your city and business, and we&apos;ll suggest a plan — including Google Business Profile and local pages for the areas you actually serve.
           </p>
           <CtaButtons />
         </div>

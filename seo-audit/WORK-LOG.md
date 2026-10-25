@@ -87,3 +87,34 @@ See seo-audit/AEO-GEO.md for the full explanation and off-site checklist.
 **Content & design fixes**: honest "Why us" points, home section headings India-wide, service cards button always visible (was hover-only, invisible on phones), compact service cards on phones, floating buttons stacked on the right on phones (left button covered text), service counts read from data, ≥44px tap targets on small links.
 
 **Tested**: build ✅ (58 pages + 404), ESLint 0 ✅, test ✅, axe WCAG 2 A/AA: 0 violations on all pages ✅, 0 broken internal links ✅, 1 H1 per page ✅, no horizontal scroll at 390px ✅, no JS errors ✅. Lighthouse mobile (with compression like Vercel): Performance ~91, Accessibility 100, Best Practices 100, SEO 100; CLS 0.
+
+## 25 Oct 2026 — Pan-India city pages, 19 industries, quick-answer redesign
+**Navigation & layout**
+- "Locations" removed from the main menu (we work pan-India). City pages stay for SEO, linked from a quiet "Serving businesses across India" strip in the footer, a one-line city list on the home page, the /locations hub (now grouped by zone) and in-page links.
+- "In India" removed from visible H1s on the service pages, /services and /about (titles and meta descriptions still mention India for ranking).
+- Quick answer box redesigned as a quiet "In short" row and moved below the page intro on every template (blog posts keep a compact short answer at the top).
+- Instagram floating button moved to the right, above WhatsApp (it covered text on the left); hero sparkle moved off the "Leads, Not Likes" card.
+
+**New pages (65 new URLs → 123 total)**
+- 17 new city/locality hubs, each with a website-development and an SEO page (51 pages): Lucknow, Indirapuram, Gurugram, Faridabad, Greater Noida, Meerut, Mohali, Panchkula, Jaipur, Agra, Kanpur, Dehradun, Ludhiana, Hyderabad, Pune, Bengaluru, Mumbai. Each is written for its own market (localities, industries, landmarks) — max 6-word-shingle overlap between any two city pages ≈ 23%, all from shared template sections.
+- 14 new industry pages: dental clinics, skin/hair/aesthetic clinics, home services, hotels & travel, weddings & events, e-commerce & D2C, retail & showrooms, manufacturers & exporters, education, salons, fitness & wellness, professional services, immigration consultants, startups & SaaS. /industries is grouped into 7 sectors.
+
+**Linking**
+- Service pages link to their relevant industries ("… for your industry") and to every city page for that service; city hubs link to nearby cities in the same zone, then the rest of India; service cards on city hubs point to the city-specific page where one exists.
+- Blog guides now linked from the new city and industry pages (guideIndex).
+- First trusted outbound links added (Google Search Central, web.dev Core Web Vitals, Google Business Profile ranking & guidelines, Google Ads healthcare policy, Meta Advertising Standards).
+- Organization schema areaServed and facts.js / llms.txt now list all cities and 19 industries.
+
+**Tooling**: `npm run sync-pages` (scripts/sync-pages.js) keeps seo.json and siteIndex.js in sync with the city/industry files.
+
+**Tested**: build ✅ (123 pages + 404), 1 H1 per page ✅, 0 broken internal links ✅, all JSON-LD valid ✅, no duplicate titles/descriptions ✅, all titles ≤ 60 chars ✅, no horizontal scroll at 390px ✅.
+
+## 2026-10-25 — Competitor gap work (digitalnotebook, techmagnate, buffetism, matebiz, invoidea)
+
+- New service **AI Search Optimization (AEO / GEO)** at /services/ai-search-optimization — answer-first content citing Google's "AI features and your website" and OpenAI's crawler docs; added to nav, footer, schema, facts, FAQs, llms.txt and the home/services grids.
+- Home: outcome-led hero ("Get Found on Google & AI Search. Turn Visitors into Enquiries"), WhatsApp CTA, honest 12+ / 19+ stats; new "Problems We Fix" section (pain → fix → service); "Our Toolkit" section; reviews section that appears automatically once real reviews are added (src/data/site/reviews.js); home FAQ expanded (AI search, ownership, reporting, remote work).
+- /about redesigned: story split with illustration, values, services, process, industries and cities, toolkit.
+- /faq: new "AI search" group.
+- 3 new blog posts: get-recommended-by-chatgpt-google-ai, website-visitors-but-no-enquiries, how-to-choose-digital-marketing-agency — each linked from relevant service, industry and city pages via guideIndex.
+
+**Tested**: build ✅ (127 pages + 404), 0 broken internal links ✅, all JSON-LD valid ✅, no duplicate titles ✅, 1 H1 per page and no horizontal scroll at 390px ✅.

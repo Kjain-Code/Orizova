@@ -8,20 +8,22 @@ import { ArrowDoodle, StarDoodle, SparkleDoodle, RocketCharacter } from '../comm
 import './Hero.css';
 import logo from '../../assets/logo.webp';
 import services from '../../data/services/services';
+import { industriesIndex } from '../../data/site/siteIndex';
+import { waLink } from '../../data/site/contact';
 
 // Only verifiable facts here. The previous numbers (150+ projects, 98%
 // satisfaction, 50+ clients, 5+ years, 150% revenue, 100K+ leads, 5.0 rating)
 // could not be verified and were removed. {{TODO: add real, verifiable stats}}
 const stats = [
-  { value: services.length, suffix: '', label: 'Services Under One Roof' },
-  { text: 'Pan-India', label: 'Clients Across India' },
+  { value: services.length, suffix: '+', label: 'Services Under One Roof' },
+  { value: industriesIndex.length, suffix: '+', label: 'Industries We Plan For' },
   { text: 'Free', label: 'First Consultation' },
 ];
 
 const floatingCards = [
   { icon: '📈', title: 'Leads, Not Likes', value: 'Meta & Google', sub: 'Ads tracked to enquiries' },
   { icon: '📍', title: 'Local SEO', value: 'Google Maps', sub: 'Show up near you' },
-  { icon: '🌏', title: 'Work With Us', value: 'Anywhere', sub: 'Remote-first, pan-India' },
+  { icon: '✨', title: 'AI Search', value: 'ChatGPT & Gemini', sub: 'Get named in AI answers' },
 ];
 
 const marqueeItems = ['Web Development', 'App Development', 'SEO', 'Branding', 'Digital Marketing', 'E-Commerce'];
@@ -47,13 +49,13 @@ const Hero = () => {
           </h1>
 
           <p className="hero-title">
-            From Strategy to <span className="highlight-gold gradient-text">Scale</span> —<br />
-            We Build Growth <span className="highlight-purple accent-serif">That Lasts</span>
+            Websites, SEO, Ads &amp; <span className="highlight-gold gradient-text">Content</span> —<br />
+            One Team for <span className="highlight-purple accent-serif">More Enquiries</span>
             <StarDoodle className="hero-title-star" />
           </p>
 
           <p className="hero-desc">
-            Orizova Digital is a web development company and digital marketing agency based in Delhi NCR, working with businesses across India. We build fast, SEO-ready websites and apps, and run Google &amp; Meta Ads that turn visitors into enquiries.
+            Orizova Digital is a web development company and digital marketing agency based in Delhi NCR, working with businesses across India. We build fast, SEO-ready websites, get you ranking on Google, Maps and AI answers like ChatGPT, and run Google &amp; Meta Ads tracked to real calls and WhatsApp enquiries.
           </p>
 
           <div className="hero-btns">
@@ -63,9 +65,12 @@ const Hero = () => {
               </Link>
               <ArrowDoodle className="hero-cta-doodle" />
             </div>
-            <Link to="/services" className="btn-outline">
-              Our Services
-            </Link>
+            <a
+              href={waLink('Hi Orizova Digital, I saw your website. I want more enquiries for my business — can we talk?')}
+              className="btn-outline" target="_blank" rel="noopener noreferrer"
+            >
+              WhatsApp Us
+            </a>
           </div>
 
 

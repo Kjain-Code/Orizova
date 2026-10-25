@@ -15,6 +15,8 @@ import './components/sections/Contact.css';
 import './components/home/AreasServed.css';
 import './components/sections/CreativeRingGallery.css';
 import './components/sections/CreativeWorkSections.css';
+import './components/sections/ServicesDetail.css';
+import './components/common/GoalPicker.css';
 
 // The static SEO tags in each pre-rendered HTML file (marked data-rh) exist for
 // crawlers and link previews. Once React is running, react-helmet-async renders

@@ -1,6 +1,7 @@
 // Industry pages: /industries/<slug>. Original copy, no invented results.
 // name/short come from data/siteIndex.js (shared with nav/footer/home).
-import { industryMeta } from '../site/siteIndex';
+import { industryMeta, industriesIndex } from '../site/siteIndex';
+import moreIndustries from './more';
 
 const industries = [
   /* ------------------------------------------------------------------ */
@@ -69,6 +70,14 @@ const industries = [
           { to: '/blog/google-business-profile-guide', label: 'Google Business Profile guide' },
           { to: '/locations/ghaziabad/seo', label: 'SEO in Ghaziabad' },
           { to: '/locations/delhi/seo', label: 'SEO in Delhi' },
+        ],
+      },
+      {
+        type: 'prose',
+        tag: 'Official guidance',
+        h2: 'Platform rules for healthcare ads',
+        paras: [
+          'Beyond medical-council rules, ad platforms have their own healthcare policies: Google’s [healthcare and medicines policy](https://support.google.com/adspolicy/answer/176031) and Meta’s [Advertising Standards](https://transparency.meta.com/policies/ad-standards/). We plan campaigns within both, so your ads get approved and your accounts stay safe.',
         ],
       },
       {
@@ -374,5 +383,12 @@ const industries = [
     ],
   },
 ];
+
+// Newer industries live in ./more (one file per industry).
+moreIndustries.forEach(({ answer, meta, ...ind }) => industries.push({ ...industryMeta[ind.slug], ...ind }));
+
+// Keep the same order as industriesIndex (grouped), so hubs and nav match.
+const order = industriesIndex.map((i) => i.slug);
+industries.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
 
 export default industries;

@@ -266,7 +266,7 @@ const llmsTxt = ({ answers, facts, contact }, routes) => {
     `- Based in: ${facts.basedIn}`,
     facts.founded && `- Founded: ${facts.founded}`,
     facts.founders.length && `- Founder(s): ${facts.founders.join(', ')}`,
-    `- Serves: ${facts.serves.join(', ')}`,
+    `- Serves: ${facts.serves.join('; ')}`,
     `- Services: ${facts.services.join('; ')}`,
     `- Industries: ${facts.industries.join('; ')}`,
     `- Languages: ${facts.languages.join(', ')}`,

@@ -6,9 +6,7 @@ import CONTACT, { whatsappLink } from '../../data/site/contact';
 import './Footer.css';
 import logo from '../../assets/logo.webp';
 import services from '../../data/services/services';
-import locations from '../../data/locations/locations';
-
-import { industriesIndex as industries, cityServicesIndex as cityServices } from '../../data/site/siteIndex';
+import { industriesIndex as industries, citiesIndex } from '../../data/site/siteIndex';
 
 const quickLinks = [
   { name: 'About', to: '/about' },
@@ -27,7 +25,7 @@ const Footer = () => {
           <Link to="/" className="footer-logo">
             <img src={logo} alt="Orizova Digital – web development & digital marketing agency" width="65" height="48" loading="lazy" decoding="async" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
           </Link>
-          <p>Website development, SEO and digital marketing agency for businesses across India — based in Delhi NCR, with local pages for Ghaziabad, Noida, Delhi, Chandigarh and Varanasi.</p>
+          <p>Website development, SEO and digital marketing agency for businesses across India — based in Delhi NCR, working with clients in every major city.</p>
           <div className="footer-contacts">
             <a href={`mailto:${CONTACT.email}`}><FiMail size={14}/> {CONTACT.email}</a>
             <a href={`tel:${CONTACT.phoneTel}`}><FiPhone size={14}/> {CONTACT.phoneDisplay}</a>
@@ -66,28 +64,28 @@ const Footer = () => {
         <div className="footer-links">
           <h2 className="footer-heading">Industries</h2>
           <ul>
-            {industries.map((ind) => (
+            {industries.filter((ind) => ind.featured).map((ind) => (
               <li key={ind.slug}><Link to={`/industries/${ind.slug}`}>{ind.name}</Link></li>
             ))}
+            <li><Link to="/industries">All industries</Link></li>
           </ul>
         </div>
+      </div>
 
-        <div className="footer-links">
-          <h2 className="footer-heading">Local Pages</h2>
-          <ul>
-            <li><Link to="/locations">All locations</Link></li>
-            {locations.map((loc) => (
-              <li key={loc.slug}>
-                <Link to={`/locations/${loc.slug}`}>Digital agency in {loc.city}</Link>
-              </li>
-            ))}
-            {cityServices.map((c) => (
-              <li key={`${c.city}-${c.service}`}>
-                <Link to={`/locations/${c.city}/${c.service}`}>{c.label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {/* Pan-India strip: one quiet line of city links instead of a big
+          "Locations" section. Keeps every city page linked site-wide. */}
+      <div className="container footer-areas">
+        <h2 className="footer-areas-title">Serving businesses across India</h2>
+        <p className="footer-areas-list">
+          {citiesIndex.map((c, i) => (
+            <React.Fragment key={c.slug}>
+              {i > 0 && <span aria-hidden="true"> · </span>}
+              <Link to={`/locations/${c.slug}`}>{c.city}</Link>
+            </React.Fragment>
+          ))}
+          <span aria-hidden="true"> · </span>
+          <Link to="/locations">All cities</Link>
+        </p>
       </div>
 
       <div className="footer-bottom">

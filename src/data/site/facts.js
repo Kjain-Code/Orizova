@@ -17,17 +17,22 @@ const facts = {
   founded: null, // {{TODO: founding year, e.g. '2024'}}
   founders: [], // {{TODO: founder name(s), e.g. ['Name Surname']}}
   serves: [
-    'Ghaziabad', 'Noida', 'Greater Noida', 'Delhi', 'Chandigarh', 'Mohali', 'Panchkula', 'Zirakpur', 'Varanasi',
-    'clients across India (remote)',
+    'Businesses across India (remote, over calls, video and WhatsApp)',
+    'Delhi NCR: Delhi, Noida, Greater Noida, Ghaziabad, Indirapuram, Gurugram, Faridabad',
+    'Uttar Pradesh: Lucknow, Meerut, Agra, Kanpur, Varanasi',
+    'Chandigarh Tricity & Punjab: Chandigarh, Mohali, Panchkula, Ludhiana',
+    'Jaipur, Dehradun, Hyderabad, Pune, Bengaluru, Mumbai',
   ],
   services: [
     'Website development', 'E-commerce stores (Shopify, WooCommerce, custom)', 'Mobile app development (Android, iOS, React Native, Flutter)',
-    'SEO', 'Local SEO & Google Business Profile', 'Google Ads', 'Meta (Facebook & Instagram) Ads', 'Social media marketing',
+    'SEO', 'Local SEO & Google Business Profile', 'AI search optimization (AEO / GEO)', 'Google Ads', 'Meta (Facebook & Instagram) Ads', 'Social media marketing',
     'Branding & logo design', 'Video editing (reels, ads, brand films)',
   ],
   industries: [
-    'Clinics & doctors', 'Architects & interior designers', 'Real estate builders & brokers',
-    'Restaurants & cafes', 'Loan agents, DSAs & financial advisors', 'Startups & local service businesses',
+    'Clinics & doctors', 'Dental clinics', 'Skin, hair & aesthetic clinics', 'Real estate', 'Architects & interior designers',
+    'Home services', 'Restaurants & cafes', 'Hotels, homestays & travel', 'Wedding & event businesses', 'E-commerce & D2C brands',
+    'Retailers & showrooms', 'Manufacturers & exporters', 'Schools, colleges & coaching', 'Salons & beauty', 'Gyms & wellness',
+    'Loan agents & financial advisors', 'CAs, consultants & professional firms', 'Immigration & study-abroad consultants', 'Startups, SaaS & IT companies',
   ],
   languages: ['English', 'Hindi'],
   workingPrinciples: [
@@ -49,7 +54,7 @@ export const factRows = [
   ['Based in', facts.basedIn],
   ['Founded', facts.founded],
   ['Founder(s)', facts.founders.join(', ')],
-  ['Cities we serve', facts.serves.join(', ')],
+  ['Where we work', facts.serves.join('; ')],
   ['Services', facts.services.join(', ')],
   ['Industries', facts.industries.join(', ')],
   ['Languages', facts.languages.join(', ')],

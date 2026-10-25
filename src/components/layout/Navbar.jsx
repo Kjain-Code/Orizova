@@ -45,7 +45,6 @@ const Navbar = () => {
     { name: 'Home', to: '/' },
     { name: 'Services', to: '/services' },
     { name: 'Industries', to: '/industries' },
-    { name: 'Locations', to: '/locations' },
     { name: 'Portfolio', to: '/portfolio' },
     { name: 'Creative Work', to: '/creative-work' },
     { name: 'Blog', to: '/blog' },
@@ -105,9 +104,10 @@ const Navbar = () => {
                   <div className="mega-side">
                     <p className="mega-head mega-head--light">By industry</p>
                     <ul className="mega-ind">
-                      {industriesIndex.map((i) => (
+                      {industriesIndex.filter((i) => i.featured).map((i) => (
                         <li key={i.slug}><Link to={`/industries/${i.slug}`} onClick={() => setMegaOpen(false)}>{i.name} <FiArrowRight aria-hidden="true" /></Link></li>
                       ))}
+                      <li><Link to="/industries" onClick={() => setMegaOpen(false)}>All {industriesIndex.length} industries <FiArrowRight aria-hidden="true" /></Link></li>
                     </ul>
                     <div className="mega-cta">
                       <strong>Not sure where to start?</strong>

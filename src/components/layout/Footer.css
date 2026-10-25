@@ -7,7 +7,7 @@
 
 .footer-inner {
   display: grid;
-  grid-template-columns: 1.6fr 1fr 1.1fr 1.1fr 1.2fr;
+  grid-template-columns: 1.6fr 1fr 1.2fr 1.3fr;
   gap: 48px;
   padding-bottom: 60px;
 }
@@ -197,3 +197,10 @@
   .footer-contacts a { display: inline-flex; align-items: center; min-height: 32px; }
   .footer-legal a { display: inline-flex; align-items: center; min-height: 32px; padding: 0 4px; }
 }
+
+/* Pan-India city strip */
+.footer-areas { padding-top: 26px; padding-bottom: 30px; border-top: 1px solid rgba(76, 14, 130, 0.1); }
+.footer-areas-title { font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--text-light); margin: 0 0 10px; }
+.footer-areas-list { margin: 0; font-size: 13.5px; line-height: 2.1; color: var(--text-light); }
+.footer-areas-list a { color: var(--ink); opacity: .78; padding: 6px 0; transition: color .2s ease, opacity .2s ease; }
+.footer-areas-list a:hover { color: var(--primary); opacity: 1; }

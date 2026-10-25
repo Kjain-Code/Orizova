@@ -24,10 +24,10 @@ const FaqPage = () => (
       />
     <section className="loc-section content-section">
       <div className="container">
-        <QuickAnswer answers={sectionAnswers} path="/faq" />
         {faqGroups.map((g) => (
           <Faqs key={g.title} tag={g.title} h2={`${g.title}: common questions`} faqs={g.faqs} />
         ))}
+        <QuickAnswer answers={sectionAnswers} path="/faq" />
         <div className="loc-block">
           <h2 className="section-title content-h2">Still have a question?</h2>
           <CtaButtons label="Ask us directly" />

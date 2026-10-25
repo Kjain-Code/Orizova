@@ -33,13 +33,13 @@ const Portfolio = () => {
         subtitle="Live websites we have designed and developed — open them, click around and judge the work for yourself."
         chips={['Web apps', 'Portfolios', 'Corporate sites', 'Dashboards', 'Live work']}
       />
+      <h2 className="sr-only">Website projects</h2>
+      <Projects />
       <section className="qa-home-section">
         <div className="container">
           <QuickAnswer answers={sectionAnswers} path="/portfolio" className="qa--home" />
         </div>
       </section>
-      <h2 className="sr-only">Website projects</h2>
-      <Projects />
       <CtaBand
         title="Want Results Like These?"
         subtitle="Let's talk about what a project like this could look like for your business."

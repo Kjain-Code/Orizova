@@ -1,7 +1,6 @@
 import React from 'react';
 import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/industries/answers';
-import { useParams } from 'react-router-dom';
 import { FiCheckCircle } from 'react-icons/fi';
 import PageBanner, { splitHeading } from '../../components/common/PageBanner';
 import PageTransition from '../../components/layout/PageTransition';
@@ -11,8 +10,15 @@ import {
   Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
 } from '../../components/content/ContentBlocks';
 import industries from '../../data/industries/industries';
-import locations from '../../data/locations/locations';
+import { Link, useParams } from 'react-router-dom';
+import { citiesIndex as locations } from '../../data/site/siteIndex';
 import NotFound from '../core/NotFound';
+
+// Hero chips are decorative: keep them short so they don't overlap.
+const shortChip = (t) => {
+  const base = t.split(/[(—&]/)[0].trim();
+  return base.length > 24 ? base.split(' ').slice(0, 2).join(' ') : base;
+};
 
 const IndustryPage = () => {
   const { slug } = useParams();
@@ -42,17 +48,16 @@ const IndustryPage = () => {
           faqSchema(faqs),
         ]}
       />
-      <PageBanner crumbs={crumbs} title={h1Main} highlight={h1Place} subtitle={ind.banner} chips={(serviceCards ? serviceCards.items : []).map((it) => it.title.split(/[(—]/)[0].trim()).slice(0, 5)} />
+      <PageBanner crumbs={crumbs} title={h1Main} highlight={h1Place} subtitle={ind.banner} chips={(serviceCards ? serviceCards.items : []).map((it) => shortChip(it.title)).slice(0, 5)} />
 
       <section className="loc-section content-section">
         <div className="container">
-          <QuickAnswer answers={sectionAnswers} path={path} />
           <div className="loc-intro">
             <div>
               <span className="section-tag">{ind.name}</span>
               <h2 className="section-title content-h2">{ind.intro.h2}</h2>
               {ind.intro.paras.map((p) => <p className="loc-text" key={p.slice(0, 30)}><Inline text={p} /></p>)}
-              <CtaButtons />
+              <CtaButtons message={`Hi Orizova Digital, I run a business in ${ind.name}. I'd like a plan for my website and marketing.`} />
             </div>
             <aside className="loc-card">
               <h3>We help with</h3>
@@ -61,12 +66,14 @@ const IndustryPage = () => {
                   <li key={it.title}><FiCheckCircle size={14} aria-hidden="true" /> {it.title}</li>
                 ))}
               </ul>
-              <h3 style={{ marginTop: 24 }}>Cities</h3>
+              <h3 style={{ marginTop: 24 }}>Working across India</h3>
               <ul className="loc-areas">
-                {locations.map((l) => <li key={l.slug}>{l.city}</li>)}
+                {locations.slice(0, 9).map((l) => <li key={l.slug}><Link to={`/locations/${l.slug}`}>{l.city}</Link></li>)}
+                <li><Link to="/locations">+ {locations.length - 9} more cities</Link></li>
               </ul>
             </aside>
           </div>
+          <QuickAnswer answers={sectionAnswers} path={path} />
 
           <Blocks blocks={ind.blocks} />
 

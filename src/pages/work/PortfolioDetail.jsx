@@ -43,7 +43,6 @@ const PortfolioDetail = () => {
       <PageBanner crumbs={crumbs} title={`${p.title} —`} highlight={((routesByPath[path] || {}).h1 || '').split(' — ')[1] || 'Website Case Study'} subtitle={p.desc} chips={[p.industry, ...p.tags].slice(0, 5)} />
       <section className="loc-section content-section">
         <div className="container">
-          <QuickAnswer answers={sectionAnswers} path={path} />
           <div className="loc-intro">
             <div>
               <img
@@ -66,6 +65,7 @@ const PortfolioDetail = () => {
               </a>
             </aside>
           </div>
+          <QuickAnswer answers={sectionAnswers} path={path} />
 
           <Prose tag="The brief" h2="What the client needed" paras={[p.brief]} />
           <Prose tag="What we built" h2="Key features of the website" bullets={p.built} />

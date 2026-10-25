@@ -156,6 +156,23 @@ const services = [
     ],
   },
   {
+    id: 12,
+    slug: "ai-search-optimization",
+    group: "Grow",
+    icon: "FiCpu",
+    title: "AI Search Optimization",
+    shortDesc: "Get your business named in Google AI Overviews, ChatGPT and Gemini answers.",
+    fullDesc: "We make your business easy for AI search tools to understand, trust and recommend — clear answer-first pages, consistent business details, structured data, reviews and genuine mentions across the web.",
+    color: "#0EA5E9",
+    subServices: [
+      "AI Visibility Check (ChatGPT, Gemini, AI Overviews)",
+      "Answer-First Page Content (AEO)",
+      "Entity & Brand Consistency (GEO)",
+      "Schema & Technical Setup",
+      "Mentions, Reviews & Citations",
+    ],
+  },
+  {
     id: 11,
     slug: "video-editing",
     group: "Create",

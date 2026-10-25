@@ -34,15 +34,14 @@ const ContactPage = () => {
 
       <PageBanner crumbs={[{ name: 'Contact', path: '/contact' }]}
         title="Contact Orizova Digital —"
-        highlight="Free Website & Marketing Consultation"
-        subtitle="Call, WhatsApp or send the form — tell us about your business and we'll suggest the right website and marketing plan for it."
+        highlight="Free Consultation"
+        subtitle="Tell us about your business on WhatsApp, a call or the form below — we'll reply with a clear plan and a fixed quote for your website and marketing."
         chips={['WhatsApp', 'Call', 'Email', 'Free consult', 'Pan-India']}
         actions={false}
       />
       <Contact />
       <section className="loc-section content-section">
         <div className="container">
-          <QuickAnswer answers={sectionAnswers} path="/contact" />
           <Process
             tag="What happens next"
             h2="After you get in touch"
@@ -53,6 +52,7 @@ const ContactPage = () => {
               { title: 'Kick-off', desc: 'Once approved, we share a timeline and start work.' },
             ]}
           />
+          <QuickAnswer answers={sectionAnswers} path="/contact" />
           <Faqs faqs={contactFaqs} h2="Before you contact us" />
         </div>
       </section>
