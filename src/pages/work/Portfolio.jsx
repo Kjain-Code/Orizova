@@ -5,7 +5,6 @@ import Seo, { SITE_URL } from '../../components/seo/Seo';
 import projects from '../../data/work/projects';
 import PageBanner from '../../components/common/PageBanner';
 import Projects from '../../components/sections/Projects';
-import CtaBand from '../../components/common/CtaBand';
 import PageTransition from '../../components/layout/PageTransition';
 
 const Portfolio = () => {
@@ -40,10 +39,6 @@ const Portfolio = () => {
           <QuickAnswer answers={sectionAnswers} path="/portfolio" className="qa--home" />
         </div>
       </section>
-      <CtaBand
-        title="Want Results Like These?"
-        subtitle="Let's talk about what a project like this could look like for your business."
-      />
     </PageTransition>
   );
 };

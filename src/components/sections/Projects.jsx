@@ -1,188 +1,132 @@
 import React, { useState } from "react";
-import { m, AnimatePresence } from "framer-motion";
-import { FiArrowRight, FiExternalLink } from "react-icons/fi";
+import { m } from "framer-motion";
+import { FiArrowRight, FiArrowUpRight, FiMessageCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import projects from "../../data/work/projects";
+import { waLink } from "../../data/site/contact";
 import "./Projects.css";
 
-const categories = [
-  "All",
-  "Website Development",
-  "App Development",
-  "E-Commerce",
-  "Digital Marketing",
-  "Branding",
-  "SEO",
+/* /portfolio grid. Filters only appear once there are projects in more than
+   one category — before, most filter buttons led to an empty grid. */
+
+const fadeUp = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "0px 0px -8% 0px" },
+  transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+};
+
+const hostOf = (url) => {
+  try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; }
+};
+
+const buildLinks = [
+  { to: "/services/website-development", label: "Business websites" },
+  { to: "/services/ecommerce-solutions", label: "Online stores" },
+  { to: "/services/app-development", label: "Web & mobile apps" },
+  { to: "/services/branding-designing", label: "Branding" },
 ];
 
-const containerVariants = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
-  },
-};
-
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 60,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.22, 1, 0.36, 1],
-    },
-  },
-};
-
 const Projects = () => {
+  const categories = ["All", ...Array.from(new Set(projects.map((p) => p.category)))];
   const [active, setActive] = useState("All");
-
-  const filtered =
-    active === "All"
-      ? projects
-      : projects.filter((p) => p.category === active);
+  const list = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="projects-section">
+    <section className="pf-section">
       <div className="container">
+        {categories.length > 2 && (
+          <div className="pf-filters" role="tablist" aria-label="Filter projects">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                role="tab"
+                aria-selected={active === cat}
+                className={`pf-filter ${active === cat ? "active" : ""}`}
+                onClick={() => setActive(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        )}
 
-        <div className="project-filters">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`filter-btn ${active === cat ? "active" : ""}`}
-              onClick={() => setActive(cat)}
+        <div className="pf-grid">
+          {list.map((p, i) => (
+            <m.article
+              key={p.slug}
+              className="pf-card"
+              style={{ "--c": p.color }}
+              {...fadeUp}
+              transition={{ ...fadeUp.transition, delay: (i % 2) * 0.08 }}
             >
-              {cat}
-            </button>
+              <Link to={`/portfolio/${p.slug}`} className="pf-shot" aria-label={`${p.title} — project details`}>
+                <span className="pf-browser" aria-hidden="true">
+                  <i /><i /><i />
+                  {p.link && <span className="pf-url">{hostOf(p.link)}</span>}
+                </span>
+                <span className="pf-img-wrap">
+                  {p.image && (
+                    <img
+                      src={p.image}
+                      alt={`${p.title} website designed and developed by Orizova Digital`}
+                      width="800"
+                      height="338"
+                      loading={i < 2 ? "eager" : "lazy"}
+                      decoding="async"
+                    />
+                  )}
+                </span>
+              </Link>
+
+              <div className="pf-body">
+                <p className="pf-kicker">{p.industry || p.category}</p>
+                <h3 className="pf-title">
+                  <Link to={`/portfolio/${p.slug}`}>{p.title}</Link>
+                </h3>
+                <p className="pf-desc">{p.desc}</p>
+                <ul className="pf-tags" aria-label="Project tags">
+                  {p.tags.map((t) => <li key={t}>{t}</li>)}
+                </ul>
+
+                <div className="pf-actions">
+                  <Link to={`/portfolio/${p.slug}`} className="pf-btn">
+                    View case study<span className="sr-only"> for {p.title}</span> <FiArrowRight aria-hidden="true" />
+                  </Link>
+                  {p.link && (
+                    <a href={p.link} target="_blank" rel="noopener noreferrer" className="pf-live">
+                      <span className="pf-live-dot" aria-hidden="true" />
+                      Visit live site<span className="sr-only"> of {p.title} (opens in a new tab)</span>
+                      <FiArrowUpRight aria-hidden="true" />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </m.article>
           ))}
         </div>
 
-        <m.div
-          layout
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-          className="projects-grid"
-        >
-          <AnimatePresence>
-            {filtered.map((project) => (
-              <m.div
-                key={project.id}
-                layout
-                variants={cardVariants}
-                exit={{ opacity: 0, scale: 0.8 }}
-                whileHover={{ y: -8 }}
-                className="project-card"
-              >
-                {project.image ? (
-                  <div className="project-image-wrap">
-                    <img
-                    src={project.image}
-                    alt={`${project.title} – ${project.category.toLowerCase()} project by Orizova Digital`}
-                    className="project-image"
-                    width="800"
-                    height="338"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                    <span
-                      className="project-category project-category-badge"
-                      style={{ color: project.color, background: '#fff' }}
-                    >
-                      {project.category}
-                    </span>
-                  </div>
-                ) : (
-                  <div
-                    className="project-top"
-                    style={{
-                      background: `${project.color}15`,
-                    }}
-                  >
-                    <span className="project-emoji">
-                      {project.emoji}
-                    </span>
-
-                    <span
-                      className="project-category"
-                      style={{
-                        color: project.color,
-                      }}
-                    >
-                      {project.category}
-                    </span>
-                  </div>
-                )}
-
-                <div className="project-content">
-                  <h3>{project.title}</h3>
-                  <p>{project.desc}</p>
-
-                  <div className="project-tags">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="project-tag">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div
-                    className="project-result"
-                    style={{
-                      borderColor: `${project.color}40`,
-                      color: project.color,
-                    }}
-                  >
-                    ✅ {project.result}
-                  </div>
-
-                  <Link to={`/portfolio/${project.slug}`} className="project-btn" style={{ marginBottom: 10 }}>
-                    Project details<span className="sr-only"> for {project.title}</span>
-                  </Link>
-                  {project.link ? (
-                    <a
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-btn"
-                    >
-                      {project.linkLabel || "Visit Website"}
-                      <FiExternalLink />
-                    </a>
-                  ) : (
-                    <Link to="/contact" className="project-btn">
-                      Start a Project Like This
-                      <FiExternalLink />
-                    </Link>
-                  )}
-
-                </div>
-              </m.div>
-            ))}
-          </AnimatePresence>
-        </m.div>
-
-        <m.div
-          className="projects-cta text-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <p>
-            Want results like these for your business?
-          </p>
-
-          <Link to="/contact" className="btn-primary">
-            Start Your Project
-            <FiArrowRight />
-          </Link>
+        <m.div className="pf-next" {...fadeUp}>
+          <div className="pf-next-copy">
+            <span className="pf-next-kicker">Your project could be next</span>
+            <h2>Want a Website Like These for Your Business?</h2>
+            <p>Tell us what you do and who you want to reach. We&apos;ll suggest the right type of site, share examples and send a fixed, written quote.</p>
+            <ul className="pf-next-links">
+              {buildLinks.map((l) => (
+                <li key={l.to}><Link to={l.to}>{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div className="pf-next-actions">
+            <a
+              href={waLink("Hi Orizova Digital, I saw your portfolio. I want a website for my business — can we discuss?")}
+              className="btn-gold" target="_blank" rel="noopener noreferrer"
+            >
+              <FiMessageCircle aria-hidden="true" /> WhatsApp Us
+            </a>
+            <Link to="/contact" className="pf-next-link">Get a free consultation <FiArrowRight aria-hidden="true" /></Link>
+          </div>
         </m.div>
       </div>
     </section>
