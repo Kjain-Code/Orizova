@@ -5,6 +5,10 @@
 // Section: portfolio case studies.
 
 const answers = {
+  '/portfolio/orizova-digital': {
+    q: 'How did Orizova Digital build its own website for SEO?',
+    a: 'Orizova Digital rebuilt its own agency website in October 2026 as a pre-rendered React site with 120+ pages for services, industries and cities, schema markup, answer-first summaries and WhatsApp enquiry buttons. It scores 100 for performance, accessibility, best practices and SEO on Google PageSpeed (mobile and desktop), and its daily Google impressions grew from under 20 to 40–100 within weeks, according to Google Search Console.',
+  },
   '/portfolio/morphic-spaces': {
     q: 'What did Orizova Digital build for Morphic Spaces?',
     a: 'Orizova Digital designed and developed the website for Morphic Spaces, a spatial design studio in the Chandigarh Tricity working on contemporary residential, commercial and hospitality projects. It is a premium, image-led site with a cinematic full-screen hero, editorial serif typography and a project showcase that lets the architecture speak first.',

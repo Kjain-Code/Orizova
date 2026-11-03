@@ -5,6 +5,7 @@ import { FiArrowRight, FiExternalLink } from "react-icons/fi";
 import projects from "../../data/work/projects";
 import { SquiggleUnderline } from "../common/Doodles";
 import "../sections/Projects.css";
+import { tone, toneStyle } from "../../utils/tone";
 
 const featured = projects.slice(0, 3);
 
@@ -28,11 +29,12 @@ const FeaturedWork = () => {
           </p>
         </m.div>
 
-        <div className="projects-grid" style={{ marginTop: 50 }}>
+        <div className="projects-grid mt-50">
           {featured.map((project, i) => (
             <m.div
               key={project.id}
-              className="project-card"
+              className={`project-card ${tone(project.color)}`}
+              style={toneStyle(project.color)}
               initial={{ opacity: 0, y: 60 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
@@ -51,16 +53,15 @@ const FeaturedWork = () => {
                     decoding="async"
                   />
                   <span
-                    className="project-category project-category-badge"
-                    style={{ color: project.color, background: '#fff' }}
+                    className="project-category project-category-badge project-tone-text"
                   >
                     {project.category}
                   </span>
                 </div>
               ) : (
-                <div className="project-top" style={{ background: `${project.color}15` }}>
+                <div className="project-top project-tone-bg">
                   <span className="project-emoji">{project.emoji}</span>
-                  <span className="project-category" style={{ color: project.color }}>
+                  <span className="project-category project-tone-text">
                     {project.category}
                   </span>
                 </div>
@@ -69,8 +70,7 @@ const FeaturedWork = () => {
                 <h3>{project.title}</h3>
                 <p>{project.desc}</p>
                 <div
-                  className="project-result"
-                  style={{ borderColor: `${project.color}40`, color: project.color }}
+                  className="project-result project-tone-border"
                 >
                   ✅ {project.result}
                 </div>

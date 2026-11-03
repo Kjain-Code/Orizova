@@ -118,3 +118,17 @@ See seo-audit/AEO-GEO.md for the full explanation and off-site checklist.
 - 3 new blog posts: get-recommended-by-chatgpt-google-ai, website-visitors-but-no-enquiries, how-to-choose-digital-marketing-agency — each linked from relevant service, industry and city pages via guideIndex.
 
 **Tested**: build ✅ (127 pages + 404), 0 broken internal links ✅, all JSON-LD valid ✅, no duplicate titles ✅, 1 H1 per page and no horizontal scroll at 390px ✅.
+
+## 3 Nov 2026 — SEOptimer audit fixes + portfolio update
+Portfolio redesign files (Projects, Portfolio, PortfolioDetail, CreativeWorkSections, creativeWork/projects/answers data, orizova-digital.webp, seo.json route) added from orizova-updates.zip.
+
+**SEOptimer (orizovadigital.co.in, grade A) — fixed in code**
+- Title tag 61 → 58 chars: "Web Development & Digital Marketing Agency India | Orizova". Home description now also mentions Google Maps (154 chars).
+- Clear-text email removed from the HTML of every page: new components/common/EmailLink.jsx (address shown as user<span>@</span>domain, mailto: attached after load), JSON-LD writes "@" as @, contact quick answer and one blog line reworded, form placeholder changed.
+- Inline styles: 3,258 → 102 across the site, home page 0. Brand colours now come from classes (src/utils/tone.js + src/styles/tones.css); other one-off styles moved to src/styles/utilities.css; prerender drops framer-motion's finished "opacity:1;transform:none".
+- Analytics: when REACT_APP_GA_ID is set, prerender.js writes the GA4 tag into every page's <head> (library still loads after page load).
+- X and YouTube: contact.js has xUrl / youtubeUrl slots; once filled, footer icons and schema sameAs update automatically.
+
+**Other fixes**: /portfolio quick answer + meta description now include the Orizova case study; PageSpeed ring labels no longer run together on phones (portfolio cards); footer email stays on one line.
+
+**Tested**: build ✅ (128 pages + 404), ESLint 0 ✅, test ✅, titles 30–60 chars on all pages ✅, 0 pages with plain-text email ✅, no JS/hydration errors ✅, no horizontal scroll at 390px ✅, before/after screenshots of 14 key pages compared — only intended changes.

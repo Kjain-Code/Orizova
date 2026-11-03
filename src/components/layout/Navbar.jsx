@@ -8,6 +8,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
 import services from '../../data/services/services';
 import { industriesIndex } from '../../data/site/siteIndex';
+import { tone, toneStyle } from '../../utils/tone';
 import './Navbar.css';
 import logo from '../../assets/logo.webp';
 
@@ -56,7 +57,7 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} aria-label="Main navigation">
       <div className="container navbar-inner">
         <Link to="/" className="navbar-logo" onClick={() => setMenuOpen(false)}>
-          <img src={logo} alt="Orizova Digital home" width="68" height="50" fetchPriority="high" style={{ height: '50px', width: 'auto', objectFit: 'contain' }} />
+          <img src={logo} alt="Orizova Digital home" width="68" height="50" fetchPriority="high" className="navbar-logo-img" />
         </Link>
 
         <ul className="navbar-links">
@@ -89,7 +90,7 @@ const Navbar = () => {
                           return (
                             <li key={x.slug}>
                               <Link to={`/services/${x.slug}`} className="mega-item" onClick={() => setMegaOpen(false)}>
-                                <span className="mega-ico" style={{ '--c': x.color }}><Icon aria-hidden="true" /></span>
+                                <span className={`mega-ico ${tone(x.color)}`} style={toneStyle(x.color)}><Icon aria-hidden="true" /></span>
                                 <span className="mega-txt">
                                   <strong>{x.title}</strong>
                                   <small>{x.shortDesc}</small>

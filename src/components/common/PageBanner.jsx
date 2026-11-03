@@ -20,7 +20,10 @@ const Words = ({ text, offset = 0, className = '' }) =>
       <React.Fragment key={`${w}-${i}`}>
         {i > 0 && ' '}
         <span className="pb-word">
-          <span className={`pb-word-inner ${className}`} style={{ animationDelay: `${(offset + i) * 0.06}s` }}>
+          <span
+            className={`pb-word-inner ${className}${offset + i < 40 ? ` pb-d${offset + i}` : ''}`}
+            style={offset + i < 40 ? undefined : { animationDelay: `${(offset + i) * 0.06}s` }}
+          >
             {w}
           </span>
         </span>

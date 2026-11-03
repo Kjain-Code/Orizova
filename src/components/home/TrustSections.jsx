@@ -5,6 +5,7 @@ import {
   FiArrowRight, FiPhoneOff, FiMapPin, FiTrendingDown, FiMessageSquare, FiInstagram, FiUsers, FiStar,
 } from 'react-icons/fi';
 import { reviews, clientNames, googleRating } from '../../data/site/reviews';
+import { tone, toneStyle } from '../../utils/tone';
 import './TrustSections.css';
 
 const fadeUp = {
@@ -35,7 +36,7 @@ export const ProblemsWeFix = () => (
       <div className="tr-problems-grid">
         {problems.map(({ Icon, color, pain, fix, to, label }, i) => (
           <m.div key={pain} {...fadeUp} transition={{ ...fadeUp.transition, delay: (i % 3) * 0.08 }}>
-            <Link to={to} className="tr-problem" style={{ '--c': color }}>
+            <Link to={to} className={`tr-problem ${tone(color)}`} style={toneStyle(color)}>
               <span className="tr-problem-icon" aria-hidden="true"><Icon /></span>
               <p className="tr-pain">“{pain}”</p>
               <p className="tr-fix">{fix}</p>

@@ -71,7 +71,7 @@ const CityServicePage = () => {
                   <li key={a}><FiMapPin size={14} aria-hidden="true" /> {a}</li>
                 ))}
               </ul>
-              <p className="loc-text" style={{ marginTop: 18, fontSize: 15 }}>
+              <p className="loc-text loc-text--note">
                 Part of our <Link to={`/services/${svc.slug}`} className="content-link">{svc.title.toLowerCase()} services</Link>.
               </p>
             </aside>

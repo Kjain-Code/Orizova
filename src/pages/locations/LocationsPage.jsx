@@ -65,7 +65,7 @@ const LocationsPage = () => (
                     <div key={c.slug} className="loc-service">
                       <h3>
                         <Link to={`/locations/${c.slug}`} className="loc-city-link">
-                          <FiMapPin aria-hidden="true" style={{ verticalAlign: '-2px', marginRight: 6 }} />Digital agency in {c.city}
+                          <FiMapPin aria-hidden="true" className="ico-inline" />Digital agency in {c.city}
                         </Link>
                       </h3>
                       <p>{c.region}</p>

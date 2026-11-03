@@ -57,6 +57,17 @@ const VERIFY_TAGS = [
   ['google-site-verification', readEnv('GOOGLE_SITE_VERIFICATION')],
   ['msvalidate.01', readEnv('BING_SITE_VERIFICATION')],
 ].filter(([, v]) => v).map(([n, v]) => `<meta name="${n}" content="${esc(v)}"/>`).join('');
+// Google Analytics 4 (optional): set REACT_APP_GA_ID=G-XXXXXXXXXX in Vercel →
+// Settings → Environment Variables (or .env.production). The tag is written
+// into every page's <head> so Google and audit tools can see it, but the
+// gtag.js library itself only downloads after the page has loaded — no
+// PageSpeed cost.
+const GA_ID = readEnv('REACT_APP_GA_ID');
+const GA_TAG = /^G-[A-Z0-9]+$/i.test(GA_ID)
+  ? `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${GA_ID}');`
+    + `window.addEventListener('load',function(){setTimeout(function(){var s=document.createElement('script');s.async=true;`
+    + `s.src='https://www.googletagmanager.com/gtag/js?id=${GA_ID}';document.head.appendChild(s);},1500);});</script>`
+  : '';
 // IndexNow (Bing, Yandex, Seznam, Naver): key file served from the site root.
 const INDEXNOW_KEY = readEnv('INDEXNOW_KEY');
 
@@ -147,7 +158,10 @@ const unhideAnimated = (html) =>
       .replace(/transform:[^;]*;?/g, '')
       .trim();
     return cleaned ? `style="${cleaned}"` : '';
-  });
+  })
+    // "Finished" animation styles (opacity:1; transform:none) are the browser
+    // defaults anyway — drop them so the HTML has no needless inline styles.
+    .replace(/ style="(?:opacity:1;?|transform:none;?)+"/g, '');
 
 const markRh = (tag) => tag.replace(/^<(title|meta|link)\b/i, '<$1 data-rh="true"');
 
@@ -169,7 +183,7 @@ const buildPage = (template, html) => {
   out = out.replace(/<meta data-rh="true"[^>]*>/gi, '');
   out = out.replace(/<link data-rh="true"[^>]*>/gi, '');
   out = out.replace(/<script data-rh="true" type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
-  out = out.replace('</head>', `${VERIFY_TAGS}${tags.map(markRh).join('')}</head>`);
+  out = out.replace('</head>', `${VERIFY_TAGS}${GA_TAG}${tags.map(markRh).join('')}</head>`);
   // Inline the main stylesheet (≈14 KB gzipped): removes the render-blocking
   // CSS request, so text paints sooner on slow mobile connections.
   if (MAIN_CSS) out = out.replace(MAIN_CSS.tag, `<style>${MAIN_CSS.css}</style>`);

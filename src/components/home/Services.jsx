@@ -6,6 +6,8 @@ import services from "../../data/services/services";
 import { SquiggleUnderline } from "../common/Doodles";
 import ServiceIllustration from "./ServiceIllustrations";
 import "./Services.css";
+import { tone, toneStyle } from "../../utils/tone";
+
 
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },
@@ -50,7 +52,7 @@ const Services = () => (
             viewport={{ once: true, margin: "0px 0px 15% 0px" }}
             className="svc-cell"
           >
-            <Link to={`/services/${service.slug}`} className="svc-card" style={{ "--c": service.color }}>
+            <Link to={`/services/${service.slug}`} className={`svc-card ${tone(service.color)}`} style={toneStyle(service.color)}>
               <span className="svc-art-wrap">
                 <ServiceIllustration slug={service.slug} />
               </span>

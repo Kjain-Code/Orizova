@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
-import { FaWhatsapp, FaInstagram, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
+import { FaWhatsapp, FaInstagram, FaLinkedinIn, FaFacebookF, FaYoutube } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
+import EmailLink, { EmailText } from '../common/EmailLink';
 import './Footer.css';
 import logo from '../../assets/logo.webp';
 import services from '../../data/services/services';
@@ -23,11 +25,11 @@ const Footer = () => {
       <div className="container footer-inner">
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            <img src={logo} alt="Orizova Digital – web development & digital marketing agency" width="65" height="48" loading="lazy" decoding="async" style={{ height: '48px', width: 'auto', objectFit: 'contain' }} />
+            <img src={logo} alt="Orizova Digital – web development & digital marketing agency" width="65" height="48" loading="lazy" decoding="async" className="footer-logo-img" />
           </Link>
           <p>Website development, SEO and digital marketing agency for businesses across India — based in Delhi NCR, working with clients in every major city.</p>
           <div className="footer-contacts">
-            <a href={`mailto:${CONTACT.email}`}><FiMail size={14}/> {CONTACT.email}</a>
+            <EmailLink><FiMail size={14}/> <EmailText /></EmailLink>
             <a href={`tel:${CONTACT.phoneTel}`}><FiPhone size={14}/> {CONTACT.phoneDisplay}</a>
             <span><FiMapPin size={14}/> {CONTACT.location}</span>
           </div>
@@ -44,6 +46,16 @@ const Footer = () => {
             <a href={CONTACT.facebookUrl} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <FaFacebookF size={16} />
             </a>
+            {CONTACT.youtubeUrl && (
+              <a href={CONTACT.youtubeUrl} target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <FaYoutube size={18} />
+              </a>
+            )}
+            {CONTACT.xUrl && (
+              <a href={CONTACT.xUrl} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+                <FaXTwitter size={16} />
+              </a>
+            )}
           </div>
         </div>
 

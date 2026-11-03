@@ -9,12 +9,14 @@ import CtaBand from '../../components/common/CtaBand';
 import Seo, { SITE_URL, routesByPath } from '../../components/seo/Seo';
 import { CtaButtons, Inline, Prose, LinkChips } from '../../components/content/ContentBlocks';
 import projects from '../../data/work/projects';
+import { ScoreRings, psiUrl } from '../../components/sections/Projects';
 import NotFound from '../core/NotFound';
 
 // Contextual link from a case study to the matching industry page.
 const INDUSTRY_LINKS = {
   'morphic-spaces': { to: '/industries/architects', label: 'Websites for architects & interior designers' },
   'wipo-group': { to: '/industries/finance-loan-agents', label: 'Digital marketing for finance businesses' },
+  'orizova-digital': { to: '/services/ai-search-optimization', label: 'AI search optimization' },
 };
 
 const PortfolioDetail = () => {
@@ -52,29 +54,60 @@ const PortfolioDetail = () => {
                 height="338"
                 loading="lazy"
                 decoding="async"
-                style={{ width: '100%', height: 'auto', borderRadius: 18, border: '1.5px solid var(--lavender)' }}
+                className="pf-detail-shot"
               />
             </div>
             <aside className="loc-card">
               <h2>Project</h2>
               <ul className="loc-areas">
-                {p.tags.map((t) => <li key={t}>{t}</li>)}
+                {(p.scope || p.tags).map((t) => <li key={t}>{t}</li>)}
               </ul>
-              <a href={p.link} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ marginTop: 20 }}>
+              <a href={p.link} target="_blank" rel="noopener noreferrer" className="btn-primary mt-20">
                 Visit live site <FiExternalLink aria-hidden="true" />
               </a>
             </aside>
           </div>
           <QuickAnswer answers={sectionAnswers} path={path} />
 
-          <Prose tag="The brief" h2="What the client needed" paras={[p.brief]} />
+          <Prose tag="The brief" h2={p.own ? 'What we set out to do' : 'What the client needed'} paras={[p.brief]} />
           <Prose tag="What we built" h2="Key features of the website" bullets={p.built} />
           <div className="loc-block content-prose">
             <span className="section-tag">Takeaway</span>
             <h2 className="section-title content-h2">What other businesses can learn</h2>
             <p className="loc-text"><Inline text={p.takeaway} /></p>
           </div>
-          {p.clientResult && <Prose tag="Results" h2="Results" paras={[p.clientResult]} />}
+          {(p.scores || p.results) && (
+            <div className="loc-block pf-detail-results">
+              <span className="section-tag">Results</span>
+              <h2 className="section-title content-h2">Results you can check yourself</h2>
+              {p.results && (
+                <ul className="pf-results">
+                  {p.results.map((r) => <li key={r}>{r}</li>)}
+                </ul>
+              )}
+              {p.scores && (
+                <div className="pf-detail-scores">
+                  <div>
+                    <h3>Mobile</h3>
+                    <ScoreRings scores={p.scores} device="mobile" />
+                  </div>
+                  {p.scores.desktop && (
+                    <div>
+                      <h3>Desktop</h3>
+                      <ScoreRings scores={p.scores} device="desktop" />
+                    </div>
+                  )}
+                </div>
+              )}
+              {p.scores && (
+                <p className="pf-score-note">
+                  Google PageSpeed Insights, tested {p.scores.checked}. Scores can vary slightly between tests —{' '}
+                  <a href={psiUrl(p.link)} target="_blank" rel="noopener noreferrer">run the test yourself <FiExternalLink aria-hidden="true" /></a>
+                </p>
+              )}
+            </div>
+          )}
+          {p.clientResult && <Prose tag="Results" h2="Client results" paras={[p.clientResult]} />}
           {p.testimonial && <Prose tag="Client feedback" h2="What the client said" paras={[p.testimonial]} />}
 
           <div className="loc-block">
@@ -93,7 +126,7 @@ const PortfolioDetail = () => {
               { to: '/portfolio', label: 'All portfolio projects' },
             ]}
           />
-          <Link to="/contact" className="loc-inline-link" style={{ marginTop: 20 }}>
+          <Link to="/contact" className="loc-inline-link mt-20">
             Get a quote for a similar website <FiArrowRight aria-hidden="true" />
           </Link>
         </div>

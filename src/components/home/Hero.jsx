@@ -98,7 +98,7 @@ const Hero = () => {
             <RocketCharacter />
           </m.div>
           <div className="hero-card-main">
-            <img src={logo} alt="Orizova Digital logo" width="108" height="80" decoding="async" style={{ height: '80px', width: 'auto', objectFit: 'contain', marginBottom: '12px' }} />
+            <img src={logo} alt="Orizova Digital logo" width="108" height="80" decoding="async" className="hero-card-logo" />
             <p>Your Digital Growth Partner</p>
             <div className="services-chips">
               {marqueeItems.map(s => (

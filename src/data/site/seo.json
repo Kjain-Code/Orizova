@@ -6,10 +6,10 @@
       "key": "home",
       "path": "/",
       "priority": "1.0",
-      "title": "Web Development & Digital Marketing Agency in India | Orizova",
-      "description": "Orizova Digital builds fast websites, apps and online stores and runs SEO, Google Ads, Meta Ads and social media for businesses across India.",
+      "title": "Web Development & Digital Marketing Agency India | Orizova",
+      "description": "Orizova Digital builds fast websites, apps and online stores and runs SEO, Google Maps, Google Ads, Meta Ads and social media for businesses across India.",
       "h1": "Website Development & Digital Marketing Agency in India",
-      "lastmod": "2026-10-25"
+      "lastmod": "2026-11-03"
     },
     {
       "key": "services",
@@ -1062,7 +1062,7 @@
       "title": "Morphic Spaces – Chandigarh Architecture Studio Website",
       "description": "Case study: a premium, image-led website for Morphic Spaces, a spatial design studio working across Chandigarh and the Tricity.",
       "h1": "Morphic Spaces — Architecture Studio Website Case Study",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-11-03"
     },
     {
       "key": "project:wipo-group",
@@ -1092,13 +1092,22 @@
       "lastmod": "2026-10-24"
     },
     {
+      "key": "project:orizova-digital",
+      "path": "/portfolio/orizova-digital",
+      "priority": "0.6",
+      "title": "Orizova Digital Website – SEO & PageSpeed Case Study",
+      "description": "Case study: how we rebuilt our own agency website for speed, SEO and AI search — 100/100 on Google PageSpeed and rising Google impressions.",
+      "h1": "Orizova Digital — Our Own Website SEO Case Study",
+      "lastmod": "2026-11-03"
+    },
+    {
       "key": "portfolio",
       "path": "/portfolio",
       "priority": "0.7",
       "title": "Website Development Portfolio | Orizova Digital",
-      "description": "Live websites by Orizova Digital: an architecture studio, a real-estate investment portal, a photography portfolio and a localisation studio.",
+      "description": "Live websites by Orizova Digital: our own agency site, an architecture studio, a real-estate portal, a photography portfolio and a localisation studio.",
       "h1": "Website Development Portfolio",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-11-03"
     },
     {
       "key": "creativeWork",

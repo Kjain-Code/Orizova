@@ -4,6 +4,7 @@ import { m } from 'framer-motion';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 import services from '../../data/services/services';
 import { industriesIndex, citiesIndex } from '../../data/site/siteIndex';
+import { tone, toneStyle } from '../../utils/tone';
 import './HomeSections.css';
 
 /* Extra home-page sections: intro with illustration, how-we-work steps,
@@ -202,7 +203,7 @@ export const AtAGlance = () => {
         <div className="hs-glance-grid">
           {items.map((it, i) => (
             <m.div key={it.label} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.08 }}>
-              <Link to={it.to} className="hs-glance-card" style={{ '--c': it.color }}>
+              <Link to={it.to} className={`hs-glance-card ${tone(it.color)}`} style={toneStyle(it.color)}>
                 <span className="hs-glance-value">{it.value}{it.suffix}</span>
                 <span className="hs-glance-label">{it.label}</span>
                 <span className="hs-glance-desc">{it.desc}</span>
@@ -222,7 +223,7 @@ const ReportIllustration = () => (
     <div className="hs-report-card">
       <div className="hs-report-head">
         <strong>Enquiries by source</strong>
-        <span className="hs-legend"><i style={{ background: '#4C0E82' }} /> Calls <i style={{ background: '#22C55E' }} /> WhatsApp <i style={{ background: '#F5A623' }} /> Forms</span>
+        <span className="hs-legend"><i className="hs-legend-calls" /> Calls <i className="hs-legend-wa" /> WhatsApp <i className="hs-legend-forms" /> Forms</span>
       </div>
       <svg viewBox="0 0 320 150" className="hs-report-chart">
         {[0, 1, 2, 3].map((r) => <line key={r} x1="0" x2="320" y1={20 + r * 40} y2={20 + r * 40} stroke="#EEE8F7" strokeWidth="1.5" />)}

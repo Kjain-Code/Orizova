@@ -66,7 +66,7 @@ const ServicePage = () => {
                   <li key={item}><FiCheckCircle size={14} aria-hidden="true" /> {item}</li>
                 ))}
               </ul>
-              <h3 style={{ marginTop: 24 }}>Working across India</h3>
+              <h3 className="mt-24">Working across India</h3>
               <ul className="loc-areas">
                 {locations.slice(0, 9).map((loc) => (
                   <li key={loc.slug}><Link to={`/locations/${loc.slug}`}>{loc.city}</Link></li>

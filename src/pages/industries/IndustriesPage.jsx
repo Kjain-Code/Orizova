@@ -13,6 +13,7 @@ import { guideIndex, industryGroups } from '../../data/site/siteIndex';
 import { industryIcons, groupMeta } from '../../data/site/industryIcons';
 import { waLink } from '../../data/site/contact';
 import industries from '../../data/industries/industries';
+import { tone, toneStyle } from '../../utils/tone';
 
 const slugify = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
@@ -55,7 +56,7 @@ const IndustriesPage = () => (
             const Icon = meta.icon;
             const count = industries.filter((i) => i.group === g).length;
             return (
-              <a key={g} href={`#${slugify(g)}`} className="ip-jump-chip" style={{ '--c': meta.color }}>
+              <a key={g} href={`#${slugify(g)}`} className={`ip-jump-chip ${tone(meta.color)}`} style={toneStyle(meta.color)}>
                 {Icon && <Icon aria-hidden="true" />} {g} <span className="ip-count">{count}</span>
               </a>
             );
@@ -80,7 +81,7 @@ const IndustriesPage = () => (
                 {list.map((i) => {
                   const [Icon, c] = industryIcons[i.slug] || [];
                   return (
-                    <Link key={i.slug} to={`/industries/${i.slug}`} className="ip-card" style={{ '--c': c || meta.color }}>
+                    <Link key={i.slug} to={`/industries/${i.slug}`} className={`ip-card ${tone(c || meta.color)}`} style={toneStyle(c || meta.color)}>
                       <span className="ip-card-ico" aria-hidden="true">{Icon && <Icon />}</span>
                       <h3>{i.name}</h3>
                       <p>{i.short}</p>
@@ -115,7 +116,7 @@ const IndustriesPage = () => (
           </div>
           <div className="ip-tailor-grid">
             {tailor.map((t, n) => (
-              <div key={t.title} className="ip-tailor-card" style={{ '--c': t.color }}>
+              <div key={t.title} className={`ip-tailor-card ${tone(t.color)}`} style={toneStyle(t.color)}>
                 <span className="ip-tailor-ico" aria-hidden="true"><t.icon /></span>
                 <span className="ip-tailor-num" aria-hidden="true">0{n + 1}</span>
                 <h3>{t.title}</h3>

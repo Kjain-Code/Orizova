@@ -5,6 +5,7 @@ import { FaWhatsapp, FaInstagram } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
 import services from '../../data/services/services';
 import './Contact.css';
+import EmailLink, { EmailText } from '../common/EmailLink';
 
 // Optional: set REACT_APP_WEB3FORMS_KEY (free key from web3forms.com) in
 // .env.production to receive enquiries by email without a backend.
@@ -103,14 +104,14 @@ const Contact = () => {
                 </span>
                 <FiArrowRight className="cc-arrow" aria-hidden="true" />
               </a>
-              <a href={`mailto:${CONTACT.email}`} className="cc cc--mail">
+              <EmailLink className="cc cc--mail">
                 <span className="cc-ico" aria-hidden="true"><FiMail /></span>
                 <span className="cc-body">
-                  <strong>{CONTACT.email}</strong>
+                  <strong><EmailText /></strong>
                   <span>For briefs, documents and detailed requirements</span>
                 </span>
                 <FiArrowRight className="cc-arrow" aria-hidden="true" />
-              </a>
+              </EmailLink>
             </div>
 
             <ul className="contact-meta">
@@ -156,7 +157,7 @@ const Contact = () => {
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="cf-email">Email</label>
-                <input id="cf-email" type="email" name="email" autoComplete="email" value={form.email} onChange={handleChange} placeholder="you@company.com" />
+                <input id="cf-email" type="email" name="email" autoComplete="email" value={form.email} onChange={handleChange} placeholder="Your email address" />
               </div>
               <div className="form-group">
                 <label htmlFor="cf-city">City</label>
@@ -184,7 +185,7 @@ const Contact = () => {
               <label htmlFor="cf-message">About your business *</label>
               <textarea id="cf-message" name="message" value={form.message} onChange={handleChange} placeholder="What does your business do, and what would you like to achieve? A link to your current website or Instagram helps." rows={5} required />
             </div>
-            <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" style={{ display: 'none' }} />
+            <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hp-field" />
             <button type="submit" className="btn-primary submit-btn" disabled={status === 'sending'}>
               {FORM_KEY ? <FiSend aria-hidden="true" /> : <FaWhatsapp aria-hidden="true" />}
               {status === 'sending' ? 'Sending…' : FORM_KEY ? 'Send enquiry' : 'Send enquiry on WhatsApp'}

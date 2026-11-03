@@ -166,7 +166,7 @@ const postsB = [
         bullets: [
           'Domain renewal every year — and whose name the domain is registered in',
           'Hosting renewal and whether hosting is included in year one only',
-          'Business email (for example you@yourcompany.com)',
+          'Business email (an address ending in @yourcompany.com)',
           'Paid plugins, themes or apps that renew annually',
           'Changes after launch: are small edits free for a period, or charged per change?',
           'Maintenance, backups and security updates',

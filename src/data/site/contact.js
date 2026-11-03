@@ -10,6 +10,10 @@ const CONTACT = {
   instagramUrl: 'https://www.instagram.com/orizova.digital/',
   linkedinUrl: 'https://www.linkedin.com/company/orizova',
   facebookUrl: 'https://www.facebook.com/profile.php?id=61594433301407',
+  // Paste the profile links here once the accounts exist — the footer icons
+  // and the schema "sameAs" list pick them up automatically.
+  xUrl: null, // e.g. 'https://x.com/orizovadigital'
+  youtubeUrl: null, // e.g. 'https://www.youtube.com/@orizovadigital'
   location: 'Delhi NCR, India — working with clients across India',
   // {{TODO: confirm business hours}} — shown on the contact page only when set.
   hours: null, // e.g. 'Mon–Sat, 10:00 am – 7:00 pm'
@@ -21,6 +25,7 @@ const CONTACT = {
     'https://www.facebook.com/profile.php?id=61594433301407',
   ],
 };
+CONTACT.sameAs = [...CONTACT.sameAs, CONTACT.xUrl, CONTACT.youtubeUrl].filter(Boolean);
 
 /** WhatsApp link with a pre-written message (used for service-, city- and
  *  goal-specific "talk to us" buttons so the chat starts with context). */

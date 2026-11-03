@@ -10,6 +10,7 @@ import projects from '../../data/work/projects';
 import { SITE_URL } from '../seo/Seo';
 import { guidesFor } from '../../data/site/siteIndex';
 import { factRows } from '../../data/site/facts';
+import { EmailText } from '../common/EmailLink';
 import '../../pages/locations/LocationPage.css';
 import './ContentPage.css';
 
@@ -273,7 +274,7 @@ export const FactSheet = ({ h2 = 'Orizova Digital at a glance' }) => (
       {factRows.map(([k, v]) => (
         <div className="facts-row" key={k}>
           <dt>{k}</dt>
-          <dd>{v}</dd>
+          <dd>{k === 'Email' ? <EmailText email={v} /> : v}</dd>
         </div>
       ))}
     </dl>

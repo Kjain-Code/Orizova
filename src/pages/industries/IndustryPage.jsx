@@ -66,7 +66,7 @@ const IndustryPage = () => {
                   <li key={it.title}><FiCheckCircle size={14} aria-hidden="true" /> {it.title}</li>
                 ))}
               </ul>
-              <h3 style={{ marginTop: 24 }}>Working across India</h3>
+              <h3 className="mt-24">Working across India</h3>
               <ul className="loc-areas">
                 {locations.slice(0, 9).map((l) => <li key={l.slug}><Link to={`/locations/${l.slug}`}>{l.city}</Link></li>)}
                 <li><Link to="/locations">+ {locations.length - 9} more cities</Link></li>

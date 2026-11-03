@@ -68,7 +68,7 @@ const LocationPage = () => {
                   <li key={a}><FiMapPin size={14} /> {a}</li>
                 ))}
               </ul>
-              <h3 style={{ marginTop: 24 }}>Industries we work with</h3>
+              <h3 className="mt-24">Industries we work with</h3>
               <ul className="loc-areas">
                 {loc.industries.map((a) => (
                   <li key={a}><FiCheckCircle size={14} /> {a}</li>

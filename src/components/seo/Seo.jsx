@@ -13,6 +13,11 @@ const LOGO = `${SITE_URL}/logo512.png`;
 // data/site/siteIndex.js so new city pages are picked up automatically).
 const AREAS_SERVED = ['India', 'Delhi NCR', ...citiesIndex.map((c) => c.city)];
 
+// JSON-LD with the "@" of any email address written as \u0040: still valid
+// JSON (Google reads it as the normal address) but not a clear-text email in
+// the page source.
+const jsonLd = (item) => JSON.stringify(item).replace(/([A-Za-z0-9._%+-])@([A-Za-z0-9-]+\.)/g, '$1\\u0040$2');
+
 const routesByKey = Object.fromEntries(seo.routes.map((r) => [r.key, r]));
 const routesByPath = Object.fromEntries(seo.routes.map((r) => [r.path, r]));
 
@@ -158,7 +163,7 @@ const Seo = ({ page, path, title, description, schema = [], breadcrumbs, noindex
       <meta name="twitter:image" content={DEFAULT_IMAGE} />
       {schemas.map((item, index) => (
         <script type="application/ld+json" key={`${item['@type']}-${index}`}>
-          {JSON.stringify(item)}
+          {jsonLd(item)}
         </script>
       ))}
     </Helmet>

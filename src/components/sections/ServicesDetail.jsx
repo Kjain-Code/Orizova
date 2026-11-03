@@ -7,6 +7,8 @@ import services from "../../data/services/services";
 import { waLink } from "../../data/site/contact";
 import ServiceIllustration from "../home/ServiceIllustrations";
 import "./ServicesDetail.css";
+import { tone, toneStyle } from "../../utils/tone";
+
 
 /* /services — one detailed card per service: illustration, what it is,
    what's included, and two next steps (read more, or ask on WhatsApp with
@@ -23,8 +25,8 @@ const ServicesDetail = () => (
         {services.map((service, i) => (
           <m.article
             key={service.id}
-            className="service-detail-card"
-            style={{ "--c": service.color }}
+            className={`service-detail-card ${tone(service.color)}`}
+            style={toneStyle(service.color)}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, delay: (i % 2) * 0.06 }}

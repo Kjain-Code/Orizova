@@ -4,6 +4,7 @@ import { FiArrowRight, FiGrid } from 'react-icons/fi';
 import { industryIcons as IND_ICON } from '../../data/site/industryIcons';
 import { industriesIndex as industries, postsIndex as posts } from '../../data/site/siteIndex';
 import BlogCards from '../common/BlogCards';
+import { tone, toneStyle } from '../../utils/tone';
 import './AreasServed.css';
 import '../content/ContentPage.css';
 
@@ -24,7 +25,7 @@ export const IndustriesStrip = () => (
           <Link key={ind.slug} to={`/industries/${ind.slug}`} className="area-card">
             {IND_ICON[ind.slug] && (() => {
               const [Icon, c] = IND_ICON[ind.slug];
-              return <span className="ind-ico" style={{ '--c': c }} aria-hidden="true"><Icon /></span>;
+              return <span className={`ind-ico ${tone(c)}`} style={toneStyle(c)} aria-hidden="true"><Icon /></span>;
             })()}
             <h3>{ind.name}</h3>
             <p>{ind.short}</p>
@@ -32,7 +33,7 @@ export const IndustriesStrip = () => (
           </Link>
         ))}
         <Link to="/industries" className="area-card area-card--all">
-          <span className="ind-ico" style={{ '--c': '#4C0E82' }} aria-hidden="true"><FiGrid /></span>
+          <span className={`ind-ico ${tone('#4C0E82')}`} aria-hidden="true"><FiGrid /></span>
           <h3>All {industries.length} industries</h3>
           <p>Hotels, salons, gyms, home services, startups, professional firms and more — see how we approach your business.</p>
           <span className="area-link">View all <FiArrowRight aria-hidden="true" /></span>
@@ -43,7 +44,7 @@ export const IndustriesStrip = () => (
 );
 
 export const LatestPosts = () => (
-  <section className="areas-section" style={{ background: 'var(--cream)' }}>
+  <section className="areas-section areas-section--cream">
     <div className="container">
       <div className="text-center">
         <span className="section-tag">From the blog</span>
@@ -51,7 +52,7 @@ export const LatestPosts = () => (
         <p className="section-subtitle">Plain-language answers on website costs, Google Maps, ads and more.</p>
       </div>
       <BlogCards items={posts.slice(0, 3)} />
-      <div className="text-center" style={{ marginTop: 36 }}>
+      <div className="text-center mt-36">
         <Link to="/blog" className="btn-outline">Read all articles <FiArrowRight aria-hidden="true" /></Link>
       </div>
     </div>

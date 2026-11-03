@@ -10,6 +10,7 @@ import services from '../../data/services/services';
 import { industriesIndex, industryGroups, citiesIndex } from '../../data/site/siteIndex';
 import { groupMeta } from '../../data/site/industryIcons';
 import { waLink } from '../../data/site/contact';
+import { tone, toneStyle } from '../../utils/tone';
 import ServiceIllustration from '../home/ServiceIllustrations';
 
 const fadeUp = {
@@ -125,7 +126,7 @@ export const AboutValues = () => (
       </m.div>
       <div className="ab-values-grid">
         {values.map(({ Icon, color, title, desc }, i) => (
-          <m.div key={title} className="ab-value" style={{ '--c': color }} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.06 }}>
+          <m.div key={title} className={`ab-value ${tone(color)}`} style={toneStyle(color)} {...fadeUp} transition={{ ...fadeUp.transition, delay: i * 0.06 }}>
             <span className="ab-value-icon"><Icon /></span>
             <h3>{title}</h3>
             <p>{desc}</p>
@@ -183,7 +184,7 @@ export const AboutWho = () => (
           const list = industriesIndex.filter((x) => x.group === g);
           return (
             <m.div key={g} {...fadeUp} transition={{ ...fadeUp.transition, delay: (i % 4) * 0.06 }}>
-              <Link to={`/industries#${slugify(g)}`} className="ab-who-card" style={{ '--c': meta.color }}>
+              <Link to={`/industries#${slugify(g)}`} className={`ab-who-card ${tone(meta.color)}`} style={toneStyle(meta.color)}>
                 <span className="ab-who-head">
                   {Icon && <span className="ab-who-icon"><Icon /></span>}
                   <strong>{g}</strong>

@@ -44,7 +44,7 @@ const ServicesPage = () => {
         subtitle="Websites, apps, SEO, ads, social media, branding and video for businesses across India — pick what you need, or let us plan the complete package."
         chips={['Build', 'Grow', 'Create', 'SEO', 'Ads']}
       />
-      <section className="loc-section content-section" style={{ paddingBottom: 0 }}>
+      <section className="loc-section content-section pad-b-0">
         <div className="container">
           <div className="cb-prose">
             <span className="section-tag">What we do</span>

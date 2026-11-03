@@ -17,6 +17,8 @@ import './components/sections/CreativeRingGallery.css';
 import './components/sections/CreativeWorkSections.css';
 import './components/sections/ServicesDetail.css';
 import './components/common/GoalPicker.css';
+import './styles/tones.css';
+import './styles/utilities.css';
 
 // The static SEO tags in each pre-rendered HTML file (marked data-rh) exist for
 // crawlers and link previews. Once React is running, react-helmet-async renders
@@ -34,9 +36,11 @@ if (preMain) {
 }
 
 // Google Analytics 4 — set REACT_APP_GA_ID=G-XXXXXXX in .env.production.
-// {{TODO: add your GA4 Measurement ID}}. Loaded after the first paint.
+// Set it in Vercel → Settings → Environment Variables. Loaded after the first paint.
+// Pre-rendered pages already carry the tag (scripts/prerender.js); this is
+// only a fallback for a page that wasn't pre-rendered.
 const GA_ID = process.env.REACT_APP_GA_ID;
-if (GA_ID) {
+if (GA_ID && !window.gtag) {
   window.dataLayer = window.dataLayer || [];
   window.gtag = function gtag() { window.dataLayer.push(arguments); }; // eslint-disable-line prefer-rest-params
   window.gtag('js', new Date());

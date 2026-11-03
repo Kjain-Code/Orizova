@@ -31,11 +31,11 @@ const answers = {
   },
   '/contact': {
     q: 'How do I contact Orizova Digital?',
-    a: 'You can contact Orizova Digital on WhatsApp or phone at +91 70608 24503, by email at orizovadigital@gmail.com, or through the contact form on this page. Share your business, city and goal, and the team replies with a clear plan and a fixed quote. Consultations are free.',
+    a: 'You can contact Orizova Digital on WhatsApp or phone at +91 70608 24503, by email (address on this page), or through the contact form on this page. Share your business, city and goal, and the team replies with a clear plan and a fixed quote. Consultations are free.',
   },
   '/portfolio': {
     q: 'What websites has Orizova Digital built?',
-    a: 'Orizova Digital’s website portfolio includes Morphic Spaces (a spatial design studio in the Chandigarh Tricity), WIPO Group (a fractional real-estate investment portal), Ganesh Creation (a wedding and fashion photography studio) and FPS Subtitle (a subtitling and localisation studio). Each case study explains the brief, the approach and what was built.',
+    a: 'Orizova Digital’s website portfolio includes its own agency website (a pre-rendered React site with top Google PageSpeed scores), Morphic Spaces (a spatial design studio in the Chandigarh Tricity), WIPO Group (a fractional real-estate investment portal), Ganesh Creation (a wedding and fashion photography studio) and FPS Subtitle (a subtitling and localisation studio). Each case study explains the brief, the approach and what was built.',
   },
   '/creative-work': {
     q: 'What kind of videos does Orizova Digital edit?',

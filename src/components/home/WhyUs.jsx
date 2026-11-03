@@ -2,6 +2,7 @@ import React from 'react';
 import { m } from 'framer-motion';
 import { FiZap, FiTarget, FiUsers, FiBarChart2, FiShield, FiClock } from 'react-icons/fi';
 import { SquiggleUnderline } from '../common/Doodles';
+import { tone, toneStyle } from '../../utils/tone';
 import './WhyUs.css';
 
 const reasons = [
@@ -44,8 +45,8 @@ const WhyUs = () => {
               viewport={{ once: true }}
               whileHover={{ y: -6, boxShadow: '0 12px 40px rgba(76,14,130,0.15)' }}
             >
-              <div className="whyus-icon" style={{ background: `linear-gradient(135deg, ${reason.color}, ${reason.color}CC)`, boxShadow: `0 10px 22px ${reason.color}40` }}>
-                <reason.icon size={24} color="#fff" />
+              <div className={`whyus-icon ${tone(reason.color)}`} style={toneStyle(reason.color)}>
+                <reason.icon size={24} aria-hidden="true" />
               </div>
               <h3>{reason.title}</h3>
               <p>{reason.desc}</p>

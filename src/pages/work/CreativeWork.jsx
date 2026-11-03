@@ -20,7 +20,7 @@ const CreativeWork = () => {
         subtitle="Animated typography, brand reels, and our best shoots — organised by style so you can see exactly what we do best."
         chips={['Reels', 'Ad videos', 'Brand films', 'Typography', 'Shorts']}
       />
-      <section className="loc-section content-section" style={{ paddingBottom: 0 }}>
+      <section className="loc-section content-section pad-b-0">
         <div className="container">
           <Prose
             h2="Reels, ad videos and brand films from Orizova Digital"
