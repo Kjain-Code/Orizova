@@ -1,54 +1,45 @@
-import React, { useState } from 'react';
-import creativeWork from '../../data/work/creativeWork';
-import { StarDoodle } from '../common/Doodles';
-import CreativeRingGallery from './CreativeRingGallery';
-import './CreativeWorkSections.css';
+// Web-optimised copies (720p H.264, ~3–8 MB each) generated from the
+// originals in src/assets/videos/. The originals were 1080p (several in HEVC,
+// which many browsers can't play) and ~370 MB in total.
+import pehnawaReelEdit from '../../assets/videos-web/pehnawa-brand-film.mp4';
+import drPathLab from '../../assets/videos-web/diagnostic-lab.mp4';
+import raviTraderReel3 from '../../assets/videos-web/ravi-traders.mp4';
+import carEditing from '../../assets/videos-web/car-reel.mp4';
+import reel1 from '../../assets/videos-web/doctor-informative.mp4';
+import reel2 from '../../assets/videos-web/showroom.mp4';
+import video0727 from '../../assets/videos-web/paint-dealers.mp4';
+import typography from '../../assets/videos-web/typography-1.mp4';
+import typography2 from '../../assets/videos-web/typography-2.mp4';
+import magzine from '../../assets/videos-web/magazine-ad.mp4';
+import hamper from '../../assets/videos-web/hamper-ad.mp4';
+import pPehnawa from '../../assets/videos-web/posters/pehnawa-brand-film.webp';
+import pDrPath from '../../assets/videos-web/posters/diagnostic-lab.webp';
+import pRavi from '../../assets/videos-web/posters/ravi-traders.webp';
+import pCar from '../../assets/videos-web/posters/car-reel.webp';
+import pReel1 from '../../assets/videos-web/posters/doctor-informative.webp';
+import pReel2 from '../../assets/videos-web/posters/showroom.webp';
+import p0727 from '../../assets/videos-web/posters/paint-dealers.webp';
+import pTypo from '../../assets/videos-web/posters/typography-1.webp';
+import pTypo2 from '../../assets/videos-web/posters/typography-2.webp';
+import pMag from '../../assets/videos-web/posters/magazine-ad.webp';
+import pHamper from '../../assets/videos-web/posters/hamper-ad.webp';
 
-const categories = [
-  'All',
-  'Kinetic & Animated Typography',
-  'Brand Films & Ads',
-  'Reels & Social Content',
-  'Showreel — Best Work',
+// Only real, local videos from src/assets/videos/ — nothing here links out to Instagram.
+
+// Categories drive the filter buttons on /creative-work (only categories that
+// have at least one video are shown). `client` is the brand / type of business.
+const creativeWork = [
+  { id: 1, title: "Shopping Mall Brand Film", client: "Pehnawa Shopping Mall", category: "Brand Films & Ads", video: pehnawaReelEdit, poster: pPehnawa },
+  { id: 2, title: "Diagnostic Lab Promo", client: "Diagnostic lab", category: "Brand Films & Ads", video: drPathLab, poster: pDrPath },
+  { id: 10, title: "Magazine-Style Ad", client: "Ad creative", category: "Brand Films & Ads", video: magzine, poster: pMag },
+  { id: 11, title: "Gift Hamper Ad", client: "Gift hampers", category: "Brand Films & Ads", video: hamper, poster: pHamper },
+  { id: 3, title: "Paint Dealer Reel", client: "Ravi Traders", category: "Reels & Social", video: raviTraderReel3, poster: pRavi },
+  { id: 7, title: "Paint Finish Product Reel", client: "Paint dealer", category: "Reels & Social", video: video0727, poster: p0727 },
+  { id: 4, title: "Cinematic Car Reel", client: "Automobile", category: "Reels & Social", video: carEditing, poster: pCar },
+  { id: 9, title: "Showroom Walkthrough Reel", client: "Retail showroom", category: "Reels & Social", video: reel2, poster: pReel2 },
+  { id: 5, title: "Doctor Explainer Video", client: "Healthcare", category: "Informative & Typography", video: reel1, poster: pReel1 },
+  { id: 8, title: "Kinetic Typography Reel", client: "Educational content", category: "Informative & Typography", video: typography, poster: pTypo },
+  { id: 6, title: "Animated Typography Reel", client: "Educational content", category: "Informative & Typography", video: typography2, poster: pTypo2 },
 ];
 
-const CreativeWorkSections = () => {
-  const [active, setActive] = useState('All');
-
-  if (creativeWork.length === 0) {
-    return (
-      <section className="creative-empty-section">
-        <div className="container text-center">
-          <StarDoodle className="creative-empty-star" />
-          <h3>Videos coming soon</h3>
-          <p>We're adding our animated typography, brand reels, and showreel work here shortly.</p>
-        </div>
-      </section>
-    );
-  }
-
-  const filtered = active === 'All' ? creativeWork : creativeWork.filter((v) => v.category === active);
-
-  return (
-    <section className="creative-work-section">
-      <div className="container">
-        <div className="creative-filters">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`filter-btn ${active === cat ? 'active' : ''}`}
-              onClick={() => setActive(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <CreativeRingGallery items={filtered} />
-        <p className="ring-hint">Click any card to play the video</p>
-      </div>
-    </section>
-  );
-};
-
-export default CreativeWorkSections;
+export default creativeWork;

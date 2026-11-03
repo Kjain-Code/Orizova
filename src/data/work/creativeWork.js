@@ -25,87 +25,21 @@ import pMag from '../../assets/videos-web/posters/magazine-ad.webp';
 import pHamper from '../../assets/videos-web/posters/hamper-ad.webp';
 
 // Only real, local videos from src/assets/videos/ — nothing here links out to Instagram.
-// A couple of titles are guesses from the filename (marked "rename me") — fix them to the real name.
 
+// Categories drive the filter buttons on /creative-work (only categories that
+// have at least one video are shown). `client` is the brand / type of business.
 const creativeWork = [
-  {
-    id: 1,
-    title: "Pehnawa Shopping Mall",
-    category: "Advanced Brand Films",
-    video: pehnawaReelEdit,
-    poster: pPehnawa,
-  },
-  {
-    id: 2,
-    title: "Diagnostic Lab",
-    category: "Advanced Brand Films",
-    video: drPathLab,
-    poster: pDrPath,
-  },
-  {
-    id: 3,
-    title: "Brand Films & Ads",
-    category: "Ravi Traders",
-    video: raviTraderReel3,
-    poster: pRavi,
-  },
-  {
-    id: 4,
-    title: "Car Reel",
-    category: "Cinematic Beats Edit",
-    video: carEditing,
-    poster: pCar,
-  },
-  {
-    id: 5,
-    title: "Doctor Informative",
-    category: "Informative Content",
-    video: reel1,
-    poster: pReel1,
-  },
-  {
-    id: 6,
-    title: "Typography 2",
-    category: "Informative Content",
-    video: typography2,
-    poster: pTypo2,
-  },
-  {
-    id: 7,
-    title: "Paint Dealers",
-    category: "Cinematic Beats Edit",
-    video: video0727,
-    poster: p0727,
-  },
-  {
-    id: 8,
-    title: "Typography",
-    category: "Informative Content",
-    video: typography,
-    poster: pTypo,
-  },
-  {
-    id: 9,
-    title: "Showroom",
-    category: "Advanced Workshop ",
-    video: reel2,
-    poster: pReel2,
-  },
-  {
-    id: 10,
-    title: "Magazine Ad",
-    category: "Ad Content",
-    video: magzine,
-    poster: pMag,
-  },
-  {
-    id: 11,
-    title: "Hamper Ad",
-    category: "Ad Content",
-    video: hamper,
-    poster: pHamper,
-  },
-
+  { id: 1, title: "Shopping Mall Brand Film", client: "Pehnawa Shopping Mall", category: "Brand Films & Ads", video: pehnawaReelEdit, poster: pPehnawa },
+  { id: 2, title: "Diagnostic Lab Promo", client: "Diagnostic lab", category: "Brand Films & Ads", video: drPathLab, poster: pDrPath },
+  { id: 10, title: "Magazine-Style Ad", client: "Ad creative", category: "Brand Films & Ads", video: magzine, poster: pMag },
+  { id: 11, title: "Gift Hamper Ad", client: "Gift hampers", category: "Brand Films & Ads", video: hamper, poster: pHamper },
+  { id: 3, title: "Paint Dealer Reel", client: "Ravi Traders", category: "Reels & Social", video: raviTraderReel3, poster: pRavi },
+  { id: 7, title: "Paint Finish Product Reel", client: "Paint dealer", category: "Reels & Social", video: video0727, poster: p0727 },
+  { id: 4, title: "Cinematic Car Reel", client: "Automobile", category: "Reels & Social", video: carEditing, poster: pCar },
+  { id: 9, title: "Showroom Walkthrough Reel", client: "Retail showroom", category: "Reels & Social", video: reel2, poster: pReel2 },
+  { id: 5, title: "Doctor Explainer Video", client: "Healthcare", category: "Informative & Typography", video: reel1, poster: pReel1 },
+  { id: 8, title: "Kinetic Typography Reel", client: "Educational content", category: "Informative & Typography", video: typography, poster: pTypo },
+  { id: 6, title: "Animated Typography Reel", client: "Educational content", category: "Informative & Typography", video: typography2, poster: pTypo2 },
 ];
 
 export default creativeWork;
