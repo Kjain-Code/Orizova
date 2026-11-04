@@ -5,6 +5,39 @@
 // Section: blog posts (with takeaways).
 
 const answers = {
+  '/blog/how-long-does-seo-take': {
+    q: 'How long does SEO take to show results?',
+    a: 'Google says SEO usually needs four months to a year to put improvements in place and then see the benefit. In practice, technical fixes and Google Business Profile changes can show movement within weeks, specific city and service searches start ranking in two to three months, and steady enquiries from search typically build between four and twelve months — faster for established sites, slower for new domains and competitive industries.',
+    takeaways: [
+      'Expect first signs (impressions, indexing) in weeks, enquiries in months.',
+      'Local SEO on Google Maps is usually the fastest win for nearby customers.',
+      'Specific city and service searches rank before broad, competitive ones.',
+      'Track impressions, queries and enquiries — rankings move last.',
+      'Nobody can guarantee a #1 ranking; be wary of anyone who does.',
+    ],
+  },
+  '/blog/shopify-vs-woocommerce-vs-custom-website-india': {
+    q: 'Which is better for an online store in India: Shopify, WooCommerce or a custom website?',
+    a: 'Shopify is quickest to launch with the least technical work, but adds a monthly plan, GST and — because Shopify Payments is not available in India — a transaction fee on online payments through gateways like Razorpay. WooCommerce has no platform fee and full control but needs good hosting and regular maintenance. A custom store costs more to build and suits B2B pricing, complex products or high traffic.',
+    takeaways: [
+      'Shopify: fastest start, but plan fees, app costs and per-sale fees add up.',
+      'WooCommerce: free plugin and full control; budget for hosting and upkeep.',
+      'Custom: no platform fee and top speed, for non-standard needs.',
+      'Compare running costs over two to three years, not just build price.',
+      'All three can rank on Google; speed and unique content matter most.',
+    ],
+  },
+  '/blog/google-ads-cost-india': {
+    q: 'How much does Google Ads cost in India?',
+    a: 'Google Ads has no fixed price or minimum spend: you set an average daily budget and, for search campaigns, pay when someone clicks. The cost per click depends on industry, city, keyword intent, competition and the quality of your ad and landing page. Work out a budget as enquiries wanted × cost per click ÷ conversion rate, using Keyword Planner for the click cost; GST is added for Indian billing.',
+    takeaways: [
+      'You control the budget; Google can spend up to 2× on a day but no more than 30.4× the daily average in a month.',
+      'Clicks cost more in competitive industries and metro cities.',
+      'Budget = enquiries wanted × cost per click ÷ conversion rate.',
+      'Negative keywords, landing pages and conversion tracking stop most waste.',
+      'Review weekly and change slowly.',
+    ],
+  },
   '/blog/get-recommended-by-chatgpt-google-ai': {
     q: 'How can my business get recommended by ChatGPT and Google AI Overviews?',
     a: 'There is no special trick. Google says AI Overviews and AI Mode have no extra requirements beyond being indexed and eligible for a snippet, and OpenAI asks sites to allow its OAI-SearchBot crawler for ChatGPT search. Then make each key page answer buyer questions clearly near the top, keep your business details identical everywhere, add matching schema, and build genuine reviews and mentions on trusted sites.',

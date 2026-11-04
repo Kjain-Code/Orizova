@@ -29,7 +29,7 @@ const postsA = [
           '**Design approach.** A refined template is faster; a fully custom design takes longer but fits your brand exactly.',
           '**Content.** Writing good page copy is real work. If the agency writes it, expect that in the price.',
           '**Features.** Booking, payments, logins, multi-language, calculators, CRM integration or product filters each add development time.',
-          '**Platform.** Hand-coded, WordPress, Shopify or a custom framework — each has different build and running costs.',
+          '**Platform.** Hand-coded, WordPress, Shopify or a custom framework — each has different build and running costs. For stores, see [Shopify vs WooCommerce vs custom](/blog/shopify-vs-woocommerce-vs-custom-website-india).',
           '**SEO and speed setup.** Proper titles, schema, sitemaps, image optimisation and Search Console setup take time but pay back for years.',
           '**Ongoing costs.** Domain renewal, hosting, premium plugins or apps, maintenance and security updates.',
         ],
@@ -263,7 +263,7 @@ const postsA = [
           'Search for your service in your area on Google. If you see ads and the searches make sense, people are searching — start with Google.',
           'If almost nobody searches but your product looks great in photos or video, start with Meta.',
           'If you rely on trust (medical, finance, high-value purchases), fix your website, reviews and Google profile first, then add ads.',
-          'Start with a modest test budget, track qualified leads, and scale what works.',
+          'Start with a modest test budget, track qualified leads, and scale what works — our [Google Ads budget guide](/blog/google-ads-cost-india) shows how to work out a starting number.',
         ],
       },
       {

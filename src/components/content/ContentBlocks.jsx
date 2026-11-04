@@ -87,18 +87,80 @@ export const SectionHead = ({ tag, h2, center = false }) => (
   </div>
 );
 
-export const Prose = ({ tag, h2, paras, bullets, after, variant }) => {
+/* ---------- article extras (blog posts) ---------- */
+
+/** Numbered steps: [{ title, text }] */
+const ArticleSteps = ({ steps }) => (
+  <ol className="cb-steps">
+    {steps.map((s, i) => (
+      <li key={s.title} className="cb-step">
+        <span className="cb-step-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+        <div>
+          <h3 className="cb-step-title">{s.title}</h3>
+          <p><Inline text={s.text} /></p>
+        </div>
+      </li>
+    ))}
+  </ol>
+);
+
+/** Comparison table: { caption, head: [..], rows: [[..], ..], note } */
+const ArticleTable = ({ table }) => (
+  <figure className="cb-table">
+    {table.caption && <p className="cb-table-title" aria-hidden="true">{table.caption}</p>}
+    <p className="cb-table-hint" aria-hidden="true">Swipe to see all columns →</p>
+    <div className="cb-table-scroll" tabIndex={0} role="region" aria-label={table.caption || 'Comparison table'}>
+      <table>
+        {table.caption && <caption className="cb-table-caption">{table.caption}</caption>}
+        <thead>
+          <tr>{table.head.map((h) => <th key={h} scope="col">{h}</th>)}</tr>
+        </thead>
+        <tbody>
+          {table.rows.map((r) => (
+            <tr key={r[0]}>
+              {r.map((c, i) => (i === 0
+                ? <th key={`${r[0]}-${i}`} scope="row"><Inline text={c} /></th>
+                : <td key={`${r[0]}-${i}`}><Inline text={c} /></td>))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    {table.note && <figcaption><Inline text={table.note} /></figcaption>}
+  </figure>
+);
+
+/** Callout box: { title, text, tone: 'tip' | 'warn' | 'example' } */
+const TIP_ICONS = { tip: FiZap, warn: FiShield, example: FiCompass };
+const ArticleTip = ({ tip }) => {
+  const tone = tip.tone || 'tip';
+  const Icon = TIP_ICONS[tone] || FiZap;
+  return (
+    <aside className={`cb-tip cb-tip--${tone}`}>
+      <span className="cb-tip-ico" aria-hidden="true"><Icon /></span>
+      <div>
+        {tip.title && <p className="cb-tip-title">{tip.title}</p>}
+        <p><Inline text={tip.text} /></p>
+      </div>
+    </aside>
+  );
+};
+
+export const Prose = ({ tag, h2, paras, bullets, after, variant, steps, table, tip }) => {
   const hasBullets = bullets && bullets.length > 0;
   if (variant === 'article') {
     return (
       <div className="loc-block cb-article">
         {h2 && <h2 className="cb-article-h2">{h2}</h2>}
         <Paras paras={paras} />
+        {steps && steps.length > 0 && <ArticleSteps steps={steps} />}
+        {table && <ArticleTable table={table} />}
         {hasBullets && (
           <ul className="cb-article-list">
             {bullets.map((b) => <li key={b.slice(0, 40)}><Inline text={b} /></li>)}
           </ul>
         )}
+        {tip && <ArticleTip tip={tip} />}
         {after && <Paras paras={after} />}
       </div>
     );

@@ -41,21 +41,10 @@ export const splitHeading = (text, re) => {
   return [str.slice(0, m.index).trim(), str.slice(m.index).trim()];
 };
 
-/** Visible breadcrumb trail — mirrors the BreadcrumbList schema from <Seo>. */
-const Crumbs = ({ items }) => (
-  <nav className="pb-crumbs" aria-label="Breadcrumb">
-    <ol>
-      <li><Link to="/">Home</Link></li>
-      {items.map((c, i) => (
-        <li key={c.path}>
-          {i === items.length - 1 ? <span aria-current="page">{c.name}</span> : <Link to={c.path}>{c.name}</Link>}
-        </li>
-      ))}
-    </ol>
-  </nav>
-);
-
-const PageBanner = ({ title, highlight, subtitle, chips = DEFAULT_CHIPS, actions = true, compact = false, crumbs }) => {
+/* No visible breadcrumb trail on the pages (removed on purpose, 4 Nov 2026).
+   Pages still pass `crumbs`; it is ignored here. The BreadcrumbList schema
+   in <Seo> stays, so Google can still show the page path in search results. */
+const PageBanner = ({ title, highlight, subtitle, chips = DEFAULT_CHIPS, actions = true, compact = false }) => {
   const titleWords = String(title || '').split(' ').filter(Boolean).length;
   // A leading/trailing em dash is kept as a plain-text separator so the H1
   // reads "Local SEO Services — Rank on Google Maps", not "...Services Rank...".
@@ -71,7 +60,6 @@ const PageBanner = ({ title, highlight, subtitle, chips = DEFAULT_CHIPS, actions
 
       <div className="container pb-inner">
         <div className="pb-copy">
-          {crumbs && crumbs.length > 0 && <Crumbs items={crumbs} />}
           <h1 className="pb-title">
             <Words text={cleanTitle} />
             {cleanHighlight && (dashed ? '\u00A0— ' : ' ')}

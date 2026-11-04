@@ -19,7 +19,7 @@ const answers = {
   },
   '/blog': {
     q: 'What does the Orizova Digital blog cover?',
-    a: 'The Orizova Digital blog publishes practical, plain-language guides for business owners in India on website cost, getting a website made, choosing a developer, Google Business Profile, local SEO, Meta Ads vs Google Ads, and marketing for clinics, real estate, restaurants, architects and loan agents.',
+    a: 'The Orizova Digital blog publishes practical, plain-language guides for business owners in India on website cost, getting a website made, choosing a developer and an e-commerce platform, how long SEO takes, Google Ads budgets, Google Business Profile, local SEO, Meta Ads vs Google Ads, and marketing for clinics, real estate, restaurants, architects and loan agents.',
   },
   '/faq': {
     q: 'What do businesses usually ask Orizova Digital?',

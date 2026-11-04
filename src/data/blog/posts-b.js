@@ -61,7 +61,7 @@ const postsB = [
           '**Design approach:** a refined template is quicker; a custom design takes longer.',
           '**Content writing:** if the developer writes your copy, that time is part of the price.',
           '**Features:** online payments, bookings, product catalogues, logins or a bilingual site add development time.',
-          '**Technology:** WordPress, Shopify and custom-coded sites (for example React) differ in build effort and running costs.',
+          '**Technology:** WordPress, Shopify and custom-coded sites (for example React) differ in build effort and running costs — for online stores, compare [Shopify, WooCommerce and custom builds](/blog/shopify-vs-woocommerce-vs-custom-website-india).',
           '**SEO setup:** titles, descriptions, schema, sitemap and fast loading — ask whether these are included.',
         ],
         after: [
@@ -652,7 +652,7 @@ const postsB = [
       {
         h2: 'How long does local SEO take?',
         paras: [
-          'Fixing your profile, categories and details can show movement within a few weeks. Reviews, citations and website content build over months. The businesses that win in local search are rarely the ones that did one big push — they are the ones that kept a simple routine going every month.',
+          'Fixing your profile, categories and details can show movement within a few weeks. Reviews, citations and website content build over months. The businesses that win in local search are rarely the ones that did one big push — they are the ones that kept a simple routine going every month. For the full picture, see [how long SEO takes to show results](/blog/how-long-does-seo-take).',
         ],
       },
       {

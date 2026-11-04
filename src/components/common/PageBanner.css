@@ -219,27 +219,3 @@
 .pb-static .pb-sub, .pb-static .pb-actions { animation: none; opacity: 1; }
 .pb-static .pb-chip { animation: pb-bob 6s ease-in-out infinite; opacity: 1; }
 
-/* Visible breadcrumb trail (mirrors the BreadcrumbList schema) */
-.pb-crumbs { margin-bottom: 18px; }
-.pb-crumbs ol {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 4px 0;
-  list-style: none; margin: 0; padding: 0;
-  font-size: 13.5px; font-weight: 500; color: var(--text-light);
-}
-.pb-crumbs li { display: inline-flex; align-items: center; min-width: 0; }
-.pb-crumbs li + li::before {
-  content: '›'; margin: 0 9px; color: rgba(76, 14, 130, .4); font-weight: 600;
-}
-.pb-crumbs a {
-  color: var(--primary); text-decoration: none; padding: 4px 0;
-  border-bottom: 1px solid transparent; transition: border-color .2s;
-}
-.pb-crumbs a:hover, .pb-crumbs a:focus-visible { border-bottom-color: currentColor; }
-.pb-crumbs [aria-current="page"] {
-  color: var(--text-light); max-width: 46ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-}
-@media (max-width: 640px) {
-  .pb-crumbs { margin-bottom: 14px; }
-  .pb-crumbs ol { font-size: 12.5px; }
-  .pb-crumbs [aria-current="page"] { max-width: 24ch; }
-}

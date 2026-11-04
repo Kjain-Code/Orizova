@@ -907,9 +907,36 @@
       "path": "/blog",
       "priority": "0.7",
       "title": "Digital Marketing Blog – Website, SEO & Ads Guides",
-      "description": "Practical guides for business owners in Delhi NCR and Chandigarh: website costs, Google Maps, Meta vs Google Ads, and marketing for clinics, cafes and more.",
+      "description": "Practical guides for business owners across India: website and Google Ads costs, SEO timelines, e-commerce platforms, Google Maps and Meta vs Google Ads.",
       "h1": "Practical Guides on Websites, SEO & Digital Marketing",
-      "lastmod": "2026-10-25"
+      "lastmod": "2026-11-04"
+    },
+    {
+      "key": "post:how-long-does-seo-take",
+      "path": "/blog/how-long-does-seo-take",
+      "priority": "0.7",
+      "title": "How Long Does SEO Take? Realistic Timeline (2026)",
+      "description": "How long SEO takes to show results in India: a month-by-month timeline, what speeds it up, and how to tell it is working before rankings arrive.",
+      "h1": "How Long Does SEO Take to Show Results?",
+      "lastmod": "2026-11-04"
+    },
+    {
+      "key": "post:shopify-vs-woocommerce-vs-custom-website-india",
+      "path": "/blog/shopify-vs-woocommerce-vs-custom-website-india",
+      "priority": "0.7",
+      "title": "Shopify vs WooCommerce vs Custom Store India (2026)",
+      "description": "Shopify, WooCommerce or a custom store? Compare costs, transaction fees, Indian payments, COD, speed and SEO to pick the right e-commerce platform.",
+      "h1": "Shopify vs WooCommerce vs Custom Website for an Online Store in India",
+      "lastmod": "2026-11-04"
+    },
+    {
+      "key": "post:google-ads-cost-india",
+      "path": "/blog/google-ads-cost-india",
+      "priority": "0.7",
+      "title": "Google Ads Cost in India: How Much Budget? (2026)",
+      "description": "How Google Ads pricing works in India, how to calculate a starting budget from your own cost per click, and the five mistakes that waste ad spend.",
+      "h1": "Google Ads Cost in India: How Much Budget Do You Need?",
+      "lastmod": "2026-11-04"
     },
     {
       "key": "post:get-recommended-by-chatgpt-google-ai",

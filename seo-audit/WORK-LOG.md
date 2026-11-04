@@ -132,3 +132,21 @@ Portfolio redesign files (Projects, Portfolio, PortfolioDetail, CreativeWorkSect
 **Other fixes**: /portfolio quick answer + meta description now include the Orizova case study; PageSpeed ring labels no longer run together on phones (portfolio cards); footer email stays on one line.
 
 **Tested**: build ✅ (128 pages + 404), ESLint 0 ✅, test ✅, titles 30–60 chars on all pages ✅, 0 pages with plain-text email ✅, no JS/hydration errors ✅, no horizontal scroll at 390px ✅, before/after screenshots of 14 key pages compared — only intended changes.
+
+## 3 Nov 2026 (later) — blank page after deploy fixed
+Live /portfolio and /creative-work showed only the navbar when opened from a tab loaded before the latest deploy: the page's JS file name had changed, the download failed and React waited forever. App.js now retries the download, reloads the page once (max once per 30 s) to get the new files, and if it still fails keeps the pre-rendered page (or a "Refresh page" message) instead of a blank screen. Tested: forced chunk failures recover; normal navigation between all pages OK; build ✅ lint ✅ test ✅.
+
+## 4 Nov 2026 — visible breadcrumbs removed
+The "Home › Services › …" line above the H1 is gone from every page (PageBanner.jsx no longer renders it; its CSS removed). Pages still pass `crumbs`, which PageBanner ignores. The BreadcrumbList schema in <Seo> is unchanged, so Google can still show the path in search results. Tested: 0 pages with a visible breadcrumb, banners checked on desktop + mobile, build ✅ lint ✅ test ✅.
+
+## 4 Nov 2026 — 3 new blog posts + richer blog formatting
+**New posts** (src/data/blog/posts-d.js, newest first on /blog and the home page):
+- /blog/how-long-does-seo-take — SEO timeline (cites Google's "Do you need an SEO?"; our own Search Console numbers from the case study)
+- /blog/shopify-vs-woocommerce-vs-custom-website-india — e-commerce platform comparison (Shopify India prices/fees dated Nov 2026, linked to official pricing)
+- /blog/google-ads-cost-india — how Google Ads cost works + budget formula (Google's 2× daily / 30.4× monthly rule linked; example numbers labelled)
+
+Each has a short answer + takeaways (data/blog/answers.js), FAQ schema, seo.json route (title ≤60, description 120–160), sitemap entry, and guideIndex links from the related service, industry and city pages (22–42 linking pages each). Older posts now link to them (local SEO checklist, Delhi NCR cost guide, business-website guide, Meta vs Google). /blog meta description and hub answer updated.
+
+**New blog blocks** (ContentBlocks.jsx Prose, article variant + ContentPage.css): `steps` (numbered cards), `table` (comparison table, swipe on mobile), `tip` (callout: tip / warn / example).
+
+**Tested**: build ✅ (131 pages + 404), lint ✅, test ✅, 0 broken internal links, all JSON-LD valid, 1 H1 per page, titles 30–60 ✅, desktop + mobile screenshots checked.
