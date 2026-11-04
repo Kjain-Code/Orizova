@@ -50,7 +50,7 @@ if (GA_ID && !window.gtag) {
       const s = document.createElement('script');
       s.async = true;
       s.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
-      document.head.appendChild(s);
+      document.head.appendCh  ild(s);
     }, 1500);
   });
 }

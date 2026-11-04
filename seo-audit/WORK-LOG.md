@@ -150,3 +150,16 @@ Each has a short answer + takeaways (data/blog/answers.js), FAQ schema, seo.json
 **New blog blocks** (ContentBlocks.jsx Prose, article variant + ContentPage.css): `steps` (numbered cards), `table` (comparison table, swipe on mobile), `tip` (callout: tip / warn / example).
 
 **Tested**: build ✅ (131 pages + 404), lint ✅, test ✅, 0 broken internal links, all JSON-LD valid, 1 H1 per page, titles 30–60 ✅, desktop + mobile screenshots checked.
+
+## 4 Nov 2026 — blank white page fixed
+Symptom on the live site: some pages stayed an empty cream screen (tab showing the URL instead of the title) until refreshed. Reproduced locally: when any error happens while React starts, React removed the whole pre-rendered page and the static <title> had already been removed — exactly that screen.
+- src/index.js: `RootSafety` boundary around the app. On any crash the pre-rendered page (and its title) stays on screen, links keep working as normal links, and the error is logged in the console as "[orizova] page error …". React 19 `onUncaughtError` also logs.
+- scripts/prerender.js: title, description, canonical, OG and verification tags now sit right after the viewport tag, before the inline CSS (title at ~250 bytes instead of ~130 KB), so the tab title shows immediately.
+Tested: forced crash → page still shown (old build: blank); no hydration errors on key pages; first paint < 1 s with mobile network + CPU throttling; build ✅ lint ✅ test ✅.
+
+## 4 Nov 2026 — full-site QA pass
+Checked all 131 pages on mobile (390 px) and desktop: no JS or hydration errors, no horizontal scroll, no broken images, every image has alt text, no empty links, exactly 1 H1 per page, 0 broken internal links, all JSON-LD valid.
+Fixed:
+- Accessibility (axe WCAG 2 A/AA, all pages): 8 issues → 0. Small gold labels (eyebrow tags, "In short", case-study kicker, contact kicker) now use `--gold-text: #A85507` (contrast 4.9–5.3:1, was 3.8–4.1); industries WhatsApp button green #15803D (white text 5:1, was 2:1); decorative 01/02/03 numbers drawn by CSS; case-study link's accessible name includes its visible URL.
+- Images: logo.webp 243×180 21 KB → 216×160 14 KB (still 2× for the hero); morphic-spaces.webp 1400 px 106 KB → 1000 px 61 KB.
+Lighthouse (mobile, local): accessibility 100, best practices 100, SEO 100 on home, portfolio, industries, contact, blog post; performance 89–95 locally (no CDN).

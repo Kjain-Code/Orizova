@@ -8,6 +8,8 @@
   --violet: #8B5CF6;
   --gold: #F5A623;
   --gold-deep: #C2650C;
+  /* darker gold for small uppercase labels — 4.5:1+ contrast on white, lilac and cream */
+  --gold-text: #A85507;
   --coral: #FF6B4A;
 
   /* Light, colorful surface system */

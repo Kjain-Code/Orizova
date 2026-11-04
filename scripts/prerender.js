@@ -183,7 +183,12 @@ const buildPage = (template, html) => {
   out = out.replace(/<meta data-rh="true"[^>]*>/gi, '');
   out = out.replace(/<link data-rh="true"[^>]*>/gi, '');
   out = out.replace(/<script data-rh="true" type="application\/ld\+json">[\s\S]*?<\/script>/gi, '');
-  out = out.replace('</head>', `${VERIFY_TAGS}${GA_TAG}${tags.map(markRh).join('')}</head>`);
+  // Title, description and other SEO tags go right after the viewport tag —
+  // before the large inline stylesheet — so the browser tab shows the page
+  // title immediately and crawlers find the tags in the first bytes.
+  const headTags = `${VERIFY_TAGS}${tags.map(markRh).join('')}${GA_TAG}`;
+  const viewport = out.match(/<meta name="viewport"[^>]*>/i);
+  out = viewport ? out.replace(viewport[0], `${viewport[0]}${headTags}`) : out.replace('</head>', `${headTags}</head>`);
   // Inline the main stylesheet (≈14 KB gzipped): removes the render-blocking
   // CSS request, so text paints sooner on slow mobile connections.
   if (MAIN_CSS) out = out.replace(MAIN_CSS.tag, `<style>${MAIN_CSS.css}</style>`);

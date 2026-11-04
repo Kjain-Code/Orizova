@@ -118,7 +118,7 @@ const IndustriesPage = () => (
             {tailor.map((t, n) => (
               <div key={t.title} className={`ip-tailor-card ${tone(t.color)}`} style={toneStyle(t.color)}>
                 <span className="ip-tailor-ico" aria-hidden="true"><t.icon /></span>
-                <span className="ip-tailor-num" aria-hidden="true">0{n + 1}</span>
+                <span className="ip-tailor-num" aria-hidden="true" data-n={`0${n + 1}`} />
                 <h3>{t.title}</h3>
                 <p>{t.desc}</p>
               </div>

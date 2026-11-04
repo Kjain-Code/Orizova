@@ -28,7 +28,7 @@
   font-weight: 800;
   letter-spacing: 2.2px;
   text-transform: uppercase;
-  color: var(--gold-deep);
+  color: var(--gold-text);
 }
 .sh-line,
 .content-section .section-tag::before {
@@ -619,7 +619,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .qa-label {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: .72rem; font-weight: 700; letter-spacing: 1.6px; text-transform: uppercase;
-  color: var(--gold-deep);
+  color: var(--gold-text);
   margin-bottom: 10px;
 }
 .qa-q { font-size: clamp(1.05rem, 1.6vw, 1.22rem); line-height: 1.4; color: var(--ink); margin: 0; letter-spacing: -0.01em; }
@@ -766,6 +766,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .ip-tailor-card { position: relative; background: #fff; border-radius: 22px; padding: 30px 26px; border: 1px solid #ECE4F7; }
 .ip-tailor-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; font-size: 24px; color: #fff; background: var(--c); margin-bottom: 16px; }
 .ip-tailor-num { position: absolute; top: 22px; right: 24px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 2.2rem; color: rgba(76, 14, 130, .08); }
+/* decorative watermark number drawn by CSS, so it isn't read as low-contrast text */
+.ip-tailor-num::before { content: attr(data-n); }
 .ip-tailor-card h3 { font-size: var(--fs-h3); color: var(--ink); margin: 0 0 8px; }
 .ip-tailor-card p { font-size: var(--fs-card); line-height: 1.7; color: var(--text-light); margin: 0; }
 
@@ -777,8 +779,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
 .ip-cta h2 { color: #fff; font-size: var(--fs-h3-lg); margin: 6px 0 8px; }
 .ip-cta p { color: rgba(255, 255, 255, .78); margin: 0; max-width: 560px; line-height: 1.7; }
 .ip-cta-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.ip-cta-wa { display: inline-flex; align-items: center; gap: 8px; min-height: 50px; padding: 0 22px; border-radius: 999px; background: #25D366; color: #fff; font-weight: 700; box-shadow: 0 10px 24px rgba(37, 211, 102, .35); }
-.ip-cta-wa:hover { background: #1EBE5A; }
+.ip-cta-wa { display: inline-flex; align-items: center; gap: 8px; min-height: 50px; padding: 0 22px; border-radius: 999px; background: #15803D; color: #fff; font-weight: 700; box-shadow: 0 10px 24px rgba(37, 211, 102, .35); }
+.ip-cta-wa:hover { background: #166534; }
 .ip-cta-link { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; color: #fff; opacity: .85; font-weight: 600; }
 .ip-cta-link:hover { opacity: 1; }
 

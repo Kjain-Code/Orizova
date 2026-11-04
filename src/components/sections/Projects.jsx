@@ -80,7 +80,7 @@ const Projects = () => {
                 <Link to={`/portfolio/${own.slug}`} className="pf-btn">Read the case study <FiArrowRight aria-hidden="true" /></Link>
               </div>
             </div>
-            <Link to={`/portfolio/${own.slug}`} className="pf-feature-shot" aria-label={`${own.title} case study`}>
+            <Link to={`/portfolio/${own.slug}`} className="pf-feature-shot" aria-label={`${own.title} case study (${hostOf(own.link)})`}>
               <span className="pf-browser" aria-hidden="true"><i /><i /><i /><span className="pf-url">{hostOf(own.link)}</span></span>
               <span className="pf-img-wrap"><img src={own.image} alt="Orizova Digital website home page" width="800" height="338" loading="eager" decoding="async" /></span>
             </Link>

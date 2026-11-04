@@ -87,3 +87,5 @@ img.pf-detail-shot.pf-detail-shot { width: 100%; height: auto; border-radius: 18
 /* App.js: shown only if a page's code can't be downloaded even after a retry */
 .page-load-error.page-load-error { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; text-align: center; padding-top: 140px; padding-bottom: 60px; }
 .page-load-error p { max-width: 460px; color: var(--text-light); margin: 0; }
+/* index.js RootSafety: fallback copy of the pre-rendered page */
+.root-safety { display: contents; }
