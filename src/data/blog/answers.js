@@ -5,6 +5,39 @@
 // Section: blog posts (with takeaways).
 
 const answers = {
+  '/blog/ai-ugc-video-ads-guide': {
+    q: 'What are AI UGC video ads and when should brands use them?',
+    a: 'AI UGC video ads are creator-style ads — a presenter talking to camera about a product — where the presenter or scenes are made with AI. They are best for testing many hooks, angles and languages quickly and for simple product demos. Real creators and customers remain the right choice for testimonials, results and trust-heavy categories, and realistic AI content should be labelled in India.',
+    takeaways: [
+      'Use AI UGC to test many hooks and languages quickly.',
+      'Script from real product benefits; edit like a real ad with captions.',
+      'Never fake testimonials or AI “experts”.',
+      'Label realistic AI presenters; use real likenesses only with consent.',
+      'Re-make winning messages with real people for trust.',
+    ],
+  },
+  '/blog/ai-video-production-cost-india': {
+    q: 'How much do AI videos cost in India?',
+    a: 'There is no single price: the cost of AI video production depends on the type of video, how many videos and versions you need, languages, stock presenter vs custom digital twin, and editing depth. Per version, AI is usually much cheaper than a shoot because extra hooks, sizes and languages are fast to make. Very cheap quotes often mean raw, unedited AI clips, so compare finished samples.',
+    takeaways: [
+      'Scripting and editing are most of the value, not the AI tool.',
+      'Versions, languages and custom avatars raise the price.',
+      'Monthly batches cost less per video than one-offs.',
+      'Ask about revisions, sizes, music and file ownership.',
+      'Compare finished samples, not just prices.',
+    ],
+  },
+  '/blog/ai-video-vs-traditional-video-shoot': {
+    q: 'Should a brand use AI video or a traditional video shoot?',
+    a: 'Use AI video when the job is volume, speed or versions — ad testing, product catalogues, multilingual content, explainers and offers. Use a real shoot when the video depends on viewers believing what they see is real — testimonials, results, places, people and hero brand films. Most brands do best with a hybrid: AI to find winning messages, real shoots for proof.',
+    takeaways: [
+      'AI wins on speed, versions and cost per variation.',
+      'Real shoots win on trust, proof and real places.',
+      'Ask: does this video depend on viewers believing it is real?',
+      'Test with AI, then shoot the winners and the proof.',
+      'Label realistic AI content.',
+    ],
+  },
   '/blog/how-long-does-seo-take': {
     q: 'How long does SEO take to show results?',
     a: 'Google says SEO usually needs four months to a year to put improvements in place and then see the benefit. In practice, technical fixes and Google Business Profile changes can show movement within weeks, specific city and service searches start ranking in two to three months, and steady enquiries from search typically build between four and twelve months — faster for established sites, slower for new domains and competitive industries.',

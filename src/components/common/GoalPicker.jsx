@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiArrowRight, FiPhone } from 'react-icons/fi';
 import CONTACT, { waLink } from '../../data/site/contact';
-import services from '../../data/services/services';
+import { allServices as services } from '../../data/services/services';
 import ServiceIllustration from '../home/ServiceIllustrations';
 import './GoalPicker.css';
 
@@ -42,6 +42,11 @@ const GOALS = [
     id: 'social', ask: 'to grow on Instagram', label: 'Grow on Instagram', emoji: '📱',
     plan: 'A monthly content calendar, reels edited to stop the scroll, and small boosts for your best posts — with replies handled quickly.',
     services: ['social-media-marketing', 'video-editing', 'meta-ads'],
+  },
+  {
+    id: 'aivideo', ask: 'AI videos for ads and social media', label: 'AI video ads', emoji: '🎬',
+    plan: 'Scripts built on your product’s real benefits, then AI UGC-style ads and product videos in several hooks and languages — edited and sized for Meta, Instagram and YouTube.',
+    services: ['ai-video-production', 'ai-ugc-videos', 'meta-ads'],
   },
   {
     id: 'app', ask: 'a mobile app', label: 'A mobile app', emoji: '📲',

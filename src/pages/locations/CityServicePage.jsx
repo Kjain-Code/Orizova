@@ -12,7 +12,7 @@ import {
 } from '../../components/content/ContentBlocks';
 import cityServices from '../../data/locations/cityServices';
 import locations from '../../data/locations/locations';
-import services from '../../data/services/services';
+import { allServices as services } from '../../data/services/services';
 import NotFound from '../core/NotFound';
 
 const CityServicePage = () => {

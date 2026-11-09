@@ -80,6 +80,12 @@ export const cityServicesIndex = [
   { city: 'bengaluru', service: 'seo', label: 'SEO company in Bengaluru' },
   { city: 'mumbai', service: 'website-development', label: 'Website development company in Mumbai' },
   { city: 'mumbai', service: 'seo', label: 'SEO company in Mumbai' },
+  { city: 'delhi', service: 'ai-video-production', label: 'AI video production in Delhi' },
+  { city: 'noida', service: 'ai-video-production', label: 'AI video production in Noida' },
+  { city: 'gurugram', service: 'ai-video-production', label: 'AI video production in Gurugram' },
+  { city: 'mumbai', service: 'ai-video-production', label: 'AI video production in Mumbai' },
+  { city: 'bengaluru', service: 'ai-video-production', label: 'AI video production in Bengaluru' },
+  { city: 'chandigarh', service: 'ai-video-production', label: 'AI video production in Chandigarh' },
 ];
 
 // Which industries to link from each main service page ("Industries we do
@@ -97,6 +103,10 @@ export const serviceIndustries = {
   'ai-search-optimization': ['clinics', 'dental-clinics', 'professional-services', 'immigration-consultants', 'education', 'startups-saas', 'ecommerce-d2c', 'manufacturers-exporters'],
   'video-editing': ['restaurants-cafes', 'events-weddings', 'real-estate', 'skin-hair-clinics', 'salons-beauty', 'retail-showrooms', 'ecommerce-d2c'],
   'branding-designing': ['startups-saas', 'ecommerce-d2c', 'restaurants-cafes', 'architects', 'salons-beauty', 'professional-services'],
+  'ai-video-production': ['ecommerce-d2c', 'retail-showrooms', 'skin-hair-clinics', 'education', 'real-estate', 'hotels-travel', 'startups-saas', 'restaurants-cafes', 'salons-beauty', 'fitness-wellness'],
+  'ai-ugc-videos': ['ecommerce-d2c', 'skin-hair-clinics', 'salons-beauty', 'fitness-wellness', 'education', 'startups-saas'],
+  'ai-product-videos': ['ecommerce-d2c', 'retail-showrooms', 'manufacturers-exporters', 'restaurants-cafes', 'salons-beauty'],
+  'ai-avatar-videos': ['education', 'clinics', 'professional-services', 'immigration-consultants', 'finance-loan-agents', 'startups-saas', 'real-estate'],
 };
 
 export const cityZones = ['Delhi NCR', 'Uttar Pradesh', 'Punjab, Haryana & Chandigarh Tricity', 'Rajasthan & Uttarakhand', 'South & West India'];
@@ -127,6 +137,9 @@ export const citiesIndex = [
 ];
 
 export const postsIndex = [
+  { slug: 'ai-ugc-video-ads-guide', category: 'AI Video', readMins: 9, title: 'AI UGC Video Ads: What They Are, How They Work and When to Use Them (2026 Guide)', excerpt: 'How AI UGC ads are made, where they beat real creators, where they don’t, and the rules for using them honestly.' },
+  { slug: 'ai-video-production-cost-india', category: 'AI Video', readMins: 8, title: 'How Much Do AI Videos Cost in India? What Decides the Price (2026)', excerpt: 'The factors that decide the price of AI video production, and how to compare quotes without getting raw AI clips.' },
+  { slug: 'ai-video-vs-traditional-video-shoot', category: 'AI Video', readMins: 8, title: 'AI Video vs Traditional Video Shoot: Which Should Your Brand Use?', excerpt: 'Speed, versions, trust and cost compared — plus a simple test for deciding which each video needs.' },
   { slug: 'how-long-does-seo-take', category: 'SEO', readMins: 9, title: 'How Long Does SEO Take to Show Results? A Realistic Timeline for Indian Businesses', excerpt: 'First signs in weeks, enquiries in months, steady growth after six to twelve — what happens in each phase and what speeds it up.' },
   { slug: 'shopify-vs-woocommerce-vs-custom-website-india', category: 'E-commerce', readMins: 10, title: 'Shopify vs WooCommerce vs Custom Website: Which Is Best for an Online Store in India? (2026)', excerpt: 'Costs, per-sale fees, Indian payments, COD, speed and SEO compared — so you pick the platform that fits your store.' },
   { slug: 'google-ads-cost-india', category: 'Ads', readMins: 9, title: 'Google Ads Cost in India: How Much Budget Do You Need? (2026 Guide)', excerpt: 'How the price is decided, how to work out a starting budget from your own numbers, and how to stop wasting it.' },
@@ -143,6 +156,9 @@ export const postsIndex = [
 // industry and city pages it helps (previously most posts were reachable only
 // from /blog and their siblings).
 export const guideIndex = [
+  { slug: 'ai-ugc-video-ads-guide', label: 'Guide: AI UGC video ads — how they work', pages: ['/services/ai-video-production', '/services/ai-ugc-videos', '/services/meta-ads', '/services/video-editing', '/services/social-media-marketing', '/industries/ecommerce-d2c', '/industries/salons-beauty', '/industries/fitness-wellness', '/industries/skin-hair-clinics', '/locations/delhi/ai-video-production', '/locations/noida/ai-video-production', '/locations/gurugram/ai-video-production', '/locations/mumbai/ai-video-production', '/locations/bengaluru/ai-video-production', '/locations/chandigarh/ai-video-production', '/creative-work'] },
+  { slug: 'ai-video-production-cost-india', label: 'Guide: what AI videos cost in India', pages: ['/services/ai-video-production', '/services/ai-ugc-videos', '/services/ai-product-videos', '/services/ai-avatar-videos', '/services/video-editing', '/industries/retail-showrooms', '/industries/manufacturers-exporters', '/industries/startups-saas', '/locations/delhi/ai-video-production', '/locations/noida/ai-video-production', '/locations/gurugram/ai-video-production', '/locations/mumbai/ai-video-production', '/locations/bengaluru/ai-video-production', '/locations/chandigarh/ai-video-production'] },
+  { slug: 'ai-video-vs-traditional-video-shoot', label: 'Guide: AI video vs a traditional shoot', pages: ['/services/ai-video-production', '/services/ai-product-videos', '/services/ai-avatar-videos', '/services/video-editing', '/services/branding-designing', '/industries/real-estate', '/industries/hotels-travel', '/industries/restaurants-cafes', '/industries/education', '/locations/delhi/ai-video-production', '/locations/noida/ai-video-production', '/locations/gurugram/ai-video-production', '/locations/mumbai/ai-video-production', '/locations/bengaluru/ai-video-production', '/locations/chandigarh/ai-video-production', '/creative-work'] },
   { slug: 'how-long-does-seo-take', label: 'Guide: how long SEO takes — a realistic timeline', pages: ['/services/seo', '/services/local-seo', '/services/ai-search-optimization', '/services/digital-marketing', '/portfolio/orizova-digital', '/industries/startups-saas', '/industries/professional-services', '/industries/education', '/locations/delhi/seo', '/locations/noida/seo', '/locations/ghaziabad/seo', '/locations/gurugram/seo', '/locations/lucknow/seo', '/locations/jaipur/seo', '/locations/chandigarh/seo', '/locations/hyderabad/seo', '/locations/bengaluru/seo', '/locations/mumbai/seo', '/locations/pune/seo', '/locations/indirapuram/seo', '/locations/faridabad/seo', '/locations/greater-noida/seo', '/locations/meerut/seo', '/locations/mohali/seo', '/locations/panchkula/seo', '/locations/agra/seo', '/locations/kanpur/seo', '/locations/dehradun/seo', '/locations/ludhiana/seo'] },
   { slug: 'shopify-vs-woocommerce-vs-custom-website-india', label: 'Guide: Shopify vs WooCommerce vs custom store', pages: ['/services/ecommerce-solutions', '/services/website-development', '/services/app-development', '/industries/ecommerce-d2c', '/industries/retail-showrooms', '/industries/manufacturers-exporters', '/industries/salons-beauty', '/locations/delhi/website-development', '/locations/noida/website-development', '/locations/gurugram/website-development', '/locations/jaipur/website-development', '/locations/ludhiana/website-development', '/locations/mumbai/website-development', '/locations/bengaluru/website-development', '/locations/hyderabad/website-development', '/locations/pune/website-development', '/locations/meerut/website-development'] },
   { slug: 'google-ads-cost-india', label: 'Guide: Google Ads cost and budget in India', pages: ['/services/google-ads', '/services/meta-ads', '/services/digital-marketing', '/industries/clinics', '/industries/dental-clinics', '/industries/skin-hair-clinics', '/industries/real-estate', '/industries/home-services', '/industries/education', '/industries/immigration-consultants', '/industries/finance-loan-agents', '/industries/hotels-travel', '/industries/fitness-wellness'] },

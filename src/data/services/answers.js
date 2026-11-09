@@ -49,6 +49,22 @@ const answers = {
     q: 'What video editing does Orizova Digital offer?',
     a: 'Orizova Digital edits reels, short-form ad creatives, brand films and animated typography for Instagram, YouTube and Meta ads for brands across India — usually from footage you shoot on your phone. Edits focus on a strong opening, tight cuts, readable captions and fitting music. Monthly reel packages are available, and revision rounds are agreed upfront.',
   },
+  '/services/ai-video-production': {
+    q: 'What is AI video production and what does Orizova Digital make?',
+    a: 'AI video production means making marketing videos with AI tools — AI presenters, AI-generated scenes and product shots, AI voices and dubbing — guided by a human script and finished by human editors. Orizova Digital produces AI UGC-style ads, AI product videos, AI avatar and spokesperson videos, AI reels and multilingual versions in Hindi, English and other languages for brands across India, sized for Instagram, YouTube and Meta ads, and labelled as AI where rules require.',
+  },
+  '/services/ai-ugc-videos': {
+    q: 'What are AI UGC video ads?',
+    a: 'AI UGC video ads are creator-style “person talking to camera” ads made with realistic AI presenters instead of hired creators. Orizova Digital scripts them from your product’s real benefits and produces several hooks, lengths and languages per script, so Meta and Instagram ads can test what works quickly. They are best for testing and volume; real customer videos are still better for testimonials and trust-heavy categories.',
+  },
+  '/services/ai-product-videos': {
+    q: 'Can AI make product videos from photos?',
+    a: 'Yes. Orizova Digital turns clear product photos into AI product videos — showcase and 360-style shots, lifestyle scenes, close-ups, launch ads and marketplace videos. Every shot is checked against your photos so colour, shape and labels stay accurate, and the video only shows what the product really is and does.',
+  },
+  '/services/ai-avatar-videos': {
+    q: 'What is an AI avatar video?',
+    a: 'An AI avatar video is a presenter video where a stock AI presenter, or a digital twin of a real person created with their written consent, speaks your script. Orizova Digital makes avatar videos for explainers, FAQs, founder messages, training and multilingual marketing in Hindi, English and other Indian languages, with lip-sync and captions.',
+  },
   '/services/branding-designing': {
     q: 'What branding services does Orizova Digital provide?',
     a: 'Orizova Digital designs logos, complete brand identity systems, social media templates, packaging and pitch decks for businesses across India. You receive editable source files plus PNG, SVG and PDF exports, and the number of concepts and revisions is agreed in the quote. Existing logos can be refreshed instead of replaced.',

@@ -10,7 +10,7 @@ import Seo, { routesByPath } from '../../components/seo/Seo';
 import {
   Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
 } from '../../components/content/ContentBlocks';
-import services from '../../data/services/services';
+import { allServices as services } from '../../data/services/services';
 import servicePages from '../../data/services/servicePages';
 import {
   cityServicesIndex as cityServices, citiesIndex as locations, serviceIndustries, industryMeta,
@@ -30,7 +30,13 @@ const ServicePage = () => {
   const route = routesByPath[path] || {};
   const [h1Main, h1Place] = splitHeading(route.h1 || service.title, / (?=in [A-Z]|— )/);
   const faqs = collectFaqs(page.blocks);
-  const others = services.filter((s) => s.slug !== service.slug && s.group === service.group);
+  // Related: a pillar lists its specialised pages first; a sub-service lists its
+  // pillar and sibling pages first; then the rest of the group.
+  const family = service.parent || service.slug;
+  const others = [
+    ...services.filter((s) => s.slug !== service.slug && (s.slug === family || s.parent === family)),
+    ...services.filter((s) => s.slug !== service.slug && s.group === service.group && s.slug !== family && s.parent !== family),
+  ];
 
   return (
     <PageTransition>

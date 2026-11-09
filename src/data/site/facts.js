@@ -27,6 +27,7 @@ const facts = {
     'Website development', 'E-commerce stores (Shopify, WooCommerce, custom)', 'Mobile app development (Android, iOS, React Native, Flutter)',
     'SEO', 'Local SEO & Google Business Profile', 'AI search optimization (AEO / GEO)', 'Google Ads', 'Meta (Facebook & Instagram) Ads', 'Social media marketing',
     'Branding & logo design', 'Video editing (reels, ads, brand films)',
+    'AI video production (AI UGC ads, AI product videos, AI avatar videos)',
   ],
   industries: [
     'Clinics & doctors', 'Dental clinics', 'Skin, hair & aesthetic clinics', 'Real estate', 'Architects & interior designers',

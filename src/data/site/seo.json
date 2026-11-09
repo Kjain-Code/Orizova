@@ -111,6 +111,42 @@
       "lastmod": "2026-10-25"
     },
     {
+      "key": "service:ai-video-production",
+      "path": "/services/ai-video-production",
+      "priority": "0.8",
+      "title": "AI Video Production Company in India | Orizova",
+      "description": "AI video production in India: AI UGC ads, product videos, AI avatar videos, reels and Hindi/English versions — scripted, edited and ready for ads.",
+      "h1": "AI Video Production — UGC Ads, Product & Avatar Videos",
+      "lastmod": "2026-11-09"
+    },
+    {
+      "key": "service:ai-ugc-videos",
+      "path": "/services/ai-ugc-videos",
+      "priority": "0.8",
+      "title": "AI UGC Video Ads for Brands in India | Orizova",
+      "description": "AI UGC video ads for Meta and Instagram: creator-style videos with AI presenters, many hooks and languages per script, made for fast ad testing.",
+      "h1": "AI UGC Video Ads — Creator-Style Ads Made with AI",
+      "lastmod": "2026-11-09"
+    },
+    {
+      "key": "service:ai-product-videos",
+      "path": "/services/ai-product-videos",
+      "priority": "0.8",
+      "title": "AI Product Videos from Photos | Orizova Digital",
+      "description": "AI product videos made from your product photos: showcase, 360-style and lifestyle shots, launch ads and marketplace videos for e-commerce brands.",
+      "h1": "AI Product Videos — From Your Product Photos",
+      "lastmod": "2026-11-09"
+    },
+    {
+      "key": "service:ai-avatar-videos",
+      "path": "/services/ai-avatar-videos",
+      "priority": "0.8",
+      "title": "AI Avatar & Spokesperson Videos in India | Orizova",
+      "description": "AI avatar videos with stock presenters or a consent-based digital twin of you — explainers, FAQs, training and Hindi/English multilingual videos.",
+      "h1": "AI Avatar Videos — Presenter Videos in Any Language",
+      "lastmod": "2026-11-09"
+    },
+    {
       "key": "service:video-editing",
       "path": "/services/video-editing",
       "priority": "0.8",
@@ -210,6 +246,15 @@
       "lastmod": "2026-10-24"
     },
     {
+      "key": "cityservice:noida/ai-video-production",
+      "path": "/locations/noida/ai-video-production",
+      "priority": "0.9",
+      "title": "AI Video Production in Noida – Explainers & Ads",
+      "description": "AI explainers for Noida startups and edtech, catalogue videos for exporters and UGC-style ads for D2C brands — scripted, produced and edited.",
+      "h1": "AI Video Production in Noida",
+      "lastmod": "2026-11-09"
+    },
+    {
       "key": "cityservice:delhi/website-development",
       "path": "/locations/delhi/website-development",
       "priority": "0.9",
@@ -228,6 +273,15 @@
       "lastmod": "2026-10-24"
     },
     {
+      "key": "cityservice:delhi/ai-video-production",
+      "path": "/locations/delhi/ai-video-production",
+      "priority": "0.9",
+      "title": "AI Video Production in Delhi – UGC & Product Ads",
+      "description": "AI UGC ads, product videos and Hindi–English avatar videos for Delhi brands, traders, coaching institutes and clinics — made without a shoot.",
+      "h1": "AI Video Production in Delhi",
+      "lastmod": "2026-11-09"
+    },
+    {
       "key": "cityservice:chandigarh/website-development",
       "path": "/locations/chandigarh/website-development",
       "priority": "0.9",
@@ -244,6 +298,15 @@
       "description": "SEO and Google Maps optimisation for businesses in Chandigarh, Mohali, Panchkula and Zirakpur — service pages, reviews and local content.",
       "h1": "SEO Company in Chandigarh",
       "lastmod": "2026-10-24"
+    },
+    {
+      "key": "cityservice:chandigarh/ai-video-production",
+      "path": "/locations/chandigarh/ai-video-production",
+      "priority": "0.9",
+      "title": "AI Video Production in Chandigarh | Orizova",
+      "description": "AI videos for Chandigarh, Mohali and Panchkula businesses — study-abroad promos, property offers, clinic explainers and fashion reels.",
+      "h1": "AI Video Production in Chandigarh",
+      "lastmod": "2026-11-09"
     },
     {
       "key": "city:varanasi",
@@ -343,6 +406,15 @@
       "description": "Technical, content and local SEO for Gurugram SaaS companies, D2C brands, real-estate firms, clinics and restaurants. Reporting tied to revenue.",
       "h1": "SEO Company in Gurugram",
       "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:gurugram/ai-video-production",
+      "path": "/locations/gurugram/ai-video-production",
+      "priority": "0.9",
+      "title": "AI Video Production in Gurugram | Orizova Digital",
+      "description": "Premium AI videos for Gurugram D2C brands, startups, real-estate developers and clinics — UGC ads, product films and avatar videos on brand.",
+      "h1": "AI Video Production in Gurugram",
+      "lastmod": "2026-11-09"
     },
     {
       "key": "city:faridabad",
@@ -696,6 +768,15 @@
       "lastmod": "2026-10-25"
     },
     {
+      "key": "cityservice:bengaluru/ai-video-production",
+      "path": "/locations/bengaluru/ai-video-production",
+      "priority": "0.9",
+      "title": "AI Video Production in Bengaluru for Startups",
+      "description": "AI explainers, launch videos and UGC-style ad creatives for Bengaluru startups and SaaS — produced in batches, in English, Kannada and Hindi.",
+      "h1": "AI Video Production in Bengaluru",
+      "lastmod": "2026-11-09"
+    },
+    {
       "key": "city:mumbai",
       "path": "/locations/mumbai",
       "priority": "0.8",
@@ -721,6 +802,15 @@
       "description": "Focused SEO for Mumbai D2C brands, professional services, clinics and restaurants — products, services and neighbourhoods with real intent.",
       "h1": "SEO Company in Mumbai",
       "lastmod": "2026-10-25"
+    },
+    {
+      "key": "cityservice:mumbai/ai-video-production",
+      "path": "/locations/mumbai/ai-video-production",
+      "priority": "0.9",
+      "title": "AI Video Production in Mumbai – UGC & Product Ads",
+      "description": "AI UGC ads, product videos and multilingual avatar videos for Mumbai fashion, beauty and D2C brands — English, Hindi and Marathi versions.",
+      "h1": "AI Video Production in Mumbai",
+      "lastmod": "2026-11-09"
     },
     {
       "key": "industries",
@@ -907,9 +997,36 @@
       "path": "/blog",
       "priority": "0.7",
       "title": "Digital Marketing Blog – Website, SEO & Ads Guides",
-      "description": "Practical guides for business owners across India: website and Google Ads costs, SEO timelines, e-commerce platforms, Google Maps and Meta vs Google Ads.",
+      "description": "Practical guides for business owners across India: website and ad costs, SEO timelines, AI video, e-commerce platforms, Google Maps and Meta vs Google Ads.",
       "h1": "Practical Guides on Websites, SEO & Digital Marketing",
-      "lastmod": "2026-11-04"
+      "lastmod": "2026-11-09"
+    },
+    {
+      "key": "post:ai-ugc-video-ads-guide",
+      "path": "/blog/ai-ugc-video-ads-guide",
+      "priority": "0.7",
+      "title": "AI UGC Video Ads: What They Are & How They Work",
+      "description": "What AI UGC video ads are, how they are made, when they beat real creators, when they don’t, and the AI-labelling rules for brands in India in 2026.",
+      "h1": "AI UGC Video Ads: What They Are, How They Work and When to Use Them",
+      "lastmod": "2026-11-09"
+    },
+    {
+      "key": "post:ai-video-production-cost-india",
+      "path": "/blog/ai-video-production-cost-india",
+      "priority": "0.7",
+      "title": "AI Video Production Cost in India (2026 Guide)",
+      "description": "What decides the cost of AI video production in India — video type, versions, languages, avatars and editing — and how to compare quotes properly.",
+      "h1": "How Much Do AI Videos Cost in India? What Decides the Price",
+      "lastmod": "2026-11-09"
+    },
+    {
+      "key": "post:ai-video-vs-traditional-video-shoot",
+      "path": "/blog/ai-video-vs-traditional-video-shoot",
+      "priority": "0.7",
+      "title": "AI Video vs Traditional Video Shoot: Which to Use?",
+      "description": "AI video vs a traditional shoot compared: speed, versions, trust, cost and rules — plus a simple test to decide which each of your videos needs.",
+      "h1": "AI Video vs Traditional Video Shoot: Which Should Your Brand Use?",
+      "lastmod": "2026-11-09"
     },
     {
       "key": "post:how-long-does-seo-take",
@@ -1140,10 +1257,10 @@
       "key": "creativeWork",
       "path": "/creative-work",
       "priority": "0.6",
-      "title": "Video Editing Portfolio – Reels & Brand Films | Orizova",
-      "description": "Reels, ad videos, brand films and kinetic typography edited by Orizova Digital for brands in Delhi NCR and across India. See samples of our video work.",
+      "title": "Video Portfolio – Reels, Ads & AI Videos | Orizova",
+      "description": "Reels, ad videos, brand films, kinetic typography and AI videos made by Orizova Digital for brands across India. See samples of our video work.",
       "h1": "Video Editing & Reels That Do the Talking",
-      "lastmod": "2026-10-24"
+      "lastmod": "2026-11-09"
     },
     {
       "key": "about",

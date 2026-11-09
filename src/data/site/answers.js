@@ -7,11 +7,11 @@
 const answers = {
   '/': {
     q: 'What is Orizova Digital?',
-    a: 'Orizova Digital is a website development and digital marketing agency based in Delhi NCR. It builds fast, mobile-first websites, online stores and apps, and grows businesses with SEO, local SEO, AI search optimization, Google Ads, Meta (Facebook & Instagram) Ads, social media, branding and video editing — for businesses across India, from Delhi NCR, Lucknow and Chandigarh to Jaipur, Hyderabad, Pune, Bengaluru and Mumbai.',
+    a: 'Orizova Digital is a website development and digital marketing agency based in Delhi NCR. It builds fast, mobile-first websites, online stores and apps, and grows businesses with SEO, local SEO, AI search optimization, Google Ads, Meta (Facebook & Instagram) Ads, social media, branding, video editing and AI video production — for businesses across India, from Delhi NCR, Lucknow and Chandigarh to Jaipur, Hyderabad, Pune, Bengaluru and Mumbai.',
   },
   '/services': {
     q: 'What services does Orizova Digital offer?',
-    a: 'Orizova Digital offers three groups of services: build (website development, e-commerce stores, mobile apps), grow (SEO, local SEO, AI search optimization for ChatGPT and Google AI Overviews, Google Ads, Meta Ads, social media marketing, digital marketing) and create (branding, logo design and video editing). Each service is planned around enquiries and sales, with tracking set up so results can be measured.',
+    a: 'Orizova Digital offers three groups of services: build (website development, e-commerce stores, mobile apps), grow (SEO, local SEO, AI search optimization for ChatGPT and Google AI Overviews, Google Ads, Meta Ads, social media marketing, digital marketing) and create (branding, logo design, video editing and AI video production — AI UGC ads, product videos and avatar videos). Each service is planned around enquiries and sales, with tracking set up so results can be measured.',
   },
   '/industries': {
     q: 'Which industries does Orizova Digital work with?',
@@ -19,7 +19,7 @@ const answers = {
   },
   '/blog': {
     q: 'What does the Orizova Digital blog cover?',
-    a: 'The Orizova Digital blog publishes practical, plain-language guides for business owners in India on website cost, getting a website made, choosing a developer and an e-commerce platform, how long SEO takes, Google Ads budgets, Google Business Profile, local SEO, Meta Ads vs Google Ads, and marketing for clinics, real estate, restaurants, architects and loan agents.',
+    a: 'The Orizova Digital blog publishes practical, plain-language guides for business owners in India on website cost, getting a website made, choosing a developer and an e-commerce platform, how long SEO takes, Google Ads budgets, AI video ads and their cost, Google Business Profile, local SEO, Meta Ads vs Google Ads, and marketing for clinics, real estate, restaurants, architects and loan agents.',
   },
   '/faq': {
     q: 'What do businesses usually ask Orizova Digital?',
@@ -38,8 +38,8 @@ const answers = {
     a: 'Orizova Digital’s website portfolio includes its own agency website (a pre-rendered React site with top Google PageSpeed scores), Morphic Spaces (a spatial design studio in the Chandigarh Tricity), WIPO Group (a fractional real-estate investment portal), Ganesh Creation (a wedding and fashion photography studio) and FPS Subtitle (a subtitling and localisation studio). Each case study explains the brief, the approach and what was built.',
   },
   '/creative-work': {
-    q: 'What kind of videos does Orizova Digital edit?',
-    a: 'Orizova Digital edits Instagram reels, short-form ad creatives, brand films and kinetic-typography videos for businesses such as a shopping mall, a diagnostic lab, doctors, paint dealers, car brands and gift-hamper sellers — mostly from footage shot on a phone or camera by the client.',
+    q: 'What kind of videos does Orizova Digital make?',
+    a: 'Orizova Digital edits Instagram reels, short-form ad creatives, brand films and kinetic-typography videos for businesses such as a shopping mall, a diagnostic lab, doctors, paint dealers, car brands and gift-hamper sellers — mostly from footage shot on a phone or camera by the client — and also produces AI videos: AI UGC-style ads, AI product videos and AI avatar videos.',
   },
 };
 

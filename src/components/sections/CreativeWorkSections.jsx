@@ -50,17 +50,53 @@ const VideoCard = ({ item, index, onOpen }) => {
   );
 };
 
-const CreativeWorkSections = () => {
-  const [active, setActive] = useState('All');
-  const [open, setOpen] = useState(null);
-
+/** Full-screen player for one video (shared by the gallery and VideoGrid). */
+const VideoModal = ({ open, onClose }) => {
   useEffect(() => {
     if (!open) return undefined;
     document.body.style.overflow = 'hidden';
-    const onKey = (e) => { if (e.key === 'Escape') setOpen(null); };
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
     window.addEventListener('keydown', onKey);
     return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', onKey); };
-  }, [open]);
+  }, [open, onClose]);
+  if (!open) return null;
+  return createPortal(
+    <div className="cw-modal" role="dialog" aria-modal="true" aria-label={open.title} onClick={onClose}>
+      <div className="cw-modal-inner" onClick={(e) => e.stopPropagation()}>
+        <div className="cw-modal-head">
+          <div>
+            <span>{open.category}</span>
+            <strong>{open.title}</strong>
+          </div>
+          <button type="button" className="cw-modal-close" onClick={onClose} aria-label="Close video">
+            <FiX size={20} />
+          </button>
+        </div>
+        <video key={open.id} src={open.video} poster={open.poster} controls autoPlay playsInline className="cw-modal-video" />
+      </div>
+    </div>,
+    document.body,
+  );
+};
+
+/** A small grid of video cards (used on service pages, e.g. AI video samples). */
+export const VideoGrid = ({ items }) => {
+  const [open, setOpen] = useState(null);
+  const close = React.useCallback(() => setOpen(null), []);
+  return (
+    <>
+      <div className="cw-grid cw-grid--compact">
+        {items.map((item, i) => <VideoCard key={item.id} item={item} index={i} onOpen={setOpen} />)}
+      </div>
+      <VideoModal open={open} onClose={close} />
+    </>
+  );
+};
+
+const CreativeWorkSections = () => {
+  const [active, setActive] = useState('All');
+  const [open, setOpen] = useState(null);
+  const close = React.useCallback(() => setOpen(null), []);
 
   if (creativeWork.length === 0) {
     return (
@@ -84,8 +120,8 @@ const CreativeWorkSections = () => {
       <div className="container">
         <div className="text-center">
           <span className="section-tag">Our Video Work</span>
-          <h2 className="section-title">Watch What <span>We&apos;ve Edited</span></h2>
-          <p className="section-subtitle">Hover to preview, tap to watch with sound. Every video was cut for a real business and a real platform.</p>
+          <h2 className="section-title">Watch What <span>We&apos;ve Made</span></h2>
+          <p className="section-subtitle">Hover to preview, tap to watch with sound. Every video was made for a real business and a real platform — edited from footage or produced with AI.</p>
         </div>
 
         <div className="creative-filters" role="tablist" aria-label="Filter videos">
@@ -126,23 +162,7 @@ const CreativeWorkSections = () => {
         </m.div>
       </div>
 
-      {open && createPortal(
-        <div className="cw-modal" role="dialog" aria-modal="true" aria-label={open.title} onClick={() => setOpen(null)}>
-          <div className="cw-modal-inner" onClick={(e) => e.stopPropagation()}>
-            <div className="cw-modal-head">
-              <div>
-                <span>{open.category}</span>
-                <strong>{open.title}</strong>
-              </div>
-              <button type="button" className="cw-modal-close" onClick={() => setOpen(null)} aria-label="Close video">
-                <FiX size={20} />
-              </button>
-            </div>
-            <video key={open.id} src={open.video} poster={open.poster} controls autoPlay playsInline className="cw-modal-video" />
-          </div>
-        </div>,
-        document.body,
-      )}
+      <VideoModal open={open} onClose={close} />
     </section>
   );
 };

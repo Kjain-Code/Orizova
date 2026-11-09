@@ -3,6 +3,7 @@
 // the city name.
 
 import moreCities from './cities';
+import aiVideoCities from './aiVideoCities';
 
 const cityServices = [
   /* ============================ GHAZIABAD ============================ */
@@ -896,5 +897,7 @@ const cityServices = [
 
 // Newer cities (see ./cities): one file per market.
 moreCities.forEach((c) => cityServices.push(...c.pages));
+// AI video production pages for several cities (one file, written per city).
+cityServices.push(...aiVideoCities.pages);
 
 export default cityServices;

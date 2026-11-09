@@ -70,7 +70,8 @@ const Services = () => (
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "0px 0px 15% 0px" }}
-          className={`svc-cell${services.length % 3 === 0 ? ' svc-cell--wide' : ''}`}
+          // CTA fills the rest of the last row: full width, or two columns when one card is left over
+          className={`svc-cell${services.length % 3 === 0 ? ' svc-cell--wide' : ''}${services.length % 3 === 1 ? ' svc-cell--span2' : ''}`}
         >
           <Link to="/contact" className="svc-card svc-card--cta">
             <span className="svc-cta-kicker">Not sure what you need?</span>

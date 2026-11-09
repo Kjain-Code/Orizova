@@ -2,7 +2,7 @@ import React from 'react';
 import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/site/answers';
 import Seo, { SITE_URL, AREAS_SERVED } from '../../components/seo/Seo';
-import services from '../../data/services/services';
+import { allServices as services } from '../../data/services/services';
 import PageBanner from '../../components/common/PageBanner';
 import ServicesDetail from '../../components/sections/ServicesDetail';
 import CtaBand from '../../components/common/CtaBand';
@@ -17,7 +17,7 @@ import GoalPicker from '../../components/common/GoalPicker';
 const GROUPS = [
   { name: 'Build', n: '01', desc: 'The digital assets you own — the place every ad, search and post sends people to.', cta: 'Need a website, store or app?', ask: 'Hi Orizova Digital, I need a website / online store / app. Can we discuss?' },
   { name: 'Grow', n: '02', desc: 'How customers find and choose you — search, maps, ads and social, all tracked to enquiries.', cta: 'Want more enquiries?', ask: 'Hi Orizova Digital, I want more enquiries for my business. Can you suggest a plan?' },
-  { name: 'Create', n: '03', desc: 'Content that stops the scroll and builds trust — reels, ad videos and a brand people remember.', cta: 'Need reels or a new logo?', ask: 'Hi Orizova Digital, I need video editing / branding. Can you share a quote?' },
+  { name: 'Create', n: '03', desc: 'Content that stops the scroll and builds trust — reels, AI videos, ad creatives and a brand people remember.', cta: 'Need reels, AI videos or a new logo?', ask: 'Hi Orizova Digital, I need video editing / AI videos / branding. Can you share a quote?' },
 ];
 
 const ServicesPage = () => {

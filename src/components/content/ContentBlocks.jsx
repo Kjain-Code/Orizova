@@ -11,6 +11,8 @@ import { SITE_URL } from '../seo/Seo';
 import { guidesFor } from '../../data/site/siteIndex';
 import { factRows } from '../../data/site/facts';
 import { EmailText } from '../common/EmailLink';
+import creativeWork from '../../data/work/creativeWork';
+import { VideoGrid } from '../sections/CreativeWorkSections';
 import '../../pages/locations/LocationPage.css';
 import './ContentPage.css';
 
@@ -91,12 +93,12 @@ export const SectionHead = ({ tag, h2, center = false }) => (
 
 /** Numbered steps: [{ title, text }] */
 const ArticleSteps = ({ steps }) => (
-  <ol className="cb-steps">
+  <ol className="cb-asteps">
     {steps.map((s, i) => (
-      <li key={s.title} className="cb-step">
-        <span className="cb-step-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+      <li key={s.title} className="cb-astep">
+        <span className="cb-astep-n" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
         <div>
-          <h3 className="cb-step-title">{s.title}</h3>
+          <h3 className="cb-astep-title">{s.title}</h3>
           <p><Inline text={s.text} /></p>
         </div>
       </li>
@@ -171,6 +173,8 @@ export const Prose = ({ tag, h2, paras, bullets, after, variant, steps, table, t
         <SectionHead tag={tag} h2={h2} />
         <div className="cb-prose-body">
           <Paras paras={paras} />
+          {table && <ArticleTable table={table} />}
+          {tip && <ArticleTip tip={tip} />}
           {after && <Paras paras={after} />}
         </div>
       </div>
@@ -313,6 +317,37 @@ export const RealWork = ({ h2 = 'Websites we have built' }) => (
 );
 
 /** Renders an array of block objects (see data/services, data/locations, data/industries). */
+/** AI video samples from data/work/creativeWork.js (category "AI Videos").
+ *  `kind` narrows to one type (ugc | product | avatar | reel | explainer);
+ *  if there are none of that kind yet, all AI videos are shown; if there are
+ *  no AI videos at all, visitors are invited to ask for samples on WhatsApp. */
+export const VideoSamples = ({ tag = 'Our AI videos', h2 = 'AI videos we have made', intro, kind }) => {
+  const ai = creativeWork.filter((v) => v.category === 'AI Videos');
+  const ofKind = kind ? ai.filter((v) => v.kind === kind) : ai;
+  const list = (ofKind.length ? ofKind : ai).slice(0, 8);
+  return (
+    <div className="loc-block">
+      <SectionHead tag={tag} h2={h2} />
+      {intro && <p className="loc-text"><Inline text={intro} /></p>}
+      {list.length > 0 ? (
+        <>
+          <VideoGrid items={list} />
+          <p className="vs-more"><Link to="/creative-work" className="loc-inline-link">See all our video work <FiArrowRight aria-hidden="true" /></Link></p>
+        </>
+      ) : (
+        <div className="vs-empty">
+          <FaWhatsapp className="vs-empty-ico" aria-hidden="true" />
+          <div>
+            <p className="vs-empty-title">Want to see samples for your kind of product?</p>
+            <p>Message us on WhatsApp with your product or category — we&apos;ll share AI videos close to what you need.</p>
+          </div>
+          <a className="btn-primary" href={waLink('Hi Orizova Digital, please share AI video samples for my product / business.')} target="_blank" rel="noopener noreferrer">Get samples on WhatsApp</a>
+        </div>
+      )}
+    </div>
+  );
+};
+
 export const Blocks = ({ blocks }) =>
   blocks.map((b, i) => {
     const key = `${b.type}-${i}`;
@@ -323,6 +358,7 @@ export const Blocks = ({ blocks }) =>
       case 'faq': return <Faqs key={key} {...b} />;
       case 'links': return <LinkChips key={key} {...b} />;
       case 'work': return <RealWork key={key} {...b} />;
+      case 'videos': return <VideoSamples key={key} {...b} />;
       case 'cta': return <div key={key} className="loc-block"><CtaButtons /></div>;
       default: return null;
     }

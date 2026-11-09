@@ -1,6 +1,11 @@
 // Service cards (home grid, /services list, footer, nav). Long-form page copy
 // for each service lives in data/services/servicePages.js.
-const services = [
+//
+// A service with `parent` is a specialised sub-service page (e.g. AI UGC
+// videos under AI Video Production). The default export lists top-level
+// services only (nav, home grid, footer, counts); `allServices` includes the
+// sub-services (service pages, /services hub, schema).
+const allServices = [
   {
     id: 1,
     slug: "website-development",
@@ -206,6 +211,82 @@ const services = [
       "Pitch Deck Design",
     ],
   },
+  {
+    id: 13,
+    slug: "ai-video-production",
+    group: "Create",
+    icon: "FiFilm",
+    title: "AI Video Production",
+    shortDesc: "AI UGC ads, product videos and avatar videos — made without a shoot.",
+    fullDesc: "We plan, script and produce AI videos for ads and social media — UGC-style ads, product videos, AI avatar and spokesperson videos, reels and multilingual versions — finished by our editors and ready for Instagram, YouTube and Meta ads.",
+    color: "#7C3AED",
+    subServices: [
+      "AI UGC Video Ads",
+      "AI Product Videos",
+      "AI Avatar & Spokesperson Videos",
+      "AI Reels & Short-form Content",
+      "Multilingual AI Voiceovers & Dubbing",
+      "AI Explainer & Promo Videos",
+    ],
+  },
+  {
+    id: 14,
+    slug: "ai-ugc-videos",
+    parent: "ai-video-production",
+    group: "Create",
+    icon: "FiUsers",
+    title: "AI UGC Video Ads",
+    shortDesc: "Creator-style video ads made with AI — many hooks, ready to test.",
+    fullDesc: "UGC-style video ads made with AI presenters and AI-generated scenes — scripted from your product's real benefits, produced in multiple hooks, lengths and languages, and edited for Meta, Instagram and YouTube ads.",
+    color: "#DB2777",
+    subServices: [
+      "Talking-head UGC ads with AI presenters",
+      "Hook & angle variations for ad testing",
+      "Product demo & unboxing-style ads",
+      "Hindi, English & regional-language versions",
+      "9:16, 1:1 and 16:9 cut-downs",
+    ],
+  },
+  {
+    id: 15,
+    slug: "ai-product-videos",
+    parent: "ai-video-production",
+    group: "Create",
+    icon: "FiPackage",
+    title: "AI Product Videos",
+    shortDesc: "Studio-style product videos from your product photos.",
+    fullDesc: "Product videos created with AI from your existing product photos — rotating shots, lifestyle scenes, close-ups and ad-ready cuts for e-commerce listings, Instagram, Meta ads and marketplaces.",
+    color: "#C2650C",
+    subServices: [
+      "Product showcase & 360-style shots",
+      "Lifestyle & in-use scenes",
+      "Marketplace & website product videos",
+      "Launch, offer & festive ads",
+      "AI model / try-on style videos",
+    ],
+  },
+  {
+    id: 16,
+    slug: "ai-avatar-videos",
+    parent: "ai-video-production",
+    group: "Create",
+    icon: "FiUser",
+    title: "AI Avatar Videos",
+    shortDesc: "AI presenter and spokesperson videos in many languages.",
+    fullDesc: "Videos presented by an AI avatar — a stock presenter or, with written consent, a digital twin of you or your spokesperson — for explainers, training, announcements, FAQs and multilingual marketing.",
+    color: "#0EA5E9",
+    subServices: [
+      "Stock AI presenters",
+      "Consent-based digital twin of you",
+      "Explainer, FAQ & training videos",
+      "Multilingual versions with lip-sync",
+      "Website & WhatsApp video messages",
+    ],
+  },
 ];
 
+/** Top-level services only (nav, home grid, footer, counts). */
+const services = allServices.filter((s) => !s.parent);
+
+export { allServices };
 export default services;

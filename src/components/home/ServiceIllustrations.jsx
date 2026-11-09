@@ -199,6 +199,62 @@ const art = {
       <rect x="22" y="102" width="52" height="6" rx="3" fill="#8B5CF6" />
     </>
   ),
+  'ai-video-production': (
+    <>
+      <Blob fill="#EDE4FF" />
+      <rect x="24" y="30" width="92" height="64" rx="10" fill="#241832" />
+      <rect x="32" y="38" width="76" height="40" rx="6" fill="#7C3AED" />
+      <path d="M62 48l18 10-18 10z" fill="#fff" />
+      <rect x="32" y="84" width="76" height="4" rx="2" fill="#4C0E82" />
+      <rect x="32" y="84" width="40" height="4" rx="2" fill="#F5A623" />
+      <path d="M124 26l3.2 7.8L135 37l-7.8 3.2L124 48l-3.2-7.8L113 37l7.8-3.2z" fill="#F5A623" />
+      <path d="M138 58l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#FF6B4A" />
+      <rect x="118" y="70" width="30" height="24" rx="6" fill="#fff" stroke="#7C3AED" strokeWidth="2" />
+      <text x="133" y="86" textAnchor="middle" fontSize="11" fontWeight="800" fill="#7C3AED" fontFamily="sans-serif">AI</text>
+      <Spark x={18} y={22} c="#8B5CF6" s={0.7} />
+    </>
+  ),
+  'ai-ugc-videos': (
+    <>
+      <Blob fill="#FCE7F3" />
+      <rect x="54" y="14" width="52" height="96" rx="10" fill="#241832" />
+      <rect x="58" y="22" width="44" height="78" rx="6" fill="#FBCFE8" />
+      <circle cx="80" cy="48" r="11" fill="#DB2777" />
+      <path d="M62 86c2-14 10-20 18-20s16 6 18 20z" fill="#DB2777" />
+      <rect x="62" y="90" width="36" height="6" rx="3" fill="#fff" />
+      <rect x="112" y="34" width="38" height="20" rx="10" fill="#fff" stroke="#DB2777" strokeWidth="2" />
+      <rect x="119" y="41" width="24" height="5" rx="2.5" fill="#F9A8D4" />
+      <rect x="10" y="60" width="38" height="20" rx="10" fill="#fff" stroke="#8B5CF6" strokeWidth="2" />
+      <path d="M20 70l4 4 8-8" fill="none" stroke="#22C55E" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+      <Spark x={140} y={84} /><Spark x={24} y={30} c="#DB2777" s={0.7} />
+    </>
+  ),
+  'ai-product-videos': (
+    <>
+      <Blob fill="#FDEEDB" />
+      <ellipse cx="78" cy="98" rx="42" ry="8" fill="#F5D0A9" />
+      <path d="M50 46l28-14 28 14v34l-28 14-28-14z" fill="#C2650C" />
+      <path d="M50 46l28 14 28-14" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinejoin="round" />
+      <path d="M78 60v34" stroke="#fff" strokeWidth="2.5" />
+      <path d="M36 66a42 42 0 0 1 8-26" fill="none" stroke="#8B5CF6" strokeWidth="3" strokeLinecap="round" />
+      <path d="M40 38l4 2-1 4" fill="none" stroke="#8B5CF6" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="128" cy="40" r="14" fill="#4C0E82" />
+      <path d="M124 33l11 7-11 7z" fill="#fff" />
+      <Spark x={130} y={82} c="#F5A623" /><Spark x={26} y={24} c="#C2650C" s={0.7} />
+    </>
+  ),
+  'ai-avatar-videos': (
+    <>
+      <Blob fill="#E0F2FE" />
+      <rect x="22" y="24" width="84" height="74" rx="10" fill="#fff" stroke="#0EA5E9" strokeWidth="2.5" />
+      <circle cx="64" cy="52" r="13" fill="#0EA5E9" />
+      <path d="M40 92c3-16 13-24 24-24s21 8 24 24z" fill="#0369A1" />
+      <path d="M110 30h36a6 6 0 0 1 6 6v18a6 6 0 0 1-6 6h-22l-10 8v-8h-4a6 6 0 0 1-6-6V36a6 6 0 0 1 6-6z" fill="#4C0E82" />
+      <text x="128" y="49" textAnchor="middle" fontSize="10" fontWeight="800" fill="#fff" fontFamily="sans-serif">हि · EN</text>
+      <path d="M112 82h10M112 88h18M112 94h6" stroke="#0EA5E9" strokeWidth="3" strokeLinecap="round" />
+      <Spark x={142} y={88} /><Spark x={16} y={18} c="#0EA5E9" s={0.7} />
+    </>
+  ),
   'ai-search-optimization': (
     <>
       <Blob fill="#E0F2FE" />

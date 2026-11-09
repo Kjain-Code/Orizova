@@ -28,6 +28,15 @@ import pHamper from '../../assets/videos-web/posters/hamper-ad.webp';
 
 // Categories drive the filter buttons on /creative-work (only categories that
 // have at least one video are shown). `client` is the brand / type of business.
+//
+// AI videos: use category "AI Videos" and add `kind` — 'ugc', 'product',
+// 'avatar', 'reel' or 'explainer'. They then also appear on the AI video
+// service pages (/services/ai-video-production and the UGC / product / avatar
+// pages show their own kind first) and the city AI video pages. Example:
+//   import aiSkincare from '../../assets/videos-web/ai-skincare-ugc.mp4';
+//   import pAiSkincare from '../../assets/videos-web/posters/ai-skincare-ugc.webp';
+//   { id: 12, title: 'Skincare UGC Ad', client: 'D2C skincare brand', category: 'AI Videos', kind: 'ugc', video: aiSkincare, poster: pAiSkincare },
+// Keep files web-sized: 720p H.264 MP4 (~3–8 MB) + a 360×640 WebP poster.
 const creativeWork = [
   { id: 1, title: "Shopping Mall Brand Film", client: "Pehnawa Shopping Mall", category: "Brand Films & Ads", video: pehnawaReelEdit, poster: pPehnawa },
   { id: 2, title: "Diagnostic Lab Promo", client: "Diagnostic lab", category: "Brand Films & Ads", video: drPathLab, poster: pDrPath },

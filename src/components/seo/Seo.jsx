@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import CONTACT from '../../data/site/contact';
 import seo from '../../data/site/seo.json';
-import services from '../../data/services/services';
+import { allServices as services } from '../../data/services/services';
 import { citiesIndex } from '../../data/site/siteIndex';
 
 const SITE_URL = (process.env.REACT_APP_SITE_URL || seo.defaultSiteUrl).replace(/\/$/, '');

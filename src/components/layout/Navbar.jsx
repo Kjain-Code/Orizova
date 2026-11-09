@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import {
   FiMenu, FiX, FiPhone, FiChevronDown, FiArrowRight, FiMonitor, FiSmartphone, FiTrendingUp,
-  FiPenTool, FiSearch, FiShoppingCart, FiInstagram, FiTarget, FiMousePointer, FiMapPin, FiVideo,
+  FiPenTool, FiSearch, FiShoppingCart, FiInstagram, FiTarget, FiMousePointer, FiMapPin, FiVideo, FiCpu, FiFilm,
 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
@@ -14,12 +14,12 @@ import logo from '../../assets/logo.webp';
 
 const ICONS = {
   FiMonitor, FiSmartphone, FiTrendingUp, FiPenTool, FiSearch, FiShoppingCart,
-  FiInstagram, FiTarget, FiMousePointer, FiMapPin, FiVideo,
+  FiInstagram, FiTarget, FiMousePointer, FiMapPin, FiVideo, FiCpu, FiFilm,
 };
 const GROUPS = [
   { name: 'Build', note: 'Websites, stores & apps' },
   { name: 'Grow', note: 'SEO, ads & social' },
-  { name: 'Create', note: 'Video & branding' },
+  { name: 'Create', note: 'Video, AI video & branding' },
 ];
 
 const Navbar = () => {

@@ -2,6 +2,8 @@
 // Rules: original writing, no invented numbers, prices, clients or results.
 // Inline links use [text](/path). Block types are rendered by ContentBlocks.
 
+import aiVideoPages from './aiVideoPages';
+
 const servicePages = {
   /* ------------------------------------------------------------------ */
   'website-development': {
@@ -917,6 +919,7 @@ const servicePages = {
         h2: 'Related services',
         links: [
           { to: '/creative-work', label: 'See our video work' },
+          { to: '/services/ai-video-production', label: 'AI video production (no shoot needed)' },
           { to: '/services/social-media-marketing', label: 'Social media marketing' },
           { to: '/services/meta-ads', label: 'Meta ads' },
           { to: '/industries/restaurants-cafes', label: 'Restaurants & cafes' },
@@ -1020,6 +1023,7 @@ const servicePages = {
       },
     ],
   },
+  ...aiVideoPages,
 };
 
 export default servicePages;

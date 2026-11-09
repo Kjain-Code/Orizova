@@ -5,6 +5,7 @@
 // Section: city and city × service pages (local).
 
 import moreCities from './cities';
+import aiVideoCities from './aiVideoCities';
 
 const answers = {
   '/locations': {
@@ -70,5 +71,6 @@ const answers = {
 };
 
 moreCities.forEach((c) => Object.assign(answers, c.answers));
+Object.assign(answers, aiVideoCities.answers);
 
 export default answers;
