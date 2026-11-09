@@ -6,11 +6,14 @@ import {
 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
-import services from '../../data/services/services';
+import services, { allServices } from '../../data/services/services';
 import { industriesIndex } from '../../data/site/siteIndex';
 import { tone, toneStyle } from '../../utils/tone';
 import './Navbar.css';
 import logo from '../../assets/logo.webp';
+
+// Specialised sub-pages (e.g. AI UGC videos) listed under their main service.
+const childrenOf = (slug) => allServices.filter((s) => s.parent === slug);
 
 const ICONS = {
   FiMonitor, FiSmartphone, FiTrendingUp, FiPenTool, FiSearch, FiShoppingCart,
@@ -96,6 +99,15 @@ const Navbar = () => {
                                   <small>{x.shortDesc}</small>
                                 </span>
                               </Link>
+                              {childrenOf(x.slug).length > 0 && (
+                                <div className="mega-kids">
+                                  {childrenOf(x.slug).map((c) => (
+                                    <Link key={c.slug} to={`/services/${c.slug}`} className="mega-kid" onClick={() => setMegaOpen(false)}>
+                                      {c.title.replace(/^AI /, '')}
+                                    </Link>
+                                  ))}
+                                </div>
+                              )}
                             </li>
                           );
                         })}
@@ -165,7 +177,12 @@ const Navbar = () => {
                   <React.Fragment key={g.name}>
                     <p className="mobile-sub-head">{g.name}</p>
                     {services.filter((x) => x.group === g.name).map((x) => (
-                      <Link key={x.slug} to={`/services/${x.slug}`} className="mobile-sub-link" onClick={() => setMenuOpen(false)}>{x.title}</Link>
+                      <React.Fragment key={x.slug}>
+                        <Link to={`/services/${x.slug}`} className="mobile-sub-link" onClick={() => setMenuOpen(false)}>{x.title}</Link>
+                        {childrenOf(x.slug).map((c) => (
+                          <Link key={c.slug} to={`/services/${c.slug}`} className="mobile-sub-link mobile-sub-kid" onClick={() => setMenuOpen(false)}>{c.title}</Link>
+                        ))}
+                      </React.Fragment>
                     ))}
                   </React.Fragment>
                 ))}

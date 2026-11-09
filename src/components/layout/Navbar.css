@@ -287,6 +287,16 @@
 .mega-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .mega-txt strong { font-size: 14px; color: var(--ink); line-height: 1.3; }
 .mega-txt small { font-size: 12.5px; color: var(--text-light); line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+/* Sub-pages listed under their main service (e.g. AI UGC / Product / Avatar) */
+.mega-kids { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 10px 8px 58px; }
+.mega-kid {
+  font-size: 12.5px; font-weight: 600; line-height: 1.2;
+  color: var(--primary); background: color-mix(in srgb, #7C3AED 10%, white);
+  border: 1px solid color-mix(in srgb, #7C3AED 18%, white);
+  padding: 5px 10px; border-radius: 999px;
+  transition: background .2s, color .2s;
+}
+.mega-kid:hover, .mega-kid:focus-visible { background: var(--primary); color: #fff; }
 
 .mega-side {
   display: flex; flex-direction: column; gap: 12px;
@@ -339,4 +349,5 @@
 .mobile-sub > div { overflow: hidden; display: flex; flex-direction: column; padding-left: 12px; }
 .mobile-sub-head { font-size: 11.5px; font-weight: 800; letter-spacing: 1.6px; text-transform: uppercase; color: var(--gold-deep); margin: 14px 0 4px; }
 .mobile-sub-link { padding: 9px 0; font-size: 15px; font-weight: 500; color: var(--text); }
+.mobile-sub-kid { padding: 7px 0 7px 14px; font-size: 14px; color: var(--text-light); border-left: 2px solid var(--lilac); }
 .mobile-sub-all { font-weight: 700; color: var(--primary); padding-top: 12px; }
