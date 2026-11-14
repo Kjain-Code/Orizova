@@ -172,3 +172,8 @@ Lighthouse (mobile, local): accessibility 100, best practices 100, SEO 100 on ho
 **Also:** quick answers, seo.json routes (titles ≤60, descriptions 120–160), facts, /services /creative-work and home answers, GoalPicker "AI video ads" goal, illustrations for the 4 services, guide links from service/industry/city pages.
 **Fixes found while testing:** (1) the blog `steps` CSS added on 4 Nov used `.cb-step`, which clashed with the existing "Our process" timeline and broke it on every service/city page — blog steps renamed to `.cb-astep*`; (2) AI Search Optimization showed an arrow icon in the mega menu (FiCpu was missing from Navbar ICONS); (3) home service grid CTA now fills the last row when one card is left over.
 **Tested:** build ✅ 144 pages, lint ✅, test ✅, 0 broken links, all JSON-LD valid, axe 0 violations on all pages, no JS errors / horizontal scroll on any page (390 px + desktop), screenshots checked.
+
+## 13 Nov 2026 — 5 new commercial-intent blogs
+- New file src/data/blog/posts-f.js: meta-ads-cost-india, seo-cost-india, whatsapp-marketing-for-business-india, social-media-marketing-cost-india, b2b-lead-generation-manufacturers-india.
+- Wired into blog/index.js, blog/answers.js (quick answers), siteIndex.js (postsIndex = home "From the blog" cards, guideIndex = links from service/industry/city pages), seo.json routes (149 pages in sitemap), site/answers.js and /blog description.
+- QA: CI build pass, 0 broken links, JSON-LD valid, axe 0 violations, sweep clean on 149 pages.

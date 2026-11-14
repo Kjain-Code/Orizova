@@ -5,6 +5,61 @@
 // Section: blog posts (with takeaways).
 
 const answers = {
+  '/blog/meta-ads-cost-india': {
+    q: "How much do Facebook and Instagram ads cost in India?",
+    a: "Meta ads have no fixed price in India: you set a daily or lifetime budget and an auction decides how far it goes, with GST added on Meta’s invoices. Work out a budget from the customers you want — customers × leads per customer × cost per lead — and test for one to two weeks. Judge cost per qualified lead or per customer, not just the cheapest lead.",
+    takeaways: [
+      "You set the budget; the auction sets the price.",
+      "GST is added to ad spend for India billing.",
+      "Budget = customers × leads per customer × cost per lead.",
+      "Cheap instant-form leads often cost more per customer.",
+      "Fresh creatives and fast follow-up lower costs.",
+    ],
+  },
+  '/blog/seo-cost-india': {
+    q: "How much does SEO cost in India?",
+    a: "SEO cost in India depends on competition, whether you target one city or the whole country, the state of your website and how much content is needed. A sensible monthly package covers technical fixes, on-page work, new content, local SEO, genuine authority building and reports that show enquiries. Treat ranking guarantees and bulk backlinks as red flags.",
+    takeaways: [
+      "Price depends on competition, scope and website condition.",
+      "Good SEO includes technical, content, local and authority work.",
+      "No one can guarantee a #1 ranking on Google.",
+      "Own your website, Search Console and Business Profile.",
+      "Judge SEO by calls and enquiries, not rankings alone.",
+    ],
+  },
+  '/blog/whatsapp-marketing-for-business-india': {
+    q: "How can a business use WhatsApp marketing in India?",
+    a: "Small businesses can start with the free WhatsApp Business app; teams that need bulk messages, automation and a shared inbox use the WhatsApp Business API through a provider. Since July 2025 Meta charges per delivered template message by category, while replies inside the 24-hour customer window are mostly free. Message only people who opted in, using approved templates.",
+    takeaways: [
+      "Free app for small businesses; API for teams and bulk messages.",
+      "Marketing templates are charged per message.",
+      "Click-to-WhatsApp ads open a 72-hour free window.",
+      "Only message opted-in contacts with approved templates.",
+      "Unofficial bulk-sender tools get numbers banned.",
+    ],
+  },
+  '/blog/social-media-marketing-cost-india': {
+    q: "How much does social media marketing cost in India?",
+    a: "Social media management cost in India depends on the number of reels versus posts, who shoots the video, how many platforms are covered, community management and reporting. The management fee is separate from the ad budget, which goes to Meta plus GST. Compare packages by what is included and judge results by profile visits and enquiries, not likes.",
+    takeaways: [
+      "Reels cost more than static posts — and do more.",
+      "Management fee and ad budget are separate.",
+      "A package needs a plan, replies and reports.",
+      "Avoid bought followers and greeting-only calendars.",
+      "Judge by enquiries over two to three months.",
+    ],
+  },
+  '/blog/b2b-lead-generation-manufacturers-india': {
+    q: "How can manufacturers in India get B2B leads online?",
+    a: "Indian manufacturers get B2B enquiries online by building a website with a page per product range, specifications and proof of capability, ranking those pages on Google, running search ads for exact product + manufacturer searches, reaching dealers with Meta and LinkedIn, and replying to every enquiry the same day with a catalogue on WhatsApp. B2B portals help with volume but should not be the only channel.",
+    takeaways: [
+      "Product pages with specifications win B2B searches.",
+      "Show factory, capacity, quality and certifications.",
+      "Use Google for buyers searching, Meta/LinkedIn for dealers.",
+      "Filter retail buyers with a qualifying question.",
+      "Fast quotes and follow-up win the order.",
+    ],
+  },
   '/blog/ai-ugc-video-ads-guide': {
     q: 'What are AI UGC video ads and when should brands use them?',
     a: 'AI UGC video ads are creator-style ads — a presenter talking to camera about a product — where the presenter or scenes are made with AI. They are best for testing many hooks, angles and languages quickly and for simple product demos. Real creators and customers remain the right choice for testimonials, results and trust-heavy categories, and realistic AI content should be labelled in India.',

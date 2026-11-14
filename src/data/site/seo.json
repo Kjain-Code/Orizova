@@ -997,9 +997,54 @@
       "path": "/blog",
       "priority": "0.7",
       "title": "Digital Marketing Blog – Website, SEO & Ads Guides",
-      "description": "Practical guides for business owners across India: website and ad costs, SEO timelines, AI video, e-commerce platforms, Google Maps and Meta vs Google Ads.",
+      "description": "Practical guides for business owners in India: website, SEO, Meta Ads, Google Ads and social media costs, WhatsApp marketing, AI video and B2B leads.",
       "h1": "Practical Guides on Websites, SEO & Digital Marketing",
-      "lastmod": "2026-11-09"
+      "lastmod": "2026-11-13"
+    },
+    {
+      "key": "post:meta-ads-cost-india",
+      "path": "/blog/meta-ads-cost-india",
+      "priority": "0.7",
+      "title": "Facebook & Instagram Ads Cost in India (2026)",
+      "description": "How Meta ads are priced in India, how to set a budget from the leads you want, GST on ads, and why the cheapest lead is rarely the best one.",
+      "h1": "Facebook & Instagram Ads Cost in India: Budget, Cost per Lead and GST",
+      "lastmod": "2026-11-13"
+    },
+    {
+      "key": "post:seo-cost-india",
+      "path": "/blog/seo-cost-india",
+      "priority": "0.7",
+      "title": "SEO Cost in India: What Monthly Packages Include",
+      "description": "What decides SEO prices in India, what a monthly SEO package should include, red flags in cheap offers, and how to judge if SEO is working.",
+      "h1": "SEO Cost in India: What Monthly SEO Packages Should Include",
+      "lastmod": "2026-11-13"
+    },
+    {
+      "key": "post:whatsapp-marketing-for-business-india",
+      "path": "/blog/whatsapp-marketing-for-business-india",
+      "priority": "0.7",
+      "title": "WhatsApp Marketing for Business in India (2026)",
+      "description": "WhatsApp Business app vs API, how Meta charges per message, opt-in rules, and five WhatsApp campaigns that bring Indian businesses customers.",
+      "h1": "WhatsApp Marketing for Business in India: App vs API, Costs and Rules",
+      "lastmod": "2026-11-13"
+    },
+    {
+      "key": "post:social-media-marketing-cost-india",
+      "path": "/blog/social-media-marketing-cost-india",
+      "priority": "0.7",
+      "title": "Social Media Marketing Cost in India (2026)",
+      "description": "What decides social media management cost in India, what a monthly package should include, management fee vs ad budget, and red flags.",
+      "h1": "Social Media Marketing Cost in India: What Monthly Packages Include",
+      "lastmod": "2026-11-13"
+    },
+    {
+      "key": "post:b2b-lead-generation-manufacturers-india",
+      "path": "/blog/b2b-lead-generation-manufacturers-india",
+      "priority": "0.7",
+      "title": "B2B Lead Generation for Manufacturers in India",
+      "description": "How Indian manufacturers and exporters get dealer, distributor and bulk-order enquiries from their website, Google, Meta, LinkedIn and WhatsApp.",
+      "h1": "B2B Lead Generation for Manufacturers: Get Dealer and Bulk-Order Enquiries Online",
+      "lastmod": "2026-11-13"
     },
     {
       "key": "post:ai-ugc-video-ads-guide",
