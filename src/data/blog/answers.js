@@ -216,6 +216,7 @@ const answers = {
       'Ask for live examples and an itemised quote before you pay.',
       'A 5–10 page business website usually takes about 2–4 weeks once content is ready.',
       'After launch, set up Google Search Console and Google Business Profile.',
+      'Old free Google business.site websites no longer work — use a website on your own domain.',
     ],
   },
   '/blog/website-development-cost-chandigarh': {

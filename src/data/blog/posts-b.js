@@ -7,9 +7,9 @@ const postsB = [
     title: 'How to Get a Business Website Made in India: Process, Cost and Tips (2026)',
     category: 'Websites',
     date: '2026-10-19',
-    updated: '2026-10-20',
-    readMins: 9,
-    chips: ['Websites', '9 min read', 'Guide', 'India'],
+    updated: '2026-11-18',
+    readMins: 10,
+    chips: ['Websites', '10 min read', 'Guide', 'India'],
     excerpt: 'A step-by-step guide to getting a professional website made for your business in India — what to prepare, how the process works, what drives the cost, how to choose a developer and what to do after launch.',
     intro: [
       'Most customers now look a business up on Google before they call. Whether you run a clinic, a coaching institute, a shop, a hotel or a service company, a slow, outdated website — or no website at all — sends them straight to the next result.',
@@ -92,6 +92,19 @@ const postsB = [
         ],
       },
       {
+        h2: 'Had a free Google business.site website? It no longer works',
+        paras: [
+          'Many small businesses in India once used the free website that Google created from a Business Profile, with an address ending in **business.site**. Google [shut these websites down](https://www.seroundtable.com/google-shutting-down-google-business-profiles-websites-36686.html): they stopped working on 1 March 2024, redirected to the Business Profile only until 10 June 2024, and now show a “page not found” error.',
+          'If your Google listing, visiting cards, Instagram bio or old ads still point to a business.site address, customers who click it reach a dead page. Here is what to do:',
+        ],
+        bullets: [
+          '**Get a proper website on your own domain** (such as yourbusiness.in), so the address never depends on a free tool that can be switched off.',
+          '**Update the website link** in your Google Business Profile, Instagram, Facebook, WhatsApp Business and any directory listings.',
+          '**Replace the old link** on visiting cards, brochures and ads when you next print or run them.',
+          '**Keep your Business Profile active** with photos, posts and reviews — the profile itself was not affected, only the free website.',
+        ],
+      },
+      {
         h2: 'What to do after your website goes live',
         bullets: [
           'Create a Google Business Profile and link it to your website — see our [Google Business Profile guide](/blog/google-business-profile-guide)',
@@ -115,6 +128,7 @@ const postsB = [
       ['Can my website be in Hindi as well as English?', 'Yes. A website can be built in English, Hindi or both.'],
       ['Will my website appear on Google automatically?', 'Your site is indexed after it is submitted to Google Search Console, but ranking higher needs a Google Business Profile, reviews, useful content and links from other websites. No one can guarantee a #1 position.'],
       ['Whose name should the domain and hosting be in?', 'Always your own, with all logins in your possession.'],
+      ['What happened to Google business.site websites?', 'Google shut down the free websites made from Business Profiles. They stopped working on 1 March 2024, redirected to the Business Profile until 10 June 2024, and now show a page-not-found error. Businesses need a website on their own domain instead.'],
     ],
   },
   /* ------------------------------------------------------------------ */

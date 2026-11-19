@@ -4,6 +4,8 @@
 
 import moreCities from './cities';
 import aiVideoCities from './aiVideoCities';
+import aiVideoCities2 from './aiVideoCities2';
+import metaAdsCities from './metaAdsCities';
 
 const cityServices = [
   /* ============================ GHAZIABAD ============================ */
@@ -899,5 +901,7 @@ const cityServices = [
 moreCities.forEach((c) => cityServices.push(...c.pages));
 // AI video production pages for several cities (one file, written per city).
 cityServices.push(...aiVideoCities.pages);
+cityServices.push(...aiVideoCities2.pages);
+cityServices.push(...metaAdsCities.pages);
 
 export default cityServices;

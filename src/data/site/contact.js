@@ -18,11 +18,13 @@ const CONTACT = {
   // {{TODO: confirm business hours}} — shown on the contact page only when set.
   hours: null, // e.g. 'Mon–Sat, 10:00 am – 7:00 pm'
   // Every official profile URL goes here (used for schema "sameAs").
-  // {{TODO: add Clutch, GoodFirms, YouTube and Google Business Profile URLs once live}}
+  // {{TODO: add GoodFirms, YouTube and Google Business Profile URLs once live}}
   sameAs: [
     'https://www.instagram.com/orizova.digital/',
     'https://www.linkedin.com/company/orizova',
     'https://www.facebook.com/profile.php?id=61594433301407',
+    'https://clutch.co/profile/orizova-digital',
+    'https://themanifest.com/company/orizova-digital',
   ],
 };
 CONTACT.sameAs = [...CONTACT.sameAs, CONTACT.xUrl, CONTACT.youtubeUrl].filter(Boolean);

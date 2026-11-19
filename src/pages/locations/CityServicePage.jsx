@@ -72,7 +72,7 @@ const CityServicePage = () => {
                 ))}
               </ul>
               <p className="loc-text loc-text--note">
-                Part of our <Link to={`/services/${svc.slug}`} className="content-link">{svc.title.toLowerCase()} services</Link>.
+                Part of our <Link to={`/services/${svc.slug}`} className="content-link">{svc.title.split(' ').map((w) => (/^\(?(?:[A-Z]{2,}|Meta|Facebook|Instagram|Google)\)?$/.test(w) ? w : w.toLowerCase())).join(' ')} services</Link>.
               </p>
             </aside>
           </div>
