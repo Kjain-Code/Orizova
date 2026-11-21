@@ -45,10 +45,10 @@ import pAiVilla from '../../assets/videos-web/posters/ai-villa-ugc-hyderabad.web
 const creativeWork = [
   { id: 12, title: "AI Presenter Plot Ad", client: "Villa plots, Shadnagar", category: "AI Videos", kind: "ugc", video: aiPlots, poster: pAiPlots },
   { id: 13, title: "AI Luxury Villa Ad", client: "Villa project, Hyderabad", category: "AI Videos", kind: "ugc", video: aiVilla, poster: pAiVilla },
+  { id: 11, title: "AI Gift Hamper Ad", client: "Festive gift hampers", category: "AI Videos", kind: "product", video: hamper, poster: pHamper },
   { id: 1, title: "Shopping Mall Brand Film", client: "Pehnawa Shopping Mall", category: "Brand Films & Ads", video: pehnawaReelEdit, poster: pPehnawa },
   { id: 2, title: "Diagnostic Lab Promo", client: "Diagnostic lab", category: "Brand Films & Ads", video: drPathLab, poster: pDrPath },
   { id: 10, title: "Magazine-Style Ad", client: "Ad creative", category: "Brand Films & Ads", video: magzine, poster: pMag },
-  { id: 11, title: "Gift Hamper Ad", client: "Gift hampers", category: "Brand Films & Ads", video: hamper, poster: pHamper },
   { id: 3, title: "Paint Dealer Reel", client: "Ravi Traders", category: "Reels & Social", video: raviTraderReel3, poster: pRavi },
   { id: 7, title: "Paint Finish Product Reel", client: "Paint dealer", category: "Reels & Social", video: video0727, poster: p0727 },
   { id: 4, title: "Cinematic Car Reel", client: "Automobile", category: "Reels & Social", video: carEditing, poster: pCar },
