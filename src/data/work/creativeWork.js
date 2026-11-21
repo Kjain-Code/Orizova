@@ -23,6 +23,11 @@ import pTypo from '../../assets/videos-web/posters/typography-1.webp';
 import pTypo2 from '../../assets/videos-web/posters/typography-2.webp';
 import pMag from '../../assets/videos-web/posters/magazine-ad.webp';
 import pHamper from '../../assets/videos-web/posters/hamper-ad.webp';
+// AI videos (added 21 Nov 2026) — AI presenter, UGC-style real-estate ads.
+import aiPlots from '../../assets/videos-web/ai-plots-ugc-shadnagar.mp4';
+import aiVilla from '../../assets/videos-web/ai-villa-ugc-hyderabad.mp4';
+import pAiPlots from '../../assets/videos-web/posters/ai-plots-ugc-shadnagar.webp';
+import pAiVilla from '../../assets/videos-web/posters/ai-villa-ugc-hyderabad.webp';
 
 // Only real, local videos from src/assets/videos/ — nothing here links out to Instagram.
 
@@ -38,6 +43,8 @@ import pHamper from '../../assets/videos-web/posters/hamper-ad.webp';
 //   { id: 12, title: 'Skincare UGC Ad', client: 'D2C skincare brand', category: 'AI Videos', kind: 'ugc', video: aiSkincare, poster: pAiSkincare },
 // Keep files web-sized: 720p H.264 MP4 (~3–8 MB) + a 360×640 WebP poster.
 const creativeWork = [
+  { id: 12, title: "AI Presenter Plot Ad", client: "Villa plots, Shadnagar", category: "AI Videos", kind: "ugc", video: aiPlots, poster: pAiPlots },
+  { id: 13, title: "AI Luxury Villa Ad", client: "Villa project, Hyderabad", category: "AI Videos", kind: "ugc", video: aiVilla, poster: pAiVilla },
   { id: 1, title: "Shopping Mall Brand Film", client: "Pehnawa Shopping Mall", category: "Brand Films & Ads", video: pehnawaReelEdit, poster: pPehnawa },
   { id: 2, title: "Diagnostic Lab Promo", client: "Diagnostic lab", category: "Brand Films & Ads", video: drPathLab, poster: pDrPath },
   { id: 10, title: "Magazine-Style Ad", client: "Ad creative", category: "Brand Films & Ads", video: magzine, poster: pMag },

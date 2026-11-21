@@ -8,10 +8,13 @@ import { waLink } from '../../data/site/contact';
 import { StarDoodle } from '../common/Doodles';
 import './CreativeWorkSections.css';
 
-/* /creative-work: a clean grid of vertical (9:16) video cards.
-   - Filters come from the data, so a filter can never show an empty grid.
+/* /creative-work: two auto-scrolling rows of vertical (9:16) video cards —
+   the top row moves right-to-left, the bottom row left-to-right.
+   - Rows pause while the pointer is over them (or a card has focus).
+   - Filters come from the data, so a filter can never show an empty row.
    - Hover (desktop) plays a muted preview; click/tap opens the video with sound.
-   - Posters load first; video files only load on hover or when opened. */
+   - Posters load first; video files only load on hover or when opened.
+   - With "reduce motion" switched on, rows become normal swipeable strips. */
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -20,7 +23,7 @@ const fadeUp = {
   transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
 };
 
-const VideoCard = ({ item, index, onOpen }) => {
+const VideoCard = ({ item, index, onOpen, plain = false, hidden = false }) => {
   const ref = useRef(null);
   const play = () => { const v = ref.current; if (v) { v.preload = 'auto'; v.play().catch(() => {}); } };
   const stop = () => { const v = ref.current; if (v) { v.pause(); v.currentTime = 0; } };
@@ -35,8 +38,10 @@ const VideoCard = ({ item, index, onOpen }) => {
       onFocus={play}
       onBlur={stop}
       aria-label={`Play video: ${item.title} — ${item.client}`}
-      {...fadeUp}
-      transition={{ ...fadeUp.transition, delay: (index % 4) * 0.06 }}
+      aria-hidden={hidden || undefined}
+      tabIndex={hidden ? -1 : undefined}
+      {...(plain ? {} : fadeUp)}
+      {...(plain ? {} : { transition: { ...fadeUp.transition, delay: (index % 4) * 0.06 } })}
     >
       <img className="cw-poster" src={item.poster} alt="" width="360" height="640" loading={index < 4 ? 'eager' : 'lazy'} decoding="async" />
       <video ref={ref} className="cw-preview" src={item.video} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />
@@ -93,6 +98,28 @@ export const VideoGrid = ({ items }) => {
   );
 };
 
+/** One endlessly scrolling row. The items are repeated so the strip is always
+ *  wider than the screen, then the whole set is doubled so the loop is seamless
+ *  (the track moves by exactly half its width). Only the first copy of each
+ *  video is reachable by keyboard / screen readers. */
+const MarqueeRow = ({ items, reverse = false, onOpen }) => {
+  const reps = Math.max(1, Math.ceil(8 / items.length));
+  const set = Array.from({ length: reps }, () => items).flat();
+  const loop = [...set, ...set];
+  const seconds = Math.max(28, set.length * 6);
+  return (
+    <div className={`cw-row${reverse ? ' cw-row--reverse' : ''}`}>
+      <div className="cw-track" style={{ '--cw-duration': `${seconds}s` }}>
+        {loop.map((item, i) => (
+          <div className={`cw-slot${i >= items.length ? ' cw-slot--clone' : ''}`} key={`${item.id}-${i}`}>
+            <VideoCard item={item} index={i} onOpen={onOpen} plain hidden={i >= items.length} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const CreativeWorkSections = () => {
   const [active, setActive] = useState('All');
   const [open, setOpen] = useState(null);
@@ -114,6 +141,9 @@ const CreativeWorkSections = () => {
   const tabs = ['All', ...cats];
   const list = active === 'All' ? creativeWork : creativeWork.filter((v) => v.category === active);
   const countOf = (c) => (c === 'All' ? creativeWork.length : creativeWork.filter((v) => v.category === c).length);
+  // Alternate videos between the two rows so each row mixes styles.
+  const rowA = list.filter((_, i) => i % 2 === 0);
+  const rowB = list.length > 1 ? list.filter((_, i) => i % 2 === 1) : list;
 
   return (
     <section className="creative-work-section">
@@ -121,7 +151,7 @@ const CreativeWorkSections = () => {
         <div className="text-center">
           <span className="section-tag">Our Video Work</span>
           <h2 className="section-title">Watch What <span>We&apos;ve Made</span></h2>
-          <p className="section-subtitle">Hover to preview, tap to watch with sound. Every video was made for a real business and a real platform — edited from footage or produced with AI.</p>
+          <p className="section-subtitle">Every video was made for a real business and a real platform — edited from footage or produced with AI.</p>
         </div>
 
         <div className="creative-filters" role="tablist" aria-label="Filter videos">
@@ -139,11 +169,15 @@ const CreativeWorkSections = () => {
           ))}
         </div>
 
-        <div className="cw-grid">
-          {list.map((item, i) => (
-            <VideoCard key={item.id} item={item} index={i} onOpen={setOpen} />
-          ))}
-        </div>
+      </div>
+
+      <div className="cw-marquee" key={active} aria-label={`${active === 'All' ? 'All' : active} videos`} role="region">
+        <MarqueeRow items={rowA} onOpen={setOpen} />
+        <MarqueeRow items={rowB} onOpen={setOpen} reverse />
+      </div>
+      <p className="cw-marquee-hint"><span className="cw-hint-desk">Hover over a row to pause · click a video to watch with sound</span><span className="cw-hint-touch">Touch and hold to pause · tap a video to watch with sound</span></p>
+
+      <div className="container">
 
         <m.div className="cw-next" {...fadeUp}>
           <div>
