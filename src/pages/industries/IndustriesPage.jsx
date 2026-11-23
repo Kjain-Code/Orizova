@@ -4,7 +4,7 @@ import sectionAnswers from '../../data/site/answers';
 import { Link } from 'react-router-dom';
 import { FiArrowRight, FiUsers, FiShield, FiTarget } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
-import PageBanner from '../../components/common/PageBanner';
+import { IndustriesHero } from '../../components/heroes/PageHeroes';
 import PageTransition from '../../components/layout/PageTransition';
 import CtaBand from '../../components/common/CtaBand';
 import Seo, { SITE_URL } from '../../components/seo/Seo';
@@ -41,12 +41,7 @@ const IndustriesPage = () => (
         },
       }]}
     />
-    <PageBanner crumbs={[{ name: 'Industries', path: '/industries' }]}
-      title="Digital Marketing"
-      highlight="by Industry"
-      subtitle={`Every industry buys differently. Pick yours from ${industries.length} industries to see how we plan websites, SEO and ads around how your customers search and decide.`}
-      chips={['Healthcare', 'Real estate', 'Education', 'D2C brands', 'Manufacturers']}
-    />
+    <IndustriesHero />
     <section className="loc-section content-section ip">
       <div className="container">
         {/* Jump navigation */}

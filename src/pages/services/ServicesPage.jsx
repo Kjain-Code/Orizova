@@ -3,7 +3,7 @@ import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/site/answers';
 import Seo, { SITE_URL, AREAS_SERVED } from '../../components/seo/Seo';
 import { allServices as services } from '../../data/services/services';
-import PageBanner from '../../components/common/PageBanner';
+import { ServicesHero } from '../../components/heroes/PageHeroes';
 import ServicesDetail from '../../components/sections/ServicesDetail';
 import CtaBand from '../../components/common/CtaBand';
 import PageTransition from '../../components/layout/PageTransition';
@@ -37,13 +37,7 @@ const ServicesPage = () => {
         }))}
       />
 
-      <PageBanner
-        crumbs={[{ name: 'Services', path: '/services' }]}
-        title="Web Development, SEO &"
-        highlight="Digital Marketing Services"
-        subtitle="Websites, apps, SEO, ads, social media, branding and video for businesses across India — pick what you need, or let us plan the complete package."
-        chips={['Build', 'Grow', 'Create', 'SEO', 'Ads']}
-      />
+      <ServicesHero />
       <section className="loc-section content-section pad-b-0">
         <div className="container">
           <div className="cb-prose">
@@ -56,7 +50,7 @@ const ServicesPage = () => {
               Most businesses do not need everything at once. We usually start with the one or two services that will bring the quickest, most measurable improvement, then add the rest as you grow.
             </p>
           </div>
-          <div className="sg">
+          <div className="sg" id="all-services">
             {GROUPS.map((g) => {
               const list = services.filter((x) => x.group === g.name);
               return (

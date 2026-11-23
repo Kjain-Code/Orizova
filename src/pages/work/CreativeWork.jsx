@@ -2,7 +2,7 @@ import React from 'react';
 import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/site/answers';
 import Seo from '../../components/seo/Seo';
-import PageBanner from '../../components/common/PageBanner';
+import { CreativeHero } from '../../components/heroes/PageHeroes';
 import CreativeWorkSections from '../../components/sections/CreativeWorkSections';
 import CtaBand from '../../components/common/CtaBand';
 import PageTransition from '../../components/layout/PageTransition';
@@ -13,13 +13,7 @@ const CreativeWork = () => {
     <PageTransition>
       <Seo speakable page="creativeWork" breadcrumbs={[{ name: 'Creative Work', path: '/creative-work' }]} />
 
-      <PageBanner
-        crumbs={[{ name: 'Creative Work', path: '/creative-work' }]}
-        title="Video Editing & Reels That"
-        highlight="Do the Talking"
-        subtitle="Brand reels, ad videos, animated typography and AI videos — organised by style so you can see exactly what we do best."
-        chips={['Reels', 'Ad videos', 'AI videos', 'Brand films', 'Typography']}
-      />
+      <CreativeHero />
       <section className="loc-section content-section pad-b-0">
         <div className="container">
           <Prose

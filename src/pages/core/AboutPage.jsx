@@ -2,7 +2,7 @@ import React from 'react';
 import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/site/answers';
 import Seo, { SITE_URL } from '../../components/seo/Seo';
-import PageBanner from '../../components/common/PageBanner';
+import { AboutHero } from '../../components/heroes/PageHeroes';
 import { AboutStory, AboutValues, AboutServices, AboutWho } from '../../components/sections/About';
 import { AtAGlance, HowWeWork } from '../../components/home/HomeSections';
 import { ToolsStrip, Reviews } from '../../components/home/TrustSections';
@@ -27,12 +27,7 @@ const AboutPage = () => {
         }]}
       />
 
-      <PageBanner crumbs={[{ name: 'About', path: '/about' }]}
-        title="About Orizova Digital —"
-        highlight="Web Development & Digital Marketing Agency"
-        subtitle="We're a full-service digital agency based in Delhi NCR, helping businesses across India get found, chosen and contacted online."
-        chips={['Websites', 'SEO', 'Ads', 'Content', 'Pan-India']}
-      />
+      <AboutHero />
       <AboutStory />
       <AtAGlance />
       <AboutValues />

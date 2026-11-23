@@ -42,6 +42,14 @@ import pAiVilla from '../../assets/videos-web/posters/ai-villa-ugc-hyderabad.web
 //   import pAiSkincare from '../../assets/videos-web/posters/ai-skincare-ugc.webp';
 //   { id: 12, title: 'Skincare UGC Ad', client: 'D2C skincare brand', category: 'AI Videos', kind: 'ugc', video: aiSkincare, poster: pAiSkincare },
 // Keep files web-sized: 720p H.264 MP4 (~3–8 MB) + a 360×640 WebP poster.
+//
+// POSTERS / static ad creatives (images): put the file in src/assets/creatives/
+// (WebP or JPG, max ~1080px wide, under ~300 KB), import it, and add an entry
+// with `image` instead of `video` + `poster`, category "Ad Posters". A
+// "Ad Posters" filter button appears on /creative-work by itself. Example:
+//   import cPlotOffer from '../../assets/creatives/plot-offer-hyderabad.webp';
+//   { id: 14, title: 'Plot Offer Poster', client: 'Villa plots, Hyderabad', category: 'Ad Posters', image: cPlotOffer },
+// Any shape works (1:1, 4:5, 9:16) — it is shown whole, never cropped.
 const creativeWork = [
   { id: 12, title: "AI Presenter Plot Ad", client: "Villa plots, Shadnagar", category: "AI Videos", kind: "ugc", video: aiPlots, poster: pAiPlots },
   { id: 13, title: "AI Luxury Villa Ad", client: "Villa project, Hyderabad", category: "AI Videos", kind: "ugc", video: aiVilla, poster: pAiVilla },

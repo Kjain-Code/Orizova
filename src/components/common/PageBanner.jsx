@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaWhatsapp } from 'react-icons/fa';
-import { FiArrowRight, FiPhone } from 'react-icons/fi';
+import { FiArrowRight, FiPhone, FiCheckCircle, FiCheck } from 'react-icons/fi';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
+import facts from '../../data/site/facts';
 import './PageBanner.css';
 
-/* Inner-page hero. Left: kinetic headline (each word slides up), subtitle and
-   quick actions. Right: an animated "orbit" visual with floating chips.
+/* Inner-page hero. Left: section label, headline (each word slides up once),
+   subtitle and quick actions. Right: a small "How we work" card with a link
+   to the real results (no decorative graphics). `chips` is still accepted but unused.
    Pure CSS animations — the text is in the HTML from the first paint, so it
    stays fast for PageSpeed and fully readable for Google. */
-
-const DEFAULT_CHIPS = ['Websites', 'SEO', 'Meta Ads', 'Google Ads', 'Reels'];
 
 const Words = ({ text, offset = 0, className = '' }) =>
   String(text)
@@ -44,22 +44,38 @@ export const splitHeading = (text, re) => {
 /* No visible breadcrumb trail on the pages (removed on purpose, 4 Nov 2026).
    Pages still pass `crumbs`; it is ignored here. The BreadcrumbList schema
    in <Seo> stays, so Google can still show the page path in search results. */
-const PageBanner = ({ title, highlight, subtitle, chips = DEFAULT_CHIPS, actions = true, compact = false }) => {
+/* Card on the right: how we work (from data/site/facts.js) + a link to the
+   real results. No numbers here, so the same figures are not repeated on
+   every page — they live on /case-studies. */
+const ProofCard = () => (
+  <aside className="pb-proof" aria-label="How we work">
+    <p className="pb-proof-tag"><FiCheckCircle aria-hidden="true" /> How we work</p>
+    <ul className="pb-proof-list">
+      {facts.workingPrinciples.slice(0, 3).map((p) => (
+        <li key={p}><FiCheck aria-hidden="true" /> {p}</li>
+      ))}
+    </ul>
+    <Link to="/case-studies" className="pb-proof-link">See real results with screenshots <FiArrowRight aria-hidden="true" /></Link>
+  </aside>
+);
+
+const PageBanner = ({ title, highlight, subtitle, crumbs = [], actions = true, compact = false, proof = true }) => {
   const titleWords = String(title || '').split(' ').filter(Boolean).length;
   // A leading/trailing em dash is kept as a plain-text separator so the H1
   // reads "Local SEO Services — Rank on Google Maps", not "...Services Rank...".
   const dashed = /^—/.test(String(highlight || '')) || /—\s*$/.test(String(title || ''));
   const cleanHighlight = highlight ? String(highlight).replace(/^—\s*/, '') : '';
   const cleanTitle = String(title || '').replace(/\s*—\s*$/, '');
+  // Small label above the H1: the section this page belongs to (e.g. "Services").
+  const section = crumbs.length ? crumbs[0].name : '';
+  const eyebrow = section && !cleanTitle.toLowerCase().startsWith(section.toLowerCase()) ? section : '';
+  const showProof = proof;
 
   return (
     <section className={`pb ${compact ? 'pb--compact' : ''}`}>
-      <div className="pb-grid-bg" aria-hidden="true" />
-      <div className="pb-glow pb-glow--a" aria-hidden="true" />
-      <div className="pb-glow pb-glow--b" aria-hidden="true" />
-
-      <div className="container pb-inner">
+      <div className={`container pb-inner${showProof ? '' : ' pb-inner--solo'}`}>
         <div className="pb-copy">
+          {eyebrow && <p className="pb-eyebrow">{eyebrow}</p>}
           <h1 className="pb-title">
             <Words text={cleanTitle} />
             {cleanHighlight && (dashed ? '\u00A0— ' : ' ')}
@@ -85,23 +101,8 @@ const PageBanner = ({ title, highlight, subtitle, chips = DEFAULT_CHIPS, actions
           )}
         </div>
 
-        <div className="pb-visual" aria-hidden="true">
-          <div className="pb-orbit pb-orbit--1" />
-          <div className="pb-orbit pb-orbit--2" />
-          <div className="pb-orbit pb-orbit--3" />
-          <div className="pb-core">
-            <span className="pb-core-ring" />
-            <span className="pb-core-dot" />
-          </div>
-          {chips.slice(0, 5).map((c, i) => (
-            <span key={c} className={`pb-chip pb-chip--${i + 1}`}>
-              <span className="pb-chip-dot" />
-              {c}
-            </span>
-          ))}
-        </div>
+        {showProof && <ProofCard />}
       </div>
-      <div className="pb-bottom-line" aria-hidden="true" />
     </section>
   );
 };

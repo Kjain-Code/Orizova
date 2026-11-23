@@ -84,6 +84,7 @@ const LegalPage = lazyPage(() => import('./pages/core/LegalPage'));
 const Portfolio = lazyPage(() => import('./pages/work/Portfolio'));
 const PortfolioDetail = lazyPage(() => import('./pages/work/PortfolioDetail'));
 const CreativeWork = lazyPage(() => import('./pages/work/CreativeWork'));
+const CaseStudies = lazyPage(() => import('./pages/work/CaseStudies'));
 const AboutPage = lazyPage(() => import('./pages/core/AboutPage'));
 const ContactPage = lazyPage(() => import('./pages/core/ContactPage'));
 const NotFound = lazyPage(() => import('./pages/core/NotFound'));
@@ -138,6 +139,7 @@ const AnimatedRoutes = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/portfolio/:slug" element={<PortfolioDetail />} />
         <Route path="/creative-work" element={<CreativeWork />} />
+        <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="*" element={<NotFound />} />

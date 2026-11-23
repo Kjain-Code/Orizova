@@ -25,28 +25,31 @@ const fadeUp = {
 
 const VideoCard = ({ item, index, onOpen, plain = false, hidden = false }) => {
   const ref = useRef(null);
+  // Poster / static ad creative (item.image, no video): same card, no preview.
+  const isImage = !item.video && !!item.image;
   const play = () => { const v = ref.current; if (v) { v.preload = 'auto'; v.play().catch(() => {}); } };
   const stop = () => { const v = ref.current; if (v) { v.pause(); v.currentTime = 0; } };
 
   return (
     <m.button
       type="button"
-      className="cw-card"
+      className={`cw-card${isImage ? ' cw-card--image' : ''}`}
       onClick={() => onOpen(item)}
-      onMouseEnter={play}
-      onMouseLeave={stop}
-      onFocus={play}
-      onBlur={stop}
-      aria-label={`Play video: ${item.title} — ${item.client}`}
+      onMouseEnter={isImage ? undefined : play}
+      onMouseLeave={isImage ? undefined : stop}
+      onFocus={isImage ? undefined : play}
+      onBlur={isImage ? undefined : stop}
+      aria-label={`${isImage ? 'View poster' : 'Play video'}: ${item.title} — ${item.client}`}
       aria-hidden={hidden || undefined}
       tabIndex={hidden ? -1 : undefined}
       {...(plain ? {} : fadeUp)}
       {...(plain ? {} : { transition: { ...fadeUp.transition, delay: (index % 4) * 0.06 } })}
     >
-      <img className="cw-poster" src={item.poster} alt="" width="360" height="640" loading={index < 4 ? 'eager' : 'lazy'} decoding="async" />
-      <video ref={ref} className="cw-preview" src={item.video} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />
+      {isImage && <img className="cw-image-bg" src={item.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
+      <img className="cw-poster" src={isImage ? item.image : item.poster} alt="" width="360" height="640" loading={index < 4 ? 'eager' : 'lazy'} decoding="async" />
+      {!isImage && <video ref={ref} className="cw-preview" src={item.video} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />}
       <span className="cw-badge">{item.category}</span>
-      <span className="cw-play" aria-hidden="true"><FiPlay /></span>
+      {!isImage && <span className="cw-play" aria-hidden="true"><FiPlay /></span>}
       <span className="cw-caption">
         <strong>{item.title}</strong>
         <small>{item.client}</small>
@@ -55,7 +58,7 @@ const VideoCard = ({ item, index, onOpen, plain = false, hidden = false }) => {
   );
 };
 
-/** Full-screen player for one video (shared by the gallery and VideoGrid). */
+/** Full-screen viewer for one video or poster (shared by the gallery and VideoGrid). */
 const VideoModal = ({ open, onClose }) => {
   useEffect(() => {
     if (!open) return undefined;
@@ -73,11 +76,13 @@ const VideoModal = ({ open, onClose }) => {
             <span>{open.category}</span>
             <strong>{open.title}</strong>
           </div>
-          <button type="button" className="cw-modal-close" onClick={onClose} aria-label="Close video">
+          <button type="button" className="cw-modal-close" onClick={onClose} aria-label="Close">
             <FiX size={20} />
           </button>
         </div>
-        <video key={open.id} src={open.video} poster={open.poster} controls autoPlay playsInline className="cw-modal-video" />
+        {open.video
+          ? <video key={open.id} src={open.video} poster={open.poster} controls autoPlay playsInline className="cw-modal-video" />
+          : <img key={open.id} src={open.image} alt={`${open.title} — ${open.client}`} className="cw-modal-video cw-modal-image" />}
       </div>
     </div>,
     document.body,
@@ -146,7 +151,7 @@ const CreativeWorkSections = () => {
   const rowB = list.length > 1 ? list.filter((_, i) => i % 2 === 1) : list;
 
   return (
-    <section className="creative-work-section">
+    <section className="creative-work-section" id="work">
       <div className="container">
         <div className="text-center">
           <span className="section-tag">Our Video Work</span>
@@ -175,7 +180,7 @@ const CreativeWorkSections = () => {
         <MarqueeRow items={rowA} onOpen={setOpen} />
         <MarqueeRow items={rowB} onOpen={setOpen} reverse />
       </div>
-      <p className="cw-marquee-hint"><span className="cw-hint-desk">Hover over a row to pause · click a video to watch with sound</span><span className="cw-hint-touch">Touch and hold to pause · tap a video to watch with sound</span></p>
+      <p className="cw-marquee-hint"><span className="cw-hint-desk">Hover over a row to pause · click to open (videos play with sound)</span><span className="cw-hint-touch">Touch and hold to pause · tap to open (videos play with sound)</span></p>
 
       <div className="container">
 

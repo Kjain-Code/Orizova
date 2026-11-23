@@ -1,7 +1,7 @@
 import React from 'react';
 import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/site/answers';
-import PageBanner from '../../components/common/PageBanner';
+import { BlogHero } from '../../components/heroes/PageHeroes';
 import PageTransition from '../../components/layout/PageTransition';
 import CtaBand from '../../components/common/CtaBand';
 import Seo, { SITE_URL } from '../../components/seo/Seo';
@@ -29,13 +29,7 @@ const BlogIndex = () => (
         })),
       }]}
     />
-    <PageBanner crumbs={[{ name: 'Blog', path: '/blog' }]}
-      title="Practical Guides on Websites, SEO"
-      highlight="& Digital Marketing"
-      subtitle="Plain-language guides for business owners across India — website costs, Google Maps, ads, and marketing for clinics, real estate, cafes, architects and finance professionals."
-      chips={['Website costs', 'Google Maps', 'Meta vs Google', 'Local SEO', 'Reels']}
-      actions={false}
-      />
+    <BlogHero />
     <section className="loc-section content-section">
       <div className="container">
         <div className="content-prose mb-40">

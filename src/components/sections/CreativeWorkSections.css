@@ -161,6 +161,12 @@
 }
 .cw-modal-close:hover { background: rgba(255, 255, 255, .26); }
 .cw-modal-video { width: 100%; max-height: 78vh; aspect-ratio: 9 / 16; border-radius: 18px; background: #000; object-fit: contain; }
+/* Posters (image items): any shape fits inside the 9:16 card over a blurred copy. */
+.cw-card--image .cw-poster { object-fit: contain; z-index: 1; }
+.cw-image-bg { position: absolute; inset: -12px; width: calc(100% + 24px); height: calc(100% + 24px); object-fit: cover; filter: blur(16px) brightness(.7); }
+.cw-card--image::after { z-index: 1; }
+.cw-card--image .cw-badge, .cw-card--image .cw-caption { z-index: 2; }
+.cw-modal-image { aspect-ratio: auto; height: auto; }
 
 @media (max-width: 1100px) { .cw-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 760px) {

@@ -41,6 +41,10 @@ const answers = {
     q: 'What kind of videos does Orizova Digital make?',
     a: 'Orizova Digital edits Instagram reels, short-form ad creatives, brand films and kinetic-typography videos for businesses such as a shopping mall, a diagnostic lab, doctors, paint dealers, car brands and gift-hamper sellers — mostly from footage shot on a phone or camera by the client — and also produces AI videos: AI UGC-style ads, AI product videos and AI avatar videos.',
   },
+  '/case-studies': {
+    q: 'What results has Orizova Digital delivered for clients?',
+    a: 'Orizova Digital publishes real campaign numbers on its case studies page. For a villa plot project in Hyderabad, its Click-to-WhatsApp ads on Facebook and Instagram brought 39 WhatsApp enquiries from interested plot buyers in 6 days (18–23 Nov 2026), at about ₹67 per enquiry on ₹2,627 of total ad spend. For SEO, Orizova Digital’s own website grew to 4,030 Google search impressions and 90 clicks over three months (to 22 Nov 2026), according to Google Search Console.',
+  },
 };
 
 export default answers;

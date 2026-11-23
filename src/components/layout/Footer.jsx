@@ -12,6 +12,7 @@ import { industriesIndex as industries, citiesIndex } from '../../data/site/site
 
 const quickLinks = [
   { name: 'About', to: '/about' },
+  { name: 'Case Studies', to: '/case-studies' },
   { name: 'Portfolio', to: '/portfolio' },
   { name: 'Creative Work', to: '/creative-work' },
   { name: 'Blog', to: '/blog' },

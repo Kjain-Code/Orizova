@@ -177,3 +177,52 @@ Lighthouse (mobile, local): accessibility 100, best practices 100, SEO 100 on ho
 - New file src/data/blog/posts-f.js: meta-ads-cost-india, seo-cost-india, whatsapp-marketing-for-business-india, social-media-marketing-cost-india, b2b-lead-generation-manufacturers-india.
 - Wired into blog/index.js, blog/answers.js (quick answers), siteIndex.js (postsIndex = home "From the blog" cards, guideIndex = links from service/industry/city pages), seo.json routes (149 pages in sitemap), site/answers.js and /blog description.
 - QA: CI build pass, 0 broken links, JSON-LD valid, axe 0 violations, sweep clean on 149 pages.
+
+## 23 Nov 2026 — Proof of work: Case Studies, home Results strip, posters
+**New page /case-studies** (src/pages/work/CaseStudies.jsx + .css, classes `csx-*`): one card per case study — Industry · Type · City (no client name), result headline, big number, 3 stats (days of ads, avg cost per enquiry, total ad spend), "What we did" (3 points), date range, link to the matching service. Below: Reviews section (hidden while reviews.js is empty), "Ad Creatives We've Made" (first 4 items of creativeWork.js) and CTA. ItemList JSON-LD, quick answer in site/answers.js, seo.json route (title 48, description 138), Navbar + Footer links. Sitemap now 189 URLs.
+**Data:** src/data/work/caseStudies.js — newest first; cost per enquiry and "~₹2.6K" spend are calculated from `enquiries` + `adSpend`, so they always match. Optional `creatives: [ids]` shows the ads used under a card. First entry: Real Estate · Villa Plots · Hyderabad — 39 WhatsApp enquiries, 6 days, ~₹67/enquiry, ~₹2.6K spend, 18–23 Nov 2026.
+**Home:** src/components/home/ResultsStrip.jsx (+ .css, classes `rs-*`) after IntroSplit — 1–2 case studies: latest one's 4 numbers; 3+: totals (enquiries, campaigns, avg cost per enquiry, total spend); none: hidden. "View Case Studies" button.
+**Testimonials:** existing reviews.js + `Reviews` component reused (home + /case-studies); stays hidden until a real review is added.
+**Posters:** creativeWork.js items can now use `image` instead of `video`/`poster` (category "Ad Posters"); shown whole (no crop) over a blurred copy, opens full size on click. Files go in src/assets/creatives/ (README there). Tested with a temporary poster, then removed.
+**Note:** the /case-studies quick answer (site/answers.js) quotes the Hyderabad numbers — update it when a bigger case study is added.
+**Tested:** lint ✅, CI=true build ✅ (189 pages), test ✅, screenshots 390 px + 1366 px, no horizontal scroll, axe 0 violations on /case-studies and /creative-work, 1 H1 per page, new internal links all resolve.
+
+## 23 Nov 2026 (later) — case study: spend corrected + proof sections
+- caseStudies.js: Hyderabad villa plots ad spend corrected to ~₹4K (cost per enquiry now ~₹103, auto-calculated); quick answer in site/answers.js updated to match.
+- New optional fields, each shown only when filled with real data: `note` (how enquiries are counted), `meta` (reach / impressions / clicks / CTR from Ads Manager), `daily` (enquiries per day → bar chart), `proof` (blurred Ads Manager / WhatsApp screenshots with full-size lightbox). Screenshots go in src/assets/case-studies/ (README with blur rules).
+- Tested with temporary sample data + screenshot (removed): desktop 1366 px + mobile 390 px OK. Lint ✅ CI build ✅ (189 pages) test ✅.
+
+## 23 Nov 2026 (11:10) — real Ads Manager proof on /case-studies
+- Ad spend set to the exact Ads Manager total ₹2,626.75 (₹957.24 + ₹1,669.51; results 12 + 27 = 39) — the ~₹4K entered earlier did not match the screenshot. Cost per enquiry ~₹67. Quick answer updated.
+- New `campaigns` field → "Meta Ads Manager report" table (campaign rows, results, cost per result, amount spent, total) with bars; stacks into cards on mobile.
+- Proof screenshot src/assets/case-studies/hyd-plots-ads-manager.webp (cropped to the table, ad account name + profile picture blurred, browser tabs removed), opens full size.
+- Lint ✅ CI build ✅ (189 pages); checked 1366 px + 390 px.
+
+## 23 Nov 2026 (11:20) — SEO case study with Search Console proof
+- caseStudies.js now has two kinds: `ads` (big number + stats calculated from enquiries/adSpend) and `seo` (big number + 3 stats given directly). Card, JSON-LD and home ResultsStrip read the shared `big` / `stats`; ResultsStrip totals count ads case studies only.
+- New SEO case study (our own site, Delhi NCR): 4,030 impressions, 90 clicks, 2.2% CTR, avg position 30.5 — Google Search Console, last 3 months (11 Sep–22 Nov 2026). Screenshot src/assets/case-studies/orizova-search-console-3-months.webp (cropped to the Performance report). Links to /portfolio/orizova-digital and /services/seo.
+- Cards are now one per row (max 900 px). Privacy line under screenshots is per case study (`proofNote`), so it only appears where something was actually blurred.
+- /case-studies quick answer mentions the SEO numbers too. Lint ✅ CI build ✅ (189 pages); checked 1366 px + 390 px.
+
+## 23 Nov 2026 (12:00) — Design upgrade: page-specific heroes (no more template banner)
+Problem: every page opened with the same gradient banner + grid + orbit graphic + floating chips, which read as a WordPress theme.
+- **Home** (src/components/home/Hero.jsx + Hero.css, classes `hm-*`): same H1/copy/CTAs/stats (LCP, SEO), new editorial type; right side shows real work — Morphic Spaces + WIPO Group screenshots in browser frames (link to case studies), a real reel (→ /creative-work) and the latest real result (39 enquiries → /case-studies). Removed blobs, doodles, rocket, floating badges, marquee.
+- **New src/components/heroes/PageHeroes.jsx + .css** (classes `ph-*`), one composition per hub page, same H1 text as seo.json:
+  - /services — interactive Build / Grow / Create catalogue with the service illustrations.
+  - /industries — editorial numbered index of the 7 industry groups (jumps to each group).
+  - /portfolio — image-led grid of the 5 real project screenshots.
+  - /case-studies — evidence cards (big number + real Ads Manager / Search Console screenshot).
+  - /creative-work — dark "cinema screen" with a fan of real reel posters.
+  - /blog — magazine masthead with featured latest article + next articles.
+  - /about — brand statement + the 4 working principles from facts.js.
+  - /contact — WhatsApp / call / email / form as large direct options.
+- **PageBanner** (all other pages: services, cities, industries, blog posts…): calm version — no grid/orbit/chips/shimmer; section label from crumbs; real "Proof, not promises" card (from caseStudies.js) on the right. `proof={false}` hides it.
+- Anchors added: #all-services (ServicesPage), #work (CreativeWorkSections), #enquiry (Contact.jsx).
+- QA: lint ✅, CI=true build ✅ (189 pages), test ✅, 1 H1 per page, no horizontal scroll at 1366/390 px, axe WCAG A/AA 0 violations on home, 8 hubs and sample deep pages, 0 broken internal links across all 189 pages (30,630 links), Services tabs tested, reduced-motion respected.
+- Note: the brief mentioned Next.js / Tailwind / Sora / Space Grotesk — this site is React (CRA) with plain CSS and Bricolage Grotesque / Inter / Instrument Serif; kept the existing stack and fonts.
+
+## 23 Nov 2026 (12:20) — tweaks after review
+- Home hero: back browser mockup now FPS Subtitle (was WIPO Group). The "39 enquiries" chip replaced by "5 live websites you can open · 13 reels & ad videos" (counts from projects.js / creativeWork.js) → /portfolio.
+- "39 enquiries" now appears only on /case-studies and in the home Results strip (not on every page). PageBanner right card is now "How we work" (first 3 working principles from facts.js) + link to real results.
+- /portfolio hero: one large project (Morphic Spaces) instead of all 5 — the full project cards follow right below, so no repetition.
+- Lint ✅ CI build ✅ (189 pages); checked 1366 + 390 px; slow-scroll check found no section stuck invisible.

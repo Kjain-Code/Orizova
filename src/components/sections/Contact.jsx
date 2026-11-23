@@ -73,7 +73,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact-section">
+    <section className="contact-section" id="enquiry">
       <div className="container">
         <div className="contact-inner">
           <m.div

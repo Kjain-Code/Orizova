@@ -50,6 +50,7 @@ const Navbar = () => {
     { name: 'Services', to: '/services' },
     { name: 'Industries', to: '/industries' },
     { name: 'Portfolio', to: '/portfolio' },
+    { name: 'Case Studies', to: '/case-studies' },
     { name: 'Creative Work', to: '/creative-work' },
     { name: 'Blog', to: '/blog' },
     { name: 'About', to: '/about' },

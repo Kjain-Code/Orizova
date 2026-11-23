@@ -3,7 +3,7 @@ import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/site/answers';
 import Seo, { SITE_URL } from '../../components/seo/Seo';
 import projects from '../../data/work/projects';
-import PageBanner from '../../components/common/PageBanner';
+import { PortfolioHero } from '../../components/heroes/PageHeroes';
 import Projects from '../../components/sections/Projects';
 import PageTransition from '../../components/layout/PageTransition';
 
@@ -25,13 +25,7 @@ const Portfolio = () => {
         }]}
       />
 
-      <PageBanner
-        crumbs={[{ name: 'Portfolio', path: '/portfolio' }]}
-        title="Website Development Portfolio —"
-        highlight="Projects That Speak"
-        subtitle="Live websites we have designed and developed — open them, click around and judge the work for yourself."
-        chips={['Web apps', 'Portfolios', 'Corporate sites', 'Dashboards', 'Live work']}
-      />
+      <PortfolioHero />
       <h2 className="sr-only">Website projects</h2>
       <Projects />
       <section className="qa-home-section">

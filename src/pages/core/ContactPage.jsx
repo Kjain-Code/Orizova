@@ -2,7 +2,7 @@ import React from 'react';
 import QuickAnswer from '../../components/content/QuickAnswer';
 import sectionAnswers from '../../data/site/answers';
 import Seo, { SITE_URL } from '../../components/seo/Seo';
-import PageBanner from '../../components/common/PageBanner';
+import { ContactHero } from '../../components/heroes/PageHeroes';
 import Contact from '../../components/sections/Contact';
 import PageTransition from '../../components/layout/PageTransition';
 import { Faqs, Process, faqSchema } from '../../components/content/ContentBlocks';
@@ -32,13 +32,7 @@ const ContactPage = () => {
         ]}
       />
 
-      <PageBanner crumbs={[{ name: 'Contact', path: '/contact' }]}
-        title="Contact Orizova Digital —"
-        highlight="Free Consultation"
-        subtitle="Tell us about your business on WhatsApp, a call or the form below — we'll reply with a clear plan and a fixed quote for your website and marketing."
-        chips={['WhatsApp', 'Call', 'Email', 'Free consult', 'Pan-India']}
-        actions={false}
-      />
+      <ContactHero />
       <Contact />
       <section className="loc-section content-section">
         <div className="container">
