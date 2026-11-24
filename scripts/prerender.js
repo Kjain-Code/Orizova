@@ -170,7 +170,7 @@ const loadMainCss = (template) => {
   const m = template.match(/<link href="(\/static\/css\/main\.[a-f0-9]+\.css)" rel="stylesheet">/);
   if (!m) return null;
   const css = fs.readFileSync(path.join(BUILD, m[1]), 'utf8').replace(/\/\*# sourceMappingURL=.*?\*\//g, '');
-  if (css.length > 150000 || /<\/style/i.test(css)) return null; // too big / unsafe to inline
+  if (css.length > 200000 || /<\/style/i.test(css)) return null; // too big / unsafe to inline
   return { tag: m[0], css };
 };
 

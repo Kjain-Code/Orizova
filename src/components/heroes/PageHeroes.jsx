@@ -179,7 +179,7 @@ export const CaseStudiesHero = () => (
             <span className="ph-cs-what">{cs.kind === 'seo' ? cs.big.label : `WhatsApp enquiries in ${cs.days} days`}</span>
             <span className="ph-cs-meta">{cs.industry} · {cs.city} · {cs.period}</span>
             {cs.proof && cs.proof[0] && (
-              <span className="ph-cs-shot" aria-hidden="true"><img src={cs.proof[0].image} alt="" loading="lazy" decoding="async" /></span>
+              <span className="ph-cs-shot" aria-hidden="true"><img src={cs.proof[0].small || cs.proof[0].image} alt="" width={cs.proof[0].w} height={cs.proof[0].h} decoding="async" /></span>
             )}
             <span className="ph-cs-go">See the proof <FiArrowDown aria-hidden="true" /></span>
           </a>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiZap } from 'react-icons/fi';
 import { routesByPath } from '../seo/Seo';
-import { Inline } from './ContentBlocks';
+import Inline from './Inline';
 
 /* ---------- AEO / GEO: answer-first summary ---------- */
 const formatDay = (iso) => {

@@ -16,35 +16,16 @@ import { VideoGrid } from '../sections/CreativeWorkSections';
 import socialPlans, { formatINR } from '../../data/services/socialPricing';
 import '../../pages/locations/LocationPage.css';
 import './ContentPage.css';
+import Inline from './Inline';
 
 /* Shared building blocks for the content-heavy pages (services, cities,
    industries, blog, FAQ). They only reuse the site's existing classes and
    tokens (section-tag, section-title, loc-*, chip-link, btn-*) so every new
    page looks native. */
 
-// Turns "see [local SEO](/services/local-seo)" into text + <Link>.
-export const Inline = ({ text }) => {
-  const parts = [];
-  const re = /\[([^\]]+)\]\(([^)]+)\)|\*\*([^*]+)\*\*/g;
-  let last = 0;
-  let m;
-  let i = 0;
-  while ((m = re.exec(text))) {
-    if (m.index > last) parts.push(text.slice(last, m.index));
-    if (m[3]) {
-      parts.push(<strong key={i++}>{m[3]}</strong>);
-    } else if (m[2].startsWith('/')) {
-      parts.push(<Link key={i++} to={m[2]} className="content-link">{m[1]}</Link>);
-    } else {
-      parts.push(
-        <a key={i++} href={m[2]} target="_blank" rel="noopener noreferrer" className="content-link">{m[1]}</a>
-      );
-    }
-    last = m.index + m[0].length;
-  }
-  if (last < text.length) parts.push(text.slice(last));
-  return <>{parts}</>;
-};
+// Inline lives in its own tiny file so the home page can use it without
+// pulling all of these blocks into the first download.
+export { Inline };
 
 export const Breadcrumbs = ({ items }) => (
   <nav className="crumbs" aria-label="Breadcrumb">

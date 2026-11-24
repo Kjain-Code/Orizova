@@ -10,7 +10,6 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import ScrollProgress from './components/layout/ScrollProgress';
 import ScrollReveal from './components/layout/ScrollReveal';
 import motionFeatures from './motionFeatures';
-import Home from './pages/core/Home';
 
 // After a new deploy the page files get new names. A tab that was opened
 // before the deploy still asks for the old names, the download fails and —
@@ -68,8 +67,10 @@ const PageArea = () => {
   );
 };
 
-// Home ships in the main bundle (it's the landing page); every other page is
-// code-split so the first load downloads far less JavaScript.
+// Every page — Home included — is code-split, so the first download is only
+// the shared app shell. The pre-rendered HTML stays on screen while a page's
+// own file loads (see PageFallback), so nothing flashes.
+const Home = lazyPage(() => import('./pages/core/Home'));
 const ServicesPage = lazyPage(() => import('./pages/services/ServicesPage'));
 const ServicePage = lazyPage(() => import('./pages/services/ServicePage'));
 const LocationsPage = lazyPage(() => import('./pages/locations/LocationsPage'));

@@ -31,7 +31,8 @@
 .ph-textlink svg { transition: transform .25s ease; }
 .ph-textlink:hover svg { transform: translateY(3px); }
 
-@keyframes ph-up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+/* Transform only: hero text and cards are visible from the first paint. */
+@keyframes ph-up { from { transform: translateY(14px); } to { transform: none; } }
 
 /* ---------- SERVICES: interactive catalogue ---------- */
 .ph-svc { background: linear-gradient(180deg, #F6F0FF 0%, var(--cream) 100%); }

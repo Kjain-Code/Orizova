@@ -45,6 +45,10 @@
 //   proofNote   optional line under the screenshots, e.g. what was blurred
 import hydAdsManager from '../../assets/case-studies/hyd-plots-ads-manager.webp';
 import orizovaGsc from '../../assets/case-studies/orizova-search-console-3-months.webp';
+// Smaller copies (760px wide) for the cards and the hero; the full screenshot
+// opens when someone taps to zoom. Optional: `small`, `w`, `h` can be left out.
+import hydAdsManagerSm from '../../assets/case-studies/small/hyd-plots-ads-manager-760.webp';
+import orizovaGscSm from '../../assets/case-studies/small/orizova-search-console-3-months-760.webp';
 
 const caseStudies = [
   {
@@ -77,7 +81,7 @@ const caseStudies = [
       { name: 'Campaign 2 — "New Engagement campaign"', results: 27, costPerResult: 61.83, spent: 1669.51 },
     ],
     proof: [
-      { image: hydAdsManager, caption: 'Meta Ads Manager — 18–23 Nov 2026 (account name blurred)' },
+      { image: hydAdsManager, small: hydAdsManagerSm, w: 1400, h: 499, caption: 'Meta Ads Manager — 18–23 Nov 2026 (account name blurred)' },
     ],
     proofNote: 'Only the ad account name and profile picture are blurred, for the client’s privacy.',
   },
@@ -106,7 +110,7 @@ const caseStudies = [
     service: { label: 'SEO', to: '/services/seo' },
     more: { label: 'Full website case study', to: '/portfolio/orizova-digital' },
     proof: [
-      { image: orizovaGsc, caption: 'Google Search Console — Performance, last 3 months (to 22 Nov 2026)' },
+      { image: orizovaGsc, small: orizovaGscSm, w: 1300, h: 798, caption: 'Google Search Console — Performance, last 3 months (to 22 Nov 2026)' },
     ],
   },
 ];

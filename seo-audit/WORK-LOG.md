@@ -260,3 +260,16 @@ Goal: rank for "social media management", "Instagram management", "Facebook page
 - Phone with the real AI villa reel kept beside the screen; pointer depth/tilt kept on desktop.
 - New FPS Subtitle cover: src/assets/portfolio/fps-subtitle.webp replaced with the real hero ("Translate your vision with us for the world.") supplied by Kritika, cropped to the same 1000×423 ratio — also updates the portfolio pages.
 - Lint ✅ CI build ✅ (215 pages); checked 1920 / 1366 / 390 px, slide change + tab click tested, no overflow.
+
+## 24 Nov 2026 (evening) — Speed + responsive pass
+Problem found: hub pages (Services, Industries, Portfolio, Case Studies, Creative Work, Blog, About, Contact) painted without their hero styles until a late CSS file loaded → page jumped (Case Studies CLS 0.36, mobile score 64). Hero text also started invisible (opacity 0) → slow LCP.
+- index.js: PageHeroes.css, CaseStudies.css and the home styles now ship in the main stylesheet (CSS order verified identical to before).
+- PageBanner.css / PageHeroes.css: hero text visible from first paint (movement-only animation, no hidden start).
+- App.js: Home is code-split too → first JS download 180 KB → 137 KB (gzip) for every page.
+- New components/content/Inline.jsx (home no longer pulls all ContentBlocks into the first download).
+- Hero.jsx showreel: 720px copies for phones (assets/portfolio/small/), slides 2–3 load after the page has loaded.
+- Case studies: 760px screenshot copies (assets/case-studies/small/) for hero + cards; full size opens on zoom.
+- logo.webp resized 216×160 → 162×120 (19 KB → 9.5 KB).
+- prerender.js: CSS inline limit 150 KB → 200 KB (CSS had crossed 150 KB, so it stopped being inlined).
+Results (local Lighthouse, mobile): Home 95, Case Studies 96 (was 64), Delhi social 98, Services 95, Industries 97, Contact 97; desktop 100 on all tested; CLS 0 everywhere.
+Responsive check: all 215 pages at 320/360/414/768/1024/1366 px → 0 pages with sideways scroll.

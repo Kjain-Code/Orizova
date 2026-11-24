@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Inline } from '../content/ContentBlocks';
+import Inline from '../content/Inline';
 import { citiesIndex } from '../../data/site/siteIndex';
 import './AreasServed.css';
 

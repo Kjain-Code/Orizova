@@ -2,6 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+// Home is code-split too, so its styles ship in the main stylesheet (same
+// order as before, so the cascade doesn't change).
+import './components/home/Hero.css';
+import './components/home/Services.css';
+import './components/home/WhyUs.css';
+import './components/sections/Projects.css';
+import './components/home/AreasServed.css';
+import './components/common/CtaBand.css';
+import './components/content/ContentPage.css';
+import './components/home/HomeSections.css';
+import './components/home/TrustSections.css';
+import './components/common/GoalPicker.css';
 import reportWebVitals from './reportWebVitals';
 // Styles for the code-split pages ship in the main stylesheet. The
 // pre-rendered HTML only links main.css, so when these lived in lazy chunks the
@@ -17,6 +29,8 @@ import './components/sections/CreativeRingGallery.css';
 import './components/sections/CreativeWorkSections.css';
 import './components/sections/ServicesDetail.css';
 import './components/common/GoalPicker.css';
+import './components/heroes/PageHeroes.css';
+import './pages/work/CaseStudies.css';
 import './styles/tones.css';
 import './styles/utilities.css';
 

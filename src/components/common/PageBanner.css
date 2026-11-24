@@ -45,10 +45,11 @@
 .pb-word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; }
 .pb-word-inner {
   display: inline-block;
-  transform: translateY(105%);
-  animation: pb-rise 0.7s cubic-bezier(.2, .8, .2, 1) forwards;
+  /* Visible from the very first paint (no hidden start) so the headline counts
+     as painted immediately — a hidden-then-revealed headline slowed LCP by ~2 s. */
+  animation: pb-rise 0.6s cubic-bezier(.2, .8, .2, 1);
 }
-@keyframes pb-rise { to { transform: translateY(0); } }
+@keyframes pb-rise { from { transform: translateY(14%); } to { transform: none; } }
 
 /* Highlighted words: one solid brand colour in the serif italic — no shimmer. */
 .pb-highlight .pb-word-inner.pb-grad {
@@ -65,18 +66,16 @@
   color: var(--text-light);
   max-width: 640px;
   margin: 0 0 30px;
-  opacity: 0;
-  animation: pb-fade 0.7s ease 0.3s forwards;
+  animation: pb-fade 0.7s ease 0.3s backwards;
 }
-@keyframes pb-fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes pb-fade { from { transform: translateY(10px); } to { transform: none; } }
 
 .pb-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 12px;
-  opacity: 0;
-  animation: pb-fade 0.7s ease 0.42s forwards;
+  animation: pb-fade 0.7s ease 0.42s backwards;
 }
 .pb-btn {
   display: inline-flex;
@@ -103,8 +102,7 @@
   background: #fff;
   border: 1px solid #ECE4F7;
   box-shadow: 0 18px 44px rgba(76, 14, 130, .08);
-  opacity: 0;
-  animation: pb-fade 0.7s ease 0.5s forwards;
+  animation: pb-fade 0.7s ease 0.5s backwards;
 }
 .pb-proof-tag {
   display: flex;

@@ -135,7 +135,7 @@ const ProofShots = ({ proof, note }) => {
       <div className={`csx-proof-grid${proof.length === 1 ? ' csx-proof-grid--wide' : ''}`}>
         {proof.map((p) => (
           <button type="button" key={p.caption} className="csx-shot" onClick={() => setOpen(p)} aria-label={`View screenshot: ${p.caption}`}>
-            <img src={p.image} alt={p.caption} loading="lazy" decoding="async" />
+            <img src={p.small || p.image} srcSet={p.small ? `${p.small} 760w, ${p.image} ${p.w || 1300}w` : undefined} sizes="(max-width: 900px) 92vw, 860px" alt={p.caption} width={p.w} height={p.h} loading="lazy" decoding="async" />
             <span><FiZoomIn aria-hidden="true" /> {p.caption}</span>
           </button>
         ))}

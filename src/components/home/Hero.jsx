@@ -8,6 +8,9 @@ import { industriesIndex } from '../../data/site/siteIndex';
 import { waLink } from '../../data/site/contact';
 import projects from '../../data/work/projects';
 import creativeWork from '../../data/work/creativeWork';
+import morphicSm from '../../assets/portfolio/small/morphic-spaces-720.webp';
+import fpsSm from '../../assets/portfolio/small/fps-subtitle-720.webp';
+import ganeshSm from '../../assets/portfolio/small/ganesh-creation-720.webp';
 
 /* Home hero. Left: the brand promise (unchanged copy — it is the page's LCP
    and SEO heading). Right: a "showreel" — one large browser that cycles
@@ -25,9 +28,10 @@ const bySlug = Object.fromEntries(projects.map((p) => [p.slug, p]));
 // Showreel slides: real client websites. `focus` = which part of the
 // screenshot stays in view when the frame crops it.
 const SHOWREEL = [
-  { slug: 'morphic-spaces', focus: '12% center' },
-  { slug: 'fps-subtitle', focus: 'center 30%' },
-  { slug: 'ganesh-creation', focus: 'center 40%' },
+  // `small` = a 720px copy so phones download about half the bytes.
+  { slug: 'morphic-spaces', focus: '12% center', small: morphicSm },
+  { slug: 'fps-subtitle', focus: 'center 30%', small: fpsSm },
+  { slug: 'ganesh-creation', focus: 'center 40%', small: ganeshSm, w: 800 },
 ].map((s) => ({ ...s, project: bySlug[s.slug] })).filter((s) => s.project);
 const SLIDE_MS = 5000;
 // Lightest real reel (≈2.5 MB) plays inside the phone on desktop only.
@@ -103,6 +107,17 @@ const Showreel = () => {
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
   const [auto, setAuto] = useState(false);
+  // Only the first screenshot downloads with the page. The other slides load
+  // a moment after the page has finished loading (or as soon as a tab is used),
+  // so they never compete with the first paint on a slow phone.
+  const [warm, setWarm] = useState(false);
+  useEffect(() => {
+    let t;
+    const go = () => { t = setTimeout(() => setWarm(true), 1200); };
+    if (document.readyState === 'complete') go(); else window.addEventListener('load', go, { once: true });
+    return () => { clearTimeout(t); window.removeEventListener('load', go); };
+  }, []);
+  useEffect(() => { if (i !== 0) setWarm(true); }, [i]);
 
   // Auto-advance only in the browser, never for reduced-motion users.
   useEffect(() => {
@@ -138,7 +153,7 @@ const Showreel = () => {
               aria-hidden={k !== i} tabIndex={k === i ? 0 : -1}
               aria-label={`${s.project.title} — website case study`}
             >
-              <img src={s.project.image} alt="" width="1000" height="423" loading={k === 0 ? 'eager' : 'lazy'} decoding="async" style={{ objectPosition: s.focus }} />
+              {(k === 0 || warm) && <img src={s.project.image} srcSet={s.small ? `${s.small} 720w, ${s.project.image} ${s.w || 1000}w` : undefined} sizes="(max-width: 600px) 92vw, (max-width: 1100px) 680px, 640px" alt="" width="1000" height="423" loading={k === 0 ? 'eager' : 'lazy'} decoding="async" style={{ objectPosition: s.focus }} />}
             </Link>
           ))}
         </div>
