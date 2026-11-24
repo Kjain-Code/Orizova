@@ -5,8 +5,8 @@ import CONTACT, { whatsappLink } from '../../data/site/contact';
 import './FloatingButtons.css';
 
 /* Floating contact buttons on every page (Instagram above WhatsApp, bottom
-   right), plus a small greeting bubble that appears a few seconds after the
-   page loads — like a salesperson saying hello. Closing it hides it for the
+   right), plus a small greeting bubble that appears once the visitor scrolls past
+   the first screen (or after 25 s) — like a salesperson saying hello. Closing it hides it for the
    rest of the visit (sessionStorage, wrapped in try/catch so private mode
    never breaks the page). */
 const SEEN_KEY = 'orz-greet-closed';
@@ -18,8 +18,14 @@ const FloatingButtons = () => {
     let closed = false;
     try { closed = sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e) { /* storage blocked */ }
     if (closed) return undefined;
-    const t = setTimeout(() => setGreet(true), 6000);
-    return () => clearTimeout(t);
+    // Don't cover the first screen: say hello once the visitor scrolls past
+    // it, or after 25 seconds on the page — whichever comes first.
+    let done = false;
+    const show = () => { if (!done) { done = true; setGreet(true); } };
+    const onScroll = () => { if (window.scrollY > window.innerHeight * 0.8) show(); };
+    const t = setTimeout(show, 25000);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => { clearTimeout(t); window.removeEventListener('scroll', onScroll); };
   }, []);
 
   const closeGreet = () => {

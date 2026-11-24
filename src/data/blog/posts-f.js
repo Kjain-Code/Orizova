@@ -1,9 +1,101 @@
-// Blog posts (set F, 13 Nov 2026): commercial-intent cluster — what ads, SEO
+// Blog posts (set F, 13 Nov 2026; + social media manager guide 24 Nov 2026): commercial-intent cluster — what ads, SEO
 // and social media cost, WhatsApp marketing, and B2B leads for manufacturers.
 // Original writing — no invented statistics, clients, results or prices.
 // Example numbers are labelled as examples.
 
+import socialPlans, { formatINR } from '../services/socialPricing';
+
 const postsF = [
+  /* ------------------------------------------------------------------ */
+  {
+    slug: 'what-does-a-social-media-manager-do',
+    title: 'What Does a Social Media Manager Do? A Plain Guide for Business Owners (2026)',
+    category: 'Marketing',
+    date: '2026-11-24',
+    readMins: 7,
+    chips: ['Social Media', '7 min read', 'Instagram', 'Small business'],
+    excerpt: 'You made an Instagram and Facebook page, posted for a few weeks, then stopped. What a social media manager actually does each month, what you still need to do yourself, and how to choose one.',
+    intro: [
+      'Almost every business owner has the same story: you create an Instagram and Facebook page, post enthusiastically for two or three weeks, then the shop, the clinic or the clients take over and the page goes quiet. Months later, customers still check it — and see nothing new.',
+      'A social media manager exists to fix exactly that. This guide explains, in plain words, what they do every week and month, what you still need to give them, what it costs, and how to tell a good one from a bad one.',
+    ],
+    sections: [
+      {
+        h2: 'The short answer',
+        paras: [
+          'A social media manager plans what your business should post, creates it (reels, posts, stories), writes the captions, publishes on a schedule, replies to comments and messages, and tells you every month what worked. In short: **someone who keeps posting for you, consistently, and makes it look good.**',
+        ],
+      },
+      {
+        h2: 'What a social media manager does every month',
+        steps: [
+          { title: 'Plans the month', text: 'A content calendar built around your offers, festivals, seasons and the questions customers ask — sent to you for approval.' },
+          { title: 'Writes hooks and scripts for reels', text: 'The first two seconds decide whether people keep watching. A good manager writes the hook, the on-screen text and the voice-over.' },
+          { title: 'Creates the content', text: 'Edits reels from your phone clips or their own footage (or AI video), designs posts and carousels in your brand style.' },
+          { title: 'Writes captions and hashtags', text: 'Captions with a clear call to action, local hashtags and location tags so nearby people find you.' },
+          { title: 'Posts on schedule', text: 'Reels, posts and stories go out on fixed days — you do not have to remember or log in.' },
+          { title: 'Replies to comments and DMs', text: 'General questions answered quickly; price, booking and order enquiries passed to you or your team.' },
+          { title: 'Reports and improves', text: 'A monthly report on reach, followers, profile visits and messages — and what will change next month.' },
+        ],
+      },
+      {
+        h2: 'What you still need to do',
+        bullets: [
+          '**Approve the monthly plan** — usually five minutes on WhatsApp',
+          '**Share a few clips** of your shop, team, product or work when asked — a phone is enough',
+          '**Reply to serious enquiries** the manager passes on, quickly',
+          '**Tell them about offers, events and changes** so the page stays accurate',
+        ],
+        tip: {
+          tone: 'tip',
+          title: 'No time to shoot at all?',
+          text: 'Ask whether the manager can create content without you — from your existing photos, designed posts or AI-made videos — or arrange an occasional on-location shoot.',
+        },
+      },
+      {
+        h2: 'Freelancer, agency or someone in-house?',
+        table: {
+          caption: 'Three ways to get your social media managed',
+          head: ['Option', 'Good for', 'Watch out for'],
+          rows: [
+            ['Freelancer', 'Simple posting for one platform', 'Holidays and gaps; limited video and design skills'],
+            ['Agency', 'Planning, reels, design, replies, reports and ads in one place', 'Template content — ask for samples in your industry'],
+            ['In-house hire', 'Large brands posting daily on many platforms', 'Salary plus tools; still needs design and video help'],
+          ],
+        },
+      },
+      {
+        h2: 'How much does a social media manager cost?',
+        paras: [
+          'Prices depend mostly on how many **reels** you need (they take far more work than posts), whether replies to comments and DMs are included, and how many platforms are covered. The management fee is separate from any ad budget. For a detailed breakdown see [social media management cost in India](/blog/social-media-marketing-cost-india).',
+          `As a reference, our own plans for Instagram and Facebook are ${socialPlans.map((p) => `${formatINR(p.price)}/month (${p.name})`).join(', ')} — see [what each plan includes](/services/social-media-marketing#pricing).`,
+        ],
+      },
+      {
+        h2: 'Red flags when hiring a social media manager',
+        bullets: [
+          '**Offers to buy followers or likes** — fake numbers reduce reach and trust',
+          '**Wants to own or keep your account** — the page must always stay yours',
+          '**Only festival greetings and quotes** — fills the calendar, rarely brings customers',
+          '**No reels samples** — reels decide most results on Instagram today',
+          '**Reports that show only likes** — ask for profile visits, messages and enquiries',
+        ],
+      },
+      {
+        h2: 'Want someone to keep posting for you?',
+        paras: [
+          'Orizova Digital offers done-for-you [social media management](/services/social-media-marketing) — [Instagram](/services/instagram-management), [Facebook](/services/facebook-page-management) and [LinkedIn](/services/linkedin-management) — for businesses across India. You approve the plan; we create, post, reply and report. [Talk to us](/contact) for a free review of your page.',
+        ],
+      },
+    ],
+    faqs: [
+      ['What does a social media manager do for a small business?', 'Plans the content calendar, writes hooks and captions, edits reels, designs posts, posts on schedule, replies to comments and messages, and sends a monthly report.'],
+      ['Do I need to give my password to a social media manager?', 'Usually not. For Instagram and Facebook you can give access through Meta Business Suite roles, and remove it any time.'],
+      ['How many posts should a social media manager make each month?', 'Consistency matters more than volume. For most local businesses, one to three reels a week plus a few posts and regular stories works well.'],
+      ['Can a social media manager guarantee followers?', 'No honest manager guarantees follower numbers. Anyone who does is usually buying fake followers.'],
+      ['Is a social media manager the same as running ads?', 'No. Managing your page (posting and replies) is different from running paid ads, which have their own budget paid to Meta.'],
+    ],
+  },
   /* ------------------------------------------------------------------ */
   {
     slug: 'meta-ads-cost-india',
@@ -318,7 +410,7 @@ const postsF = [
   /* ------------------------------------------------------------------ */
   {
     slug: 'social-media-marketing-cost-india',
-    title: 'Social Media Marketing Cost in India: What Monthly Packages Include (2026)',
+    title: 'Social Media Management Cost in India: Packages, Prices and What They Include (2026)',
     category: 'Marketing',
     date: '2026-11-13',
     readMins: 8,
@@ -391,6 +483,25 @@ const postsF = [
         ],
       },
       {
+        h2: 'Our social media management prices',
+        paras: [
+          'To make this concrete, here are Orizova Digital’s own monthly plans for Instagram and Facebook management. The management fee does not include ad budget.',
+        ],
+        table: {
+          caption: 'Orizova Digital social media management plans (per month)',
+          head: ['Plan', 'Price', 'Reels', 'Posts', 'Stories', 'Also included'],
+          rows: socialPlans.map((p) => [
+            p.name,
+            formatINR(p.price),
+            p.items[0].replace(/ Reels?$/, ''),
+            p.items[1].replace(/ (Static \/ Carousel |Static )Posts$/, ''),
+            p.items[2].replace(/ Stories$/, ''),
+            p.items.slice(3).join(', '),
+          ]),
+        },
+        after: ['See [what each plan includes](/services/social-media-marketing#pricing), or find us in your city — e.g. [Delhi](/locations/delhi/social-media-marketing), [Noida](/locations/noida/social-media-marketing), [Hyderabad](/locations/hyderabad/social-media-marketing).'],
+      },
+      {
         h2: 'Social media that brings enquiries',
         paras: [
           'Orizova Digital manages [social media marketing](/services/social-media-marketing) for businesses across India — content plans, reels from our [video editing](/services/video-editing) team, community management and [Meta Ads](/services/meta-ads) when you want faster growth. Your accounts stay in your name. [Talk to us](/contact) for a free review of your Instagram profile.',
@@ -398,7 +509,7 @@ const postsF = [
       },
     ],
     faqs: [
-      ['How much does social media management cost in India?', 'It depends on how many reels and posts you need, who shoots the video, how many platforms are covered and whether replies and ads are included. Compare packages by what is included, not only the number of posts.'],
+      ['How much does social media management cost in India?', 'It depends on how many reels and posts you need, who shoots the video, how many platforms are covered and whether replies and ads are included. Orizova Digital’s plans are ₹6,000, ₹10,000 and ₹14,000 per month for Instagram and Facebook. Compare packages by what is included, not only the number of posts.'],
       ['Is the ad budget included in the social media package?', 'Usually not. The management fee covers content and posting; ad spend goes to Meta separately, plus GST. Check every quote for this.'],
       ['How many posts per month does a business need?', 'Consistency matters more than volume. A few strong reels and useful posts every week beat daily low-effort posts.'],
       ['Can social media bring customers without ads?', 'Yes, especially for local businesses with good reels and quick replies — but growth is slower. Ads speed up reach to new people.'],

@@ -8,6 +8,7 @@ import moreCities from './cities';
 import aiVideoCities from './aiVideoCities';
 import aiVideoCities2 from './aiVideoCities2';
 import metaAdsCities from './metaAdsCities';
+import socialCities from './socialCities';
 
 const answers = {
   '/locations': {
@@ -76,5 +77,6 @@ moreCities.forEach((c) => Object.assign(answers, c.answers));
 Object.assign(answers, aiVideoCities.answers);
 Object.assign(answers, aiVideoCities2.answers);
 Object.assign(answers, metaAdsCities.answers);
+Object.assign(answers, socialCities.answers);
 
 export default answers;

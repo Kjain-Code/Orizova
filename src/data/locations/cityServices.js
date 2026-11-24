@@ -6,6 +6,7 @@ import moreCities from './cities';
 import aiVideoCities from './aiVideoCities';
 import aiVideoCities2 from './aiVideoCities2';
 import metaAdsCities from './metaAdsCities';
+import socialCities from './socialCities';
 
 const cityServices = [
   /* ============================ GHAZIABAD ============================ */
@@ -903,5 +904,6 @@ moreCities.forEach((c) => cityServices.push(...c.pages));
 cityServices.push(...aiVideoCities.pages);
 cityServices.push(...aiVideoCities2.pages);
 cityServices.push(...metaAdsCities.pages);
+cityServices.push(...socialCities.pages);
 
 export default cityServices;

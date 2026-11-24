@@ -8,7 +8,7 @@ import PageTransition from '../../components/layout/PageTransition';
 import CtaBand from '../../components/common/CtaBand';
 import Seo, { routesByPath } from '../../components/seo/Seo';
 import {
-  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema, socialOffers, hasPricing,
 } from '../../components/content/ContentBlocks';
 import { allServices as services } from '../../data/services/services';
 import servicePages from '../../data/services/servicePages';
@@ -48,6 +48,7 @@ const ServicePage = () => {
             name: route.h1 || service.title,
             description: route.description || service.fullDesc,
             path,
+            ...(hasPricing(page.blocks) ? { offers: socialOffers(path) } : {}),
             serviceType: service.title,
             areaServed: { '@type': 'Country', name: 'India' },
           }),

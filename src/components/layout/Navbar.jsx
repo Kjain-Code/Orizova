@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import {
   FiMenu, FiX, FiPhone, FiChevronDown, FiArrowRight, FiMonitor, FiSmartphone, FiTrendingUp,
-  FiPenTool, FiSearch, FiShoppingCart, FiInstagram, FiTarget, FiMousePointer, FiMapPin, FiVideo, FiCpu, FiFilm,
+  FiPenTool, FiSearch, FiShoppingCart, FiInstagram, FiFacebook, FiLinkedin, FiTarget, FiMousePointer, FiMapPin, FiVideo, FiCpu, FiFilm,
 } from 'react-icons/fi';
 import { FaWhatsapp } from 'react-icons/fa';
 import CONTACT, { whatsappLink } from '../../data/site/contact';
@@ -17,7 +17,7 @@ const childrenOf = (slug) => allServices.filter((s) => s.parent === slug);
 
 const ICONS = {
   FiMonitor, FiSmartphone, FiTrendingUp, FiPenTool, FiSearch, FiShoppingCart,
-  FiInstagram, FiTarget, FiMousePointer, FiMapPin, FiVideo, FiCpu, FiFilm,
+  FiInstagram, FiTarget, FiMousePointer, FiMapPin, FiVideo, FiCpu, FiFilm, FiFacebook, FiLinkedin,
 };
 const GROUPS = [
   { name: 'Build', note: 'Websites, stores & apps' },

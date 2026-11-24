@@ -38,9 +38,18 @@ const answers = {
       "Unofficial bulk-sender tools get numbers banned.",
     ],
   },
+  '/blog/what-does-a-social-media-manager-do': {
+    q: "What does a social media manager do?",
+    a: "A social media manager plans a business’s monthly content calendar, writes reel hooks, scripts and captions, edits reels and designs posts, publishes on a fixed schedule, replies to comments and messages, and reports what worked each month. The owner only approves the plan, shares occasional phone clips and answers serious enquiries. Managing a page is separate from running paid ads.",
+    takeaways: [
+      "Plans, creates, posts, replies and reports — every month.",
+      "You approve the plan and share a few clips; no daily work.",
+      "Never buy followers; the account must stay in your name.",
+    ],
+  },
   '/blog/social-media-marketing-cost-india': {
-    q: "How much does social media marketing cost in India?",
-    a: "Social media management cost in India depends on the number of reels versus posts, who shoots the video, how many platforms are covered, community management and reporting. The management fee is separate from the ad budget, which goes to Meta plus GST. Compare packages by what is included and judge results by profile visits and enquiries, not likes.",
+    q: "How much does social media management cost in India?",
+    a: "Social media management cost in India depends on the number of reels versus posts, who shoots the video, how many platforms are covered, community management and reporting. Orizova Digital’s Instagram and Facebook plans are ₹6,000, ₹10,000 and ₹14,000 per month. The management fee is separate from the ad budget, which goes to Meta plus GST. Judge results by profile visits and enquiries, not likes.",
     takeaways: [
       "Reels cost more than static posts — and do more.",
       "Management fee and ad budget are separate.",

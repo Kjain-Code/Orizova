@@ -814,3 +814,31 @@ a:focus-visible, button:focus-visible, summary:focus-visible, input:focus-visibl
   .vs-empty { grid-template-columns: 1fr; text-align: left; }
   .vs-empty .btn-primary { justify-self: start; }
 }
+
+/* ---------- Pricing plans (cb-plan*) ---------- */
+.cb-plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; align-items: stretch; margin-top: 8px; }
+.cb-plan { position: relative; display: flex; flex-direction: column; padding: 28px 26px 24px; border-radius: 24px; background: #fff; border: 1px solid #ECE4F7; box-shadow: 0 14px 36px rgba(76, 14, 130, .06); scroll-margin-top: 110px; }
+.cb-plan--popular { border: 2px solid var(--primary); box-shadow: 0 24px 60px rgba(76, 14, 130, .16); transform: translateY(-8px); }
+.cb-plan--popular .cb-plan-tier { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); margin: 0; padding: 5px 14px; border-radius: 999px; background: var(--primary); color: #fff; font-size: 12px; letter-spacing: .8px; white-space: nowrap; }
+.cb-plan--popular .cb-plan-name { margin-top: 18px; }
+.cb-plan-tier { margin: 0 0 6px; font-size: 12px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--gold-text); }
+.cb-plan-name { margin: 0 0 12px; font-size: 1.35rem; color: var(--ink); }
+.cb-plan-price { display: flex; align-items: baseline; gap: 6px; margin: 0 0 10px; }
+.cb-plan-price strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: 2.4rem; font-weight: 800; line-height: 1; color: var(--primary); }
+.cb-plan-price span { font-size: 14px; color: var(--text-light); }
+.cb-plan-for { margin: 0 0 16px; font-size: 14px; line-height: 1.55; color: var(--text-light); }
+.cb-plan ul { list-style: none; margin: 0 0 16px; padding: 16px 0 0; border-top: 1px dashed #E4DAF2; display: flex; flex-direction: column; gap: 9px; }
+.cb-plan li { display: flex; gap: 9px; align-items: flex-start; font-size: 14.5px; line-height: 1.45; color: var(--ink); }
+.cb-plan li svg { flex: none; margin-top: 2px; width: 18px; height: 18px; padding: 3px; border-radius: 50%; background: #E7F7EC; color: #16A34A; }
+.cb-plan-platforms { margin: auto 0 14px; padding: 8px 12px; border-radius: 10px; background: #F7F2FF; font-size: 13px; font-weight: 700; color: var(--primary); text-align: center; }
+.cb-plan-btn { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 13px 18px; border-radius: 999px; border: 1.5px solid #E2D7F2; background: #fff; color: var(--ink); font-weight: 700; font-size: 14.5px; text-decoration: none; transition: border-color .2s ease, transform .2s ease, background .2s ease; }
+.cb-plan-platforms + .cb-plan-btn { margin-top: 0; }
+.cb-plan-btn svg { color: #16A34A; font-size: 17px; }
+.cb-plan-btn:hover { border-color: var(--primary); transform: translateY(-2px); }
+.cb-plan-btn.is-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.cb-plan-btn.is-primary svg { color: #fff; }
+.cb-plan-note { margin: 20px 0 0; font-size: 13.5px; line-height: 1.6; color: var(--text-light); }
+@media (max-width: 991px) {
+  .cb-plans { grid-template-columns: minmax(0, 1fr); max-width: 520px; margin-left: auto; margin-right: auto; gap: 26px; }
+  .cb-plan--popular { transform: none; order: -1; }
+}

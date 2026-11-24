@@ -13,6 +13,7 @@ import { factRows } from '../../data/site/facts';
 import { EmailText } from '../common/EmailLink';
 import creativeWork from '../../data/work/creativeWork';
 import { VideoGrid } from '../sections/CreativeWorkSections';
+import socialPlans, { formatINR } from '../../data/services/socialPricing';
 import '../../pages/locations/LocationPage.css';
 import './ContentPage.css';
 
@@ -227,6 +228,39 @@ export const Cards = ({ tag, h2, intro, items }) => (
   </div>
 );
 
+/* Social media management price plans (data/services/socialPricing.js).
+   Usage in page data: { type: 'pricing', tag, h2, intro, note } */
+export const Pricing = ({ tag = 'Pricing', h2 = 'Social media management plans', intro, note, context = 'social media management' }) => (
+  <div className="loc-block" id="pricing">
+    <SectionHead tag={tag} h2={h2} />
+    {intro && <p className="loc-text cb-intro"><Inline text={intro} /></p>}
+    <div className="cb-plans">
+      {socialPlans.map((plan) => (
+        <div key={plan.id} className={`cb-plan${plan.popular ? ' cb-plan--popular' : ''}`}>
+          <p className="cb-plan-tier">{plan.tier}</p>
+          <h3 className="cb-plan-name">{plan.name}</h3>
+          <p className="cb-plan-price"><strong>{formatINR(plan.price)}</strong><span>/ month</span></p>
+          <p className="cb-plan-for">{plan.bestFor}</p>
+          <ul>
+            {plan.items.map((it) => <li key={it}><FiCheck aria-hidden="true" /> {it}</li>)}
+          </ul>
+          {plan.platforms && <p className="cb-plan-platforms">{plan.platforms}</p>}
+          <a
+            href={waLink(`Hi Orizova Digital, I'm interested in the ${plan.name} plan (${formatINR(plan.price)}/month) for ${context}. Can we discuss?`)}
+            target="_blank" rel="noopener noreferrer"
+            className={`cb-plan-btn${plan.popular ? ' is-primary' : ''}`}
+          >
+            <FaWhatsapp aria-hidden="true" /> Choose {plan.name}
+          </a>
+        </div>
+      ))}
+    </div>
+    <p className="cb-plan-note">
+      {note || 'Prices are our monthly management fee. Paid ads (Meta Ads) are a separate service, and the ad budget is paid to Meta directly. Need LinkedIn, extra reels or an on-location shoot? Ask for a custom quote.'}
+    </p>
+  </div>
+);
+
 export const Process = ({ tag = 'Our process', h2 = 'How we work', steps }) => (
   <div className="loc-block cb-band">
     <SectionHead tag={tag} h2={h2} />
@@ -321,8 +355,9 @@ export const RealWork = ({ h2 = 'Websites we have built' }) => (
  *  `kind` narrows to one type (ugc | product | avatar | reel | explainer);
  *  if there are none of that kind yet, all AI videos are shown; if there are
  *  no AI videos at all, visitors are invited to ask for samples on WhatsApp. */
-export const VideoSamples = ({ tag = 'Our AI videos', h2 = 'AI videos we have made', intro, kind }) => {
-  const ai = creativeWork.filter((v) => v.category === 'AI Videos');
+export const VideoSamples = ({ tag = 'Our AI videos', h2 = 'AI videos we have made', intro, kind, all = false }) => {
+  // `all`: any real video (reels, brand films, AI) — used by social media pages.
+  const ai = all ? creativeWork.filter((v) => v.video) : creativeWork.filter((v) => v.category === 'AI Videos');
   const ofKind = kind ? ai.filter((v) => v.kind === kind) : ai;
   const list = (ofKind.length ? ofKind : ai).slice(0, 8);
   return (
@@ -354,6 +389,7 @@ export const Blocks = ({ blocks }) =>
     switch (b.type) {
       case 'prose': return <Prose key={key} {...b} />;
       case 'cards': return <Cards key={key} {...b} />;
+      case 'pricing': return <Pricing key={key} {...b} />;
       case 'process': return <Process key={key} {...b} />;
       case 'faq': return <Faqs key={key} {...b} />;
       case 'links': return <LinkChips key={key} {...b} />;
@@ -390,7 +426,7 @@ export const faqSchema = (faqs) => ({
   })),
 });
 
-export const serviceSchema = ({ name, description, path, areaServed, serviceType }) => ({
+export const serviceSchema = ({ name, description, path, areaServed, serviceType, offers }) => ({
   '@context': 'https://schema.org',
   '@type': 'Service',
   name,
@@ -399,6 +435,24 @@ export const serviceSchema = ({ name, description, path, areaServed, serviceType
   provider: { '@id': `${SITE_URL}/#organization` },
   areaServed,
   url: `${SITE_URL}${path}`,
+  ...(offers ? { hasOfferCatalog: offers } : {}),
 });
+
+/** Offer schema for pages that show the social media plans. */
+export const socialOffers = (path) => ({
+  '@type': 'OfferCatalog',
+  name: 'Social media management plans',
+  itemListElement: socialPlans.map((p) => ({
+    '@type': 'Offer',
+    name: `${p.name} — ${p.tier}`,
+    description: p.items.join(', '),
+    price: p.price,
+    priceCurrency: 'INR',
+    url: `${SITE_URL}${path}#pricing`,
+    priceSpecification: { '@type': 'UnitPriceSpecification', price: p.price, priceCurrency: 'INR', unitText: 'MONTH' },
+  })),
+});
+
+export const hasPricing = (blocks) => blocks.some((b) => b.type === 'pricing');
 
 export const collectFaqs = (blocks) => blocks.filter((b) => b.type === 'faq').flatMap((b) => b.faqs);

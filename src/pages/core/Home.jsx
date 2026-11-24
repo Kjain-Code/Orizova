@@ -9,7 +9,6 @@ import CtaBand from '../../components/common/CtaBand';
 import { IndustriesStrip, LatestPosts } from '../../components/home/HomeExtras';
 import { IntroSplit, HowWeWork, AtAGlance, TrackingSplit } from '../../components/home/HomeSections';
 import { ProblemsWeFix, ToolsStrip, Reviews } from '../../components/home/TrustSections';
-import ResultsStrip from '../../components/home/ResultsStrip';
 import GoalPicker from '../../components/common/GoalPicker';
 import PageTransition from '../../components/layout/PageTransition';
 
@@ -31,7 +30,6 @@ const Home = () => {
 
       <Hero />
       <IntroSplit />
-      <ResultsStrip />
       <ProblemsWeFix />
       <Services />
       <GoalPicker />

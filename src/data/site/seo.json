@@ -60,10 +60,37 @@
       "key": "service:social-media-marketing",
       "path": "/services/social-media-marketing",
       "priority": "0.9",
-      "title": "Social Media Marketing Agency in India | Orizova",
-      "description": "Content calendars, reels, posts and community management for Instagram, Facebook, LinkedIn and YouTube — social media marketing for businesses across India.",
-      "h1": "Social Media Marketing Agency — Content, Reels & Community",
-      "lastmod": "2026-10-25"
+      "title": "Social Media Management Services in India | Orizova",
+      "description": "Done-for-you social media management for Instagram, Facebook & LinkedIn — reels, posts, stories, captions & replies. Plans from ₹6,000/month.",
+      "h1": "Social Media Management Services — Instagram, Facebook & LinkedIn",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "service:instagram-management",
+      "path": "/services/instagram-management",
+      "priority": "0.9",
+      "title": "Instagram Management Services for Business | Orizova",
+      "description": "Instagram account management: reels with hooks & scripts, posts, stories, highlights, captions, hashtags and DM replies. Plans from ₹6,000/month.",
+      "h1": "Instagram Management Services — Reels, Posts & Stories Done for You",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "service:facebook-page-management",
+      "path": "/services/facebook-page-management",
+      "priority": "0.8",
+      "title": "Facebook Page Management Services | Orizova Digital",
+      "description": "Facebook page management for local businesses: weekly posts & reels, reviews, Messenger replies, events and offers — with Instagram, from ₹6,000/month.",
+      "h1": "Facebook Page Management — Posts, Reviews & Replies Handled",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "service:linkedin-management",
+      "path": "/services/linkedin-management",
+      "priority": "0.8",
+      "title": "LinkedIn Management Services for Founders & B2B | Orizova",
+      "description": "LinkedIn management for founders, consultants, CAs and B2B companies: profile optimisation, weekly posts and carousels in your voice, company page.",
+      "h1": "LinkedIn Management for Founders, Consultants & B2B Companies",
+      "lastmod": "2026-11-24"
     },
     {
       "key": "service:meta-ads",
@@ -1164,6 +1191,204 @@
       "lastmod": "2026-11-19"
     },
     {
+      "key": "cityservice:delhi/social-media-marketing",
+      "path": "/locations/delhi/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Delhi | Instagram & FB",
+      "description": "Social media management in Delhi for restaurants, boutiques, clinics & coaching institutes. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Delhi",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:noida/social-media-marketing",
+      "path": "/locations/noida/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Noida | Instagram & FB",
+      "description": "Social media management in Noida for restaurants, salons, clinics & real-estate brokers. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Noida",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:greater-noida/social-media-marketing",
+      "path": "/locations/greater-noida/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Greater Noida | Instagram & FB",
+      "description": "Social media management in Greater Noida for gyms, salons, cafés, schools & coaching. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Greater Noida",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:ghaziabad/social-media-marketing",
+      "path": "/locations/ghaziabad/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Ghaziabad | Instagram & FB",
+      "description": "Social media management in Ghaziabad for shops, showrooms, clinics & coaching institutes. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Ghaziabad",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:indirapuram/social-media-marketing",
+      "path": "/locations/indirapuram/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Indirapuram | Instagram & FB",
+      "description": "Social media management in Indirapuram for cafés, salons, clinics, tutors & boutiques. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Indirapuram",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:gurugram/social-media-marketing",
+      "path": "/locations/gurugram/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Gurugram | Instagram & FB",
+      "description": "Social media management in Gurugram for restaurants, salons, real-estate firms & startups. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Gurugram",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:faridabad/social-media-marketing",
+      "path": "/locations/faridabad/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Faridabad | Instagram & FB",
+      "description": "Social media management in Faridabad for retailers, clinics, schools, gyms & manufacturers. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Faridabad",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:lucknow/social-media-marketing",
+      "path": "/locations/lucknow/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Lucknow | Instagram & FB",
+      "description": "Social media management in Lucknow for restaurants, sweet shops, boutiques & clinics. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Lucknow",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:meerut/social-media-marketing",
+      "path": "/locations/meerut/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Meerut | Instagram & FB",
+      "description": "Social media management in Meerut for sports-goods brands, jewellers, showrooms & schools. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Meerut",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:agra/social-media-marketing",
+      "path": "/locations/agra/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Agra | Instagram & FB",
+      "description": "Social media management in Agra for hotels, restaurants, handicraft & marble shops. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Agra",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:kanpur/social-media-marketing",
+      "path": "/locations/kanpur/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Kanpur | Instagram & FB",
+      "description": "Social media management in Kanpur for leather & textile businesses, showrooms & clinics. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Kanpur",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:varanasi/social-media-marketing",
+      "path": "/locations/varanasi/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Varanasi | Instagram & FB",
+      "description": "Social media management in Varanasi for hotels, guest houses & Banarasi saree sellers. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Varanasi",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:chandigarh/social-media-marketing",
+      "path": "/locations/chandigarh/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Chandigarh | Instagram & FB",
+      "description": "Social media management in Chandigarh for cafés, salons, clinics & immigration consultants. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Chandigarh",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:mohali/social-media-marketing",
+      "path": "/locations/mohali/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Mohali | Instagram & FB",
+      "description": "Social media management in Mohali for IT companies, immigration consultants & clinics. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Mohali",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:panchkula/social-media-marketing",
+      "path": "/locations/panchkula/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Panchkula | Instagram & FB",
+      "description": "Social media management in Panchkula for clinics, schools, salons, gyms & cafés. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Panchkula",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:ludhiana/social-media-marketing",
+      "path": "/locations/ludhiana/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Ludhiana | Instagram & FB",
+      "description": "Social media management in Ludhiana for hosiery & garment brands, manufacturers & showrooms. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Ludhiana",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:jaipur/social-media-marketing",
+      "path": "/locations/jaipur/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Jaipur | Instagram & FB",
+      "description": "Social media management in Jaipur for hotels, restaurants, jewellers & handicraft brands. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Jaipur",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:dehradun/social-media-marketing",
+      "path": "/locations/dehradun/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Dehradun | Instagram & FB",
+      "description": "Social media management in Dehradun for schools, coaching institutes, cafés & homestays. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Dehradun",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:hyderabad/social-media-marketing",
+      "path": "/locations/hyderabad/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Hyderabad | Instagram & FB",
+      "description": "Social media management in Hyderabad for restaurants, real-estate projects & clinics. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Hyderabad",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:bengaluru/social-media-marketing",
+      "path": "/locations/bengaluru/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Bengaluru | Instagram & FB",
+      "description": "Social media management in Bengaluru for startups, D2C brands, cafés, clinics & gyms. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Bengaluru",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:pune/social-media-marketing",
+      "path": "/locations/pune/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Pune | Instagram & FB",
+      "description": "Social media management in Pune for cafés, coaching, colleges, clinics & real estate. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Pune",
+      "lastmod": "2026-11-24"
+    },
+    {
+      "key": "cityservice:mumbai/social-media-marketing",
+      "path": "/locations/mumbai/social-media-marketing",
+      "priority": "0.9",
+      "title": "Social Media Management in Mumbai | Instagram & FB",
+      "description": "Social media management in Mumbai for restaurants, salons, boutiques & real estate. Reels, posts, stories & DM replies every week — from ₹6,000/month.",
+      "h1": "Social Media Management in Mumbai",
+      "lastmod": "2026-11-24"
+    },
+    {
       "key": "industries",
       "path": "/industries",
       "priority": "0.7",
@@ -1380,13 +1605,22 @@
       "lastmod": "2026-11-13"
     },
     {
+      "key": "post:what-does-a-social-media-manager-do",
+      "path": "/blog/what-does-a-social-media-manager-do",
+      "priority": "0.7",
+      "title": "What Does a Social Media Manager Do? (2026 Guide)",
+      "description": "What a social media manager does each month for a business — planning, reels, posts, captions, replies, reports — what you still do, cost and red flags.",
+      "h1": "What Does a Social Media Manager Do? A Plain Guide for Business Owners",
+      "lastmod": "2026-11-24"
+    },
+    {
       "key": "post:social-media-marketing-cost-india",
       "path": "/blog/social-media-marketing-cost-india",
       "priority": "0.7",
-      "title": "Social Media Marketing Cost in India (2026)",
-      "description": "What decides social media management cost in India, what a monthly package should include, management fee vs ad budget, and red flags.",
-      "h1": "Social Media Marketing Cost in India: What Monthly Packages Include",
-      "lastmod": "2026-11-13"
+      "title": "Social Media Management Cost in India (2026)",
+      "description": "Social media management cost in India: what decides the price, what a monthly package should include, real plan prices, fee vs ad budget and red flags.",
+      "h1": "Social Media Management Cost in India: Packages, Prices & What They Include",
+      "lastmod": "2026-11-24"
     },
     {
       "key": "post:b2b-lead-generation-manufacturers-india",

@@ -226,3 +226,37 @@ Problem: every page opened with the same gradient banner + grid + orbit graphic 
 - "39 enquiries" now appears only on /case-studies and in the home Results strip (not on every page). PageBanner right card is now "How we work" (first 3 working principles from facts.js) + link to real results.
 - /portfolio hero: one large project (Morphic Spaces) instead of all 5 — the full project cards follow right below, so no repetition.
 - Lint ✅ CI build ✅ (189 pages); checked 1366 + 390 px; slow-scroll check found no section stuck invisible.
+
+## 24 Nov 2026 — Results strip removed from home
+- Removed `<ResultsStrip />` from Home.jsx: the Hyderabad "39 enquiries" numbers now appear only on /case-studies (checked across all 189 built pages). ResultsStrip.jsx/.css are kept but unused, in case a results section is wanted again later.
+- Lint ✅ CI build ✅ (189 pages).
+
+## 24 Nov 2026 — Home hero: premium motion
+- Hero.jsx/Hero.css: (desktop + mouse only, off for reduced motion) stage tilts in 3D and the website mockups / phone / card drift at different depths with the pointer; soft spotlight follows the pointer; slow ambient glow drift. Uses CSS variables + one requestAnimationFrame per frame, `translate` property so hover effects still work. No new packages.
+- Phone mockup now plays the real "AI Luxury Villa Ad" reel (≈2.5 MB) — loaded only after the page has fully loaded + idle, desktop ≥1100 px, not on save-data; poster image shows until then (no LCP impact).
+- Gold underline draws under "more enquiries."; shine sweep on the Get Free Consultation button; pulsing green dot on the "5 live websites" card.
+- FloatingButtons.jsx: "Hi there" WhatsApp bubble no longer covers the first screen — shows after scrolling past it or after 25 s (was 6 s).
+- Tested: lint ✅ CI build ✅ (189 pages); pointer tilt/drift, reel autoplay (muted), mobile (no effects, no video, no overflow), reduced-motion (all off), greeting appears only after scroll.
+
+## 24 Nov 2026 — Social media management push (SEO + pricing)
+Goal: rank for "social media management", "Instagram management", "Facebook page management", "LinkedIn management" + "<city>" and turn visitors into WhatsApp enquiries.
+- **Pricing** (Kritika's price list): src/data/services/socialPricing.js — Brand Presence ₹6,000, Brand Accelerator ₹10,000 (most popular), Brand Domination ₹14,000 per month. New `pricing` content block (ContentBlocks.jsx, classes `cb-plan*`) with WhatsApp "Choose plan" buttons (pre-filled message), anchor #pricing; Offer/OfferCatalog schema (`socialOffers`) added automatically on any service or city page that shows the block.
+- **Pillar** /services/social-media-marketing (URL unchanged): renamed "Social Media Management"; new content in src/data/services/socialPages.js — what we do monthly, platforms, process, real reels, industries, organic + ads, "what we will never do", city links, 10 FAQs; title/description/H1 + quick answer updated.
+- **New sub-services** (parent social-media-marketing, navbar chips with Facebook/LinkedIn icons): /services/instagram-management, /services/facebook-page-management, /services/linkedin-management — each with own content, FAQs, pricing (LinkedIn quoted separately), quick answers and seo.json routes.
+- **22 city pages** /locations/<city>/social-media-marketing (src/data/locations/socialCities.js) — local intro, business types, local notes, pricing, process, FAQs per city; titles "Social Media Management in <City> | Instagram & FB"; descriptions 147–159 chars. Synced with `npm run sync-pages` (city×service 110).
+- **Blog**: new /blog/what-does-a-social-media-manager-do; /blog/social-media-marketing-cost-india retitled "Social Media Management Cost in India" with a plan table built from socialPricing.js; guides linked from all social pages.
+- VideoSamples block: `all: true` shows any real video (not only AI) on social pages.
+- QA: lint ✅ CI build ✅ (215 pages, sitemap 215), 0 broken internal links, axe 0 violations + no overflow on pillar, Instagram, Noida city, both blogs at 1366/390 px.
+
+## 24 Nov 2026 (16:00) — Home hero: fuller right side
+- Removed the gold underline under "more enquiries." (looked hand-drawn, not professional).
+- Right side recomposed and taller (610 px): FPS Subtitle window top-right (shown whole), a **Google PageSpeed card** with the real mobile scores of morphicspaces.com from projects.js (94 / 100 / 100 / 100, tested 3 Nov 2026) with animated score rings, Morphic Spaces window below, phone with the reel and the "5 live websites" card. All layers keep the pointer depth effect.
+- Note: the FPS screenshot itself is grey because their hero video had not loaded when it was captured — a fresh screenshot of fpssubtitle.com would look better.
+- Lint ✅ CI build ✅; checked 1920 / 1366 / 390 px, no overflow.
+
+## 24 Nov 2026 (16:30) — Home hero: showreel design
+- Replaced the collage (two browser windows, PageSpeed card, "5 live websites" counter card) with a **showreel**: one large dark browser frame that cycles through real client websites — Morphic Spaces → FPS Subtitle → Ganesh Creation — every 5 s with a crossfade and slow zoom; address bar shows each site's real URL; project tabs underneath with a progress bar (click to switch, pauses on hover/focus, no autoplay for reduced motion); "All work" link. Each slide links to its case study.
+- Real Google PageSpeed card (94 / 100 / 100 / 100, mobile) appears only while Morphic Spaces — the tested site — is on screen. Counter card removed (no "5 websites / 13 reels" numbers).
+- Phone with the real AI villa reel kept beside the screen; pointer depth/tilt kept on desktop.
+- New FPS Subtitle cover: src/assets/portfolio/fps-subtitle.webp replaced with the real hero ("Translate your vision with us for the world.") supplied by Kritika, cropped to the same 1000×423 ratio — also updates the portfolio pages.
+- Lint ✅ CI build ✅ (215 pages); checked 1920 / 1366 / 390 px, slide change + tab click tested, no overflow.

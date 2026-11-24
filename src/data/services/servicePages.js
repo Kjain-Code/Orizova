@@ -3,6 +3,7 @@
 // Inline links use [text](/path). Block types are rendered by ContentBlocks.
 
 import aiVideoPages from './aiVideoPages';
+import socialPages from './socialPages';
 
 const servicePages = {
   /* ------------------------------------------------------------------ */
@@ -1052,6 +1053,7 @@ const servicePages = {
     ],
   },
   ...aiVideoPages,
+  ...socialPages,
 };
 
 export default servicePages;

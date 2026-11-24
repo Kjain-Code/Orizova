@@ -22,8 +22,20 @@ const answers = {
     a: 'Orizova Digital’s digital marketing combines SEO, Google Ads, Meta Ads, social media and content in one plan for businesses across India, built around how many enquiries or sales you need each month. Tracking is set up first and reports focus on leads and cost per lead, not likes. Ads can bring enquiries within days; SEO builds over months. No fixed lead numbers are guaranteed.',
   },
   '/services/social-media-marketing': {
-    q: 'What does Orizova Digital’s social media management cover?',
-    a: 'Orizova Digital manages Instagram, Facebook, LinkedIn and YouTube for businesses across India with a monthly content calendar, post design, captions, reel editing, posting and replies to general comments, plus a monthly review of what worked. Nothing goes live without your approval, and enquiries from comments and DMs are passed to your team so no lead is missed.',
+    q: 'What does Orizova Digital’s social media management include and cost?',
+    a: 'Orizova Digital manages Instagram, Facebook and LinkedIn for businesses across India: a monthly content calendar, reels with scripts and editing, posts, carousels, stories, captions, posting and replies, plus a monthly report. Plans are ₹6,000/month (4 reels, 4 posts, 8 stories), ₹10,000/month (8 reels, 8 posts, community management) and ₹14,000/month (12 reels, 12 posts, advanced strategy). Paid ads are separate.',
+  },
+  '/services/instagram-management': {
+    q: 'Who can manage my business Instagram account?',
+    a: 'Orizova Digital offers Instagram management for businesses across India: reels with hooks, scripts and editing, posts and carousels, daily stories, highlights, bio optimisation, captions, hashtags and replies to comments and DMs. You approve a monthly calendar and we post on schedule. Plans start at ₹6,000/month and cover Instagram and Facebook together. Followers are never bought.',
+  },
+  '/services/facebook-page-management': {
+    q: 'What does Facebook page management include?',
+    a: 'Orizova Digital’s Facebook page management covers page set-up and clean-up, weekly posts and reels, Messenger and comment replies, replies to reviews, events and offers, and a monthly report. It runs together with Instagram in every plan, from ₹6,000/month. Facebook ads are available as a separate Meta Ads service, with the ad budget paid to Meta directly.',
+  },
+  '/services/linkedin-management': {
+    q: 'Does Orizova Digital manage LinkedIn for founders and companies?',
+    a: 'Yes. Orizova Digital manages LinkedIn for founders, consultants, CAs and B2B companies: profile and company page optimisation, weekly posts and carousels written in the client’s voice from short monthly calls or voice notes, and manual engagement with relevant people — no automation tools. LinkedIn is quoted on its own or added to an Instagram and Facebook plan.',
   },
   '/services/meta-ads': {
     q: 'How does Orizova Digital run Meta (Facebook & Instagram) ads?',

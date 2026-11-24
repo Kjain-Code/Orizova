@@ -8,7 +8,7 @@ import PageTransition from '../../components/layout/PageTransition';
 import CtaBand from '../../components/common/CtaBand';
 import Seo, { routesByPath } from '../../components/seo/Seo';
 import {
-  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema,
+  Blocks, CtaButtons, RelatedGuides, Inline, LinkChips, collectFaqs, faqSchema, serviceSchema, socialOffers, hasPricing,
 } from '../../components/content/ContentBlocks';
 import cityServices from '../../data/locations/cityServices';
 import locations from '../../data/locations/locations';
@@ -44,6 +44,7 @@ const CityServicePage = () => {
             name: route.h1 || page.label,
             description: route.description,
             path,
+            ...(hasPricing(page.blocks) ? { offers: socialOffers(path) } : {}),
             serviceType: svc.title,
             areaServed: [
               { '@type': 'City', name: loc.city },
