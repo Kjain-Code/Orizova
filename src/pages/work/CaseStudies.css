@@ -14,18 +14,18 @@
 .csx-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0; font-size: 12.5px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--gold-text); }
 .csx-meta i { font-style: normal; color: #CDBFE3; }
 
-.csx-headline { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: var(--fs-h3-lg); line-height: 1.25; color: var(--ink); }
+.csx-headline { margin: 0; font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif; font-size: var(--fs-h3-lg); line-height: 1.25; color: var(--ink); }
 
 .csx-body { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 26px; align-items: start; }
 
 .csx-big { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: var(--radius); background: var(--grad-primary); color: #fff; }
-.csx-big strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(3rem, 6vw, 4.2rem); line-height: 1; font-weight: 800; }
+.csx-big strong { font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif; font-size: clamp(3rem, 6vw, 4.2rem); line-height: 1; font-weight: 800; }
 .csx-big span { font-size: 15px; font-weight: 600; line-height: 1.4; opacity: .95; }
 
 .csx-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 0 0; }
 .csx-stats div { padding: 12px 10px; border-radius: 14px; background: #F7F2FF; text-align: center; display: flex; flex-direction: column-reverse; gap: 4px; }
 .csx-stats dt { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.3; }
-.csx-stats dd { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--primary); line-height: 1.1; }
+.csx-stats dd { margin: 0; font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif; font-size: 1.45rem; font-weight: 800; color: var(--primary); line-height: 1.1; }
 
 .csx-did h4, .csx-ads h4 { margin: 0 0 12px; font-size: 13px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--text-light); }
 .csx-did ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }

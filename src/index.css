@@ -48,12 +48,25 @@
   box-sizing: border-box;
 }
 
+/* Font fallbacks sized to match the brand fonts. The brand fonts load a
+   moment after the first paint; until then the page uses Arial (Windows/Mac)
+   or Roboto (Android) stretched to the same width and line height, so the
+   text does not jump or re-wrap when the brand font arrives. */
+@font-face { font-family: 'Inter Fallback'; src: local('Arial'), local('ArialMT'); font-weight: 400; size-adjust: 106.7%; ascent-override: 90.8%; descent-override: 22.6%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'); font-weight: 500 800; size-adjust: 101.3%; ascent-override: 95.6%; descent-override: 23.8%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback R'; src: local('Roboto'), local('Roboto-Regular'); font-weight: 400; size-adjust: 106.7%; ascent-override: 90.8%; descent-override: 22.6%; line-gap-override: 0%; }
+@font-face { font-family: 'Inter Fallback R'; src: local('Roboto Bold'), local('Roboto-Bold'); font-weight: 500 800; size-adjust: 107.6%; ascent-override: 90.0%; descent-override: 22.4%; line-gap-override: 0%; }
+@font-face { font-family: 'Bricolage Fallback'; src: local('Arial Bold'), local('Arial-BoldMT'); font-weight: 400 800; size-adjust: 100.5%; ascent-override: 92.5%; descent-override: 26.9%; line-gap-override: 0%; }
+@font-face { font-family: 'Bricolage Fallback R'; src: local('Roboto Bold'), local('Roboto-Bold'); font-weight: 400 800; size-adjust: 106.8%; ascent-override: 87.1%; descent-override: 25.3%; line-gap-override: 0%; }
+@font-face { font-family: 'Instrument Fallback'; src: local('Times New Roman Italic'), local('TimesNewRomanPS-ItalicMT'), local('Liberation Serif Italic'); font-style: italic; size-adjust: 79.6%; ascent-override: 124.4%; descent-override: 38.9%; line-gap-override: 0%; }
+@font-face { font-family: 'Instrument Fallback R'; src: local('Noto Serif Italic'), local('NotoSerif-Italic'); font-style: italic; size-adjust: 69.2%; ascent-override: 143.1%; descent-override: 44.8%; line-gap-override: 0%; }
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', 'Inter Fallback R', sans-serif;
   background: var(--cream);
   color: var(--text);
   overflow-x: hidden;
@@ -61,14 +74,14 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif;
   line-height: 1.12;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .accent-serif {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', 'Instrument Fallback', 'Instrument Fallback R', serif;
   font-style: italic;
   font-weight: 400;
 }

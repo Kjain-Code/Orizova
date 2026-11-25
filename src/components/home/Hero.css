@@ -41,7 +41,7 @@
   align-items: center;
   gap: 12px;
   margin: 0 0 22px;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', 'Inter Fallback R', sans-serif;
   font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
@@ -53,7 +53,7 @@
 
 .hm-title {
   margin: 0 0 24px;
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif;
   font-size: clamp(2.6rem, 5.2vw, 4.4rem);
   font-weight: 800;
   line-height: 1.02;
@@ -62,7 +62,7 @@
 }
 .hm-title-soft { color: #8A7FA0; font-weight: 700; }
 .hm-title em {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', 'Instrument Fallback', 'Instrument Fallback R', serif;
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -98,7 +98,7 @@
 .hm-stats { display: flex; gap: 0; margin: 0; padding-top: 24px; border-top: 1px solid #E8DEF5; max-width: 560px; }
 .hm-stats div { flex: 1; display: flex; flex-direction: column-reverse; gap: 4px; padding-right: 16px; }
 .hm-stats div + div { padding-left: 20px; border-left: 1px solid #E8DEF5; }
-.hm-stats dd { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--primary); line-height: 1; }
+.hm-stats dd { margin: 0; font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif; font-size: 1.7rem; font-weight: 800; color: var(--primary); line-height: 1; }
 .hm-stats dt { font-size: 13px; color: var(--text-light); }
 
 /* ---- stage: showreel of real websites + phone ---- */

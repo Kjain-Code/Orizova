@@ -4,7 +4,8 @@ import { m } from 'framer-motion';
 const variants = {
   initial: { opacity: 0, y: 18 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -18 },
+  // Quick exit so the next page appears sooner after a click.
+  exit: { opacity: 0, y: -10, transition: { duration: 0.15 } },
 };
 
 // The very first page render must NOT start invisible — otherwise the browser
@@ -24,7 +25,7 @@ const PageTransition = ({ children }) => {
       initial={skipIntro ? false : 'initial'}
       animate="animate"
       exit="exit"
-      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </m.div>

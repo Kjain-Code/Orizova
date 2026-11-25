@@ -33,19 +33,11 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <!-- Fonts: connect early, load without blocking the first paint -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@1&display=swap" />
-    </noscript>
-
+    <!-- Fonts are self-hosted from our own domain (public/fonts/). The font CSS
+         loads without blocking the first paint: text shows straight away in
+         the system font and switches to the brand fonts a moment later. -->
+    <link rel="preload" as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="/fonts/fonts.css" /></noscript>
     <script data-rh="true" type="application/ld+json">
       {"@context":"https://schema.org","@type":"ProfessionalService","@id":"https://orizovadigital.co.in/#organization","name":"Orizova Digital","url":"https://orizovadigital.co.in","logo":"https://orizovadigital.co.in/logo512.png","image":"https://orizovadigital.co.in/logo512.png","email":"orizovadigital@gmail.com","telephone":"+917060824503","description":"Web development and digital marketing agency in Delhi NCR serving businesses across India: websites, SEO, AI video production, Meta & Google Ads, social media and branding.","areaServed":"India","sameAs":["https://www.instagram.com/orizova.digital/","https://www.linkedin.com/company/orizova","https://www.facebook.com/profile.php?id=61594433301407","https://clutch.co/profile/orizova-digital","https://themanifest.com/company/orizova-digital"]}
     </script>

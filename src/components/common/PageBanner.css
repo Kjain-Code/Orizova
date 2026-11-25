@@ -53,7 +53,7 @@
 
 /* Highlighted words: one solid brand colour in the serif italic — no shimmer. */
 .pb-highlight .pb-word-inner.pb-grad {
-  font-family: 'Instrument Serif', serif;
+  font-family: 'Instrument Serif', 'Instrument Fallback', 'Instrument Fallback R', serif;
   font-style: italic;
   font-weight: 400;
   color: var(--primary);
@@ -120,7 +120,7 @@
 .pb-proof li:first-child { border-top: 0; padding-top: 4px; }
 .pb-proof strong {
   min-width: 88px;
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif;
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;

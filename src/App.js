@@ -70,25 +70,126 @@ const PageArea = () => {
 // Every page — Home included — is code-split, so the first download is only
 // the shared app shell. The pre-rendered HTML stays on screen while a page's
 // own file loads (see PageFallback), so nothing flashes.
-const Home = lazyPage(() => import('./pages/core/Home'));
-const ServicesPage = lazyPage(() => import('./pages/services/ServicesPage'));
-const ServicePage = lazyPage(() => import('./pages/services/ServicePage'));
-const LocationsPage = lazyPage(() => import('./pages/locations/LocationsPage'));
-const LocationPage = lazyPage(() => import('./pages/locations/LocationPage'));
-const CityServicePage = lazyPage(() => import('./pages/locations/CityServicePage'));
-const IndustriesPage = lazyPage(() => import('./pages/industries/IndustriesPage'));
-const IndustryPage = lazyPage(() => import('./pages/industries/IndustryPage'));
-const BlogIndex = lazyPage(() => import('./pages/blog/BlogIndex'));
-const BlogPost = lazyPage(() => import('./pages/blog/BlogPost'));
-const FaqPage = lazyPage(() => import('./pages/core/FaqPage'));
-const LegalPage = lazyPage(() => import('./pages/core/LegalPage'));
-const Portfolio = lazyPage(() => import('./pages/work/Portfolio'));
-const PortfolioDetail = lazyPage(() => import('./pages/work/PortfolioDetail'));
-const CreativeWork = lazyPage(() => import('./pages/work/CreativeWork'));
-const CaseStudies = lazyPage(() => import('./pages/work/CaseStudies'));
-const AboutPage = lazyPage(() => import('./pages/core/AboutPage'));
-const ContactPage = lazyPage(() => import('./pages/core/ContactPage'));
-const NotFound = lazyPage(() => import('./pages/core/NotFound'));
+const pageLoaders = {
+  Home: () => import('./pages/core/Home'),
+  ServicesPage: () => import('./pages/services/ServicesPage'),
+  ServicePage: () => import('./pages/services/ServicePage'),
+  LocationsPage: () => import('./pages/locations/LocationsPage'),
+  LocationPage: () => import('./pages/locations/LocationPage'),
+  CityServicePage: () => import('./pages/locations/CityServicePage'),
+  IndustriesPage: () => import('./pages/industries/IndustriesPage'),
+  IndustryPage: () => import('./pages/industries/IndustryPage'),
+  BlogIndex: () => import('./pages/blog/BlogIndex'),
+  BlogPost: () => import('./pages/blog/BlogPost'),
+  FaqPage: () => import('./pages/core/FaqPage'),
+  LegalPage: () => import('./pages/core/LegalPage'),
+  Portfolio: () => import('./pages/work/Portfolio'),
+  PortfolioDetail: () => import('./pages/work/PortfolioDetail'),
+  CreativeWork: () => import('./pages/work/CreativeWork'),
+  CaseStudies: () => import('./pages/work/CaseStudies'),
+  AboutPage: () => import('./pages/core/AboutPage'),
+  ContactPage: () => import('./pages/core/ContactPage'),
+  NotFound: () => import('./pages/core/NotFound'),
+};
+const Home = lazyPage(pageLoaders.Home);
+const ServicesPage = lazyPage(pageLoaders.ServicesPage);
+const ServicePage = lazyPage(pageLoaders.ServicePage);
+const LocationsPage = lazyPage(pageLoaders.LocationsPage);
+const LocationPage = lazyPage(pageLoaders.LocationPage);
+const CityServicePage = lazyPage(pageLoaders.CityServicePage);
+const IndustriesPage = lazyPage(pageLoaders.IndustriesPage);
+const IndustryPage = lazyPage(pageLoaders.IndustryPage);
+const BlogIndex = lazyPage(pageLoaders.BlogIndex);
+const BlogPost = lazyPage(pageLoaders.BlogPost);
+const FaqPage = lazyPage(pageLoaders.FaqPage);
+const LegalPage = lazyPage(pageLoaders.LegalPage);
+const Portfolio = lazyPage(pageLoaders.Portfolio);
+const PortfolioDetail = lazyPage(pageLoaders.PortfolioDetail);
+const CreativeWork = lazyPage(pageLoaders.CreativeWork);
+const CaseStudies = lazyPage(pageLoaders.CaseStudies);
+const AboutPage = lazyPage(pageLoaders.AboutPage);
+const ContactPage = lazyPage(pageLoaders.ContactPage);
+const NotFound = lazyPage(pageLoaders.NotFound);
+
+// ---- Faster clicks: download a page's file before it is needed ----
+// When the pointer moves over (or a finger touches) an internal link, start
+// loading that page's file, so by the time the click lands it is ready.
+// After the first page has loaded and the browser is idle, the other page
+// files are fetched quietly too — skipped on Data Saver and slow (2G/3G)
+// connections so nobody's data is wasted.
+const ROUTE_LOADERS = [
+  [/^\/$/, 'Home'],
+  [/^\/services\/?$/, 'ServicesPage'],
+  [/^\/services\/[^/]+\/?$/, 'ServicePage'],
+  [/^\/locations\/?$/, 'LocationsPage'],
+  [/^\/locations\/[^/]+\/?$/, 'LocationPage'],
+  [/^\/locations\/[^/]+\/[^/]+\/?$/, 'CityServicePage'],
+  [/^\/industries\/?$/, 'IndustriesPage'],
+  [/^\/industries\/[^/]+\/?$/, 'IndustryPage'],
+  [/^\/blog\/?$/, 'BlogIndex'],
+  [/^\/blog\/[^/]+\/?$/, 'BlogPost'],
+  [/^\/faq\/?$/, 'FaqPage'],
+  [/^\/(privacy-policy|terms)\/?$/, 'LegalPage'],
+  [/^\/portfolio\/?$/, 'Portfolio'],
+  [/^\/portfolio\/[^/]+\/?$/, 'PortfolioDetail'],
+  [/^\/creative-work\/?$/, 'CreativeWork'],
+  [/^\/case-studies\/?$/, 'CaseStudies'],
+  [/^\/about\/?$/, 'AboutPage'],
+  [/^\/contact\/?$/, 'ContactPage'],
+];
+const prefetched = new Set();
+const prefetchPage = (name) => {
+  if (!name || prefetched.has(name) || !pageLoaders[name]) return;
+  prefetched.add(name);
+  pageLoaders[name]().catch(() => prefetched.delete(name));
+};
+const prefetchPath = (pathname) => {
+  const hit = ROUTE_LOADERS.find(([re]) => re.test(pathname));
+  if (hit) prefetchPage(hit[1]);
+};
+
+const LinkPrefetcher = () => {
+  useEffect(() => {
+    const onIntent = (e) => {
+      const a = e.target && e.target.closest ? e.target.closest('a[href^="/"]') : null;
+      if (a) prefetchPath(a.getAttribute('href').split(/[?#]/)[0]);
+    };
+    const opts = { passive: true, capture: true };
+    document.addEventListener('mouseover', onIntent, opts);
+    document.addEventListener('touchstart', onIntent, opts);
+    document.addEventListener('focusin', onIntent, opts);
+
+    let timer;
+    let idleId;
+    const conn = navigator.connection || {};
+    const slow = conn.saveData || /(^|-)(2g|3g)$/.test(conn.effectiveType || '');
+    const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 200));
+    const warmAll = () => {
+      const names = Object.keys(pageLoaders);
+      const next = () => {
+        const name = names.shift();
+        if (!name) return;
+        prefetchPage(name);
+        idleId = idle(next);
+      };
+      idleId = idle(next);
+    };
+    const start = () => { timer = setTimeout(warmAll, 2500); };
+    if (!slow) {
+      if (document.readyState === 'complete') start();
+      else window.addEventListener('load', start, { once: true });
+    }
+    return () => {
+      document.removeEventListener('mouseover', onIntent, opts);
+      document.removeEventListener('touchstart', onIntent, opts);
+      document.removeEventListener('focusin', onIntent, opts);
+      window.removeEventListener('load', start);
+      clearTimeout(timer);
+      if (window.cancelIdleCallback && idleId) window.cancelIdleCallback(idleId);
+    };
+  }, []);
+  return null;
+};
 
 // Meta Pixel: the base script loads lazily from index.html, so SPA route
 // changes need their own PageView (the first one is sent by index.html).
@@ -157,6 +258,7 @@ export const AppShell = () => (
     <ScrollProgress />
     <ScrollReveal />
     <PixelPageView />
+    <LinkPrefetcher />
     <Navbar />
     <main id="main">
       <PageArea />

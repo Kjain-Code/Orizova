@@ -62,7 +62,7 @@
 .svc-card:hover .svc-art-wrap { transform: translateY(-4px) scale(1.05); }
 
 .svc-title {
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif;
   font-size: var(--fs-h3);
   font-weight: 700;
   line-height: 1.25;

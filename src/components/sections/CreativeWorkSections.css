@@ -102,7 +102,7 @@
 .cw-play svg { margin-left: 3px; }
 .cw-card:hover .cw-play { opacity: 0; transform: scale(.8); }
 .cw-caption { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 16px 16px 18px; display: flex; flex-direction: column; gap: 3px; }
-.cw-caption strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: 17px; line-height: 1.25; }
+.cw-caption strong { font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif; font-size: 17px; line-height: 1.25; }
 .cw-caption small { font-size: 13px; color: rgba(255, 255, 255, .78); }
 
 /* ===== Two auto-scrolling rows (creative-work page) ===== */
@@ -140,7 +140,7 @@
   margin-top: 56px; padding: 36px 40px; border-radius: 24px; background: var(--paper); border: 1px solid #ECE4F7;
   display: grid; grid-template-columns: 1.6fr auto; gap: 28px; align-items: center; box-shadow: 0 14px 34px rgba(76, 14, 130, .07);
 }
-.cw-next h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: var(--fs-h3-lg); color: var(--ink); margin: 0 0 8px; }
+.cw-next h2 { font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif; font-size: var(--fs-h3-lg); color: var(--ink); margin: 0 0 8px; }
 .cw-next p { margin: 0; font-size: var(--fs-card); line-height: 1.7; color: var(--text-light); max-width: 640px; }
 .cw-next-actions { display: flex; flex-direction: column; align-items: center; gap: 10px; }
 .cw-next-actions .btn-gold { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }

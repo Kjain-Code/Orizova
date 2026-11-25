@@ -273,3 +273,16 @@ Problem found: hub pages (Services, Industries, Portfolio, Case Studies, Creativ
 - prerender.js: CSS inline limit 150 KB → 200 KB (CSS had crossed 150 KB, so it stopped being inlined).
 Results (local Lighthouse, mobile): Home 95, Case Studies 96 (was 64), Delhi social 98, Services 95, Industries 97, Contact 97; desktop 100 on all tested; CLS 0 everywhere.
 Responsive check: all 215 pages at 320/360/414/768/1024/1366 px → 0 pages with sideways scroll.
+
+## 25 Nov 2026 — Speed pass 2 (fonts, faster clicks) + index check
+Indexing (Search Console export 25 Nov, data till 16 Nov): 131 of 215 sitemap URLs indexed, 84 not indexed (list + Request-Indexing order sent as orizova-not-indexed-pages.csv). Google also indexed 3 stray URLs (2 on www., 1 old blog URL) — www should redirect to non-www in Vercel → Domains.
+Speed:
+- Fonts self-hosted: public/fonts/ (Inter 400–800, Bricolage Grotesque 600–800 w/ optical sizes, Instrument Serif italic; same as the old Google Fonts link). Google Fonts request removed from public/index.html. fonts.css loads without blocking first paint. vercel.json caches /fonts/* for 1 year (rename a file if you ever change it).
+- ₹ sign gets its own ~1 KB font file, so price pages don't download the 60–85 KB Latin-Extended files.
+- index.css: metric-matched fallback fonts (Arial / Roboto / Times / Noto Serif) + all font stacks updated → much less text jumping when the brand font arrives.
+- App.js: page files prefetch on link hover/touch, and all page files load quietly after the first page is idle (skipped on Data Saver / 2G / 3G). Clicks between pages now ~70–170 ms locally.
+- PageTransition: exit 0.4 s → 0.15 s, enter 0.3 s.
+- Video previews (Creative Work cards): leaving a card now cancels the 2–9 MB download.
+- Below-the-fold posters / portfolio shot now lazy; case-studies hero screenshot fetchpriority=high.
+Checked: CI build, 0 sideways scroll on all 215 pages at 320/390/768/1366, SEO/Accessibility/Best-practices 100 (instagram-management), navigation + no console errors.
+Known: 2 pages (services/instagram-management, services/google-ads) can still shift a little on slow phones when the heading font swaps (CLS ~0.15–0.2 in throttled test); most pages 0.

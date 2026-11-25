@@ -172,14 +172,14 @@ export const CaseStudiesHero = () => (
       <p className="ph-lead">What our ads and SEO actually delivered — with the real Meta Ads Manager and Google Search Console screenshots behind every number.</p>
 
       <div className="ph-cs-evidence">
-        {caseStudies.map((cs) => (
+        {caseStudies.map((cs, idx) => (
           <a key={cs.slug} href={`#${cs.slug}`} className="ph-cs-item">
             <span className="ph-cs-src">{cs.kind === 'seo' ? 'Google Search Console' : 'Meta Ads Manager'}</span>
             <strong>{cs.big.value}</strong>
             <span className="ph-cs-what">{cs.kind === 'seo' ? cs.big.label : `WhatsApp enquiries in ${cs.days} days`}</span>
             <span className="ph-cs-meta">{cs.industry} · {cs.city} · {cs.period}</span>
             {cs.proof && cs.proof[0] && (
-              <span className="ph-cs-shot" aria-hidden="true"><img src={cs.proof[0].small || cs.proof[0].image} alt="" width={cs.proof[0].w} height={cs.proof[0].h} decoding="async" /></span>
+              <span className="ph-cs-shot" aria-hidden="true"><img src={cs.proof[0].small || cs.proof[0].image} alt="" width={cs.proof[0].w} height={cs.proof[0].h} decoding="async" fetchPriority={idx === 0 ? 'high' : undefined} /></span>
             )}
             <span className="ph-cs-go">See the proof <FiArrowDown aria-hidden="true" /></span>
           </a>

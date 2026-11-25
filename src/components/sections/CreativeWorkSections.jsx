@@ -28,7 +28,18 @@ const VideoCard = ({ item, index, onOpen, plain = false, hidden = false }) => {
   // Poster / static ad creative (item.image, no video): same card, no preview.
   const isImage = !item.video && !!item.image;
   const play = () => { const v = ref.current; if (v) { v.preload = 'auto'; v.play().catch(() => {}); } };
-  const stop = () => { const v = ref.current; if (v) { v.pause(); v.currentTime = 0; } };
+  // On leave: stop the preview AND cancel its download (a reel is 2–9 MB), so
+  // moving the mouse across many cards doesn't clog the connection.
+  const stop = () => {
+    const v = ref.current;
+    if (!v) return;
+    v.pause();
+    const src = v.getAttribute('src');
+    v.preload = 'none';
+    v.removeAttribute('src');
+    v.load();
+    if (src) v.setAttribute('src', src);
+  };
 
   return (
     <m.button
@@ -46,7 +57,7 @@ const VideoCard = ({ item, index, onOpen, plain = false, hidden = false }) => {
       {...(plain ? {} : { transition: { ...fadeUp.transition, delay: (index % 4) * 0.06 } })}
     >
       {isImage && <img className="cw-image-bg" src={item.image} alt="" aria-hidden="true" loading="lazy" decoding="async" />}
-      <img className="cw-poster" src={isImage ? item.image : item.poster} alt="" width="360" height="640" loading={index < 4 ? 'eager' : 'lazy'} decoding="async" />
+      <img className="cw-poster" src={isImage ? item.image : item.poster} alt="" width="360" height="640" loading="lazy" decoding="async" />
       {!isImage && <video ref={ref} className="cw-preview" src={item.video} muted loop playsInline preload="none" aria-hidden="true" tabIndex={-1} />}
       <span className="cw-badge">{item.category}</span>
       {!isImage && <span className="cw-play" aria-hidden="true"><FiPlay /></span>}

@@ -7,7 +7,7 @@
   display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 24px 22px; border-radius: var(--radius);
   background: var(--lilac); border: 1px solid #ECE4F7; text-align: center;
 }
-.rs-item strong { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(2rem, 3.4vw, 2.6rem); font-weight: 800; line-height: 1.05; color: var(--primary); }
+.rs-item strong { font-family: 'Bricolage Grotesque', 'Bricolage Fallback', 'Bricolage Fallback R', sans-serif; font-size: clamp(2rem, 3.4vw, 2.6rem); font-weight: 800; line-height: 1.05; color: var(--primary); }
 .rs-item span { font-size: 14px; font-weight: 600; line-height: 1.4; color: var(--text-light); }
 .rs-item--main { background: var(--grad-primary); border-color: transparent; box-shadow: var(--shadow-lg); }
 .rs-item--main strong { color: #fff; font-size: clamp(2.8rem, 5vw, 3.8rem); }
